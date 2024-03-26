@@ -7,6 +7,6 @@
     <title>Product Kategori</title>
 </head>
 <body>
-    
+    <p>Test product kategori</p>
 </body>
 </html>
