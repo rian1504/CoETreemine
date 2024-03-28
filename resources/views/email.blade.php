@@ -21,7 +21,7 @@
     <h1 class="text-center text-black-700 font-bold">ENTER YOUR EMAIL </h1>
     <p>This is the final step in recovering your password!</p>
   <div class="mb-5">
-    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address <span class="text-red-500">*</span></label>
     <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-green-700 dark:border-green-600 dark:placeholder-green-600 dark:text-white dark:focus:ring-green-800 dark:focus:border-green-500" placeholder="name@.com" required />
   </div>
   <div class="flex items-center justify-center">
