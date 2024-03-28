@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function home(){
-        return view('components/home');
+    function home()
+    {
+        return view('layouts/pembeli');
     }
 }
