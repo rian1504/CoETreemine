@@ -14,8 +14,8 @@ Route::get('/', function () {
     
 });
 
-Route::get('/login', [EmailController::class, 'login']);
-Route::get('/register', [PasswordController::class, 'register']);
+Route::get('/login', [LoginController::class, 'login']);
+Route::get('/register', [RegisterController::class, 'register']);
 
 Route::get('/email', [EmailController::class, 'email']);
 Route::get('/password', [PasswordController::class, 'password']);
