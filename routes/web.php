@@ -14,11 +14,11 @@ Route::get('/', function () {
     
 });
 
-Route::get("/login", [EmailController::class, "login"]);
-Route::get("/register", [PasswordController::class, "register"]);
+Route::get('/login', [EmailController::class, 'login']);
+Route::get('/register', [PasswordController::class, 'register']);
 
-Route::get("/email", [EmailController::class, "email"]);
-Route::get("/password", [PasswordController::class, "password"]);
+Route::get('/email', [EmailController::class, 'email']);
+Route::get('/password', [PasswordController::class, 'password']);
 
 
 Route::get('/home', [HomeController::class, 'home']);
