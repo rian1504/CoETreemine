@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\ProductKategoriController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -32,3 +33,5 @@ Route::get('/product', [ProductKategoriController::class, 'product']);
 
 
 Route::get('/service', [ServiceController::class, 'service']);
+
+Route::get('/portofolio', [PortofolioController::class, 'portofolio']);

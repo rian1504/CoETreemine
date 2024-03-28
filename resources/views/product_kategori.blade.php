@@ -11,7 +11,7 @@
 
 <body>
 
-
+    <h1 class="text-center font-extrabold text-black-900" style="font-size: 30px;">CATEGORY PRODUCT</h1>
     <div class="inline-grid grid-cols-4">
         <div
             class="w-56 h-60 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ml-16 mt-24">
