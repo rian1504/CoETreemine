@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductKategoriController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
@@ -15,6 +14,8 @@ Route::get('/', function () {
     
 });
 
+Route::get("/login", [EmailController::class, "login"]);
+Route::get("/register", [PasswordController::class, "register"]);
 
 Route::get("/email", [EmailController::class, "email"]);
 Route::get("/password", [PasswordController::class, "password"]);
