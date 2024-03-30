@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\UploadController;
 
 use App\Http\Controllers\ServiceController;
 
@@ -28,6 +29,7 @@ Route::get('/home', [HomeController::class, 'home']);
 Route::get('/product', [ProductKategoriController::class, 'product']);
 
 Route::get('/shopping', [ShoppingController::class, 'shopping']);
+Route::get('/file', [UploadController::class, 'file']);
 
 
 
