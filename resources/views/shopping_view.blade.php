@@ -57,7 +57,7 @@
                             <input type="checkbox" name="" id="">
                         </div>
                         
-                <img src="./image/development board.jpg" alt="Image" class="ml-10" >
+                <img src="./image/development board.jpg" alt="Image" class="ml-2" >
           <div class="ml-10">
                             <p>2 Layers Size 10x10mm 1.6mm</p>
                             <p>Product No : WWR45TYFVG4</p>
