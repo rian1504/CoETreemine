@@ -26,24 +26,25 @@
             </a>
         </div>
     </nav>
-    <div class="text-2xl font-bold text-gray-800">
+    <div class="bg-white shadow-md p-4 rounded-md">
+      
+    <div class="ml-8 my-5 text-2xl font-bold text-gray-800">
   <span class="text-black">Attach Your Gerber Files</span>
   <p class="text-base inline font-medium text-green-800 mx-5">PCBway will never disclose your PCB files to any third party!</p>
 </div>
-    <table class="table-auto w-full border">
-  <tbody>
+<tbody>
     <tr>
       <td class="border-t px-6 py-4">
         <div class="flex items-center">
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="" class="ml-10">
           <div class="w-6 h-6 mr-2">
           </div>
           <div class="font-medium text-gray-800">Gerber Files</div>
         </div>
       </td>
-      <td class="border-t px-6 py-4">
+  <td class=" border-t px-6 py-4">
         <div class="flex items-center">
-        <input type="checkbox" name="" id="">
+        <input type="checkbox" name="" id="" class="ml-10">
           <div class="w-6 h-6 mr-2">
           </div>
           <div class="font-medium text-gray-800">DXP</div>
@@ -57,7 +58,9 @@
           <div class="font-medium text-gray-800">Others</div>
         </div>
       </td>
-      <div>
+</div>
+
+      <div >
       <td class="border-t px-6 py-4">
         <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
           + Add Gerber File
@@ -65,6 +68,16 @@
         </div>
       </td>
     </tr>
+  <div class="mt-2">
+    
+    <span class="text-gray-500 ml-2">.rar, .zip or Maximum 50M</span>
+  </div>
+  
+ 
+     
+      
+
+     
     <tr>
      
   </tbody>
