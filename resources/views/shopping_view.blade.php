@@ -47,6 +47,14 @@
                     <div class="inline-grid grid-cols-4">
                         <img src="./image/development board.jpg" alt="Image" class="me-5">
                         <div>
+<<<<<<< HEAD
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        
+                <img src="./image/development board.jpg" alt="Image" class="ml-2" >
+          <div class="ml-10">
+=======
+>>>>>>> 69efbabde77cd504093b459c1eb46acad050dc7b
                             <p>2 Layers Size 10x10mm 1.6mm</p>
                             <p>Product No : WWR45TYFVG4</p>
                             <p>Solder Mask: Green</p>
