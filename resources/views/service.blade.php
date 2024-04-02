@@ -14,7 +14,7 @@
     <div class="inline-grid grid-cols-2">
         <div class=" max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ml-28 mt-2">
             <a href="#">
-                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+                <img class="rounded-t-lg" src="https://images.squarespace-cdn.com/content/v1/529a48e1e4b09eb80191621d/1634064788419-1RUKZGRRDHWGVS5VICTU/MEGA+Heading.jpg?format=1500w" alt="" />
             </a>
             <div class="p-5">
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">We have more expertise, better equipment,
@@ -29,7 +29,7 @@
         <div class=" max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ml-28 mt-2">
 
             <a href="#">
-                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+                <img class="rounded-t-lg" src="https://images.squarespace-cdn.com/content/v1/529a48e1e4b09eb80191621d/1634064788419-1RUKZGRRDHWGVS5VICTU/MEGA+Heading.jpg?format=1500w" alt="" />
             </a>
             <div class="p-5">
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">We have more expertise, better equipment,

@@ -12,6 +12,8 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\PasswordController;
 
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\HistoryController;
+
 
 
 Route::get('/', function () {
@@ -33,3 +35,6 @@ Route::get('/service', [ServiceController::class, 'service']);
 
 Route::get('/portofolio', [PortofolioController::class, 'portofolio']);
 Route::get('/detail', [DetailController::class, 'detail']);
+Route::get('/history', [HistoryController::class, 'history']);
+
+
