@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\ProductKategoriController;
@@ -29,14 +30,8 @@ Route::get('/product', [ProductKategoriController::class, 'product']);
 
 Route::get('/shopping', [ShoppingController::class, 'shopping']);
 
-
-
-
-
-
-
-
 Route::get('/service', [ServiceController::class, 'service']);
 
 Route::get('/portofolio', [PortofolioController::class, 'portofolio']);
 Route::get('/detail', [DetailController::class, 'detail']);
+Route::get('/history', [HistoryController::class, 'history']);
