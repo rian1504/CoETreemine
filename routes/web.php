@@ -6,15 +6,12 @@ use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\ProductKategoriController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\UploadController;
-use App\Http\Controllers\ShoppingController;
-
-
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\PasswordController;
-
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\ShoppingController;
+use App\Http\Controllers\UploadController;
 
 
 
@@ -27,18 +24,10 @@ Route::get('/email', [EmailController::class, 'email']);
 Route::get('/password', [PasswordController::class, 'password']);
 Route::get('/home', [HomeController::class, 'home']);
 Route::get('/product', [ProductKategoriController::class, 'product']);
-
-Route::get('/product', [ProductKategoriController::class, 'product']);
-
-
-
-
-
-
 Route::get('/service', [ServiceController::class, 'service']);
-
 Route::get('/portofolio', [PortofolioController::class, 'portofolio']);
 Route::get('/detail', [DetailController::class, 'detail']);
 Route::get('/history', [HistoryController::class, 'history']);
-
+Route::get('/shopping', [ShoppingController::class, 'shopping']);
+Route::get('/upload', [UploadController::class, 'upload']);
 
