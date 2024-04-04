@@ -6,6 +6,8 @@ use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\ProductKategoriController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\ShoppingController;
 
 
 use App\Http\Controllers\EmailController;
@@ -24,6 +26,8 @@ Route::get('/register', [RegisterController::class, 'register']);
 Route::get('/email', [EmailController::class, 'email']);
 Route::get('/password', [PasswordController::class, 'password']);
 Route::get('/home', [HomeController::class, 'home']);
+Route::get('/product', [ProductKategoriController::class, 'product']);
+
 Route::get('/product', [ProductKategoriController::class, 'product']);
 
 

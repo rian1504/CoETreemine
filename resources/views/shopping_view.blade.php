@@ -20,7 +20,7 @@
 
     <div class="mt-10 flex justify-center gap-24">
         <button class="bg-gray-300 hover:bg-gray-800 hover:text-white font-bold py-2 px-10 rounded">
-            Custom
+            Product
         </button>
         <button class="bg-green-300 hover:bg-green-800 hover:text-white font-bold py-2 px-10 rounded">
             Custom
