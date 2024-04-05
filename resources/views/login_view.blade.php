@@ -6,6 +6,7 @@
     <title>LOGIN COETREEMINE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -21,16 +22,17 @@
               <form class="space-y-4 md:space-y-6" action="#">
                   <div class="mb-4">
                       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Email Address<span class="text-red-500">*</span></label>
-                      <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500" placeholder="coetreemine@yahui.kom" required="">
+                      <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg bg-gray-50 focus:outline-none focus:ring focus:ring-green-500 focus:border-green-500" placeholder="coetreemine@yahui.kom" required="">
                   </div>
-                  <div>
+                  <div class="mb-5 relative">
                       <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Password<span class="text-red-500">*</span></label>
-                      <input type="password" name="password" id="password" placeholder="••••••••" class="w-full px-3 py-2 border rounded-lg bg-gray-50 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500" required="">
+                      <input type="password" name="password" id="password" placeholder="••••••••" class="w-full px-3 py-2 border rounded-lg bg-gray-50 focus:outline-none focus:ring focus:ring-green-500 focus:border-green-500" required="">
+                      <i class="absolute top-10 right-3 text-gray-500 hover:text-green-500 cursor-pointer fas fa-eye-slash"></i>
                   </div>
                   <div class="flex items-center justify-between">
                       <div class="flex items-start">
                           <div class="flex items-center h-5">
-                            <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                            <input id="remember" aria-describedby="remember" type="checkbox" class="focus:ring-green-500 focus:border-green-500 w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-white dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
                           </div>
                           <div class="ml-3 text-sm">
                             <label for="remember" class="text-sm font-medium text-primary-600 dark:text-primary-500">Keep me signed in</label>
