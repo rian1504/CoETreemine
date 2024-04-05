@@ -10,7 +10,6 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\UploadController;
 
