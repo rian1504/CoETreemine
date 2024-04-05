@@ -31,4 +31,5 @@ Route::get('/detail', [DetailController::class, 'detail']);
 Route::get('/payment', [PaymentController::class, 'payment']);
 Route::get('/shopping', [ShoppingController::class, 'shopping']);
 Route::get('/upload', [UploadController::class, 'upload']);
+Route::get('/history', [HistoryController::class, 'history']);
 
