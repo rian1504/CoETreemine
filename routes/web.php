@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\ProductKategoriController;
