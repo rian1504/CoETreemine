@@ -3,7 +3,7 @@
 
 <head>
     <title>Payment</title>
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet" type="text/css">
 </head>
 
@@ -41,24 +41,25 @@
         </div>
         <div class="grid grid-cols-2">
             <div class=" text-sm text-gray-600 mb-4 mt-4 ml-9 ">
-               <span class="col-start-1 col-end-3">Order Total (1 product) :</span> <br>
+                <span class="col-start-1 col-end-3">Order Total (1 product) :</span> <br>
                 <span class="col-start-1 col-end-3">SubTotal for ptoduct :</span> <br>
-                 <span class="col-start-1 col-end-3">Shipping costs : </span> <br>
-                <span class="col-start-1 col-end-3">Total Payment :</span>
-        </div>
-        <div class="grid grid-cols-2 ">
-            <div class="text-sm text-gray-600 mt-10 mr-7 ">
-                <span class=" font-bold col-end-7 col-span-2  ">Rp.400.000</span> <br>
-                <span class="font-bold col-end-7 col-span-2 ">Rp.50.000</span> <br>
-                <span class="text-black font-bold col-end-7 col-span-2 ">Rp.450.000</span>
+                <span class="col-start-1 col-end-3">Shipping costs : </span> <br>
+                <span class="col-start-1 col-end-3 text-lg">Total Payment :</span>
+            </div>
+            <div class="ms-auto">
+                <div class="text-sm text-gray-600 mt-10 mr-7 ">
+                    <span class=" font-bold col-end-7 col-span-2  ">Rp.400.000</span> <br>
+                    <span class="font-bold col-end-7 col-span-2 ">Rp.50.000</span> <br>
+                    <span class="text-black font-bold col-end-7 col-span-2 text-lg">Rp.450.000</span>
+                </div>
+                <div class="my-4">
+                    <button
+                        class="bg-green-800 hover:bg-green-600 hover:text-white text-white font-bold py-2 px-4 rounded">
+                        Pay Now
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="mt-4 mb-10 ml-9 text-end mr-4 ">
-            <button class="bg-green-800 hover:bg-green-600 hover:text-white text-white font-bold py-2 px-4 rounded">
-                Pay Now
-            </button>
-        </div>
-    </div>
 </body>
 
 </html>
