@@ -10,11 +10,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $role = Auth()->user()->is_admin;
+        $is_admin = Auth()->user()->is_admin;
 
-        if ($role == 0) {
+        if ($is_admin == 0) {
             return view('pembeli.dashboard');
-        } elseif ($role == 1) {
+        } elseif ($is_admin == 1) {
             return view('admin.dashboard');
         } else {
             return redirect()->back();
