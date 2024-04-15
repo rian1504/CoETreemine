@@ -8,6 +8,11 @@ use App\Models\User;
 
 class DashboardController extends Controller
 {
+    public function getDataAdmin()
+    {
+        // $dataCategory = Category::all()::count();
+    }
+
     public function index()
     {
         $is_admin = Auth()->user()->is_admin;
@@ -15,7 +20,9 @@ class DashboardController extends Controller
         if ($is_admin == 0) {
             return view('pembeli.dashboard');
         } elseif ($is_admin == 1) {
-            return view('admin.dashboard');
+            $data = $this->getDataAdmin();
+
+            return view('admin.dashboard')->with('data');
         } else {
             return redirect()->back();
         }
