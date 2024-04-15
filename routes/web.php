@@ -12,6 +12,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\CardetailController;
 
 
 
@@ -29,5 +30,6 @@ Route::get('/portofolio', [PortofolioController::class, 'portofolio']);
 Route::get('/detail', [DetailController::class, 'detail']);
 Route::get('/history', [HistoryController::class, 'history']);
 Route::get('/shopping', [ShoppingController::class, 'shopping']);
-Route::get('/upload', [UploadController::class, 'upload']);
+Route::get('/file', [UploadController::class, 'file']);
+Route::get('/cardcust', [CardetailController::class, 'cardcust']);
 
