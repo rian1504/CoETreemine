@@ -10,7 +10,7 @@
 <nav class="bg-gray-300 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class="ml-5 font-semibold self-center text-5 font-medium text-black">Product Detail</span>
+                <span class="ml-5 self-center text-5 font-medium text-black">Product Detail</span>
             </a>
         </div>
     </nav>
