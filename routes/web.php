@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
 // use App\Http\Controllers\DetailController;
@@ -38,9 +37,6 @@ Route::get('/', function () {
 // Route::get('/upload', [UploadController::class, 'upload']);
 // Route::get('/history', [HistoryController::class, 'history']);
 
-Route::get('/home', function () {
-    return view('layouts.pembeli');
-});
 Route::get('/halaman', function () {
     return view('layouts.pembeli');
 });
