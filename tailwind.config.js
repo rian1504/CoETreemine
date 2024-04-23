@@ -8,6 +8,14 @@ export default {
     ],
     theme: {
         extend: {},
+        colors: {
+            transparent: 'F5F5F5',
+            grey: 'D9D9D9',
+            primary: '047C1E',
+            secondary: '618274',
+            tertiery: 'B0D9B1',
+            quaternary: '79AC78'
+        }
     },
     plugins: [
         require('flowbite/plugin')]
