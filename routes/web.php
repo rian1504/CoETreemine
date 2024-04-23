@@ -9,50 +9,60 @@ Route::get('/', function () {
 Route::get('/halaman', function () {
     return view('layouts.pembeli');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/email', function () {
-    return view('email');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/password', function () {
-    return view('password');
-});
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/product', function () {
-    return view('product');
+
+
+// guest
+
+Route::get('/login', function () {
+    return view('guest.login');
 });
-Route::get('/service', function () {
-    return view('service');
+Route::get('/enter_email', function () {
+    return view('guest.enter_email');
+});
+Route::get('/enter_password', function () {
+    return view('guest.enter_password');
+});
+Route::get('/register', function () {
+    return view('guest.register');
+});
+
+
+// buyer
+
+Route::get('/home', function () {
+    return view('buyer.home');
+});
+Route::get('/product_category', function () {
+    return view('buyer.product_category');
 });
 Route::get('/portfolio', function () {
-    return view('portfolio');
+    return view('buyer.portfolio');
 });
-Route::get('/detail', function () {
-    return view('detail');
+Route::get('/detail_portfolio', function () {
+    return view('buyer.detail_portfolio');
+});
+Route::get('/custom_cart', function () {
+    return view('buyer.custom_cart');
+});
+Route::get('/detail_custom_cart', function () {
+    return view('buyer.detail_custom_cart');
+});
+Route::get('/upload_file', function () {
+    return view('buyer.upload_file');
 });
 Route::get('/payment', function () {
-    return view('payment');
-});
-Route::get('/shopping', function () {
-    return view('shopping');
-});
-Route::get('/file', function () {
-    return view('file');
-});
-Route::get('/cardcust', function () {
-    return view('cardcust');
-});
-Route::get('/upload', function () {
-    return view('upload');
+    return view('buyer.payment');
 });
 Route::get('/history', function () {
-    return view('history');
+    return view('buyer.history');
+});
+Route::get('/service', function () {
+    return view('buyer.service');
 });
 
 
+
+// admin
