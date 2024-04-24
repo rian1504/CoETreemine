@@ -16,7 +16,7 @@
     </header>
     <div class="bg-grays-700">
         @yield('carousel')
-        <div class="flex flex-col justify-center items-center mt-28">
+        <div class="flex flex-col justify-center items-center">
             <div class="container">
                 <main>
                     @yield('content')

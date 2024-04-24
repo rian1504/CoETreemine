@@ -15,9 +15,7 @@
         @include('components.guest_header')
     </header>
     <div class="bg-grays-700">
-        <div class="mt-36">
-            @include('components.carousel')
-        </div>
+        @yield('carousel')
         <div class="flex flex-col justify-center items-center">
             <div class="container">
                 <main>

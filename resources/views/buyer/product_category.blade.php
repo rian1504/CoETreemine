@@ -3,9 +3,9 @@
 @section('title', 'CoE Treemine | Product Category')
 
 @section('content')
-<h1 class="text-center font-extrabold text-black-900 mt-14" style="font-size: 30px;">CATEGORY PRODUCT</h1>
+<h1 class="text-center font-extrabold text-black-900 mt-40" style="font-size: 30px;">CATEGORY PRODUCT</h1>
 <div class="inline-grid grid-cols-4">
-    <a href="/portfolio">
+    <a href="/buyer_portfolio">
         <div class="w-56 h-60 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ml-16 mt-24">
             <div class="flex px-4 pt-4 justify-center ">
                 <img src="{{ asset('icon/microcontroller.png') }}" class="w-40 h-40 " />

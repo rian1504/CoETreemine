@@ -1,10 +1,10 @@
-@extends('layouts.buyer_homepage')
+@extends('layouts.guest_homepage')
 
 @section('title', 'CoE Treemine | Product Portfolio')
 
 @section('content')
 
-    <a href="/buyer_detail_portfolio">
+    <a href="/guest_detail_portfolio">
     <h1 class="text-center font-extrabold text-black-900 mt-40" style="font-size: 30px;">Microcontroller Boards</h1>
     <div class="inline-grid grid-cols-3">
         <div class="w-56 h-60 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ml-24 mt-24">

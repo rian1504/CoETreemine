@@ -1,4 +1,4 @@
-@extends('layouts.buyer_homepage')
+@extends('layouts.guest_homepage')
 
 @section('title', 'CoE Treemine | Detail Product Portfolio')
 
@@ -6,7 +6,7 @@
 <div class="mx-20">
 
 
-    <a href="/buyer_portfolio"></a>
+    <a href="/guest_portfolio"></a>
     <div class="inline-grid grid-cols-2 mt-40">
         <div>
             <img src="./image/development board.jpg" class="h-80 w-80">

@@ -21,6 +21,15 @@ Route::get('/guest', function () {
 Route::get('/guest_product_category', function () {
     return view('guest.product_category');
 });
+Route::get('/guest_portfolio', function () {
+    return view('guest.portfolio');
+});
+Route::get('/guest_detail_portfolio', function () {
+    return view('guest.detail_portfolio');
+});
+Route::get('/guest_service', function () {
+    return view('guest.service');
+});
 Route::get('/login', function () {
     return view('guest.login');
 });
@@ -43,11 +52,14 @@ Route::get('/buyer', function () {
 Route::get('/buyer_product_category', function () {
     return view('buyer.product_category');
 });
-Route::get('/portfolio', function () {
+Route::get('/buyer_portfolio', function () {
     return view('buyer.portfolio');
 });
-Route::get('/detail_portfolio', function () {
+Route::get('/buyer_detail_portfolio', function () {
     return view('buyer.detail_portfolio');
+});
+Route::get('/buyer_service', function () {
+    return view('buyer.service');
 });
 Route::get('/custom_cart', function () {
     return view('buyer.custom_cart');
@@ -64,9 +76,7 @@ Route::get('/payment', function () {
 Route::get('/history', function () {
     return view('buyer.history');
 });
-Route::get('/buyer_service', function () {
-    return view('buyer.service');
-});
+
 
 
 
