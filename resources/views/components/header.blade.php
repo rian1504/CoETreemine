@@ -1,5 +1,5 @@
-<nav class="flex flex-col">
-    <div class="bg-grays-800 dark:bg-gray-900 w-full">
+<nav class="flex flex-col fixed top-0 z-50 w-full">
+    <div class="bg-grays-800 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center mx-auto p-4">
             <div class="flex w-1/2">
                 <div class=" w-28">
@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="flex w-1/2 justify-end">
-                <div class="w-28">
+                <div class="w-16">
                     <a href="/custom_cart" class="mr-1">
                         <i class="fas fa-cart-shopping fa-lg"></i>
                     </a>

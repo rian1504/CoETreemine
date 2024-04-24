@@ -13,13 +13,17 @@
 
     <header>
         @include('components.header')
-        @include('components.carousel')
     </header>
-    <div class="flex justify-center bg-grays-700">
-        <div class="container ">
-            <main>
-                @yield('content')
-            </main>
+    <div class="bg-grays-700">
+        <div class="mt-36">
+            @include('components.carousel')
+        </div>
+        <div class="flex flex-col justify-center items-center">
+            <div class="container">
+                <main>
+                    @yield('content')
+                </main>
+            </div>
         </div>
     </div>
     <!-- <footer>
