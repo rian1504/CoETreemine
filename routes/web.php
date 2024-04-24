@@ -1,9 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('/halaman', function () {
@@ -15,7 +15,9 @@ Route::get('/home', function () {
 
 
 // guest
-
+Route::get('/guest', function () {
+    return view('guest.home');
+});
 Route::get('/login', function () {
     return view('guest.login');
 });
@@ -32,10 +34,7 @@ Route::get('/register', function () {
 
 // buyer
 
-// Route::get('/home', function () {
-//     return view('layouts/buyer_homepage');
-// });
-Route::get('/home', function () {
+Route::get('/buyer', function () {
     return view('buyer.home');
 });
 Route::get('/product_category', function () {
