@@ -64,7 +64,7 @@ Route::get('/payment', function () {
 Route::get('/history', function () {
     return view('buyer.history');
 });
-Route::get('/service', function () {
+Route::get('/buyer_service', function () {
     return view('buyer.service');
 });
 

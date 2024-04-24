@@ -2,6 +2,12 @@
 
 @section('title', 'CoE Treemine | Home')
 
+@section('carousel')
+<div class="mt-36">
+    @include('components.carousel')
+</div>
+@endsection
+
 @section('content')
 
 <div class="flex flex-col my-8 gap-4">

@@ -12,13 +12,11 @@
 <body>
 
     <header>
-        @include('components.header')
+        @include('components.buyer_header')
     </header>
     <div class="bg-grays-700">
-        <div class="mt-36">
-            @include('components.carousel')
-        </div>
-        <div class="flex flex-col justify-center items-center">
+        @yield('carousel')
+        <div class="flex flex-col justify-center items-center mt-28">
             <div class="container">
                 <main>
                     @yield('content')
