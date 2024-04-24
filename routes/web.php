@@ -18,6 +18,9 @@ Route::get('/home', function () {
 Route::get('/guest', function () {
     return view('guest.home');
 });
+Route::get('/guest_product_category', function () {
+    return view('guest.product_category');
+});
 Route::get('/login', function () {
     return view('guest.login');
 });
@@ -37,7 +40,7 @@ Route::get('/register', function () {
 Route::get('/buyer', function () {
     return view('buyer.home');
 });
-Route::get('/product_category', function () {
+Route::get('/buyer_product_category', function () {
     return view('buyer.product_category');
 });
 Route::get('/portfolio', function () {

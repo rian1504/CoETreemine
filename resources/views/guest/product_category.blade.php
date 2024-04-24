@@ -1,4 +1,4 @@
-@extends('layouts.buyer_homepage')
+@extends('layouts.guest_homepage')
 
 @section('title', 'CoE Treemine | Product Category')
 
