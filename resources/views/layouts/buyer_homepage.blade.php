@@ -26,9 +26,9 @@
             </div>
         </div>
     </div>
-    <!-- <footer>
+    <footer>
         @include('components.footer')
-    </footer> -->
+    </footer>
 </body>
 
 </html>
