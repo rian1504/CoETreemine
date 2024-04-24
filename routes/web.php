@@ -32,12 +32,12 @@ Route::get('/register', function () {
 
 // buyer
 
-Route::get('/home', function () {
-    return view('layouts/buyer_homepage');
-});
 // Route::get('/home', function () {
-//     return view('buyer.home');
+//     return view('layouts/buyer_homepage');
 // });
+Route::get('/home', function () {
+    return view('buyer.home');
+});
 Route::get('/product_category', function () {
     return view('buyer.product_category');
 });
