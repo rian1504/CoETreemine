@@ -42,6 +42,12 @@ Route::get('/enter_password', function () {
 Route::get('/register', function () {
     return view('guest.register');
 });
+Route::get('/forgot', function () {
+    return view('guest.forgot_password');
+});
+Route::get('/verify', function () {
+    return view('guest.verify_email');
+});
 
 
 // buyer
