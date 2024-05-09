@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\AssemblySide;
+use App\Models\Admin\AssemblySide;
 use App\Http\Requests\StoreAssemblySideRequest;
 use App\Http\Requests\UpdateAssemblySideRequest;
 

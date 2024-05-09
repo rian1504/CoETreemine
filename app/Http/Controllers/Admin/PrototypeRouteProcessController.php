@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeRouteProcess;
+use App\Models\Admin\PrototypeRouteProcess;
 use App\Http\Requests\StorePrototypeRouteProcessRequest;
 use App\Http\Requests\UpdatePrototypeRouteProcessRequest;
 

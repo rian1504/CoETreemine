@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeFr4;
+use App\Models\Admin\PrototypeFr4;
 use App\Http\Requests\StorePrototypeFr4Request;
 use App\Http\Requests\UpdatePrototypeFr4Request;
 

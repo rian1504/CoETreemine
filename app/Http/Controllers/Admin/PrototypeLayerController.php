@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeLayer;
+use App\Models\Admin\PrototypeLayer;
 use App\Http\Requests\StorePrototypeLayerRequest;
 use App\Http\Requests\UpdatePrototypeLayerRequest;
 

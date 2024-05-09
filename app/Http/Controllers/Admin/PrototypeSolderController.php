@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeSolder;
+use App\Models\Admin\PrototypeSolder;
 use App\Http\Requests\StorePrototypeSolderRequest;
 use App\Http\Requests\UpdatePrototypeSolderRequest;
 

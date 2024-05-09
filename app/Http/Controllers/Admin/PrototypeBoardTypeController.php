@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeBoardType;
+use App\Models\Admin\PrototypeBoardType;
 use App\Http\Requests\StorePrototypeBoardTypeRequest;
 use App\Http\Requests\UpdatePrototypeBoardTypeRequest;
 

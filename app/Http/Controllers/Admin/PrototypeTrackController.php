@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeTrack;
+use App\Models\Admin\PrototypeTrack;
 use App\Http\Requests\StorePrototypeTrackRequest;
 use App\Http\Requests\UpdatePrototypeTrackRequest;
 

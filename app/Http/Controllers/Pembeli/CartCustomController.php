@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Pembeli;
 
 use App\Http\Controllers\Controller;
-use App\Models\CartCustom;
+use App\Models\Pembeli\CartCustom;
 use App\Http\Requests\StoreCartCustomRequest;
 use App\Http\Requests\UpdateCartCustomRequest;
 

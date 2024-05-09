@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\CustomAssembly;
+use App\Models\Admin\CustomAssembly;
 use App\Http\Requests\StoreCustomAssemblyRequest;
 use App\Http\Requests\UpdateCustomAssemblyRequest;
 

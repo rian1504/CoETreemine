@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeInnerCooper;
+use App\Models\Admin\PrototypeInnerCooper;
 use App\Http\Requests\StorePrototypeInnerCooperRequest;
 use App\Http\Requests\UpdatePrototypeInnerCooperRequest;
 

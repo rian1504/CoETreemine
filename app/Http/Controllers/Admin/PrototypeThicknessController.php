@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeThickness;
+use App\Models\Admin\PrototypeThickness;
 use App\Http\Requests\StorePrototypeThicknessRequest;
 use App\Http\Requests\UpdatePrototypeThicknessRequest;
 

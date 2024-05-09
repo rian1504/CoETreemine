@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeHole;
+use App\Models\Admin\PrototypeHole;
 use App\Http\Requests\StorePrototypeHoleRequest;
 use App\Http\Requests\UpdatePrototypeHoleRequest;
 

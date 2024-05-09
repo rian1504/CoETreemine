@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Pembeli;
 
 use App\Http\Controllers\Controller;
-use App\Models\CartPortfolio;
+use App\Models\Pembeli\CartPortfolio;
 use App\Http\Requests\StoreCartPortfolioRequest;
 use App\Http\Requests\UpdateCartPortfolioRequest;
 

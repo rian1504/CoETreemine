@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeSilk;
+use App\Models\Admin\PrototypeSilk;
 use App\Http\Requests\StorePrototypeSilkRequest;
 use App\Http\Requests\UpdatePrototypeSilkRequest;
 

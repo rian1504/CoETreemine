@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeSurface;
+use App\Models\Admin\PrototypeSurface;
 use App\Http\Requests\StorePrototypeSurfaceRequest;
 use App\Http\Requests\UpdatePrototypeSurfaceRequest;
 

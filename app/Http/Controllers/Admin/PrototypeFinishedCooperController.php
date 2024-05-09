@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeFinishedCooper;
+use App\Models\Admin\PrototypeFinishedCooper;
 use App\Http\Requests\StorePrototypeFinishedCooperRequest;
 use App\Http\Requests\UpdatePrototypeFinishedCooperRequest;
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\CustomPrototype;
+use App\Models\Admin\CustomPrototype;
 use App\Http\Requests\StoreCustomPrototypeRequest;
 use App\Http\Requests\UpdateCustomPrototypeRequest;
 

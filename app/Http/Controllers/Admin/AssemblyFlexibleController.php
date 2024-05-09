@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\AssemblyFlexible;
+use App\Models\Admin\AssemblyFlexible;
 use App\Http\Requests\StoreAssemblyFlexibleRequest;
 use App\Http\Requests\UpdateAssemblyFlexibleRequest;
 

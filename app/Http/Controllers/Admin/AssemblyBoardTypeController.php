@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\AssemblyBoardType;
+use App\Models\Admin\AssemblyBoardType;
 use App\Http\Requests\StoreAssemblyBoardTypeRequest;
 use App\Http\Requests\UpdateAssemblyBoardTypeRequest;
 

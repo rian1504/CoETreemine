@@ -26,14 +26,14 @@ return new class extends Migration
             $table->text("detail_information");
             $table->integer("price");
             $table->string("file");
-            $table->unsignedBigInteger("flexible_option");
-            $table->unsignedBigInteger("board_type");
-            $table->unsignedBigInteger("assembly_side");
+            $table->unsignedBigInteger("id_flexible");
+            $table->unsignedBigInteger("id_board");
+            $table->unsignedBigInteger("id_side");
             $table->timestamps();
 
-            $table->foreign("flexible_option")->references("id_flexible")->on("assembly_flexibles")->onDelete("cascade");
-            $table->foreign("board_type")->references("id_board")->on("assembly_board_types")->onDelete("cascade");
-            $table->foreign("assembly_side")->references("id_side")->on("assembly_sides")->onDelete("cascade");
+            $table->foreign("id_flexible")->references("id_flexible")->on("assembly_flexibles")->onDelete("cascade");
+            $table->foreign("id_board")->references("id_board")->on("assembly_board_types")->onDelete("cascade");
+            $table->foreign("id_side")->references("id_side")->on("assembly_sides")->onDelete("cascade");
         });
     }
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeViaProcess;
+use App\Models\Admin\PrototypeViaProcess;
 use App\Http\Requests\StorePrototypeViaProcessRequest;
 use App\Http\Requests\UpdatePrototypeViaProcessRequest;
 

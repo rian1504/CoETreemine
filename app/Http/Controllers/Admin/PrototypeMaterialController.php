@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrototypeMaterial;
+use App\Models\Admin\PrototypeMaterial;
 use App\Http\Requests\StorePrototypeMaterialRequest;
 use App\Http\Requests\UpdatePrototypeMaterialRequest;
 
