@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id("id_category");
-            $table->string("category_name");
-            $table->string("category_picture");
+        Schema::create('prototype_soldermask_layer1s', function (Blueprint $table) {
+            $table->id("id_soldermask_layer1");
+            $table->string("soldermask_layer1_name");
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('prototype_soldermask_layer1s');
     }
 };

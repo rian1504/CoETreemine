@@ -12,8 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('portfolios', function (Blueprint $table) {
-            $table->id();
+            $table->id("id_portfolio");
+            $table->string("portfolio_name");
+            $table->integer("portfolio_price");
+            $table->text("portfolio_description");
+            $table->integer("portfolio_stock");
+            $table->string("portfolio_picture");
+            $table->unsignedBigInteger("id_category");
             $table->timestamps();
+
+            $table->foreign("id_category")->references("id_category")->on("categories")->onDelete("cascade");
         });
     }
 
