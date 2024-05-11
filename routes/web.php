@@ -1,65 +1,89 @@
 <?php
+use Illuminate\Support\Facades\Route;
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/halaman', function () {
+    return view('layouts.pembeli');
 });
-
-Route::get('/email', function () {
-    return view('email');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/password', function () {
-    return view('password');
-});
-
 Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/product', function () {
-    return view('product_kategori');
+
+// guest
+Route::get('/guest', function () {
+    return view('guest.home');
+});
+Route::get('/guest_product_category', function () {
+    return view('guest.product_category');
+});
+Route::get('/guest_portfolio', function () {
+    return view('guest.portfolio');
+});
+Route::get('/guest_detail_portfolio', function () {
+    return view('guest.detail_portfolio');
+});
+Route::get('/guest_service', function () {
+    return view('guest.service');
+});
+Route::get('/login', function () {
+    return view('guest.login');
+});
+Route::get('/enter_email', function () {
+    return view('guest.enter_email');
+});
+Route::get('/enter_password', function () {
+    return view('guest.enter_password');
+});
+Route::get('/register', function () {
+    return view('guest.register');
+});
+Route::get('/forgot', function () {
+    return view('guest.forgot_password');
+});
+Route::get('/verify', function () {
+    return view('guest.verify_email');
 });
 
-Route::get('/portofolio', function () {
-    return view('portofolio');
-});
 
-Route::get('/detail', function () {
-    return view('detail_portofolio');
-});
+// buyer
 
-Route::get('/service', function () {
-    return view('service');
+Route::get('/buyer', function () {
+    return view('buyer.home');
 });
-
+Route::get('/buyer_product_category', function () {
+    return view('buyer.product_category');
+});
+Route::get('/buyer_portfolio', function () {
+    return view('buyer.portfolio');
+});
+Route::get('/buyer_detail_portfolio', function () {
+    return view('buyer.detail_portfolio');
+});
+Route::get('/buyer_service', function () {
+    return view('buyer.service');
+});
+Route::get('/custom_cart', function () {
+    return view('buyer.custom_cart');
+});
+Route::get('/detail_custom_cart', function () {
+    return view('buyer.detail_custom_cart');
+});
+Route::get('/upload_file', function () {
+    return view('buyer.upload_file');
+});
 Route::get('/payment', function () {
-    return view('payment');
+    return view('buyer.payment');
 });
-
-Route::get('/shopping', function () {
-    return view('shopping');
-});
-
 Route::get('/history', function () {
-    return view('history');
-});
-
-Route::get('/upload', function () {
-    return view('upload');
-});
-
-Route::get('/cardetail', function () {
-    return view('cardetail');
+    return view('buyer.history');
 });
 
 
+
+
+// admin
