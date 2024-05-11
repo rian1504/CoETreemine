@@ -50,6 +50,7 @@ Route::get('/verify', function () {
 });
 
 
+
 // buyer
 
 Route::get('/buyer', function () {
