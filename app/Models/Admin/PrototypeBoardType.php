@@ -10,6 +10,9 @@ class PrototypeBoardType extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_board'];
+    protected $primaryKey = 'id_board';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

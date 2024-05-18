@@ -10,6 +10,9 @@ class AssemblySide extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_side'];
+    protected $primaryKey = 'id_side';
+
     // One to Many to custom_assemblies table
     public function custom_assemblies(): HasMany
     {

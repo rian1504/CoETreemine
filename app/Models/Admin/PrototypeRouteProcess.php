@@ -10,6 +10,9 @@ class PrototypeRouteProcess extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_route'];
+    protected $primaryKey = 'id_route';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

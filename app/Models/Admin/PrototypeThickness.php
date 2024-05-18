@@ -11,6 +11,9 @@ class PrototypeThickness extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_thickness'];
+    protected $primaryKey = 'id_thickness';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

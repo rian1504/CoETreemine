@@ -13,6 +13,9 @@ class DetailOrder extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_detail_order'];
+    protected $primaryKey = 'id_detail_order';
+
     // Many to One to orders table
     public function orders(): BelongsTo
     {

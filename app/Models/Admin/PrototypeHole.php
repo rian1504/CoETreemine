@@ -10,6 +10,9 @@ class PrototypeHole extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_hole'];
+    protected $primaryKey = 'id_hole';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

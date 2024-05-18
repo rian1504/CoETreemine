@@ -10,6 +10,9 @@ class PrototypeMaterial extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_material'];
+    protected $primaryKey = 'id_material';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

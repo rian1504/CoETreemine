@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign("id_portfolio")->references("id_portfolio")->on("portfolios")->onDelete("cascade");
-            $table->foreign("id_user")->references("id")->on("users")->onDelete("cascade");
+            $table->foreign("id_user")->references("id_user")->on("users")->onDelete("cascade");
         });
     }
 

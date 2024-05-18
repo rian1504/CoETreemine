@@ -10,6 +10,9 @@ class PrototypeTrack extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_track'];
+    protected $primaryKey = 'id_track';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

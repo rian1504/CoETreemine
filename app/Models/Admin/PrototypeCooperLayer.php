@@ -10,6 +10,9 @@ class PrototypeCooperLayer extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_cooper_layer'];
+    protected $primaryKey = 'id_cooper_layer';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

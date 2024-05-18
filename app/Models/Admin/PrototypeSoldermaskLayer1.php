@@ -10,6 +10,9 @@ class PrototypeSoldermaskLayer1 extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_soldermask_layer1'];
+    protected $primaryKey = 'id_soldermask_layer1';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

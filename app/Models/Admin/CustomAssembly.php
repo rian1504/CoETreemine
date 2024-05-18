@@ -13,6 +13,9 @@ class CustomAssembly extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_custom_assembly'];
+    protected $primaryKey = 'id_custom_assembly';
+
     // Many to One to assembly_flexibles table
     public function assembly_flexibles(): BelongsTo
     {

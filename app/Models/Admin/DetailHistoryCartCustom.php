@@ -10,6 +10,9 @@ class DetailHistoryCartCustom extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_detail_history_cart_custom'];
+    protected $primaryKey = 'id_detail_history_cart_custom';
+
     // Many to One to history_cart_customs table
     public function history_cart_customs(): BelongsTo
     {

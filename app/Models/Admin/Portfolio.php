@@ -13,6 +13,9 @@ class Portfolio extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_portfolio'];
+    protected $primaryKey = 'id_portfolio';
+
     // Many to One to categories table
     public function categories(): BelongsTo
     {

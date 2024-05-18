@@ -13,6 +13,9 @@ class CartCustom extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_cart_custom'];
+    protected $primaryKey = 'id_cart_custom';
+
     // One to Many to detail_cart_customs table
     public function detail_cart_customs(): HasMany
     {

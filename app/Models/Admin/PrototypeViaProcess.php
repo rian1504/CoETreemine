@@ -10,6 +10,9 @@ class PrototypeViaProcess extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_via'];
+    protected $primaryKey = 'id_via';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

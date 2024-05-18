@@ -10,6 +10,9 @@ class PrototypeSurface extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_surface'];
+    protected $primaryKey = 'id_surface';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

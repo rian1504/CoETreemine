@@ -12,6 +12,9 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_order'];
+    protected $primaryKey = 'id_order';
+
     // Many to One to users table
     public function users(): BelongsTo
     {

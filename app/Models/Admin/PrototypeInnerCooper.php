@@ -11,6 +11,9 @@ class PrototypeInnerCooper extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_inner_cooper'];
+    protected $primaryKey = 'id_inner_cooper';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {

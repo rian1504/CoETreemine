@@ -10,6 +10,9 @@ class AssemblyBoardType extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_board'];
+    protected $primaryKey = 'id_board';
+
     // One to Many to custom_assemblies table
     public function custom_assemblies(): HasMany
     {

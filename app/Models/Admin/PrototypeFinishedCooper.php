@@ -10,6 +10,9 @@ class PrototypeFinishedCooper extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_finished_cooper'];
+    protected $primaryKey = 'id_finished_cooper';
+
     // One to Many to custom_prototypes table
     public function custom_prototypes(): HasMany
     {
