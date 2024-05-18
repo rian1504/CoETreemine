@@ -10,6 +10,9 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id_category'];
+    protected $primaryKey = 'id_category';
+
     // One to Many to portfolios table
     public function portfolios(): HasMany
     {

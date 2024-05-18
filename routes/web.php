@@ -1,12 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\AssemblyController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\PrototypeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,10 +11,8 @@ Route::get('/', function () {
 });
 
 Route::middleware('admin')->group(function () {
-    Route::resource('assembly', AssemblyController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('portfolio', PortfolioController::class);
-    Route::resource('prototype', PrototypeController::class);
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {

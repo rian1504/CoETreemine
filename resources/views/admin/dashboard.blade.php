@@ -14,4 +14,48 @@
             </div>
         </div>
     </div>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    <a href="/category">Category</a>
+                    <a href="/portfolio">Portfolio</a>
+                    <a href="/prototype">prototype</a>
+                    <a href="/assembly">assembly</a>
+                    <a href="/review_file">review file</a>
+                    <a href="/review_payment">review payment</a>
+                    <a href="/history">history</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    Data Category = {{ $data['dataCategory'] }}
+                </div>
+                <div class="p-6 text-gray-900">
+                    Data Portfolio = {{ $data['dataPortfolio'] }}
+                </div>
+                <div class="p-6 text-gray-900">
+                    Data Custom Assembly = {{ $data['dataCustomAssembly'] }}
+                </div>
+                <div class="p-6 text-gray-900">
+                    Data Custom Prototype = {{ $data['dataCustomPrototype'] }}
+                </div>
+                <div class="p-6 text-gray-900">
+                    Data Review File = {{ $data['dataReviewFile'] }}
+                </div>
+                <div class="p-6 text-gray-900">
+                    Data Review Payment = {{ $data['dataReviewPayment'] }}
+                </div>
+                <div class="p-6 text-gray-900">
+                    Data Order = {{ $data['dataOrder'] }}
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>

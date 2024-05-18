@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category_portfolio.index');
+        $datas = Category::latest()->paginate(10);
+        return view('admin.category_portfolio.index', compact('datas'));
     }
 
     /**
@@ -30,7 +32,24 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        //validate form
+        $request->validate([
+            'category_name' => 'required|min:5',
+            'category_picture' => 'required|image|mimes:jpeg,jpg,png|max:2048'
+        ]);
+
+        //upload image
+        $image = $request->file('category_picture');
+        $image->storeAs('public/assets/images/category', $image->hashName());
+
+        //create category
+        Category::create([
+            'category_name' => $request->category_name,
+            'category_picture' => $image->hashName()
+        ]);
+
+        //redirect to index
+        return redirect()->route('category.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -46,7 +65,11 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.category_portfolio.edit');
+        //get category by ID
+        $category = Category::findOrFail($category->id_category);
+
+        //render view with category
+        return view('admin.category_portfolio.edit', compact('category'));
     }
 
     /**
@@ -54,7 +77,40 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        //validate form
+        $request->validate([
+            'category_name' => 'required|min:5',
+            'category_picture' => 'image|mimes:jpeg,jpg,png|max:2048'
+        ]);
+
+        //get category by ID
+        $category = Category::findOrFail($category->id_category);
+
+        //check if image is uploaded
+        if ($request->hasFile('category_picture')) {
+
+            //upload new image
+            $image = $request->file('category_picture');
+            $image->storeAs('public/assets/images/category', $image->hashName());
+
+            //delete old image
+            Storage::delete('public/assets/images/category/' . $category->category_picture);
+
+            //update category with new image
+            $category->update([
+                'category_name' => $request->category_name,
+                'category_picture' => $image->hashName()
+            ]);
+        } else {
+
+            //update category without image
+            $category->update([
+                'category_name' => $request->category_name
+            ]);
+        }
+
+        //redirect to index
+        return redirect()->route('category.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
@@ -62,6 +118,16 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        //get category by ID
+        $category = Category::findOrFail($category->id_category);
+
+        //delete image
+        Storage::delete('public/assets/images/category/' . $category->category_picture);
+
+        //delete category
+        $category->delete();
+
+        //redirect to index
+        return redirect()->route('category.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
