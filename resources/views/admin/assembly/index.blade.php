@@ -59,31 +59,26 @@
 
 </div>
 
-{{-- <div class="flexible">
-    <a href="{{ route('category.create') }}">Tambah</a>
+<div class="board">
+    <h1>board</h1>
+    <a href="{{ route('board.create') }}">Tambah</a>
 
-    <br><br>
     <table border="1">
         <thead>
             <tr>
                 <td>No</td>
                 <td>Name</td>
-                <td>Picture</td>
                 <td>Action</td>
             </tr>
         </thead>
         <tbody>
-            @forelse ($datas as $index => $data)
+            @forelse ($dataAssembly['dataBoard'] as $index => $data)
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $data->category_name }}</td>
+                    <td>{{ $data->board_type_name }}</td>
                     <td>
-                        <img src="{{ asset('/storage/assets/images/category/' . $data->category_picture) }}"
-                            alt="" width="100" height="100">
-                    </td>
-                    <td>
-                        <a href="{{ route('category.edit', $data->id_category) }}">Edit</a>
-                        <form action="{{ route('category.destroy', $data->id_category) }}"
+                        <a href="{{ route('board.edit', $data->id_board) }}">Edit</a>
+                        <form action="{{ route('board.destroy', $data->id_board) }}"
                             onsubmit="return confirm('Are you sure?')" method="POST">
                             @csrf
                             @method('DELETE')
@@ -96,35 +91,32 @@
             @endforelse
         </tbody>
     </table>
-    {{ $datas->links() }}
+    {{ $dataAssembly['dataBoard']->links() }}
 
 </div>
 
-<div class="flexible">
-    <a href="{{ route('category.create') }}">Tambah</a>
+{{-- <div class="flexible">
+    <h1>Flexible</h1>
+    <a href="{{ route('flexible.create') }}">Tambah</a>
 
-    <br><br>
     <table border="1">
         <thead>
             <tr>
                 <td>No</td>
                 <td>Name</td>
-                <td>Picture</td>
+                <td>Price</td>
                 <td>Action</td>
             </tr>
         </thead>
         <tbody>
-            @forelse ($datas as $index => $data)
+            @forelse ($dataAssembly['dataFlexible'] as $index => $data)
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $data->category_name }}</td>
+                    <td>{{ $data->flexible_name }}</td>
+                    <td>Rp{{ number_format($data->flexible_price, 0, ''), '.' }}</td>
                     <td>
-                        <img src="{{ asset('/storage/assets/images/category/' . $data->category_picture) }}"
-                            alt="" width="100" height="100">
-                    </td>
-                    <td>
-                        <a href="{{ route('category.edit', $data->id_category) }}">Edit</a>
-                        <form action="{{ route('category.destroy', $data->id_category) }}"
+                        <a href="{{ route('flexible.edit', $data->id_flexible) }}">Edit</a>
+                        <form action="{{ route('flexible.destroy', $data->id_flexible) }}"
                             onsubmit="return confirm('Are you sure?')" method="POST">
                             @csrf
                             @method('DELETE')
@@ -137,6 +129,6 @@
             @endforelse
         </tbody>
     </table>
-    {{ $datas->links() }}
+    {{ $dataAssembly['dataFlexible']->links() }}
 
 </div> --}}
