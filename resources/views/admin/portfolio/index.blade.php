@@ -1,8 +1,9 @@
+<a href="{{ route('dashboard') }}">Dashboard</a>
 <a href="{{ route('category.index') }}">Category</a>
 <a href="{{ route('portfolio.index') }}">Portfolio</a>
-{{-- <a href="{{ route('prototype.index') }}">prototype</a>
+<a href="{{ route('prototype.index') }}">prototype</a>
 <a href="{{ route('assembly.index') }}">assembly</a>
-<a href="{{ route('review_file.index') }}">review file</a>
+{{-- <a href="{{ route('review_file.index') }}">review file</a>
 <a href="{{ route('review_payment.index') }}">review payment</a>
 <a href="{{ route('history.index') }}">history</a> --}}
 
@@ -29,9 +30,9 @@
             <tr>
                 <td>{{ $index + 1 }}</td>
                 <td>{{ $data->portfolio_name }}</td>
-                <td>{{ $data->portfolio_price }}</td>
+                <td>Rp{{ number_format($data->portfolio_price, 0, '', '.') }}</td>
                 <td>{{ $data->portfolio_description }}</td>
-                <td>{{ $data->portfolio_stock }}</td>
+                <td>{{ $data->portfolio_stock }} Pcs</td>
                 <td>
                     <img src="{{ asset('/storage/assets/images/portfolio/' . $data->portfolio_picture) }}" alt=""
                         width="100" height="100">
