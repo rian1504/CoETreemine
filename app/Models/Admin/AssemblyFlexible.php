@@ -13,9 +13,9 @@ class AssemblyFlexible extends Model
     protected $guarded = ['id_flexible'];
     protected $primaryKey = 'id_flexible';
 
-    // One to Many to custom_assemblies table
-    public function custom_assemblies(): HasMany
+    // One to Many to custom_assembly table
+    public function custom_assembly(): HasMany
     {
-        return $this->HasMany(CustomAssembly::class);
+        return $this->HasMany(CustomAssembly::class, 'id_custom_assembly');
     }
 }

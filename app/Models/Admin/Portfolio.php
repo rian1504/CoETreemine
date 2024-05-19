@@ -16,21 +16,21 @@ class Portfolio extends Model
     protected $guarded = ['id_portfolio'];
     protected $primaryKey = 'id_portfolio';
 
-    // Many to One to categories table
-    public function categories(): BelongsTo
+    // Many to One to category table
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'id_category');
     }
 
-    // One to Many to cart_portfolios table
-    public function cart_portfolios(): HasMany
+    // One to Many to cart_portfolio table
+    public function cart_portfolio(): HasMany
     {
-        return $this->HasMany(CartPortfolio::class);
+        return $this->HasMany(CartPortfolio::class, 'id_cart_portfolio');
     }
 
-    // One to Many to detail_orders table
-    public function detail_orders(): HasMany
+    // One to Many to detail_order table
+    public function detail_order(): HasMany
     {
-        return $this->HasMany(DetailOrder::class);
+        return $this->HasMany(DetailOrder::class, 'id_detail_order');
     }
 }

@@ -15,15 +15,15 @@ class CartPortfolio extends Model
     protected $guarded = ['id_cart_portfolio'];
     protected $primaryKey = 'id_cart_portfolio';
 
-    // Many to One to portfolios table
-    public function portfolios(): BelongsTo
+    // Many to One to portfolio table
+    public function portfolio(): BelongsTo
     {
-        return $this->BelongsTo(Portfolio::class);
+        return $this->BelongsTo(Portfolio::class, 'id_portfolio');
     }
 
-    // Many to One to users table
-    public function users(): BelongsTo
+    // Many to One to user table
+    public function user(): BelongsTo
     {
-        return $this->BelongsTo(User::class);
+        return $this->BelongsTo(User::class, 'id_user');
     }
 }

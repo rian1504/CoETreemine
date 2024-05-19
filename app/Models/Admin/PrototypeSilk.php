@@ -13,9 +13,9 @@ class PrototypeSilk extends Model
     protected $guarded = ['id_silk'];
     protected $primaryKey = 'id_silk';
 
-    // One to Many to custom_prototypes table
-    public function custom_prototypes(): HasMany
+    // One to Many to custom_prototype table
+    public function custom_prototype(): HasMany
     {
-        return $this->HasMany(CustomPrototype::class);
+        return $this->HasMany(CustomPrototype::class, 'id_custom_prototype');
     }
 }

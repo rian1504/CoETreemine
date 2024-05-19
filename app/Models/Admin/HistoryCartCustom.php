@@ -16,15 +16,15 @@ class HistoryCartCustom extends Model
     protected $guarded = ['id_history_cart_custom'];
     protected $primaryKey = 'id_history_cart_custom';
 
-    // One to Many to detail_history_cart_customs table
-    public function detail_history_cart_customs(): HasMany
+    // One to Many to detail_history_cart_custom table
+    public function detail_history_cart_custom(): HasMany
     {
-        return $this->HasMany(DetailHistoryCartCustom::class);
+        return $this->HasMany(DetailHistoryCartCustom::class, 'id_detail_history_cart_custom');
     }
 
-    // Many to One to users table
-    public function users(): BelongsTo
+    // Many to One to user table
+    public function user(): BelongsTo
     {
-        return $this->BelongsTo(User::class);
+        return $this->BelongsTo(User::class, 'id_user');
     }
 }

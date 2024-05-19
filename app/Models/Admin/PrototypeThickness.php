@@ -14,15 +14,15 @@ class PrototypeThickness extends Model
     protected $guarded = ['id_thickness'];
     protected $primaryKey = 'id_thickness';
 
-    // One to Many to custom_prototypes table
-    public function custom_prototypes(): HasMany
+    // One to Many to custom_prototype table
+    public function custom_prototype(): HasMany
     {
-        return $this->HasMany(CustomPrototype::class);
+        return $this->HasMany(CustomPrototype::class, 'id_custom_prototype');
     }
 
-    // Many to One to prototype_layers table
-    public function prototype_layers(): BelongsTo
+    // Many to One to prototype_layer table
+    public function prototype_layer(): BelongsTo
     {
-        return $this->BelongsTo(PrototypeLayer::class);
+        return $this->BelongsTo(PrototypeLayer::class, 'id_layer');
     }
 }

@@ -13,9 +13,9 @@ class Category extends Model
     protected $guarded = ['id_category'];
     protected $primaryKey = 'id_category';
 
-    // One to Many to portfolios table
-    public function portfolios(): HasMany
+    // One to Many to portfolio table
+    public function portfolio(): HasMany
     {
-        return $this->hasMany(Portfolio::class);
+        return $this->hasMany(Portfolio::class, 'id_portfolio');
     }
 }

@@ -16,27 +16,27 @@ class DetailOrder extends Model
     protected $guarded = ['id_detail_order'];
     protected $primaryKey = 'id_detail_order';
 
-    // Many to One to orders table
-    public function orders(): BelongsTo
+    // Many to One to order table
+    public function order(): BelongsTo
     {
-        return $this->BelongsTo(Order::class);
+        return $this->BelongsTo(Order::class, 'id_order');
     }
 
-    // Many to One to portfolios table
-    public function portfolios(): BelongsTo
+    // Many to One to portfolio table
+    public function portfolio(): BelongsTo
     {
-        return $this->BelongsTo(Portfolio::class);
+        return $this->BelongsTo(Portfolio::class, 'id_portfolio');
     }
 
-    // Many to One to customs_assemblies table
-    public function customs_assemblies(): BelongsTo
+    // Many to One to customs_assembly table
+    public function customs_assembly(): BelongsTo
     {
-        return $this->BelongsTo(CustomAssembly::class);
+        return $this->BelongsTo(CustomAssembly::class, 'id_custom_assembly');
     }
 
-    // Many to One to custom_prototypes table
-    public function custom_prototypes(): BelongsTo
+    // Many to One to custom_prototype table
+    public function custom_prototype(): BelongsTo
     {
-        return $this->BelongsTo(CustomPrototype::class);
+        return $this->BelongsTo(CustomPrototype::class, 'id_custom_prototype');
     }
 }

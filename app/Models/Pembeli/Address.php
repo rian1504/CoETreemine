@@ -11,9 +11,9 @@ class Address extends Model
 {
     use HasFactory;
 
-    // Many to One to users table
-    public function users(): BelongsTo
+    // Many to One to user table
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id_user');
     }
 }

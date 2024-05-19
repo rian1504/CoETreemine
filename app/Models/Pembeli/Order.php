@@ -15,15 +15,15 @@ class Order extends Model
     protected $guarded = ['id_order'];
     protected $primaryKey = 'id_order';
 
-    // Many to One to users table
-    public function users(): BelongsTo
+    // Many to One to user table
+    public function user(): BelongsTo
     {
-        return $this->BelongsTo(User::class);
+        return $this->BelongsTo(User::class, 'id_user');
     }
 
-    // One to Many to detail_orders table
-    public function detail_orders(): HasMany
+    // One to Many to detail_order table
+    public function detail_order(): HasMany
     {
-        return $this->HasMany(DetailOrder::class);
+        return $this->HasMany(DetailOrder::class, 'id_detail_order');
     }
 }

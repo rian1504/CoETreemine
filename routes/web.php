@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('admin')->group(function () {
+Route::middleware('admin')->prefix('admin')->group(function () {
     Route::resource('category', CategoryController::class);
     Route::resource('portfolio', PortfolioController::class);
 });

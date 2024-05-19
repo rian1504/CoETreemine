@@ -13,21 +13,21 @@ class DetailHistoryCartCustom extends Model
     protected $guarded = ['id_detail_history_cart_custom'];
     protected $primaryKey = 'id_detail_history_cart_custom';
 
-    // Many to One to history_cart_customs table
-    public function history_cart_customs(): BelongsTo
+    // Many to One to history_cart_custom table
+    public function history_cart_custom(): BelongsTo
     {
-        return $this->BelongsTo(HistoryCartCustom::class);
+        return $this->BelongsTo(HistoryCartCustom::class, 'id_history_cart_custom');
     }
 
-    // Many to One to custom_assemblies table
-    public function custom_assemblies(): BelongsTo
+    // Many to One to custom_assembly table
+    public function custom_assembly(): BelongsTo
     {
-        return $this->BelongsTo(CustomAssembly::class);
+        return $this->BelongsTo(CustomAssembly::class, 'id_custom_assembly');
     }
 
-    // Many to One to custom_prototypes table
-    public function custom_prototypes(): BelongsTo
+    // Many to One to custom_prototype table
+    public function custom_prototype(): BelongsTo
     {
-        return $this->BelongsTo(CustomPrototype::class);
+        return $this->BelongsTo(CustomPrototype::class, 'id_custom_prototype');
     }
 }

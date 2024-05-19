@@ -48,32 +48,32 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
-    // One to Many to addresses table
-    public function addresses(): HasMany
+    // One to Many to address table
+    public function address(): HasMany
     {
         return $this->hasMany(Address::class);
     }
 
-    // One to Many to cart_customs table
-    public function cart_customs(): HasMany
+    // One to Many to cart_custom table
+    public function cart_custom(): HasMany
     {
         return $this->hasMany(CartCustom::class);
     }
 
-    // One to Many to history_cart_customs table
-    public function history_cart_customs(): HasMany
+    // One to Many to history_cart_custom table
+    public function history_cart_custom(): HasMany
     {
         return $this->hasMany(HistoryCartCustom::class);
     }
 
-    // One to Many to cart_portfolios table
-    public function cart_portfolios(): HasMany
+    // One to Many to cart_portfolio table
+    public function cart_portfolio(): HasMany
     {
         return $this->hasMany(CartPortfolio::class);
     }
 
-    // One to Many to orders table
-    public function orders(): HasMany
+    // One to Many to order table
+    public function order(): HasMany
     {
         return $this->hasMany(Order::class);
     }
