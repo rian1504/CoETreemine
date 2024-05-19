@@ -60,7 +60,7 @@
 </div>
 
 <div class="board">
-    <h1>board</h1>
+    <h1>Board</h1>
     <a href="{{ route('board.create') }}">Tambah</a>
 
     <table border="1">
@@ -95,9 +95,9 @@
 
 </div>
 
-{{-- <div class="flexible">
-    <h1>Flexible</h1>
-    <a href="{{ route('flexible.create') }}">Tambah</a>
+<div class="side">
+    <h1>Side</h1>
+    <a href="{{ route('side.create') }}">Tambah</a>
 
     <table border="1">
         <thead>
@@ -109,14 +109,14 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($dataAssembly['dataFlexible'] as $index => $data)
+            @forelse ($dataAssembly['dataSide'] as $index => $data)
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $data->flexible_name }}</td>
-                    <td>Rp{{ number_format($data->flexible_price, 0, ''), '.' }}</td>
+                    <td>{{ $data->side_name }}</td>
+                    <td>Rp{{ number_format($data->side_price, 0, ''), '.' }}</td>
                     <td>
-                        <a href="{{ route('flexible.edit', $data->id_flexible) }}">Edit</a>
-                        <form action="{{ route('flexible.destroy', $data->id_flexible) }}"
+                        <a href="{{ route('side.edit', $data->id_side) }}">Edit</a>
+                        <form action="{{ route('side.destroy', $data->id_side) }}"
                             onsubmit="return confirm('Are you sure?')" method="POST">
                             @csrf
                             @method('DELETE')
@@ -129,6 +129,6 @@
             @endforelse
         </tbody>
     </table>
-    {{ $dataAssembly['dataFlexible']->links() }}
+    {{ $dataAssembly['dataSide']->links() }}
 
-</div> --}}
+</div>
