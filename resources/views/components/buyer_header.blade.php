@@ -3,7 +3,7 @@
         <div class="max-w-screen-xl flex flex-wrap items-center mx-auto p-4">
             <div class="flex w-1/2">
                 <div class=" w-28">
-                    <a href="/home" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <a href="/buyer" class="flex items-center space-x-3 rtl:space-x-reverse">
                         <span class="self-center text-3xl font-bold whitespace-nowrap dark:text-white">LOGO</span>
                     </a>
                 </div>
