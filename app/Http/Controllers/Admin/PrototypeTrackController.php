@@ -14,7 +14,10 @@ class PrototypeTrackController extends Controller
      */
     public function index()
     {
-        //
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'select' => 'Track'
+        ]);
     }
 
     /**
@@ -22,7 +25,7 @@ class PrototypeTrackController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.prototype.track.create');
     }
 
     /**
@@ -30,38 +33,90 @@ class PrototypeTrackController extends Controller
      */
     public function store(StorePrototypeTrackRequest $request)
     {
-        //
+        //validate form
+        $request->validate([
+            'track_name' => 'required|min:5',
+            'track_price' => 'required|numeric'
+        ]);
+
+        //create track
+        PrototypeTrack::create([
+            'track_name' => $request->track_name,
+            'track_price' => $request->track_price
+        ]);
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Disimpan!',
+            'select' => 'Track'
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(PrototypeTrack $prototypeTrack)
+    public function show(PrototypeTrack $track)
     {
-        //
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'select' => 'Track'
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PrototypeTrack $prototypeTrack)
+    public function edit(PrototypeTrack $track)
     {
-        //
+        //get track by ID
+        $track = PrototypeTrack::findOrFail($track->id_track);
+
+        //render view with track
+        return view('admin.prototype.track.edit', compact('track'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePrototypeTrackRequest $request, PrototypeTrack $prototypeTrack)
+    public function update(UpdatePrototypeTrackRequest $request, PrototypeTrack $track)
     {
-        //
+        //validate form
+        $request->validate([
+            'track_name' => 'required|min:5',
+            'track_price' => 'required|numeric'
+        ]);
+
+        //get track by ID
+        $track = PrototypeTrack::findOrFail($track->id_track);
+
+        // update track
+        $track->update([
+            'track_name' => $request->track_name,
+            'track_price' => $request->track_price
+        ]);
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Diubah!',
+            'select' => 'Track'
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PrototypeTrack $prototypeTrack)
+    public function destroy(PrototypeTrack $track)
     {
-        //
+        //get track by ID
+        $track = PrototypeTrack::findOrFail($track->id_track);
+
+        //delete track
+        $track->delete();
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Dihapus!',
+            'select' => 'Track'
+        ]);
     }
 }
