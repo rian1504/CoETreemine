@@ -1,12 +1,10 @@
 <h1>Tambah</h1>
 
-<form action="{{ route('side.store') }}" method="POST">
+<form action="{{ route('soldermask_layer1.store') }}" method="POST">
     @csrf
 
     <label for="">Name</label>
-    <input type="text" name="side_name" value="{{ old('side_name') }}">
-    <label for="">price</label>
-    <input type="number" name="side_price" value="{{ old('side_price') }}">
+    <input type="text" name="soldermask_layer1_name" value="{{ old('soldermask_layer1_name') }}">
 
     <button type="submit">Simpan</button>
 </form>
