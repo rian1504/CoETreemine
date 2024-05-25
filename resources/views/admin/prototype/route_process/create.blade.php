@@ -1,12 +1,10 @@
 <h1>Tambah</h1>
 
-<form action="{{ route('flexible.store') }}" method="POST">
+<form action="{{ route('route_process.store') }}" method="POST">
     @csrf
 
     <label for="">Name</label>
-    <input type="text" name="flexible_name" value="{{ old('flexible_name') }}">
-    <label for="">price</label>
-    <input type="number" name="flexible_price" value="{{ old('flexible_price') }}">
+    <input type="text" name="route_process_name" value="{{ old('route_process_name') }}">
 
     <button type="submit">Simpan</button>
 </form>

@@ -1,14 +1,12 @@
 <h1>Edit</h1>
 
-<form action="{{ route('flexible.update', $flexible->id_flexible) }}" method="POST">
+<form action="{{ route('route_process.update', $route_process->id_route) }}" method="POST">
     @csrf
     @method('PUT')
 
     <label for="">Name</label>
-    <input type="text" name="flexible_name" value="{{ old('flexible_name', $flexible->flexible_name) }}">
-
-    <label for="">Price</label>
-    <input type="text" name="flexible_price" value="{{ old('flexible_price', $flexible->flexible_price) }}">
+    <input type="text" name="route_process_name"
+        value="{{ old('route_process_name', $route_process->route_process_name) }}">
 
     <button type="submit">update</button>
 </form>
