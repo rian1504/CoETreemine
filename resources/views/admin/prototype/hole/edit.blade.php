@@ -1,14 +1,14 @@
 <h1>Edit</h1>
 
-<form action="{{ route('side.update', $side->id_side) }}" method="POST">
+<form action="{{ route('hole.update', $hole->id_hole) }}" method="POST">
     @csrf
     @method('PUT')
 
     <label for="">Name</label>
-    <input type="text" name="side_name" value="{{ old('side_name', $side->side_name) }}">
+    <input type="text" name="hole_name" value="{{ old('hole_name', $hole->hole_name) }}">
 
     <label for="">Price</label>
-    <input type="text" name="side_price" value="{{ old('side_price', $side->side_price) }}">
+    <input type="number" name="hole_price" value="{{ old('hole_price', $hole->hole_price) }}">
 
     <button type="submit">update</button>
 </form>
