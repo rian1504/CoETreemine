@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('prototype_finished_coopers', function (Blueprint $table) {
             $table->id("id_finished_cooper");
-            $table->integer("finished_cooper_name");
+            $table->string("finished_cooper_name");
             $table->integer("finished_cooper_price");
             $table->timestamps();
         });

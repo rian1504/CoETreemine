@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('prototype_layers', function (Blueprint $table) {
             $table->id("id_layer");
-            $table->integer("layer_name");
+            $table->string("layer_name");
             $table->integer("layer_price");
             $table->timestamps();
         });

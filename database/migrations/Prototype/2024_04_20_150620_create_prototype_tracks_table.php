@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('prototype_tracks', function (Blueprint $table) {
             $table->id("id_track");
-            $table->integer("track_name");
+            $table->string("track_name");
             $table->integer("track_price");
             $table->timestamps();
         });

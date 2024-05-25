@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id("id_material");
             $table->string("material_name");
             $table->string("material_picture");
-            $table->string("material_price");
+            $table->integer("material_price");
             $table->timestamps();
         });
     }

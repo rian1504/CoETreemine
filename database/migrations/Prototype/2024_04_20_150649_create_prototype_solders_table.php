@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prototype_solders', function (Blueprint $table) {
             $table->id("id_solder");
             $table->string("solder_name");
-            $table->string("solder_price");
+            $table->integer("solder_price");
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prototype_via_processes', function (Blueprint $table) {
             $table->id("id_via");
             $table->string("via_process_name");
-            $table->string("via_process_price");
+            $table->integer("via_process_price");
             $table->timestamps();
         });
     }

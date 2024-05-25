@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('prototype_silks', function (Blueprint $table) {
             $table->id("id_silk");
             $table->string("silk_name");
-            $table->string("silk_price");
+            $table->integer("silk_price");
             $table->timestamps();
         });
     }

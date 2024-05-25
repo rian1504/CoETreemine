@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('prototype_thicknesses', function (Blueprint $table) {
             $table->id("id_thickness");
-            $table->integer("thickness_name");
+            $table->string("thickness_name");
             $table->integer("thickness_price");
             $table->unsignedBigInteger("id_layer");
             $table->timestamps();

@@ -172,7 +172,7 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $data->thickness_name }}</td>
                         <td>Rp{{ number_format($data->thickness_price, 0, '', '.') }}</td>
-                        <td>{{ $data->thickness_name }}</td>
+                        <td>{{ $data->prototype_layer->layer_name }}</td>
                         <td>
                             <a href="{{ route('thickness.edit', $data->id_thickness) }}">Edit</a>
                             <form action="{{ route('thickness.destroy', $data->id_thickness) }}"

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prototype_surfaces', function (Blueprint $table) {
             $table->id("id_surface");
             $table->string("surface_name");
-            $table->string("surface_price");
+            $table->integer("surface_price");
             $table->timestamps();
         });
     }

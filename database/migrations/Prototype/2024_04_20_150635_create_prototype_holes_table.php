@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('prototype_holes', function (Blueprint $table) {
             $table->id("id_hole");
-            $table->integer("hole_name");
+            $table->string("hole_name");
             $table->integer("hole_price");
             $table->timestamps();
         });

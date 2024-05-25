@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prototype_board_types', function (Blueprint $table) {
             $table->id("id_board");
             $table->string("board_type_name");
-            $table->string("board_type_price");
+            $table->integer("board_type_price");
             $table->timestamps();
         });
     }
