@@ -562,8 +562,8 @@
                         <td>{{ $data->via_process_name }}</td>
                         <td>Rp{{ number_format($data->via_process_price, 0, '', '.') }}</td>
                         <td>
-                            <a href="{{ route('via_process.edit', $data->id_via_process) }}">Edit</a>
-                            <form action="{{ route('via_process.destroy', $data->id_via_process) }}"
+                            <a href="{{ route('via_process.edit', $data->id_via) }}">Edit</a>
+                            <form action="{{ route('via_process.destroy', $data->id_via) }}"
                                 onsubmit="return confirm('Are you sure?')" method="POST">
                                 @csrf
                                 @method('DELETE')
