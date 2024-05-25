@@ -14,7 +14,10 @@ class PrototypeSilkController extends Controller
      */
     public function index()
     {
-        //
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'select' => 'Silk'
+        ]);
     }
 
     /**
@@ -22,7 +25,7 @@ class PrototypeSilkController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.prototype.silk.create');
     }
 
     /**
@@ -30,38 +33,90 @@ class PrototypeSilkController extends Controller
      */
     public function store(StorePrototypeSilkRequest $request)
     {
-        //
+        //validate form
+        $request->validate([
+            'silk_name' => 'required|min:5',
+            'silk_price' => 'required|numeric'
+        ]);
+
+        //create silk
+        PrototypeSilk::create([
+            'silk_name' => $request->silk_name,
+            'silk_price' => $request->silk_price
+        ]);
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Disimpan!',
+            'select' => 'Silk'
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(PrototypeSilk $prototypeSilk)
+    public function show(PrototypeSilk $silk)
     {
-        //
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'select' => 'Silk'
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PrototypeSilk $prototypeSilk)
+    public function edit(PrototypeSilk $silk)
     {
-        //
+        //get silk by ID
+        $silk = PrototypeSilk::findOrFail($silk->id_silk);
+
+        //render view with silk
+        return view('admin.prototype.silk.edit', compact('silk'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePrototypeSilkRequest $request, PrototypeSilk $prototypeSilk)
+    public function update(UpdatePrototypeSilkRequest $request, PrototypeSilk $silk)
     {
-        //
+        //validate form
+        $request->validate([
+            'silk_name' => 'required|min:5',
+            'silk_price' => 'required|numeric'
+        ]);
+
+        //get silk by ID
+        $silk = PrototypeSilk::findOrFail($silk->id_silk);
+
+        // update silk
+        $silk->update([
+            'silk_name' => $request->silk_name,
+            'silk_price' => $request->silk_price
+        ]);
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Diubah!',
+            'select' => 'Silk'
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PrototypeSilk $prototypeSilk)
+    public function destroy(PrototypeSilk $silk)
     {
-        //
+        //get silk by ID
+        $silk = PrototypeSilk::findOrFail($silk->id_silk);
+
+        //delete silk
+        $silk->delete();
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Dihapus!',
+            'select' => 'Silk'
+        ]);
     }
 }
