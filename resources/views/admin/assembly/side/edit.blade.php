@@ -8,7 +8,7 @@
     <input type="text" name="side_name" value="{{ old('side_name', $side->side_name) }}">
 
     <label for="">Price</label>
-    <input type="text" name="side_price" value="{{ old('side_price', $side->side_price) }}">
+    <input type="number" name="side_price" value="{{ old('side_price', $side->side_price) }}">
 
     <button type="submit">update</button>
 </form>

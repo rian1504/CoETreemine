@@ -8,7 +8,7 @@
     <input type="text" name="thickness_name" value="{{ old('thickness_name', $thickness->thickness_name) }}">
 
     <label for="">Price</label>
-    <input type="text" name="thickness_price" value="{{ old('thickness_price', $thickness->thickness_price) }}">
+    <input type="number" name="thickness_price" value="{{ old('thickness_price', $thickness->thickness_price) }}">
 
     <label for="">Layer Name</label>
     <select name="id_layer">

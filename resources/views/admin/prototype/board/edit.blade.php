@@ -8,7 +8,7 @@
     <input type="text" name="board_type_name" value="{{ old('board_type_name', $board_type->board_type_name) }}">
 
     <label for="">Price</label>
-    <input type="text" name="board_type_price" value="{{ old('board_type_price', $board_type->board_type_price) }}">
+    <input type="number" name="board_type_price" value="{{ old('board_type_price', $board_type->board_type_price) }}">
 
     <button type="submit">update</button>
 </form>
