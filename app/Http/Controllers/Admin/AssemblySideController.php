@@ -57,7 +57,10 @@ class AssemblySideController extends Controller
      */
     public function show(AssemblySide $side)
     {
-        //
+        //redirect to index
+        return redirect()->route('assembly.index')->with([
+            'select' => 'Side'
+        ]);
     }
 
     /**

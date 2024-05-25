@@ -19,10 +19,4 @@ class PrototypeInnerCooper extends Model
     {
         return $this->HasMany(CustomPrototype::class, 'id_custom_prototype');
     }
-
-    // Many to One to prototype_layer table
-    public function prototype_layer(): BelongsTo
-    {
-        return $this->BelongsTo(PrototypeLayer::class, 'id_layer');
-    }
 }

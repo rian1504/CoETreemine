@@ -57,7 +57,10 @@ class AssemblyFlexibleController extends Controller
      */
     public function show(AssemblyFlexible $flexible)
     {
-        //
+        //redirect to index
+        return redirect()->route('assembly.index')->with([
+            'select' => 'Flexible'
+        ]);
     }
 
     /**

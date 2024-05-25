@@ -55,7 +55,10 @@ class AssemblyBoardTypeController extends Controller
      */
     public function show(AssemblyBoardType $board)
     {
-        //
+        //redirect to index
+        return redirect()->route('assembly.index')->with([
+            'select' => 'Board'
+        ]);
     }
 
     /**
