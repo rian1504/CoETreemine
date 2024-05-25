@@ -671,7 +671,6 @@
                 <tr>
                     <td>No</td>
                     <td>Name</td>
-                    <td>Price</td>
                     <td>Action</td>
                 </tr>
             </thead>
@@ -680,7 +679,6 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $data->silkscreen_layer1_name }}</td>
-                        <td>Rp{{ number_format($data->silkscreen_layer1_price, 0, '', '.') }}</td>
                         <td>
                             <a href="{{ route('silkscreen_layer1.edit', $data->id_silkscreen_layer1) }}">Edit</a>
                             <form action="{{ route('silkscreen_layer1.destroy', $data->id_silkscreen_layer1) }}"
