@@ -14,7 +14,10 @@ class PrototypeSurfaceController extends Controller
      */
     public function index()
     {
-        //
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'select' => 'Surface'
+        ]);
     }
 
     /**
@@ -22,7 +25,7 @@ class PrototypeSurfaceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.prototype.surface.create');
     }
 
     /**
@@ -30,38 +33,90 @@ class PrototypeSurfaceController extends Controller
      */
     public function store(StorePrototypeSurfaceRequest $request)
     {
-        //
+        //validate form
+        $request->validate([
+            'surface_name' => 'required|min:5',
+            'surface_price' => 'required|numeric'
+        ]);
+
+        //create surface
+        PrototypeSurface::create([
+            'surface_name' => $request->surface_name,
+            'surface_price' => $request->surface_price
+        ]);
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Disimpan!',
+            'select' => 'Surface'
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(PrototypeSurface $prototypeSurface)
+    public function show(PrototypeSurface $surface)
     {
-        //
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'select' => 'Surface'
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PrototypeSurface $prototypeSurface)
+    public function edit(PrototypeSurface $surface)
     {
-        //
+        //get surface by ID
+        $surface = PrototypeSurface::findOrFail($surface->id_surface);
+
+        //render view with surface
+        return view('admin.prototype.surface.edit', compact('surface'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePrototypeSurfaceRequest $request, PrototypeSurface $prototypeSurface)
+    public function update(UpdatePrototypeSurfaceRequest $request, PrototypeSurface $surface)
     {
-        //
+        //validate form
+        $request->validate([
+            'surface_name' => 'required|min:5',
+            'surface_price' => 'required|numeric'
+        ]);
+
+        //get surface by ID
+        $surface = PrototypeSurface::findOrFail($surface->id_surface);
+
+        // update surface
+        $surface->update([
+            'surface_name' => $request->surface_name,
+            'surface_price' => $request->surface_price
+        ]);
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Diubah!',
+            'select' => 'Surface'
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PrototypeSurface $prototypeSurface)
+    public function destroy(PrototypeSurface $surface)
     {
-        //
+        //get surface by ID
+        $surface = PrototypeSurface::findOrFail($surface->id_surface);
+
+        //delete surface
+        $surface->delete();
+
+        //redirect to index
+        return redirect()->route('prototype.index')->with([
+            'success' => 'Data Berhasil Dihapus!',
+            'select' => 'Surface'
+        ]);
     }
 }

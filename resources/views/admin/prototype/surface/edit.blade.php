@@ -1,14 +1,14 @@
 <h1>Edit</h1>
 
-<form action="{{ route('side.update', $side->id_side) }}" method="POST">
+<form action="{{ route('surface.update', $surface->id_surface) }}" method="POST">
     @csrf
     @method('PUT')
 
     <label for="">Name</label>
-    <input type="text" name="side_name" value="{{ old('side_name', $side->side_name) }}">
+    <input type="text" name="surface_name" value="{{ old('surface_name', $surface->surface_name) }}">
 
     <label for="">Price</label>
-    <input type="text" name="side_price" value="{{ old('side_price', $side->side_price) }}">
+    <input type="number" name="surface_price" value="{{ old('surface_price', $surface->surface_price) }}">
 
     <button type="submit">update</button>
 </form>
