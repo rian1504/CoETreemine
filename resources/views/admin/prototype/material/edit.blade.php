@@ -1,14 +1,17 @@
 <h1>Edit</h1>
 
-<form action="{{ route('side.update', $side->id_side) }}" method="POST">
+<form action="{{ route('material.update', $material->id_material) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
     <label for="">Name</label>
-    <input type="text" name="side_name" value="{{ old('side_name', $side->side_name) }}">
+    <input type="text" name="material_name" value="{{ old('material_name', $material->material_name) }}">
+
+    <label for="">Picture</label>
+    <input type="file" name="material_picture">
 
     <label for="">Price</label>
-    <input type="text" name="side_price" value="{{ old('side_price', $side->side_price) }}">
+    <input type="number" name="material_price" value="{{ old('material_price', $material->material_price) }}">
 
     <button type="submit">update</button>
 </form>
