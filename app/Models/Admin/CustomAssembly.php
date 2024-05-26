@@ -2,7 +2,7 @@
 
 namespace App\Models\Admin;
 
-use App\Models\Pembeli\DetailCartCustom;
+use App\Models\Pembeli\CartCustom;
 use App\Models\Pembeli\DetailOrder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -34,16 +34,16 @@ class CustomAssembly extends Model
         return $this->BelongsTo(AssemblySide::class, 'id_side');
     }
 
-    // One to Many to detail_cart_custom table
-    public function detail_cart_custom(): HasMany
+    // One to Many to cart_custom table
+    public function cart_custom(): HasMany
     {
-        return $this->HasMany(DetailCartCustom::class, 'id_detail_cart_custom');
+        return $this->HasMany(CartCustom::class, 'id_cart_custom');
     }
 
-    // One to Many to detail_history_cart_custom table
-    public function detail_history_cart_custom(): HasMany
+    // One to Many to history_cart_custom table
+    public function history_cart_custom(): HasMany
     {
-        return $this->HasMany(DetailHistoryCartCustom::class, 'id_detail_history_cart_custom');
+        return $this->HasMany(HistoryCartCustom::class, 'id_history_cart_custom');
     }
 
     // One to Many to detail_order table

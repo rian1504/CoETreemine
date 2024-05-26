@@ -38,11 +38,13 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::resource('portfolio', PortfolioController::class);
 
     // Review File
-    Route::get('review_file', [ReviewFileController::class, 'index'])->name('review_file.index');
-    Route::get('custom_assembly/{assembly}', [ReviewFileController::class, 'showAssembly'])->name('review_file.showAssembly');
-    Route::get('custom_prototype/{prototype}', [ReviewFileController::class, 'showPrototype'])->name('review_file.showPrototype');
-    Route::post('reject/{cart_custom}', [ReviewFileController::class, 'reject'])->name('review_file.reject');
-    Route::post('accept/{cart_custom}', [ReviewFileController::class, 'accept'])->name('review_file.accept');
+    Route::prefix('review_file')->group(function () {
+        Route::get('', [ReviewFileController::class, 'index'])->name('review_file.index');
+        Route::get('custom_assembly/{assembly}', [ReviewFileController::class, 'showAssembly'])->name('review_file.showAssembly');
+        Route::get('custom_prototype/{prototype}', [ReviewFileController::class, 'showPrototype'])->name('review_file.showPrototype');
+        Route::post('reject/{cart_custom}', [ReviewFileController::class, 'reject'])->name('review_file.reject');
+        Route::post('accept/{cart_custom}', [ReviewFileController::class, 'accept'])->name('review_file.accept');
+    });
 
     // Assembly
     Route::get('assembly', [CustomAssemblyController::class, 'index'])->name('assembly.index');

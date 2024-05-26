@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id("id_custom_prototype");
             $table->enum("x_out", ["accept", "not accept"])->nullable();
             $table->enum("panel_requirement", ["yes", "no"]);
-            $table->text("panel_requirement_description");
+            $table->text("panel_requirement_description")->nullable();
             $table->integer("design_panel");
             $table->integer("length");
             $table->integer("width");
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->unsignedBigInteger("id_fr4");
             $table->unsignedBigInteger("id_thickness");
             $table->unsignedBigInteger("id_layer");
-            $table->unsignedBigInteger("id_inner_cooper");
+            $table->unsignedBigInteger("id_inner_cooper")->nullable();
             $table->unsignedBigInteger("id_track");
             $table->unsignedBigInteger("id_hole");
             $table->unsignedBigInteger("id_solder");
@@ -36,9 +36,9 @@ return new class extends Migration
             $table->unsignedBigInteger("id_via");
             $table->unsignedBigInteger("id_finished_cooper");
             $table->unsignedBigInteger("id_material");
-            $table->unsignedBigInteger("id_soldermask_layer1");
-            $table->unsignedBigInteger("id_silkscreen_layer1");
-            $table->unsignedBigInteger("id_cooper_layer");
+            $table->unsignedBigInteger("id_soldermask_layer1")->nullable();
+            $table->unsignedBigInteger("id_silkscreen_layer1")->nullable();
+            $table->unsignedBigInteger("id_cooper_layer")->nullable();
             $table->timestamps();
 
             $table->foreign("id_board")->references("id_board")->on("prototype_board_types")->onDelete("cascade");

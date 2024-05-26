@@ -6,7 +6,7 @@ use App\Models\Admin\Category;
 use App\Models\Admin\CustomAssembly;
 use App\Models\Admin\CustomPrototype;
 use App\Models\Admin\Portfolio;
-use App\Models\Pembeli\DetailCartCustom;
+use App\Models\Pembeli\CartCustom;
 use App\Models\Pembeli\Order;
 
 class DashboardController extends Controller
@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $dataPortfolio = Portfolio::get()->count();
         $dataCustomAssembly = CustomAssembly::get();
         $dataCustomPrototype = CustomPrototype::get();
-        $dataReviewFile = DetailCartCustom::get()->count();
+        $dataReviewFile = CartCustom::get()->count();
         $dataReviewPayment = Order::get()->count();
         $dataOrder = Order::get()->count();
 

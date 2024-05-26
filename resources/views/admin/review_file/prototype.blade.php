@@ -12,6 +12,8 @@
 
     <a href="{{ route('review_file.index') }}">Back</a>
 
+    <h1>PROTOTYPE</h1>
+
     <table>
         <tr>
             <td>X-Out</td>
