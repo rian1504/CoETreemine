@@ -49,7 +49,7 @@ class CustomPrototype extends Model
     // Many to One to prototype_inner_cooper table
     public function prototype_inner_cooper(): BelongsTo
     {
-        return $this->BelongsTo(PrototypeInnerCooper::class, 'id_ineer_cooper');
+        return $this->BelongsTo(PrototypeInnerCooper::class, 'id_inner_cooper');
     }
 
     // Many to One to prototype_finished_cooper table
