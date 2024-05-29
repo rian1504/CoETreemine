@@ -91,3 +91,6 @@ Route::get('/kelola_profil', function () {
 
 
 // admin
+Route::get('/admin', function () {
+    return view('admin.index');
+});
