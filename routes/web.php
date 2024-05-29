@@ -88,3 +88,6 @@ Route::get('/history', function () {
 
 
 // admin
+Route::get('/admin', function () {
+    return view('admin.index');
+});
