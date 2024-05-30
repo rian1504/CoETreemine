@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Admin\AssemblyBoardType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AssemblyBoardTypeFactory extends Factory
 {
+    protected $model = AssemblyBoardType::class;
     /**
      * Define the model's default state.
      *
@@ -17,7 +19,7 @@ class AssemblyBoardTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "board_type_name" => fake()->word()
         ];
     }
 }

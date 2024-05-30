@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin\PrototypeSolder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class PrototypeSolderSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        PrototypeSolder::factory(5)->create();
     }
 }

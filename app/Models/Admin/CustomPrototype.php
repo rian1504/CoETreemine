@@ -2,8 +2,8 @@
 
 namespace App\Models\Admin;
 
-use App\Models\Pembeli\DetailCartCustom;
 use App\Models\Pembeli\DetailOrder;
+use Database\Factories\CustomPrototypeFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,6 +15,12 @@ class CustomPrototype extends Model
 
     protected $guarded = ['id_custom_prototype'];
     protected $primaryKey = 'id_custom_prototype';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new CustomPrototypeFactory();
+    }
 
     // Many to One to prototype_board_type table
     public function prototype_board_type(): BelongsTo
@@ -116,18 +122,6 @@ class CustomPrototype extends Model
     public function prototype_silkscreen_layer1(): BelongsTo
     {
         return $this->BelongsTo(PrototypeSilkscreenLayer1::class, 'id_silkscreen_layer1');
-    }
-
-    // One to Many to detail_cart_custom table
-    public function detail_cart_custom(): HasMany
-    {
-        return $this->HasMany(DetailCartCustom::class, 'id_detail_cart_custom');
-    }
-
-    // One to Many to detail_history_cart_custom table
-    public function detail_history_cart_custom(): HasMany
-    {
-        return $this->HasMany(DetailHistoryCartCustom::class, 'id_detail_history_cart_custom');
     }
 
     // One to Many to detail_order table

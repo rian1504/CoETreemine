@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Admin\PrototypeFr4;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PrototypeFr4Factory extends Factory
 {
+    protected $model = PrototypeFr4::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,7 @@ class PrototypeFr4Factory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "fr4_name" => fake()->word(),
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Admin\PrototypeRouteProcess;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PrototypeRouteProcessFactory extends Factory
 {
+    protected $model = PrototypeRouteProcess::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,7 @@ class PrototypeRouteProcessFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "route_process_name" => fake()->word()
         ];
     }
 }

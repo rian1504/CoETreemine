@@ -4,6 +4,8 @@ namespace App\Models\Admin;
 
 use App\Models\Pembeli\CartCustom;
 use App\Models\Pembeli\DetailOrder;
+use Database\Factories\AssemblyFactory;
+use Database\Factories\CustomAssemblyFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,6 +17,12 @@ class CustomAssembly extends Model
 
     protected $guarded = ['id_custom_assembly'];
     protected $primaryKey = 'id_custom_assembly';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new CustomAssemblyFactory();
+    }
 
     // Many to One to assembly_flexible table
     public function assembly_flexible(): BelongsTo

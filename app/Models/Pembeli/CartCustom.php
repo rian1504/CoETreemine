@@ -5,6 +5,7 @@ namespace App\Models\Pembeli;
 use App\Models\Admin\CustomAssembly;
 use App\Models\Admin\CustomPrototype;
 use App\Models\User;
+use Database\Factories\CartCustomFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,6 +16,12 @@ class CartCustom extends Model
 
     protected $guarded = ['id_cart_custom'];
     protected $primaryKey = 'id_cart_custom';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new CartCustomFactory();
+    }
 
     // Many to One to user table
     public function user(): BelongsTo

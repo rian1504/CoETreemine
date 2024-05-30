@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use Database\Factories\PrototypeBoardTypeFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -9,6 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class PrototypeBoardType extends Model
 {
     use HasFactory;
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new PrototypeBoardTypeFactory();
+    }
 
     protected $guarded = ['id_board'];
     protected $primaryKey = 'id_board';

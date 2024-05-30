@@ -3,6 +3,7 @@
 namespace App\Models\Admin;
 
 use App\Models\User;
+use Database\Factories\HistoryCartCustomFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,6 +14,12 @@ class HistoryCartCustom extends Model
 
     protected $guarded = ['id_history_cart_custom'];
     protected $primaryKey = 'id_history_cart_custom';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new HistoryCartCustomFactory();
+    }
 
     // Many to One to user table
     public function user(): BelongsTo

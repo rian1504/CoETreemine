@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use Database\Factories\PrototypeThicknessFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,6 +14,12 @@ class PrototypeThickness extends Model
 
     protected $guarded = ['id_thickness'];
     protected $primaryKey = 'id_thickness';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new PrototypeThicknessFactory();
+    }
 
     // One to Many to custom_prototype table
     public function custom_prototype(): HasMany

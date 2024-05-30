@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use Database\Factories\PrototypeInnerCooperFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,6 +14,12 @@ class PrototypeInnerCooper extends Model
 
     protected $guarded = ['id_inner_cooper'];
     protected $primaryKey = 'id_inner_cooper';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new PrototypeInnerCooperFactory();
+    }
 
     // One to Many to custom_prototype table
     public function custom_prototype(): HasMany

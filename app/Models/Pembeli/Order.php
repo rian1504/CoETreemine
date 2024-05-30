@@ -3,6 +3,7 @@
 namespace App\Models\Pembeli;
 
 use App\Models\User;
+use Database\Factories\OrderFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,6 +15,12 @@ class Order extends Model
 
     protected $guarded = ['id_order'];
     protected $primaryKey = 'id_order';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new OrderFactory();
+    }
 
     // Many to One to user table
     public function user(): BelongsTo

@@ -5,6 +5,7 @@ namespace App\Models\Pembeli;
 use App\Models\Admin\CustomAssembly;
 use App\Models\Admin\CustomPrototype;
 use App\Models\Admin\Portfolio;
+use Database\Factories\DetailOrderFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,6 +16,12 @@ class DetailOrder extends Model
 
     protected $guarded = ['id_detail_order'];
     protected $primaryKey = 'id_detail_order';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new DetailOrderFactory();
+    }
 
     // Many to One to order table
     public function order(): BelongsTo

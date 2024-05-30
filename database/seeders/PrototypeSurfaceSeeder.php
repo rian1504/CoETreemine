@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin\PrototypeSurface;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class PrototypeSurfaceSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        PrototypeSurface::factory(5)->create();
     }
 }

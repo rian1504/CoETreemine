@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Admin\AssemblySide;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AssemblySideFactory extends Factory
 {
+    protected $model = AssemblySide::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,8 @@ class AssemblySideFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "side_name" => fake()->word(),
+            "side_price" => fake()->numberBetween(1, 10) * 1000
         ];
     }
 }

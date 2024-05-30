@@ -4,6 +4,7 @@ namespace App\Models\Admin;
 
 use App\Models\Pembeli\CartPortfolio;
 use App\Models\Pembeli\DetailOrder;
+use Database\Factories\PortfolioFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,6 +16,12 @@ class Portfolio extends Model
 
     protected $guarded = ['id_portfolio'];
     protected $primaryKey = 'id_portfolio';
+
+    // Seeder and Factory
+    protected static function newFactory()
+    {
+        return new PortfolioFactory();
+    }
 
     // Many to One to category table
     public function category(): BelongsTo
