@@ -104,12 +104,12 @@ Route::get('/portfolio', function () {
 Route::get('/assembly', function () {
     return view('admin/assembly.index');
 });
-Route::get('/assembly', function () {
+Route::get('/assembly/board', function () {
     return view('admin/assembly/board.index');
 });
-Route::get('/assembly', function () {
+Route::get('/assembly/flexible', function () {
     return view('admin/assembly/flexible.index');
 });
-Route::get('/assembly', function () {
+Route::get('/assembly/side', function () {
     return view('admin/assembly/side.index');
 });
