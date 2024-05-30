@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\PrototypeThicknessController;
 use App\Http\Controllers\Admin\PrototypeTrackController;
 use App\Http\Controllers\Admin\PrototypeViaProcessController;
 use App\Http\Controllers\Admin\ReviewFileController;
+use App\Http\Controllers\Admin\ReviewPaymentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('admin')->prefix('admin')->group(function () {
+// admin
+Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {
     Route::resource('category', CategoryController::class);
     Route::resource('portfolio', PortfolioController::class);
 
@@ -46,17 +48,25 @@ Route::middleware('admin')->prefix('admin')->group(function () {
         Route::post('accept/{cart_custom}', [ReviewFileController::class, 'accept'])->name('review_file.accept');
     });
 
+    // Review Payment
+    Route::prefix('review_payment')->group(function () {
+        Route::get('', [ReviewPaymentController::class, 'index'])->name('review_payment.index');
+        Route::get('/{order}', [ReviewPaymentController::class, 'show'])->name('review_payment.show');
+        Route::post('reject/{order}', [ReviewPaymentController::class, 'reject'])->name('review_payment.reject');
+        Route::post('accept/{order}', [ReviewPaymentController::class, 'accept'])->name('review_payment.accept');
+    });
+
     // Assembly
-    Route::get('assembly', [CustomAssemblyController::class, 'index'])->name('assembly.index');
     Route::prefix('assembly')->group(function () {
+        Route::get('', [CustomAssemblyController::class, 'index'])->name('assembly.index');
         Route::resource('flexible', AssemblyFlexibleController::class);
         Route::resource('board', AssemblyBoardTypeController::class);
         Route::resource('side', AssemblySideController::class);
     });
 
     // Prototype
-    Route::get('prototype', [CustomPrototypeController::class, 'index'])->name('prototype.index');
     Route::prefix('prototype')->group(function () {
+        Route::get('', [CustomPrototypeController::class, 'index'])->name('prototype.index');
         Route::resource('board_type', PrototypeBoardTypeController::class);
         Route::resource('route_process', PrototypeRouteProcessController::class);
         Route::resource('fr4', PrototypeFr4Controller::class);
@@ -77,6 +87,7 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     });
 });
 
+// buyer
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

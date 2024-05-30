@@ -29,7 +29,7 @@ class DetailOrder extends Model
     }
 
     // Many to One to customs_assembly table
-    public function customs_assembly(): BelongsTo
+    public function custom_assembly(): BelongsTo
     {
         return $this->BelongsTo(CustomAssembly::class, 'id_custom_assembly');
     }

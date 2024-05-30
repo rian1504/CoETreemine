@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer("length");
             $table->integer("width");
             $table->integer("quantity");
-            $table->string("file");
+            $table->string("file")->nullable();
             $table->integer("price");
             $table->unsignedBigInteger("id_board");
             $table->unsignedBigInteger("id_route");

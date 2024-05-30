@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $dataPortfolio = Portfolio::get()->count();
         $dataCustomAssembly = CustomAssembly::get();
         $dataCustomPrototype = CustomPrototype::get();
-        $dataReviewFile = CartCustom::get()->count();
+        $dataReviewFile = CartCustom::where('status', 'not review')->get()->count();
         $dataReviewPayment = Order::get()->count();
         $dataOrder = Order::get()->count();
 
@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $is_admin = Auth()->user()->is_admin;
 
         if ($is_admin == 0) {
-            return view('pembeli.dashboard');
+            return view('buyer.dashboard');
         } elseif ($is_admin == 1) {
             $data = $this->getDataAdmin();
             return view('admin.dashboard', compact('data'));

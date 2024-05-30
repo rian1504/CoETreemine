@@ -25,7 +25,7 @@ return new class extends Migration
             $table->enum("cable_wire", ["yes", "no"]);
             $table->text("detail_information")->nullable();
             $table->integer("price");
-            $table->string("file");
+            $table->string("file")->nullable();
             $table->unsignedBigInteger("id_flexible");
             $table->unsignedBigInteger("id_board");
             $table->unsignedBigInteger("id_side");
