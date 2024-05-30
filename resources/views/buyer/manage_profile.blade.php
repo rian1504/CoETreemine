@@ -3,7 +3,12 @@
 @section('title', 'CoE Treemine | Manage Profile')
 
 @section('content')
-<div class="bg-gray-100 p-6  mt-32">
+<div class="bg-gray-100 p-6 mt-32">
+    <div class="flex flex-row">
+    <i class="fas fa-user text-5xl"></i>
+        <div class="text-xl font-semibold">Rian Abdullah</div>
+        <div class="text-gray-600 ">coetreemine@gmail.com</div>
+            </div>
     <div class="flex flex-col justify-center items-end mr-10">
         <div class="max-w-xl w-full bg-white p-6 rounded-lg shadow-md my-6">
             <h2 class="text-xl font-semibold mb-2">Profil Saya</h2>

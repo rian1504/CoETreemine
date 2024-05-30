@@ -94,3 +94,6 @@ Route::get('/manage_profile', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 });
+Route::get('/category_portfolio', function () {
+    return view('admin.category_portfolio');
+});
