@@ -5,7 +5,7 @@
 @section('content')
 
 <div>
-    <h1 class="my-4">Dashboard</h1>
+    <h1 class="my-4 text-admin-900">Dashboard</h1>
     <div class="grid grid-cols-3 gap-4 mb-4">
         <div class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div class="flex flex-col items-center justify-center p-5">
