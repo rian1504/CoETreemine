@@ -83,8 +83,8 @@ Route::get('/payment', function () {
 Route::get('/history', function () {
     return view('buyer.history');
 });
-Route::get('/kelola_profil', function () {
-    return view('buyer.kelola_profil');
+Route::get('/manage_profile', function () {
+    return view('buyer.manage_profile');
 });
 
 
