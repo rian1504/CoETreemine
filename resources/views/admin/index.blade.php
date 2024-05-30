@@ -5,26 +5,28 @@
 @section('content')
 
 <div>
+    <h1 class="my-4">Dashboard</h1>
     <div class="grid grid-cols-3 gap-4 mb-4">
-        <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+        <div class="flex flex-col items-center justify-center h-24 rounded bg-white border border-admin-900 dark:bg-gray-800">
+            <div class="font-medium">
+                <h1>Portfolio Category</h1>
+            </div>
+            <div class="flex flex-row">
+                <i class="fas fa-th-list text-4xl"></i>
+                <h1>Total: 7</h1>
+            </div>
+            <div>
+                <button>More Details <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        <div class="flex items-center justify-center h-24 rounded bg-white border border-admin-900 dark:bg-gray-800">
             <p class="text-2xl text-gray-400 dark:text-gray-500">
-                <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                </svg>
+
             </p>
         </div>
-        <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+        <div class="flex items-center justify-center h-24 rounded bg-white border border-admin-900 dark:bg-gray-800">
             <p class="text-2xl text-gray-400 dark:text-gray-500">
-                <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                </svg>
-            </p>
-        </div>
-        <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-                <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                </svg>
+
             </p>
         </div>
     </div>
