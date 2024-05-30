@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -95,5 +96,20 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 Route::get('/category_portfolio', function () {
-    return view('admin.category_portfolio');
+    return view('admin/category_portfolio.index');
+});
+Route::get('/portfolio', function () {
+    return view('admin/portfolio.index');
+});
+Route::get('/assembly', function () {
+    return view('admin/assembly.index');
+});
+Route::get('/assembly/board', function () {
+    return view('admin/assembly/board.index');
+});
+Route::get('/assembly/flexible', function () {
+    return view('admin/assembly/flexible.index');
+});
+Route::get('/assembly/side', function () {
+    return view('admin/assembly/side.index');
 });
