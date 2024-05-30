@@ -17,7 +17,7 @@
     <aside>
         @include('components.admin_sidebar')
     </aside>
-    <div class="mt-20 p-4 sm:ml-64">
+    <div class="min-h-screen flex flex-col flex-grow bg-admin-100 mt-20 p-4 sm:ml-64">
         <main>
             @yield('content')
         </main>
@@ -25,6 +25,22 @@
     <!-- <footer>
         @include('components.footer')
     </footer> -->
+
+
+
+    <script>
+        const toggleSidebarBtn = document.getElementById('toggle-sidebar-btn');
+        const sidebar = document.getElementById('logo-sidebar');
+
+        // Function to toggle sidebar
+        function toggleSidebar() {
+            sidebar.classList.toggle('translate-x-0');
+            sidebar.classList.toggle('-translate-x-full');
+        }
+
+        // Add event listener
+        toggleSidebarBtn.addEventListener('click', toggleSidebar);
+    </script>
 </body>
 
 </html>
