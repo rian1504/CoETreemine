@@ -16,13 +16,13 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Admin',
-        //     'email' => env('EMAIL'),
-        //     'telp' => env('TELP'),
-        //     'password' => Hash::make(env('PASSWORD')),
-        //     'is_admin' => 1,
-        // ]);
+        User::factory()->create([
+            'name' => 'Admin',
+            'email' => env('EMAIL'),
+            'telp' => env('TELP'),
+            'password' => Hash::make(env('PASSWORD')),
+            'is_admin' => 1,
+        ]);
 
         $this->call([
             AssemblyBoardTypeSeeder::class,

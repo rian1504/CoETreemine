@@ -74,7 +74,22 @@ class ReviewFileController extends Controller
         // get data
         $data_cart_custom = CartCustom::findOrFail($cart_custom);
 
-        // update status to accepted
+        $total_price = $data_cart_custom->total_price;
+        $id_user = $data_cart_custom->user()->first()->id_user;
+        $id_custom_assembly = CartCustom::where('id_cart_custom', $cart_custom)->first()->id_custom_assembly;
+        $id_custom_prototype = CartCustom::where('id_cart_custom', $cart_custom)->first()->id_custom_prototype;
+
+        // create history cart custom
+        HistoryCartCustom::create([
+            'status' => 'accepted',
+            'reason' => Null,
+            'total_price' => $total_price,
+            'id_user' => $id_user,
+            'id_custom_assembly' => $id_custom_assembly,
+            'id_custom_prototype' => $id_custom_prototype
+        ]);
+
+        // update status cart custom to accepted
         $data_cart_custom->update([
             'status' => 'accepted'
         ]);

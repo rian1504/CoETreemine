@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('history_cart_customs', function (Blueprint $table) {
             $table->id("id_history_cart_custom");
             $table->enum("status", ["rejected", "accepted"]);
-            $table->string("reason");
+            $table->string("reason")->nullable();
             $table->integer("total_price");
             $table->unsignedBigInteger("id_user");
             $table->unsignedBigInteger("id_custom_assembly")->nullable();
