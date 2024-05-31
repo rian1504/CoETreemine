@@ -107,14 +107,20 @@ Route::get('/portfolio/create', function () {
 Route::get('/assembly', function () {
     return view('admin/assembly.index');
 });
-Route::get('/assembly/board', function () {
-    return view('admin/assembly/board.index');
+Route::get('/assembly/board/create', function () {
+    return view('admin/assembly/board.create');
 });
-Route::get('/assembly/flexible', function () {
-    return view('admin/assembly/flexible.index');
+Route::get('/assembly/board/edit', function () {
+    return view('admin/assembly/board.edit');
 });
-Route::get('/assembly/side', function () {
-    return view('admin/assembly/side.index');
+Route::get('/assembly/flexible/create', function () {
+    return view('admin/assembly/flexible.create');
+});
+Route::get('/assembly/flexible/edit', function () {
+    return view('admin/assembly/flexible.edit');
+});
+Route::get('/assembly/side/create', function () {
+    return view('admin/assembly/side.create');
 });
 Route::get('/assembly/side/edit', function() {
     return view('admin/assembly/side.edit');
