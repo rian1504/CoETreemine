@@ -11,9 +11,9 @@ class ReviewPaymentController extends Controller
 {
     public function getData($order)
     {
-        $dataAssembly = DetailOrder::where('id_order', $order)->where('id_custom_assembly', '!=', NULL);
-        $dataPrototype = DetailOrder::where('id_order', $order)->where('id_custom_prototype', '!=', NULL);
-        $dataPortfolio = DetailOrder::where('id_order', $order)->where('id_portfolio', '!=', NULL);
+        $dataAssembly = DetailOrder::where('id_order', $order)->where('id_custom_assembly', '!=', NULL)->with('custom_assembly');
+        $dataPrototype = DetailOrder::where('id_order', $order)->where('id_custom_prototype', '!=', NULL)->with('custom_prototype');
+        $dataPortfolio = DetailOrder::where('id_order', $order)->where('id_portfolio', '!=', NULL)->with('portfolio');
 
         return [
             'dataAssembly' => $dataAssembly,
