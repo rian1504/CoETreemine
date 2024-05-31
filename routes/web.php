@@ -113,3 +113,6 @@ Route::get('/assembly/flexible', function () {
 Route::get('/assembly/side', function () {
     return view('admin/assembly/side.index');
 });
+Route::get('/assembly/side/edit', function() {
+    return view('admin/assembly/side.edit');
+});
