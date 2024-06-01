@@ -98,6 +98,9 @@ Route::get('/admin', function () {
 Route::get('/admin/category_portfolio', function () {
     return view('admin/category_portfolio.index');
 });
+Route::get('/admin/category_portfolio/create', function () {
+    return view('admin/category_portfolio.create');
+});
 Route::get('/admin/portfolio', function () {
     return view('admin/portfolio.index');
 });
