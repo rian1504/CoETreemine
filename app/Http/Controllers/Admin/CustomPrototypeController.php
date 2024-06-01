@@ -3,9 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\CustomPrototype;
-use App\Http\Requests\StoreCustomPrototypeRequest;
-use App\Http\Requests\UpdateCustomPrototypeRequest;
 use App\Models\Admin\PrototypeBoardType;
 use App\Models\Admin\PrototypeCooperLayer;
 use App\Models\Admin\PrototypeFinishedCooper;

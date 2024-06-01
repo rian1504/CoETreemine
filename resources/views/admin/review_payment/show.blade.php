@@ -15,6 +15,10 @@
         <h1>DETAIL ORDER</h1>
         <br>
 
+        {{-- @foreach ($datas['dataAssembly']['data'] as $index => $data)
+            {{ $datas['dataAssembly']['data'][$index]->custom_assembly->price }}
+        @endforeach --}}
+
         <div class="grid grid-cols-2">
             <div class="custom">
                 <table class="table border-blue-50">
@@ -26,14 +30,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($datas['dataAssembly']->get()->count() != null)
+                        @if ($datas['dataAssembly']['total'] != null)
                             <tr>
                                 <td>Assembly</td>
                                 <td>
-                                    {{ $datas['dataAssembly']->get()->count() }} Pcs
+                                    {{ $datas['dataAssembly']['total'] }} Pcs
                                 </td>
                                 <td>
-                                    Rp{{ number_format($datas['dataAssembly']->get()[0]->custom_assembly->sum('price'), 0, '', '.') }}
+                                    Rp{{ number_format($datas['dataAssembly']['price'], 0, '', '.') }}
                                 </td>
                             </tr>
                         @else
@@ -41,14 +45,14 @@
                                 <td colspan="3" class="text-2xl font-bold text-center">Assembly Kosong</td>
                             </tr>
                         @endif
-                        @if ($datas['dataPrototype']->get()->count() != null)
+                        @if ($datas['dataPrototype']['total'] != null)
                             <tr>
                                 <td>Prototype</td>
                                 <td>
-                                    {{ $datas['dataPrototype']->get()->count() }} Pcs
+                                    {{ $datas['dataPrototype']['total'] }} Pcs
                                 </td>
                                 <td>
-                                    Rp{{ number_format($datas['dataPrototype']->get()[0]->custom_prototype->sum('price'), 0, '', '.') }}
+                                    Rp{{ number_format($datas['dataPrototype']['price'], 0, '', '.') }}
                                 </td>
                             </tr>
                         @else
@@ -68,12 +72,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($datas['dataPortfolio']->get() as $index => $data)
+                        @forelse ($datas['dataPortfolio'] as $index => $data)
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $data->portfolio->portfolio_name }}</td>
                                 <td>
-                                    <img src="{{ asset('/storage/assets/images/payment/' . $data->portfolio->portfolio_picture) }}"
+                                    <img src="{{ asset('/storage/assets/images/portfolio/' . $data->portfolio->portfolio_picture) }}"
                                         alt="" width="100" height="100">
                                 </td>
                                 <td>
@@ -100,14 +104,7 @@
                 <td>:</td>
                 <td>
                     <h1 class="text-2xl font-bold">
-                        Rp{{ number_format(
-                            $datas['dataAssembly']->get()[0]->custom_assembly->sum('price') +
-                                $datas['dataPrototype']->get()[0]->custom_prototype->sum('price') +
-                                $datas['dataPortfolio']->get()[0]->portfolio->sum('portfolio_price'),
-                            0,
-                            '',
-                            '.',
-                        ) }}
+                        Rp{{ number_format($datas['dataAssembly']['price'] + $datas['dataPrototype']['price'] + $datas['pricePortfolio'], 0, '', '.') }}
                     </h1>
                 </td>
             </tr>
