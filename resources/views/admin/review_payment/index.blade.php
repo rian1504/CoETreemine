@@ -9,6 +9,10 @@
 
 <h1>Review Payment</h1>
 
+@session('success')
+    {{ session('success') }}
+@endsession
+
 <table border="1">
     <thead>
         <tr>

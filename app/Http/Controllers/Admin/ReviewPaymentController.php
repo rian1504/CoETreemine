@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Pembeli\DetailOrder;
+use Illuminate\Support\Str;
 use App\Models\Pembeli\Order;
-use Illuminate\Http\Request;
+use App\Models\Pembeli\DetailOrder;
+use App\Http\Controllers\Controller;
 
 class ReviewPaymentController extends Controller
 {
@@ -67,9 +67,32 @@ class ReviewPaymentController extends Controller
 
     public function reject($order)
     {
+        // get data order by id
+        $dataOrder = Order::findOrFail($order);
+
+        // update status order to rejected
+        $dataOrder->update([
+            'status' => 'rejected'
+        ]);
+
+        //redirect to index
+        return redirect()->route('review_payment.index')->with(['success' => 'Data Berhasil Direject!']);
     }
 
     public function accept($order)
     {
+        // get data order by id
+        $dataOrder = Order::findOrFail($order);
+
+        // update status order to accepted and make invoice number
+        $dataOrder->update([
+            // make invoice number
+            'status' => 'accepted',
+            'no_invoice' => Str::random(10)
+        ]);
+
+
+        //redirect to index
+        return redirect()->route('review_payment.index')->with(['success' => 'Data Berhasil Diaccept!']);
     }
 }
