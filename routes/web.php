@@ -104,7 +104,7 @@ Route::get('/admin/portfolio', function () {
 Route::get('/admin/portfolio/create', function () {
     return view('admin/portfolio.create');
 });
-Route::get('/admin/assembly', function () {
+Route::get('/assembly', function () {
     return view('admin/assembly.index');
 });
 Route::get('/assembly/board/create', function () {
