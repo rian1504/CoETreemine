@@ -137,3 +137,6 @@ Route::get('/assembly/side/edit', function () {
 Route::get('/admin/test', function () {
     return view('admin/test');
 });
+Route::get('/admin/history', function () {
+    return view('admin/history');
+});
