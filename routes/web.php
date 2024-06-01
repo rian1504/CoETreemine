@@ -95,24 +95,27 @@ Route::get('/manage_profile', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 });
-Route::get('/category_portfolio', function () {
+Route::get('/admin/category_portfolio', function () {
     return view('admin/category_portfolio.index');
 });
-Route::get('/portfolio', function () {
+Route::get('/admin/portfolio', function () {
     return view('admin/portfolio.index');
 });
-Route::get('/portfolio/create', function () {
+Route::get('/admin/portfolio/create', function () {
     return view('admin/portfolio.create');
 });
-Route::get('/assembly', function () {
+Route::get('/admin/assembly', function () {
     return view('admin/assembly.index');
 });
-Route::get('/assembly/board', function () {
+Route::get('/admin/assembly/board', function () {
     return view('admin/assembly/board.index');
 });
-Route::get('/assembly/flexible', function () {
+Route::get('/admin/assembly/flexible', function () {
     return view('admin/assembly/flexible.index');
 });
-Route::get('/assembly/side', function () {
+Route::get('/admin/assembly/side', function () {
     return view('admin/assembly/side.index');
+});
+Route::get('/admin/test', function () {
+    return view('admin/test');
 });

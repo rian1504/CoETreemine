@@ -6,9 +6,9 @@
 
 <div>
     <div class="my-4 flex flex-row gap-4">
-        <h1>Dashboard</h1>
-        <h2>></h2>
-        <h3 class="text-admin-900">Portfolio</h3>
+        <a href="/admin">Dashboard</a>
+        <p>></p>
+        <a href="/portfolio" class="text-admin-900">Portfolio</a>
     </div>
     <div class="pb-4 flex flex-row justify-between">
         <label for="table-search" class="sr-only">Search</label>
