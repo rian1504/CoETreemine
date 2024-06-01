@@ -11,17 +11,6 @@ use App\Models\Admin\PrototypeLayer;
 class PrototypeThicknessController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Thickness'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -54,17 +43,6 @@ class PrototypeThicknessController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Thickness'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeThickness $thickness)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Thickness'
         ]);
     }

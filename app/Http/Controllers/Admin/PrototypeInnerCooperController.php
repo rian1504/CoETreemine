@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeInnerCooperRequest;
 class PrototypeInnerCooperController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Inner Cooper'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class PrototypeInnerCooperController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Inner Cooper'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeInnerCooper $inner_cooper)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Inner Cooper'
         ]);
     }

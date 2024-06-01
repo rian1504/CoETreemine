@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeLayerRequest;
 class PrototypeLayerController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Layer'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class PrototypeLayerController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Layer'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeLayer $layer)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Layer'
         ]);
     }

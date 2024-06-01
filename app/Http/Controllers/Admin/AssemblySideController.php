@@ -10,17 +10,6 @@ use App\Http\Requests\UpdateAssemblySideRequest;
 class AssemblySideController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('assembly.index')->with([
-            'select' => 'Side'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class AssemblySideController extends Controller
         //redirect to index
         return redirect()->route('assembly.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Side'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(AssemblySide $side)
-    {
-        //redirect to index
-        return redirect()->route('assembly.index')->with([
             'select' => 'Side'
         ]);
     }

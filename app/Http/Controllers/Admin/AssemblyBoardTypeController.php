@@ -10,17 +10,6 @@ use App\Http\Requests\UpdateAssemblyBoardTypeRequest;
 class AssemblyBoardTypeController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('assembly.index')->with([
-            'select' => 'Board'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -46,17 +35,6 @@ class AssemblyBoardTypeController extends Controller
         //redirect to index
         return redirect()->route('assembly.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Board'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(AssemblyBoardType $board)
-    {
-        //redirect to index
-        return redirect()->route('assembly.index')->with([
             'select' => 'Board'
         ]);
     }

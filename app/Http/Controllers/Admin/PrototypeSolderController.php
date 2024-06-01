@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeSolderRequest;
 class PrototypeSolderController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Solder'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class PrototypeSolderController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Solder'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeSolder $solder)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Solder'
         ]);
     }

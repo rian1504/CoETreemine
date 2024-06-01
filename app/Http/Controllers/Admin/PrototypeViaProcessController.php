@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeViaProcessRequest;
 class PrototypeViaProcessController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Via Process'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class PrototypeViaProcessController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Via Process'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeViaProcess $via_process)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Via Process'
         ]);
     }

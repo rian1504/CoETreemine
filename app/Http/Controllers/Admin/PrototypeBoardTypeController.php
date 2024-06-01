@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeBoardTypeRequest;
 class PrototypeBoardTypeController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Board'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class PrototypeBoardTypeController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Board'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeBoardType $board_type)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Board'
         ]);
     }

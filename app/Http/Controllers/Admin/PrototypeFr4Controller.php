@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeFr4Request;
 class PrototypeFr4Controller extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Fr4'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -46,17 +35,6 @@ class PrototypeFr4Controller extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Fr4'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeFr4 $fr4)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Fr4'
         ]);
     }

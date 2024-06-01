@@ -36,8 +36,8 @@ Route::get('/', function () {
 
 // admin
 Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {
-    Route::resource('category', CategoryController::class);
-    Route::resource('portfolio', PortfolioController::class);
+    Route::resource('category', CategoryController::class)->except('show');
+    Route::resource('portfolio', PortfolioController::class)->except('show');
 
     // Review File
     Route::prefix('review_file')->group(function () {
@@ -59,31 +59,31 @@ Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {
     // Assembly
     Route::prefix('assembly')->group(function () {
         Route::get('', [CustomAssemblyController::class, 'index'])->name('assembly.index');
-        Route::resource('flexible', AssemblyFlexibleController::class);
-        Route::resource('board', AssemblyBoardTypeController::class);
-        Route::resource('side', AssemblySideController::class);
+        Route::resource('flexible', AssemblyFlexibleController::class)->except('show', 'index');
+        Route::resource('board', AssemblyBoardTypeController::class)->except('show', 'index');
+        Route::resource('side', AssemblySideController::class)->except('show', 'index');
     });
 
     // Prototype
     Route::prefix('prototype')->group(function () {
         Route::get('', [CustomPrototypeController::class, 'index'])->name('prototype.index');
-        Route::resource('board_type', PrototypeBoardTypeController::class);
-        Route::resource('route_process', PrototypeRouteProcessController::class);
-        Route::resource('fr4', PrototypeFr4Controller::class);
-        Route::resource('thickness', PrototypeThicknessController::class);
-        Route::resource('layer', PrototypeLayerController::class);
-        Route::resource('inner_cooper', PrototypeInnerCooperController::class);
-        Route::resource('finished_cooper', PrototypeFinishedCooperController::class);
-        Route::resource('cooper_layer', PrototypeCooperLayerController::class);
-        Route::resource('track', PrototypeTrackController::class);
-        Route::resource('hole', PrototypeHoleController::class);
-        Route::resource('solder', PrototypeSolderController::class);
-        Route::resource('silk', PrototypeSilkController::class);
-        Route::resource('surface', PrototypeSurfaceController::class);
-        Route::resource('via_process', PrototypeViaProcessController::class);
-        Route::resource('material', PrototypeMaterialController::class);
-        Route::resource('soldermask_layer1', PrototypeSoldermaskLayer1Controller::class);
-        Route::resource('silkscreen_layer1', PrototypeSilkscreenLayer1Controller::class);
+        Route::resource('board_type', PrototypeBoardTypeController::class)->except('show', 'index');
+        Route::resource('route_process', PrototypeRouteProcessController::class)->except('show', 'index');
+        Route::resource('fr4', PrototypeFr4Controller::class)->except('show', 'index');
+        Route::resource('thickness', PrototypeThicknessController::class)->except('show', 'index');
+        Route::resource('layer', PrototypeLayerController::class)->except('show', 'index');
+        Route::resource('inner_cooper', PrototypeInnerCooperController::class)->except('show', 'index');
+        Route::resource('finished_cooper', PrototypeFinishedCooperController::class)->except('show', 'index');
+        Route::resource('cooper_layer', PrototypeCooperLayerController::class)->except('show', 'index');
+        Route::resource('track', PrototypeTrackController::class)->except('show', 'index');
+        Route::resource('hole', PrototypeHoleController::class)->except('show', 'index');
+        Route::resource('solder', PrototypeSolderController::class)->except('show', 'index');
+        Route::resource('silk', PrototypeSilkController::class)->except('show', 'index');
+        Route::resource('surface', PrototypeSurfaceController::class)->except('show', 'index');
+        Route::resource('via_process', PrototypeViaProcessController::class)->except('show', 'index');
+        Route::resource('material', PrototypeMaterialController::class)->except('show', 'index');
+        Route::resource('soldermask_layer1', PrototypeSoldermaskLayer1Controller::class)->except('show', 'index');
+        Route::resource('silkscreen_layer1', PrototypeSilkscreenLayer1Controller::class)->except('show', 'index');
     });
 });
 

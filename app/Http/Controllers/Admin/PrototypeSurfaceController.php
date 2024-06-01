@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeSurfaceRequest;
 class PrototypeSurfaceController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Surface'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class PrototypeSurfaceController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Surface'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeSurface $surface)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Surface'
         ]);
     }

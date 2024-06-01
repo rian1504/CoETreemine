@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeTrackRequest;
 class PrototypeTrackController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Track'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class PrototypeTrackController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Track'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeTrack $track)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Track'
         ]);
     }

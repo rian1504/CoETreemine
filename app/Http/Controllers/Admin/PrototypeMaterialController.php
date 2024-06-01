@@ -11,17 +11,6 @@ use Illuminate\Support\Facades\Storage;
 class PrototypeMaterialController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Material'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -55,17 +44,6 @@ class PrototypeMaterialController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Material'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeMaterial $material)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Material'
         ]);
     }

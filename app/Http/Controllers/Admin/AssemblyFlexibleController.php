@@ -10,17 +10,6 @@ use App\Http\Requests\UpdateAssemblyFlexibleRequest;
 class AssemblyFlexibleController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('assembly.index')->with([
-            'select' => 'Flexible'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class AssemblyFlexibleController extends Controller
         //redirect to index
         return redirect()->route('assembly.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Flexible'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(AssemblyFlexible $flexible)
-    {
-        //redirect to index
-        return redirect()->route('assembly.index')->with([
             'select' => 'Flexible'
         ]);
     }

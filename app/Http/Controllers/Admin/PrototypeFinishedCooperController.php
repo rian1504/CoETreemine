@@ -10,17 +10,6 @@ use App\Http\Requests\UpdatePrototypeFinishedCooperRequest;
 class PrototypeFinishedCooperController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Finished Cooper'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -48,17 +37,6 @@ class PrototypeFinishedCooperController extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Finished Cooper'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeFinishedCooper $finished_cooper)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Finished Cooper'
         ]);
     }

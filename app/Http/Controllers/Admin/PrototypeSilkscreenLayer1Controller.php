@@ -9,17 +9,6 @@ use Illuminate\Http\Request;
 class PrototypeSilkscreenLayer1Controller extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
-            'select' => 'Silkscreen Layer 1'
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -45,17 +34,6 @@ class PrototypeSilkscreenLayer1Controller extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Silkscreen Layer 1'
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PrototypeSilkscreenLayer1 $silkscreen_layer1)
-    {
-        //redirect to index
-        return redirect()->route('prototype.index')->with([
             'select' => 'Silkscreen Layer 1'
         ]);
     }
