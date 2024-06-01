@@ -11,8 +11,8 @@
 
 <body>
     <div class="container m-auto">
-        <a href="{{ route('review_payment.index') }}">Back</a>
-        <h1>DETAIL ORDER</h1>
+        <a href="{{ route('history.order') }}">Back</a>
+        <h1>DETAIL HISTORY ORDER</h1>
         <br>
 
         <div class="grid grid-cols-2">

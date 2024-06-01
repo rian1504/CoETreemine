@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\PrototypeViaProcessController;
 use App\Http\Controllers\Admin\ReviewFileController;
 use App\Http\Controllers\Admin\ReviewPaymentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,11 +40,24 @@ Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {
     Route::resource('category', CategoryController::class)->except('show');
     Route::resource('portfolio', PortfolioController::class)->except('show');
 
+    // History
+    Route::prefix('history')->group(function () {
+        Route::prefix('cart_custom')->group(function () {
+            Route::get('', [HistoryController::class, 'cart_custom'])->name('history.cart_custom');
+            Route::get('custom_assembly/{assembly}', [HistoryController::class, 'showAssembly'])->name('history.cart_custom.assembly');
+            Route::get('custom_prototype/{prototype}', [HistoryController::class, 'showPrototype'])->name('history.cart_custom.prototype');
+        });
+        Route::prefix('order')->group(function () {
+            Route::get('', [HistoryController::class, 'order'])->name('history.order');
+            Route::get('{order}', [HistoryController::class, 'showOrder'])->name('history.order.show');
+        });
+    });
+
     // Review File
     Route::prefix('review_file')->group(function () {
         Route::get('', [ReviewFileController::class, 'index'])->name('review_file.index');
         Route::get('custom_assembly/{assembly}', [ReviewFileController::class, 'showAssembly'])->name('review_file.showAssembly');
-        Route::get('custom_prototype/{prototype}', [ReviewFileController::class, 'showPrototype'])->name('review_file.showPrototype');
+        Route::get('custom_assembly/{assembly}', [ReviewFileController::class, 'showPrototype'])->name('review_file.showPrototype');
         Route::post('reject/{cart_custom}', [ReviewFileController::class, 'reject'])->name('review_file.reject');
         Route::post('accept/{cart_custom}', [ReviewFileController::class, 'accept'])->name('review_file.accept');
     });

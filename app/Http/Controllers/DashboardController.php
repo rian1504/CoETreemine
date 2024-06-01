@@ -18,8 +18,9 @@ class DashboardController extends Controller
         $dataCustomAssembly = CustomAssembly::get();
         $dataCustomPrototype = CustomPrototype::get();
         $dataReviewFile = CartCustom::where('status', 'not review')->get()->count();
-        $dataReviewPayment = Order::get()->count();
-        $dataOrder = Order::get()->count();
+        $dataReviewPayment = Order::where('status', 'not review')->get()->count();
+        $dataOrderHistory = Order::get()->count();
+        $dataCartCustomHistory = Order::get()->count();
 
         return [
             "dataCategory" => $dataCategory,
@@ -28,7 +29,8 @@ class DashboardController extends Controller
             "dataCustomPrototype" => $dataCustomPrototype->count(),
             "dataReviewFile" => $dataReviewFile,
             "dataReviewPayment" => $dataReviewPayment,
-            "dataOrder" => $dataOrder,
+            "dataOrderHistory" => $dataOrderHistory,
+            "dataCartCustomHistory" => $dataCartCustomHistory,
         ];
     }
 
