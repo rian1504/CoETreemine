@@ -1,70 +1,35 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Dashboard')
+@section('title', 'CoE Treemine | 3 Flexible Options')
 
 @section('content')
 
 <div>
-        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <li class="inline-flex items-center">
-                <a href="/admin"
-                    class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-green-600 dark:text-gray-400 dark:hover:text-white">Dashboard
-                </a>
-            </li>
-            <li>
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <a href="/assembly"
-                        class="ms-1 text-sm font-medium text-gray-700 hover:text-green-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Assembly</a>
-                </div>
-            </li>
-            <li aria-current="page">
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180  w-3 h-3 mx-1 text-gray-400" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <a href="#"
-                        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-green-600 dark:text-gray-400 dark:hover:text-white">3Flexible
-                        Options</a>
-                </div>
-            </li>
-            <li aria-current="page">
-                <div class="flex items-center">
-                    <svg class="rtl:rotate-180  w-3 h-3 mx-1 text-gray-400" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Add</span>
-                </div>
-            </li>
-        </ol>
-
-        <div
-            class="h-96 w-full max-w-4xl p-4 mt-5 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <form class="space-y-6 py-4" action="#">
-                <div>
-                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                    <input type="name"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-300 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                        placeholder="nameboard" required />
-                </div>
-                <div class="relative">
-                    <button type="submit"
-                        class="absolute -bottom-52 right-4 w-20 font-semibold text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 py-1 px-4 col-end-7 col-span-2 ">
-                        Send
-                    </button>
-                </div>
-            </form>
+    <div class="my-4 flex flex-row gap-4">
+        <a href="/admin">Dashboard</a>
+        <p>></p>
+        <a href="/assembly">Assembly</a>
+        <p>></p>
+        <a href="/assembly">Flexible</a>
+        <p>></p>
+        <a href="/assembly/create" class="text-admin-900">Create</a>
+    </div>
+    <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
+        <div class="flex flex-col mt-2 mb-6">
+            <label for="" class="font-semibold mb-2">3 Flexible Options</label>
+            <select id="" class="rounded-lg text-gray-900 border-admin-900 p-4 bg-admin-100 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+                <option selected></option>
+                <option value="SP">Turnkey</option>
+                <option value="SP">Kitten or Consigned</option>
+                <option value="PP">Combo</option>
+            </select>
         </div>
-
-
+        <div class="grid place-items-end ">
+            <a href="#" class="inline-flex items-center px-5 py-2 text-lg font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                Save
+            </a>
+        </div>
+    </div>
 </div>
 
 @endsection
