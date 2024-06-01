@@ -8,7 +8,7 @@
     <div class="my-4 flex flex-row gap-4">
         <a href="/admin">Dashboard</a>
         <p>></p>
-        <a href="/portfolio">Portfolio</a>
+        <a href="/admin/portfolio">Portfolio</a>
         <p>></p>
         <a href="/portfolio/create" class="text-admin-900">Create</a>
     </div>
