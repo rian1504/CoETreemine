@@ -2,7 +2,7 @@
 
 namespace App\Models\Admin;
 
-use App\Models\Pembeli\DetailOrder;
+use App\Models\Buyer\DetailOrder;
 use Database\Factories\CustomPrototypeFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -127,6 +127,6 @@ class CustomPrototype extends Model
     // One to Many to detail_order table
     public function detail_order(): HasMany
     {
-        return $this->HasMany(DetailOrder::class, 'id_detail_order');
+        return $this->HasMany(DetailOrder::class, 'id_custom_prototype');
     }
 }

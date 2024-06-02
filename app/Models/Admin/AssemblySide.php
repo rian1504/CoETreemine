@@ -23,6 +23,6 @@ class AssemblySide extends Model
     // One to Many to custom_assembly table
     public function custom_assembly(): HasMany
     {
-        return $this->HasMany(CustomAssembly::class, 'id_custom_assembly');
+        return $this->HasMany(CustomAssembly::class, 'id_side');
     }
 }

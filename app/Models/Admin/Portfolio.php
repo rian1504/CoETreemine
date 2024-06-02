@@ -32,12 +32,12 @@ class Portfolio extends Model
     // One to Many to cart_portfolio table
     public function cart_portfolio(): HasMany
     {
-        return $this->HasMany(CartPortfolio::class, 'id_cart_portfolio');
+        return $this->HasMany(CartPortfolio::class, 'id_portfolio');
     }
 
     // One to Many to detail_order table
     public function detail_order(): HasMany
     {
-        return $this->HasMany(DetailOrder::class, 'id_detail_order');
+        return $this->HasMany(DetailOrder::class, 'id_portfolio');
     }
 }

@@ -23,6 +23,6 @@ class PrototypeCooperLayer extends Model
     // One to Many to custom_prototype table
     public function custom_prototype(): HasMany
     {
-        return $this->HasMany(CustomPrototype::class, 'id_custom_prototype');
+        return $this->HasMany(CustomPrototype::class, 'id_cooper_layer');
     }
 }

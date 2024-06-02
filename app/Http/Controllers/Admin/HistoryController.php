@@ -8,7 +8,6 @@ use App\Models\Admin\CustomPrototype;
 use App\Models\Admin\HistoryCartCustom;
 use App\Models\Buyer\DetailOrder;
 use App\Models\Buyer\Order;
-use Illuminate\Http\Request;
 
 class HistoryController extends Controller
 {
@@ -18,19 +17,19 @@ class HistoryController extends Controller
         return view('admin.history.cart_custom', compact('datas'));
     }
 
-    public function showAssembly($assembly)
+    public function showAssembly(CustomAssembly $assembly)
     {
         //get assembly by ID
-        $assembly = CustomAssembly::findOrFail($assembly);
+        $assembly = CustomAssembly::findOrFail($assembly->id_custom_assembly);
 
         //render view with assembly
         return view('admin.history.assembly', compact('assembly'));
     }
 
-    public function showPrototype($prototype)
+    public function showPrototype(CustomPrototype $prototype)
     {
         //get prototype by ID
-        $prototype = CustomPrototype::findOrFail($prototype);
+        $prototype = CustomPrototype::findOrFail($prototype->id_custom_prototype);
 
         //render view with prototype
         return view('admin.history.prototype', compact('prototype'));
@@ -82,10 +81,10 @@ class HistoryController extends Controller
         return view('admin.history.order', compact('datas'));
     }
 
-    public function showOrder($order)
+    public function showOrder(Order $order)
     {
         // get detail order by ID
-        $datas = $this->getDataOrder($order);
+        $datas = $this->getDataOrder($order->id_order);
 
         return view('admin.history.show_order', compact('datas'));
     }

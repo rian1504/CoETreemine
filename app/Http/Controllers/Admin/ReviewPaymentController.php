@@ -57,18 +57,18 @@ class ReviewPaymentController extends Controller
         return view('admin.review_payment.index', compact('datas'));
     }
 
-    public function show($order)
+    public function show(Order $order)
     {
         // get detail order by ID
-        $datas = $this->getData($order);
+        $datas = $this->getData($order->id_order);
 
         return view('admin.review_payment.show', compact('datas'));
     }
 
-    public function reject($order)
+    public function reject(Order $order)
     {
         // get data order by id
-        $dataOrder = Order::findOrFail($order);
+        $dataOrder = Order::findOrFail($order->id_order);
 
         // update status order to rejected
         $dataOrder->update([
@@ -79,10 +79,10 @@ class ReviewPaymentController extends Controller
         return redirect()->route('review_payment.index')->with(['success' => 'Data Berhasil Direject!']);
     }
 
-    public function accept($order)
+    public function accept(Order $order)
     {
         // get data order by id
-        $dataOrder = Order::findOrFail($order);
+        $dataOrder = Order::findOrFail($order->id_order);
 
         // update status order to accepted and make invoice number
         $dataOrder->update([

@@ -19,33 +19,33 @@ class ReviewFileController extends Controller
         return view('admin.review_file.index', compact('datas'));
     }
 
-    public function showAssembly($assembly)
+    public function showAssembly(CustomAssembly $assembly)
     {
         //get assembly by ID
-        $assembly = CustomAssembly::findOrFail($assembly);
+        $assembly = CustomAssembly::findOrFail($assembly->id_custom_assembly);
 
         //render view with assembly
         return view('admin.review_file.assembly', compact('assembly'));
     }
 
-    public function showPrototype($prototype)
+    public function showPrototype(CustomPrototype $prototype)
     {
         //get prototype by ID
-        $prototype = CustomPrototype::findOrFail($prototype);
+        $prototype = CustomPrototype::findOrFail($prototype->id_custom_prototype);
 
         //render view with prototype
         return view('admin.review_file.prototype', compact('prototype'));
     }
 
-    public function reject($cart_custom, Request $request)
+    public function reject(CartCustom $cart_custom, Request $request)
     {
         // get data
-        $data_cart_custom = CartCustom::findOrFail($cart_custom);
+        $data_cart_custom = CartCustom::findOrFail($cart_custom->id_cart_custom);
 
         $total_price = $data_cart_custom->total_price;
         $id_user = $data_cart_custom->user()->first()->id_user;
-        $id_custom_assembly = CartCustom::where('id_cart_custom', $cart_custom)->first()->id_custom_assembly;
-        $id_custom_prototype = CartCustom::where('id_cart_custom', $cart_custom)->first()->id_custom_prototype;
+        $id_custom_assembly = $data_cart_custom->id_custom_assembly;
+        $id_custom_prototype = $data_cart_custom->id_custom_prototype;
 
         // validate data input
         $request->validate([
@@ -69,15 +69,15 @@ class ReviewFileController extends Controller
         return redirect()->route('review_file.index')->with(['success' => 'Data Berhasil Direject!']);
     }
 
-    public function accept($cart_custom)
+    public function accept(CartCustom $cart_custom)
     {
         // get data
-        $data_cart_custom = CartCustom::findOrFail($cart_custom);
+        $data_cart_custom = CartCustom::findOrFail($cart_custom->id_cart_custom);
 
         $total_price = $data_cart_custom->total_price;
         $id_user = $data_cart_custom->user()->first()->id_user;
-        $id_custom_assembly = CartCustom::where('id_cart_custom', $cart_custom)->first()->id_custom_assembly;
-        $id_custom_prototype = CartCustom::where('id_cart_custom', $cart_custom)->first()->id_custom_prototype;
+        $id_custom_assembly = $data_cart_custom->id_custom_assembly;
+        $id_custom_prototype = $data_cart_custom->id_custom_prototype;
 
         // create history cart custom
         HistoryCartCustom::create([

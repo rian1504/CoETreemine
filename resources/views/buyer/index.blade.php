@@ -16,9 +16,8 @@
         @include('layouts.navigation')
     @else
         {{-- Guest --}}
-        <nav>
-            <h1>Guest</h1>
-        </nav>
+        <a href="{{ route('login') }}">Login</a>
+        <h1>Guest</h1>
     @endif
 
     <h1>index</h1>
