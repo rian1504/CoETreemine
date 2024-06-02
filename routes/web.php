@@ -176,4 +176,21 @@ Route::get('/admin/prototype/fr4/create', function () {
 Route::get('/admin/prototype/fr4/edit', function () {
     return view('admin/prototype/fr4.edit');
 });
-
+Route::get('/admin/prototype/finished_cooper/create', function () {
+    return view('admin/prototype/finished_cooper.create');
+});
+Route::get('/admin/prototype/finished_cooper/edit', function () {
+    return view('admin/prototype/finished_cooper.edit');
+});
+Route::get('/admin/prototype/inner_cooper/create', function () {
+    return view('admin/prototype/inner_cooper.create');
+});
+Route::get('/admin/prototype/inner_cooper/edit', function () {
+    return view('admin/prototype/inner_cooper.edit');
+});
+Route::get('/admin/prototype/route_process/create', function () {
+    return view('admin/prototype/route_process.create');
+});
+Route::get('/admin/prototype/route_process/edit', function () {
+    return view('admin/prototype/route_process.edit');
+});
