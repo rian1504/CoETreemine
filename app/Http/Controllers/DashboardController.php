@@ -8,6 +8,7 @@ use App\Models\Admin\CustomPrototype;
 use App\Models\Admin\Portfolio;
 use App\Models\Pembeli\CartCustom;
 use App\Models\Pembeli\Order;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -36,15 +37,19 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $is_admin = Auth()->user()->is_admin;
+        if (Auth::check()) {
+            $is_admin = Auth()->user()->is_admin;
 
-        if ($is_admin == 0) {
-            return view('buyer.dashboard');
-        } elseif ($is_admin == 1) {
-            $data = $this->getDataAdmin();
-            return view('admin.dashboard', compact('data'));
+            if ($is_admin == 0) {
+                return view('index');
+            } elseif ($is_admin == 1) {
+                $data = $this->getDataAdmin();
+                return view('admin.dashboard', compact('data'));
+            } else {
+                return redirect()->back();
+            }
         } else {
-            return redirect()->back();
+            return view('index');
         }
     }
 }
