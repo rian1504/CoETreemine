@@ -41,15 +41,15 @@ class DashboardController extends Controller
             $is_admin = Auth()->user()->is_admin;
 
             if ($is_admin == 0) {
-                return view('index');
+                return view('buyer.index');
             } elseif ($is_admin == 1) {
                 $data = $this->getDataAdmin();
-                return view('admin.dashboard', compact('data'));
+                return view('admin.index', compact('data'));
             } else {
                 return redirect()->back();
             }
         } else {
-            return view('index');
+            return view('buyer.index');
         }
     }
 }

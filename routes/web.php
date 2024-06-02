@@ -26,22 +26,24 @@ use App\Http\Controllers\Admin\PrototypeTrackController;
 use App\Http\Controllers\Admin\PrototypeViaProcessController;
 use App\Http\Controllers\Admin\ReviewFileController;
 use App\Http\Controllers\Admin\ReviewPaymentController;
+use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 // index
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 // guest and buyer
+
 //Kelola Profile
 Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+// Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+// Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+// Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
 
