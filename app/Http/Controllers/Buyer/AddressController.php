@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Pembeli;
+namespace App\Http\Controllers\Buyer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pembeli\Address;
+use App\Models\Buyer\Address;
 use Illuminate\Http\Request;
 
 class AddressController extends Controller

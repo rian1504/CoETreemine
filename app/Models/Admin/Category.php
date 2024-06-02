@@ -23,6 +23,6 @@ class Category extends Model
     // One to Many to portfolio table
     public function portfolio(): HasMany
     {
-        return $this->hasMany(Portfolio::class, 'id_portfolio');
+        return $this->hasMany(Portfolio::class, 'id_category');
     }
 }

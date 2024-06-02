@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Admin\Category;
 use App\Models\Admin\CustomAssembly;
 use App\Models\Admin\CustomPrototype;
+use App\Models\Admin\HistoryCartCustom;
 use App\Models\Admin\Portfolio;
-use App\Models\Pembeli\CartCustom;
-use App\Models\Pembeli\Order;
+use App\Models\Buyer\CartCustom;
+use App\Models\Buyer\Order;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -20,8 +21,8 @@ class DashboardController extends Controller
         $dataCustomPrototype = CustomPrototype::get();
         $dataReviewFile = CartCustom::where('status', 'not review')->get()->count();
         $dataReviewPayment = Order::where('status', 'not review')->get()->count();
-        $dataOrderHistory = Order::get()->count();
-        $dataCartCustomHistory = Order::get()->count();
+        $dataOrderHistory = Order::where('status', '!=', 'not review')->get()->count();
+        $dataCartCustomHistory = HistoryCartCustom::get()->count();
 
         return [
             "dataCategory" => $dataCategory,

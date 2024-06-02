@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Pembeli;
+namespace App\Models\Buyer;
 
 use App\Models\Admin\Portfolio;
 use App\Models\User;

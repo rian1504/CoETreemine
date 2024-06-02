@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Pembeli;
+namespace App\Http\Controllers\Buyer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pembeli\Order;
+use App\Models\Buyer\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 

@@ -2,8 +2,8 @@
 
 namespace App\Models\Admin;
 
-use App\Models\Pembeli\CartPortfolio;
-use App\Models\Pembeli\DetailOrder;
+use App\Models\Buyer\CartPortfolio;
+use App\Models\Buyer\DetailOrder;
 use Database\Factories\PortfolioFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

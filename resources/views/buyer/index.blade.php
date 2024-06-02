@@ -9,12 +9,11 @@
 </head>
 
 <body>
+    <a href="{{ route('buyer.portfolio.index') }}">Product</a>
     @if (Auth::check())
         {{-- Buyer --}}
-        <nav>
-            <h1>Buyer</h1>
-            @include('layouts.navigation')
-        </nav>
+        <h1>Buyer</h1>
+        @include('layouts.navigation')
     @else
         {{-- Guest --}}
         <nav>

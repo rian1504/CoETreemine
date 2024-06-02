@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin\ReviewFileController;
 use App\Http\Controllers\Admin\ReviewPaymentController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Buyer\PortfolioController as BuyerPortfolioController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,14 +37,17 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 // guest and buyer
 
-//Kelola Profile
+// Manage Profile
 Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-// Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-// Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-// Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Portfolio
+Route::get('category', [BuyerPortfolioController::class, 'index'])->name('buyer.portfolio.index');
+Route::get('category/{category}', [BuyerPortfolioController::class, 'showCategory'])->name('buyer.portfolio.showCategory');
+Route::get('portfolio/{portfolio}', [BuyerPortfolioController::class, 'showPortfolio'])->name('buyer.portfolio.showPortfolio');
+Route::post('portfolio/addCart', [BuyerPortfolioController::class, 'addCart'])->name('buyer.portfolio.cartAdd');
+Route::post('portfolio/buyNow', [BuyerPortfolioController::class, 'buyNow'])->name('buyer.portfolio.buyNow');
 
 
 

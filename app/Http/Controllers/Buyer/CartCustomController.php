@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Pembeli;
+namespace App\Http\Controllers\Buyer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pembeli\CartCustom;
+use App\Models\Buyer\CartCustom;
 use App\Http\Requests\StoreCartCustomRequest;
 use App\Http\Requests\UpdateCartCustomRequest;
 

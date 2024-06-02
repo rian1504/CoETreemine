@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\CustomAssembly;
 use App\Models\Admin\CustomPrototype;
 use App\Models\Admin\HistoryCartCustom;
-use App\Models\Pembeli\CartCustom;
+use App\Models\Buyer\CartCustom;
 use Illuminate\Http\Request;
 
 class ReviewFileController extends Controller

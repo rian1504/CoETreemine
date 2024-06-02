@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Pembeli;
+namespace App\Http\Controllers\Buyer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pembeli\DetailOrder;
+use App\Models\Buyer\DetailOrder;
 use Illuminate\Http\Request;
 
 class DetailOrderController extends Controller

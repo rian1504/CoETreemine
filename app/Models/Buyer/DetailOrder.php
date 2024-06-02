@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Models\Pembeli;
+namespace App\Models\Buyer;
 
 use App\Models\Admin\CustomAssembly;
 use App\Models\Admin\CustomPrototype;
 use App\Models\Admin\Portfolio;
+use App\Models\Buyer\Order;
 use Database\Factories\DetailOrderFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

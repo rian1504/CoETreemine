@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Str;
-use App\Models\Pembeli\Order;
-use App\Models\Pembeli\DetailOrder;
+use App\Models\Buyer\Order;
+use App\Models\Buyer\DetailOrder;
 use App\Http\Controllers\Controller;
 
 class ReviewPaymentController extends Controller

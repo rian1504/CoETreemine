@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Pembeli;
+namespace App\Http\Controllers\Buyer;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pembeli\CartPortfolio;
+use App\Models\Buyer\CartPortfolio;
 use App\Http\Requests\StoreCartPortfolioRequest;
 use App\Http\Requests\UpdateCartPortfolioRequest;
 

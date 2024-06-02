@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\CustomAssembly;
 use App\Models\Admin\CustomPrototype;
 use App\Models\Admin\HistoryCartCustom;
-use App\Models\Pembeli\DetailOrder;
-use App\Models\Pembeli\Order;
+use App\Models\Buyer\DetailOrder;
+use App\Models\Buyer\Order;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
