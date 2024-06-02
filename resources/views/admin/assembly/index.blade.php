@@ -15,18 +15,18 @@
 <div class="my-4 flex flex-row gap-4">
     <a href="/admin">Dashboard</a>
     <p>></p>
-    <a href="/portfolio" class="text-admin-900">Assembly</a>
+    <a href="/admin/assembly" class="text-admin-900">Assembly</a>
 </div>
 
 <form class=" flex flex-row gap-4   ">
     <label for="countries"
         class=" inline-flex items-center mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose</label>
     <select id="countries"
-        class=" max-w-40 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
-        <option selected></option>
-        <option value="US">3flexible options</option>
-        <option value="CA">Board type</option>
-        <option value="FR">Assembly side(s)</option>
+        class=" max-w-44 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+        <option selected>choose a assembly</option>
+        <option value="FO">3Flexible Options</option>
+        <option value="BT">Board Type</option>
+        <option value="AS">Assembly Side(s)</option>
     </select>
 </form>
 <button type="button"

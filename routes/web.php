@@ -113,7 +113,7 @@ Route::get('/admin/portfolio/create', function () {
 Route::get('/admin/portfolio/edit', function () {
     return view('admin/portfolio.edit');
 });
-Route::get('/assembly', function () {
+Route::get('/admin/assembly', function () {
     return view('admin/assembly.index');
 });
 Route::get('/assembly/board/create', function () {
@@ -139,6 +139,9 @@ Route::get('/admin/test', function () {
 });
 Route::get('/admin/history', function () {
     return view('admin/history');
+});
+Route::get('/admin/prototype', function () {
+    return view('admin/prototype.index');
 });
 Route::get('/admin/prototype/board/create', function () {
     return view('admin/prototype/board.create');
