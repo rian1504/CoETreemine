@@ -156,6 +156,9 @@ Route::get('/admin/review_file/prototype', function () {
 Route::get('/admin/history', function () {
     return view('admin/history');
 });
+Route::get('/admin/history/cart_custom', function () {
+    return view('admin/history/cart_custom');
+});
 Route::get('/admin/prototype', function () {
     return view('admin/prototype.index');
 });
