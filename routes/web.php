@@ -114,8 +114,7 @@ Route::get('/admin/portfolio/create', function () {
 Route::get('/admin/portfolio/edit', function () {
     return view('admin/portfolio.edit');
 });
-
-Route::get('/admin/assembly', function () {
+Route::get('/assembly', function () {
     return view('admin/assembly.index');
 });
 Route::get('/admin/assembly/board/create', function () {
@@ -156,4 +155,61 @@ Route::get('/admin/review_file/prototype', function () {
 
 Route::get('/admin/history', function () {
     return view('admin/history');
+});
+Route::get('/admin/prototype', function () {
+    return view('admin/prototype.index');
+});
+Route::get('/admin/prototype/board/create', function () {
+    return view('admin/prototype/board.create');
+});
+Route::get('/admin/prototype/board/edit', function () {
+    return view('admin/prototype/board.edit');
+});
+Route::get('/admin/prototype/track/create', function () {
+    return view('admin/prototype/track.create');
+});
+Route::get('/admin/prototype/track/edit', function () {
+    return view('admin/prototype/track.edit');
+});
+Route::get('/admin/prototype/thickness/create', function () {
+    return view('admin/prototype/thickness.create');
+});
+Route::get('/admin/prototype/thickness/edit', function () {
+    return view('admin/prototype/thickness.edit');
+});
+Route::get('/admin/prototype/layer/create', function () {
+    return view('admin/prototype/layer.create');
+});
+Route::get('/admin/prototype/layer/edit', function () {
+    return view('admin/prototype/layer.edit');
+});
+Route::get('/admin/prototype/material/create', function () {
+    return view('admin/prototype/material.create');
+});
+Route::get('/admin/prototype/material/edit', function () {
+    return view('admin/prototype/material.edit');
+});
+Route::get('/admin/prototype/fr4/create', function () {
+    return view('admin/prototype/fr4.create');
+});
+Route::get('/admin/prototype/fr4/edit', function () {
+    return view('admin/prototype/fr4.edit');
+});
+Route::get('/admin/prototype/finished_cooper/create', function () {
+    return view('admin/prototype/finished_cooper.create');
+});
+Route::get('/admin/prototype/finished_cooper/edit', function () {
+    return view('admin/prototype/finished_cooper.edit');
+});
+Route::get('/admin/prototype/inner_cooper/create', function () {
+    return view('admin/prototype/inner_cooper.create');
+});
+Route::get('/admin/prototype/inner_cooper/edit', function () {
+    return view('admin/prototype/inner_cooper.edit');
+});
+Route::get('/admin/prototype/route_process/create', function () {
+    return view('admin/prototype/route_process.create');
+});
+Route::get('/admin/prototype/route_process/edit', function () {
+    return view('admin/prototype/route_process.edit');
 });
