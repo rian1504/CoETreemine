@@ -8,7 +8,7 @@
     <div class="my-4 flex flex-row gap-4">
         <a href="/admin">Dashboard</a>
         <p>></p>
-        <a href="/admin/history" class="text-admin-900">History</a>
+        <a href="/admin/history" class="text-admin-900">History Order</a>
     </div>
     <div class="pb-4 justify-between">
         <label for="table-search" class="sr-only">Search</label>
@@ -78,7 +78,12 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                            Batam
+                        <div class="relative group">
+                            <p class=" whitespace-nowrap truncate max-w-20">Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            <div class="absolute -top-4 hidden group-hover:block bg-white text-black shadow-lg rounded p-4 w-96">
+                                <p>Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            </div>
+                        </div>
                     </td>
                     <td class="px-6 py-4">
                         12-01-2024
@@ -95,10 +100,10 @@
                     <td class="px-6 py-4 text-greens-600 font-semibold">
                         succes
                     </td>
-                    <td class="px-6 py-4 flex flex-row gap-2 items-center">
+                    <td class="px-6 py-4 flex flex-row gap-2 items-center ">
                         <i class="fa-solid fa-trash px-4 "></i>
                         <a href="#"
-                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                            class=" inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                             Delete
                         </a>
                     </td>
@@ -119,7 +124,12 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                            Batam
+                        <div class="relative group">
+                            <p class=" whitespace-nowrap truncate max-w-20">Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            <div class="absolute -top-4 hidden group-hover:block bg-white text-black shadow-lg rounded p-4 w-96">
+                                <p>Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            </div>
+                        </div>
                     </td>
                     <td class="px-6 py-4">
                         13-01-2024
@@ -160,7 +170,12 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                            Batam
+                        <div class="relative group">
+                            <p class=" whitespace-nowrap truncate max-w-20">Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            <div class="absolute -top-4 hidden group-hover:block bg-white text-black shadow-lg rounded p-4 w-96">
+                                <p>Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            </div>
+                        </div>
                     </td>
                     <td class="px-6 py-4">
                         14-01-2024
@@ -201,7 +216,12 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                            Batam
+                        <div class="relative group">
+                            <p class=" whitespace-nowrap truncate max-w-20">Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            <div class="absolute -top-4 hidden group-hover:block bg-white text-black shadow-lg rounded p-4 w-96">
+                                <p>Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            </div>
+                        </div>
                     </td>
                     <td class="px-6 py-4">
                         15-01-2024
@@ -242,7 +262,12 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                            Batam
+                        <div class="relative group">
+                            <p class=" whitespace-nowrap truncate max-w-20">Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            <div class="absolute -top-4 hidden group-hover:block bg-white text-black shadow-lg rounded p-4 w-96">
+                                <p>Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
+                            </div>
+                        </div>
                     </td>
                     <td class="px-6 py-4">
                         16-01-2024
