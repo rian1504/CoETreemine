@@ -197,3 +197,39 @@ Route::get('/admin/prototype/route_process/create', function () {
 Route::get('/admin/prototype/route_process/edit', function () {
     return view('admin/prototype/route_process.edit');
 });
+Route::get('/admin/prototype/cooper_layer/create', function () {
+    return view('admin/prototype/cooper_layer.create');
+});
+Route::get('/admin/prototype/cooper_layer/edit', function () {
+    return view('admin/prototype/cooper_layer.edit');
+});
+Route::get('/admin/prototype/min_hole/create', function () {
+    return view('admin/prototype/min_hole.create');
+});
+Route::get('/admin/prototype/min_hole/edit', function () {
+    return view('admin/prototype/min_hole.edit');
+});
+Route::get('/admin/prototype/soldermask/create', function () {
+    return view('admin/prototype/soldermask.create');
+});
+Route::get('/admin/prototype/soldermask/edit', function () {
+    return view('admin/prototype/soldermask.edit');
+});
+Route::get('/admin/prototype/silkscreen/create', function () {
+    return view('admin/prototype/silkscreen.create');
+});
+Route::get('/admin/prototype/silkscreen/edit', function () {
+    return view('admin/prototype/silkscreen.edit');
+});
+Route::get('/admin/prototype/surface_finish/create', function () {
+    return view('admin/prototype/surface_finish.create');
+});
+Route::get('/admin/prototype/surface_finish/edit', function () {
+    return view('admin/prototype/surface_finish.edit');
+});
+Route::get('/admin/prototype/via_process/create', function () {
+    return view('admin/prototype/via_process.create');
+});
+Route::get('/admin/prototype/via_process/edit', function () {
+    return view('admin/prototype/via_process.edit');
+});
