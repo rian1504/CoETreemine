@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Prototype Board Type')
+@section('title', 'CoE Treemine | Board Type')
 
 @section('content')
 <div>

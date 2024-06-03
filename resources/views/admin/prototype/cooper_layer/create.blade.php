@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Prototype Cooper Layer')
+@section('title', 'CoE Treemine | Cooper Layer')
 
 @section('content')
 

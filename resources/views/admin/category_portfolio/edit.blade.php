@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Dashboard')
+@section('title', 'CoE Treemine | Portfolio Category')
 
 @section('content')
 

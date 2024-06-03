@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Prototype Layers')
+@section('title', 'CoE Treemine | Layers')
 
 @section('content')
 <div>

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Dashboard')
+@section('title', 'CoE Treemine | Portfolio')
 
 @section('content')
 
@@ -14,7 +14,7 @@
     </div>
     <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
         <div class="flex flex-col mt-2 mb-6">
-            <label for="" class="font-semibold mb-2">Name</label>
+            <label for="" class="font-semibold mb-2">Portfolio</label>
             <input type="text" class="rounded-lg text-gray-900 border-admin-900 p-4 bg-admin-100 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Input a product name">
         </div>
         <div class="flex flex-col mt-2 mb-6">

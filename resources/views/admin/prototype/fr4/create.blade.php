@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Prototype FR4-TG')
+@section('title', 'CoE Treemine | FR4-TG')
 
 @section('content')
 <div>

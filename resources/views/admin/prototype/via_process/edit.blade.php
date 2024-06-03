@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Prorotype Via Process')
+@section('title', 'CoE Treemine | Via Process')
 
 @section('content')
 

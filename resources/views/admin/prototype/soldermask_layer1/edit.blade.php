@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Dashboard')
+@section('title', 'CoE Treemine | Soldermask Layer 1')
 
 @section('content')
 

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Prototype Route Process')
+@section('title', 'CoE Treemine | Route Process')
 
 @section('content')
 
