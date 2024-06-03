@@ -18,7 +18,7 @@
     <a href="/admin/prototype" class="text-admin-900">Prototype</a>
 </div>
 
-<form class=" flex flex-row gap-4   ">
+<form class=" flex flex-row gap-4">
     <label for="countries"
         class=" inline-flex items-center mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose</label>
     <select id="countries"
