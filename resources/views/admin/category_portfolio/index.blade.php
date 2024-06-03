@@ -47,7 +47,7 @@
                     <h5 class="text-1xl font-bold tracking-tight text-gray-900 dark:text-white">Industrial Arduino Shield
                     </h5>
                 </a>
-                <div class="flex flex-row gap-4 my-2" src="\public\icon\arduino.png">
+                <div class="flex flex-row gap-4 my-2" src="\icon\motor control.png" alt="motor control.png">
                     <td class="px-6 py-4 inline-flex items-center  ">
                         <a href="/admin/category_portfolio/edit"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">

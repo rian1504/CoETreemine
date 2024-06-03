@@ -60,7 +60,7 @@
                         1
                     </th>
                     <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
-                        Salman Isnaini Alnauri
+                        firmansyah Ariyanto
                     </th>
                     <td class="px-6 py-4 whitespace-nowrap truncate">
                         088872638283
@@ -102,7 +102,7 @@
                         2
                     </th>
                     <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
-                        Salman Isnaini Alnauri
+                       Firmansyah Ariyanto
                     </th>
                     <td class="px-6 py-4 whitespace-nowrap truncate">
                         088872638283
@@ -146,7 +146,7 @@
                         3
                     </th>
                     <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
-                        Salman Isnaini Alnauri
+                        Firmansyah Ariyanti
                     </th>
                     <td class="px-6 py-4 whitespace-nowrap truncate">
                         088872638283
