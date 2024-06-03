@@ -18,15 +18,6 @@
         </div>
     </nav>
 
-    <div class="mt-10 flex justify-center gap-24">
-        <button class="bg-gray-300 hover:bg-gray-800 hover:text-white font-bold py-2 px-10 rounded">
-            Product
-        </button>
-        <button class="bg-green-300 hover:bg-green-800 hover:text-white font-bold py-2 px-10 rounded">
-            Custom
-        </button>
-    </div>
-
     {{-- <div class="grid-lama">
         <div class="inline-grid grid-cols-9 ml-12 mt-8 my-5">
             <div class="bg-red-500">
@@ -47,14 +38,11 @@
                     <div class="inline-grid grid-cols-4">
                         <img src="./image/development board.jpg" alt="Image" class="me-5">
                         <div>
-<<<<<<< HEAD
                             <input type="checkbox" name="" id="">
                         </div>
                         
                 <img src="./image/development board.jpg" alt="Image" class="ml-2" >
           <div class="ml-10">
-=======
->>>>>>> 69efbabde77cd504093b459c1eb46acad050dc7b
                             <p>2 Layers Size 10x10mm 1.6mm</p>
                             <p>Product No : WWR45TYFVG4</p>
                             <p>Solder Mask: Green</p>
@@ -80,10 +68,10 @@
     </div> --}}
 
 
-    <div class="container mx-auto mt-10">
+    <div class="container mx-auto mt-10 bg-gray-500">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-500 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="p-4">
                             <div class="flex items-center">
@@ -125,10 +113,7 @@
                         <td class="py-4 font-semibold text-gray-900 dark:text-white flex">
                             <img src="./image/development board.jpg" class="w-16 max-w-full max-h-full mx-2">
                             <div class="">
-                                <p>2 Layers Size 10x10mm 1.6mm</p>
-                                <p>Product No : WWR45TYFVG4</p>
-                                <p>Solder Mask: Green</p>
-                                <p>Silkscreen : White</p>
+                                <p>Control Module Without USB Cable</p>
                                 <h2>View Detail</h2>
                             </div>
                         </td>
@@ -178,8 +163,7 @@
                         <td class="px-6 py-4">
                             <a href="#"
                                 class="font-medium text-yellow-300 dark:text-yellow-300 hover:underline">Edit</a>
-                            <a href="#"
-                                class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                         </td>
                     </tr>
                     <tr
@@ -248,8 +232,7 @@
                         <td class="px-6 py-4">
                             <a href="#"
                                 class="font-medium text-yellow-300 dark:text-yellow-300 hover:underline">Edit</a>
-                            <a href="#"
-                                class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                         </td>
                     </tr>
                 </tbody>
@@ -258,16 +241,6 @@
     </div>
 
 
-    <div>
-        <div class="bg-gray-200 mt-10 ml-10 mr-10 shadow-md h-9">
-            <div class="flex items-center p-1">
-                <input id="update-check" type="checkbox"
-                    class="h-6 w-6 text-blue-600  focus:ring-blue-500 border-gray-300 rounded">
-                <label for="update-check" class="ml-2 block text-gray-800 text-lg">Check All</label>
-            </div>
-
-        </div>
-    </div>
     <div>
         <div class="grid grid-cols-3">
             <div>
@@ -278,8 +251,8 @@
                 <div>
                     <div class="mt-4 mb-10 ">
                         <button
-                            class="bg-green-300 hover:bg-green-800 hover:text-white text-black font-bold py-2 px-4 rounded">
-                            Proceed to checkout
+                            class="bg-green-500 hover:bg-green-800 hover:text-white text-white font-bold py-2 px-4 rounded">
+                            Checkout
                         </button>
                     </div>
 

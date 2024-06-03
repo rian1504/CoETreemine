@@ -72,8 +72,8 @@ Route::get('/buyer_service', function () {
 Route::get('/custom_cart', function () {
     return view('buyer.custom_cart');
 });
-Route::get('/detail_custom_cart', function () {
-    return view('buyer.detail_custom_cart');
+Route::get('/buyer_cart', function () {
+    return view('buyer.buyer_cart');
 });
 Route::get('/upload_file', function () {
     return view('buyer.upload_file');
