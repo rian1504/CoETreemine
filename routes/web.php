@@ -219,29 +219,29 @@ Route::get('/admin/prototype/cooper_layer/create', function () {
 Route::get('/admin/prototype/cooper_layer/edit', function () {
     return view('admin/prototype/cooper_layer.edit');
 });
-Route::get('/admin/prototype/min_hole/create', function () {
-    return view('admin/prototype/min_hole.create');
+Route::get('/admin/prototype/hole/create', function () {
+    return view('admin/prototype/hole.create');
 });
-Route::get('/admin/prototype/min_hole/edit', function () {
-    return view('admin/prototype/min_hole.edit');
+Route::get('/admin/prototype/hole/edit', function () {
+    return view('admin/prototype/hole.edit');
 });
-Route::get('/admin/prototype/soldermask/create', function () {
-    return view('admin/prototype/soldermask.create');
+Route::get('/admin/prototype/solder/create', function () {
+    return view('admin/prototype/solder.create');
 });
-Route::get('/admin/prototype/soldermask/edit', function () {
-    return view('admin/prototype/soldermask.edit');
+Route::get('/admin/prototype/solder/edit', function () {
+    return view('admin/prototype/solder.edit');
 });
-Route::get('/admin/prototype/silkscreen/create', function () {
-    return view('admin/prototype/silkscreen.create');
+Route::get('/admin/prototype/silkscreen_layer1/create', function () {
+    return view('admin/prototype/silkscreen_layer1.create');
 });
-Route::get('/admin/prototype/silkscreen/edit', function () {
-    return view('admin/prototype/silkscreen.edit');
+Route::get('/admin/prototype/silkscreen_layer1/edit', function () {
+    return view('admin/prototype/silkscreen_layer1.edit');
 });
-Route::get('/admin/prototype/surface_finish/create', function () {
-    return view('admin/prototype/surface_finish.create');
+Route::get('/admin/prototype/surface/create', function () {
+    return view('admin/prototype/surface.create');
 });
-Route::get('/admin/prototype/surface_finish/edit', function () {
-    return view('admin/prototype/surface_finish.edit');
+Route::get('/admin/prototype/surface/edit', function () {
+    return view('admin/prototype/surface.edit');
 });
 Route::get('/admin/prototype/via_process/create', function () {
     return view('admin/prototype/via_process.create');

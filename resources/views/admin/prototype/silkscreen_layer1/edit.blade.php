@@ -8,9 +8,9 @@
     <div class="my-4 flex flex-row gap-4">
         <a href="/admin">Dashboard</a>
         <p>></p>
-        <a href="/admin/prototype">Porototype</a>
+        <a href="/admin/prototype">Prototype</a>
         <p>></p>
-        <a href="/admin/prototype/silkscreen_layer1">Silkscreen Layer 1</a>
+        <a href="/admin/prototype/silkscreen_layer1">Silscreen Layer 1</a>
         <p>></p>
         <a href="/admin/prototype/silkscreen_layer1/edit" class="text-admin-900">Edit</a>
     </div>
