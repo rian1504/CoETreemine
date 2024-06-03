@@ -29,34 +29,34 @@
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         NO
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         NO.Invoice
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         Buyer Name
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         Address Destination
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         Date
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         Shipping Method
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         Total Price
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         Payment Proof
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         Status
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                         Action
                     </th>
                 </tr>
@@ -73,7 +73,7 @@
                         </div>
                     </th>
                     <td class="px-6 py-4">
-                        <div class="relative group">
+                        <div class="relative group whitespace-nowrap truncate">
                             <p>Rian Abdullah</p>
                         </div>
                     </td>
@@ -114,7 +114,7 @@
                         </div>
                     </th>
                     <td class="px-6 py-4">
-                        <div class="relative group">
+                        <div class="relative group whitespace-nowrap truncate">
                             <p>Firmansyah Pramudia</p>
                         </div>
                     </td>
@@ -155,7 +155,7 @@
                         </div>
                     </th>
                     <td class="px-6 py-4">
-                        <div class="relative group">
+                        <div class="relative group whitespace-nowrap truncate">
                             <p>Alia Pramestia Nurdenia</p>
                         </div>
                     </td>
@@ -196,7 +196,7 @@
                         </div>
                     </th>
                     <td class="px-6 py-4">
-                        <div class="relative group">
+                        <div class="relative group whitespace-nowrap truncate">
                             <p>Rizqi Vela Syifa</p>
                         </div>
                     </td>
@@ -237,7 +237,7 @@
                         </div>
                     </th>
                     <td class="px-6 py-4">
-                        <div class="relative group">
+                        <div class="relative group whitespace-nowrap truncate">
                             <p>Sarah Isnaini Alnauri</p>
                         </div>
                     </td>
