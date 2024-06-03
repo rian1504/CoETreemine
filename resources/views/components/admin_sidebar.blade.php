@@ -1,6 +1,6 @@
 <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <div class="px-3 py-4 overflow-y-auto bg-white dark:bg-gray-800">
-        <a href="admin/dashboard" class="flex flex-col justify-center items-center p-2 mb-4 whitespace-nowrap text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+        <a href="/admin/dashboard" class="flex flex-col justify-center items-center p-2 mb-4 whitespace-nowrap text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
             <h1 class="text-2xl font-bold">CoETreemine</h1>
         </a>
         <ul class="space-y-2 font-medium">
@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="/assembly" class="{{ request()->is('assembly*') ? 'active' : '' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="/admin/assembly" class="{{ request()->is('assembly*') ? 'active' : '' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
                     <i class="fas fa-cogs text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Assembly</span>
                 </a>
