@@ -261,3 +261,6 @@ Route::get('/admin/prototype/soldermask_layer1/create', function () {
 Route::get('/admin/prototype/soldermask_layer1/edit', function () {
     return view('admin/prototype/soldermask_layer1.edit');
 });
+Route::get('/admin/history/order', function () {
+    return view('admin/history.order');
+});
