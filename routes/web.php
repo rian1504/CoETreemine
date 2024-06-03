@@ -104,6 +104,7 @@ Route::get('/admin/category_portfolio/create', function () {
 Route::get('/admin/category_portfolio/edit', function () {
     return view('admin/category_portfolio.edit');
 });
+
 Route::get('/admin/portfolio', function () {
     return view('admin/portfolio.index');
 });
@@ -113,30 +114,45 @@ Route::get('/admin/portfolio/create', function () {
 Route::get('/admin/portfolio/edit', function () {
     return view('admin/portfolio.edit');
 });
-Route::get('/admin/assembly', function () {
+Route::get('/assembly', function () {
     return view('admin/assembly.index');
 });
-Route::get('/assembly/board/create', function () {
+Route::get('/admin/assembly/board/create', function () {
     return view('admin/assembly/board.create');
 });
-Route::get('/assembly/board/edit', function () {
+Route::get('/admin/assembly/board/edit', function () {
     return view('admin/assembly/board.edit');
 });
-Route::get('/assembly/flexible/create', function () {
+Route::get('/admin/assembly/flexible/create', function () {
     return view('admin/assembly/flexible.create');
 });
-Route::get('/assembly/flexible/edit', function () {
+Route::get('/admin/assembly/flexible/edit', function () {
     return view('admin/assembly/flexible.edit');
 });
-Route::get('/assembly/side/create', function () {
+Route::get('/admin/assembly/side/create', function () {
     return view('admin/assembly/side.create');
 });
-Route::get('/assembly/side/edit', function () {
+Route::get('/admin/assembly/side/edit', function () {
     return view('admin/assembly/side.edit');
 });
-Route::get('/admin/test', function () {
-    return view('admin/test');
+
+Route::get('/admin/review_payment', function () {
+    return view('admin/review_payment/index');
 });
+Route::get('/admin/review_payment/create', function () {
+    return view('admin/review_payment/create');
+});
+
+Route::get('/admin/review_file', function () {
+    return view('admin/review_file/index');
+});
+Route::get('/admin/review_file/assembly', function () {
+    return view('admin/review_file/assembly');
+});
+Route::get('/admin/review_file/prototype', function () {
+    return view('admin/review_file/prototype');
+});
+
 Route::get('/admin/history', function () {
     return view('admin/history');
 });
