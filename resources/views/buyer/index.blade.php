@@ -10,6 +10,7 @@
 
 <body>
     <a href="{{ route('buyer.portfolio.index') }}">Product</a>
+    <a href="{{ route('cart.index') }}">Cart</a>
     @if (Auth::check())
         {{-- Buyer --}}
         <h1>Buyer</h1>

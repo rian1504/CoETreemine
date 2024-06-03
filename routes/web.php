@@ -27,8 +27,9 @@ use App\Http\Controllers\Admin\PrototypeViaProcessController;
 use App\Http\Controllers\Admin\ReviewFileController;
 use App\Http\Controllers\Admin\ReviewPaymentController;
 use App\Http\Controllers\Admin\HistoryController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Buyer\CartController;
 use App\Http\Controllers\Buyer\PortfolioController as BuyerPortfolioController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,17 @@ Route::get('portfolio/{portfolio}', [BuyerPortfolioController::class, 'showPortf
 
 // guest and buyer with middleware
 Route::middleware(['auth'])->group(function () {
+
+    // Cart
+    Route::get('cart', [CartController::class, 'index'])->name('cart.index');
+    Route::get('cart/assembly/{assembly}', [CartController::class, 'assembly'])->name('cart.assembly');
+    Route::post('cart/assembly/{assembly}', [CartController::class, 'assemblyAddFile'])->name('cart.assembly.addFile');
+    Route::get('cart/prototype/{prototype}', [CartController::class, 'prototype'])->name('cart.prototype');
+    Route::post('cart/prototype/{prototype}', [CartController::class, 'prototypeAddFile'])->name('cart.prototype.addFile');
+    Route::get('cart/portfolio/{portfolio}', [CartController::class, 'portfolio'])->name('cart.portfolio');
+    Route::delete('cart_custom', [CartController::class, 'delete'])->name('cart.custom.delete');
+    Route::delete('cart_portfolio', [CartController::class, 'delete'])->name('cart.portfolio.delete');
+
     // Portfolio (Button AddCart and BuyNow)
     Route::post('portfolio/addCart', [BuyerPortfolioController::class, 'addCart'])->name('buyer.portfolio.cartAdd');
     Route::post('portfolio/buyNow', [BuyerPortfolioController::class, 'buyNow'])->name('buyer.portfolio.buyNow');

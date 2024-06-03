@@ -37,7 +37,7 @@ class PortfolioController extends Controller
 
         // create cart portfolio
         CartPortfolio::create([
-            'stock' => $request->quantity,
+            'quantity' => $request->quantity,
             'id_portfolio' => $request->id_portfolio,
             'id_user' => $request->user()->id_user
         ]);
