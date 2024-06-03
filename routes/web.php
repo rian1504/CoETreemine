@@ -249,3 +249,15 @@ Route::get('/admin/prototype/via_process/create', function () {
 Route::get('/admin/prototype/via_process/edit', function () {
     return view('admin/prototype/via_process.edit');
 });
+Route::get('/admin/prototype/silkscreen_layer1/create', function () {
+    return view('admin/prototype/silkscreen_layer1.create');
+});
+Route::get('/admin/prototype/silkscreen_layer1/edit', function () {
+    return view('admin/prototype/silkscreen_layer1.edit');
+});
+Route::get('/admin/prototype/soldermask_layer1/create', function () {
+    return view('admin/prototype/soldermask_layer1.create');
+});
+Route::get('/admin/prototype/soldermask_layer1/edit', function () {
+    return view('admin/prototype/soldermask_layer1.edit');
+});
