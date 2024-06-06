@@ -3,39 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\CustomAssembly;
-use App\Models\Admin\CustomPrototype;
-use App\Models\Admin\HistoryCartCustom;
-use App\Models\Buyer\DetailOrder;
 use App\Models\Buyer\Order;
+use App\Models\Buyer\DetailOrder;
+use Illuminate\Http\Request;
 
-class HistoryController extends Controller
+class OnProgressController extends Controller
 {
-    public function cart_custom()
-    {
-        $datas = HistoryCartCustom::with('custom_assembly')->with('custom_prototype')->with('user')->latest()->paginate(10);
-        return view('admin.history.cart_custom', compact('datas'));
-    }
-
-    public function showAssembly(CustomAssembly $assembly)
-    {
-        //get assembly by ID
-        $assembly = CustomAssembly::findOrFail($assembly->id_custom_assembly);
-
-        //render view with assembly
-        return view('admin.history.assembly', compact('assembly'));
-    }
-
-    public function showPrototype(CustomPrototype $prototype)
-    {
-        //get prototype by ID
-        $prototype = CustomPrototype::findOrFail($prototype->id_custom_prototype);
-
-        //render view with prototype
-        return view('admin.history.prototype', compact('prototype'));
-    }
-
-    public function getDataOrder($order)
+    public function getData($order)
     {
         $dataAssembly = DetailOrder::where('id_order', $order)->where('id_custom_assembly', '!=', NULL)->with('custom_assembly')->get();
         $dataPrototype = DetailOrder::where('id_order', $order)->where('id_custom_prototype', '!=', NULL)->with('custom_prototype')->get();
@@ -75,17 +49,42 @@ class HistoryController extends Controller
         ];
     }
 
-    public function order()
+    public function index()
     {
-        $datas = Order::where('status', '!=', 'not review')->where('status', '!=', 'on progress')->with('user')->latest()->paginate(10);
-        return view('admin.history.order', compact('datas'));
+        // get data
+        $datas = Order::where('status', 'on progress')->with('user')->get();
+
+        return view('admin.on_progress.index', compact('datas'));
     }
 
-    public function showOrder(Order $order)
+    public function show(Order $order)
     {
         // get detail order by ID
-        $datas = $this->getDataOrder($order->id_order);
+        $datas = $this->getData($order->id_order);
 
-        return view('admin.history.show_order', compact('datas'));
+        return view('admin.on_progress.show', compact('datas'));
+    }
+
+    public function done(Order $order, Request $request)
+    {
+
+        // validate input
+        $request->validate([
+            'no_resi' => 'required|string|min:10',
+            'shipping_method' => 'required|string|min:3'
+        ]);
+
+        // get data order by id
+        $dataOrder = Order::findOrFail($order->id_order);
+
+        // update status order to done and input no resi
+        $dataOrder->update([
+            'status' => 'done',
+            'shipping_method' => $request->shipping_method,
+            'no_resi' => $request->no_resi
+        ]);
+
+        //redirect to index
+        return redirect()->route('progress.index')->with(['success' => 'Data Order Sudah Done!']);
     }
 }

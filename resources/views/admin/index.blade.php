@@ -26,6 +26,7 @@
                     <a href="{{ route('assembly.index') }}">Assembly</a>
                     <a href="{{ route('review_file.index') }}">Review File</a>
                     <a href="{{ route('review_payment.index') }}">Review Payment</a>
+                    <a href="{{ route('progress.index') }}">On Progress Product</a>
                     <a href="{{ route('history.cart_custom') }}">History Cart Custom</a>
                     <a href="{{ route('history.order') }}">History Order</a>
                 </div>

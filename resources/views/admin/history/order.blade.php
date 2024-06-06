@@ -26,10 +26,11 @@
         <thead>
             <tr>
                 <td>No</td>
-                <td>No. Invoice</td>
                 <td>Buyer Name</td>
+                <td>No. Invoice</td>
                 <td>Address Destination</td>
                 <td>Shipping Method</td>
+                <td>No. Resi</td>
                 <td>Total Price</td>
                 <td>Payment Proof</td>
                 <td>Status</td>
@@ -40,10 +41,11 @@
             @forelse ($datas as $index => $data)
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $data->no_invoice }}</td>
                     <td>{{ $data->user->name }}</td>
+                    <td>{{ $data->no_invoice }}</td>
                     <td>{{ $data->address }}</td>
                     <td>{{ $data->shipping_method }}</td>
+                    <td>{{ $data->no_resi }}</td>
                     <td>Rp{{ number_format($data->total_price, 0, '', '.') }}</td>
                     <td>
                         <img src="{{ asset('/storage/assets/images/payment/' . $data->payment_proof) }}" alt=""

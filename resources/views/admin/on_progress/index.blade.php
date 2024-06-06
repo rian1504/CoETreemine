@@ -7,7 +7,7 @@
 <a href="{{ route('review_payment.index') }}">review payment</a>
 {{-- <a href="{{ route('history.index') }}">history</a> --}}
 
-<h1>Review Payment</h1>
+<h1>Product On Progress</h1>
 
 @session('success')
     {{ session('success') }}
@@ -39,18 +39,18 @@
                         width="100" height="100">
                 </td>
                 <td>
-                    <a href="{{ route('review_payment.show', $data->id_order) }}">View Detail</a>
+                    <a href="{{ route('progress.show', $data->id_order) }}">View Detail</a>
                 </td>
                 <td>
-                    <form action="{{ route('review_payment.reject', $data->id_order) }}" method="POST"
-                        onsubmit="return confirm('Are you sure want to reject?')">
+                    <form action="{{ route('progress.done', $data->id_order) }}" method="POST"
+                        onsubmit="return confirm('Are you sure want to done this order?')">
                         @csrf
-                        <button type="submit">Reject</button>
-                    </form>
-                    <form action="{{ route('review_payment.accept', $data->id_order) }}" method="POST"
-                        onsubmit="return confirm('Are you sure want to accept?')">
-                        @csrf
-                        <button type="submit">Accept</button>
+
+                        <label for="">Shipping Method</label>
+                        <input type="text" name="shipping_method">
+                        <label for="">No Resi</label>
+                        <input type="text" name="no_resi">
+                        <button type="submit">Submit</button>
                     </form>
                 </td>
             </tr>

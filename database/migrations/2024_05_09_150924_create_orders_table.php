@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id("id_order");
             $table->string("address");
-            $table->string("shipping_method");
+            $table->string("shipping_method")->nullable();
             $table->string("payment_proof");
             $table->integer("total_price");
-            $table->enum("status", ["not review", "reject", "accepted"]);
+            $table->enum("status", ["not review", "reject", "on progress", "done"]);
             $table->string("no_invoice")->nullable();
+            $table->string("no_resi")->nullable();
             $table->unsignedBigInteger("id_user");
             $table->timestamps();
 

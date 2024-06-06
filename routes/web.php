@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\PrototypeViaProcessController;
 use App\Http\Controllers\Admin\ReviewFileController;
 use App\Http\Controllers\Admin\ReviewPaymentController;
 use App\Http\Controllers\Admin\HistoryController;
+use App\Http\Controllers\Admin\OnProgressController;
 use App\Http\Controllers\Buyer\CartController;
 use App\Http\Controllers\Buyer\PortfolioController as BuyerPortfolioController;
 use App\Http\Controllers\DashboardController;
@@ -101,6 +102,13 @@ Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {
         Route::get('/{order}', [ReviewPaymentController::class, 'show'])->name('review_payment.show');
         Route::post('reject/{order}', [ReviewPaymentController::class, 'reject'])->name('review_payment.reject');
         Route::post('accept/{order}', [ReviewPaymentController::class, 'accept'])->name('review_payment.accept');
+    });
+
+    // On Progress Product
+    Route::prefix('on_progress')->group(function () {
+        Route::get('', [OnProgressController::class, 'index'])->name('progress.index');
+        Route::get('/{order}', [OnProgressController::class, 'show'])->name('progress.show');
+        Route::post('done/{order}', [OnProgressController::class, 'done'])->name('progress.done');
     });
 
     // Assembly

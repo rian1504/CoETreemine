@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
 use App\Models\Buyer\Order;
 use App\Models\Buyer\DetailOrder;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class ReviewPaymentController extends Controller
 {
@@ -84,10 +84,9 @@ class ReviewPaymentController extends Controller
         // get data order by id
         $dataOrder = Order::findOrFail($order->id_order);
 
-        // update status order to accepted and make invoice number
+        // update status order to on progress and make invoice number
         $dataOrder->update([
-            // make invoice number
-            'status' => 'accepted',
+            'status' => 'on progress',
             'no_invoice' => Str::random(10)
         ]);
 
