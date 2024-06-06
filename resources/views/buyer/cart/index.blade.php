@@ -49,7 +49,7 @@
                             @if ($data->custom_assembly->file == null)
                                 <form
                                     action="{{ route('cart.assembly.addFile', $data->custom_assembly->id_custom_assembly) }}"
-                                    method="POST">
+                                    method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="file" name="file">
                                     <button type="submit">Save</button>
@@ -92,7 +92,7 @@
                             @if ($data->custom_prototype->file == null)
                                 <form
                                     action="{{ route('cart.prototype.addFile', $data->custom_prototype->id_custom_prototype) }}"
-                                    method="POST">
+                                    method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="file" name="file">
                                     <button type="submit">Save</button>

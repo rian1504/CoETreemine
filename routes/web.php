@@ -48,14 +48,16 @@ Route::get('portfolio/{portfolio}', [BuyerPortfolioController::class, 'showPortf
 Route::middleware(['auth'])->group(function () {
 
     // Cart
-    Route::get('cart', [CartController::class, 'index'])->name('cart.index');
-    Route::get('cart/assembly/{assembly}', [CartController::class, 'assembly'])->name('cart.assembly');
-    Route::post('cart/assembly/{assembly}', [CartController::class, 'assemblyAddFile'])->name('cart.assembly.addFile');
-    Route::get('cart/prototype/{prototype}', [CartController::class, 'prototype'])->name('cart.prototype');
-    Route::post('cart/prototype/{prototype}', [CartController::class, 'prototypeAddFile'])->name('cart.prototype.addFile');
-    Route::get('cart/portfolio/{portfolio}', [CartController::class, 'portfolio'])->name('cart.portfolio');
-    Route::delete('cart_custom', [CartController::class, 'delete'])->name('cart.custom.delete');
-    Route::delete('cart_portfolio', [CartController::class, 'delete'])->name('cart.portfolio.delete');
+    Route::prefix('cart')->group(function () {
+        Route::get('', [CartController::class, 'index'])->name('cart.index');
+        Route::get('assembly/{assembly}', [CartController::class, 'assembly'])->name('cart.assembly');
+        Route::post('assembly/{assembly}', [CartController::class, 'assemblyAddFile'])->name('cart.assembly.addFile');
+        Route::get('prototype/{prototype}', [CartController::class, 'prototype'])->name('cart.prototype');
+        Route::post('prototype/{prototype}', [CartController::class, 'prototypeAddFile'])->name('cart.prototype.addFile');
+        Route::get('portfolio/{portfolio}', [CartController::class, 'portfolio'])->name('cart.portfolio');
+        Route::delete('custom', [CartController::class, 'custom_delete'])->name('cart.custom.delete');
+        Route::delete('portfolio', [CartController::class, 'portfolio_delete'])->name('cart.portfolio.delete');
+    });
 
     // Portfolio (Button AddCart and BuyNow)
     Route::post('portfolio/addCart', [BuyerPortfolioController::class, 'addCart'])->name('buyer.portfolio.cartAdd');
