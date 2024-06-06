@@ -11,6 +11,10 @@
 <body>
     <h1>Cart Buyer</h1>
 
+    @session('success')
+        {{ session('success') }}
+    @endsession
+
     <table border="1">
         <thead>
             <tr>
@@ -63,6 +67,7 @@
                             <form action="{{ route('cart.custom.delete', $data->id_cart_custom) }}" method="POST"
                                 onsubmit="return confirm('Are you sure want to delete?')">
                                 @csrf
+                                @method('DELETE')
                                 <button type="submit">Delete Order</button>
                             </form>
                         </td>
@@ -106,6 +111,7 @@
                             <form action="{{ route('cart.custom.delete', $data->id_cart_custom) }}" method="POST"
                                 onsubmit="return confirm('Are you sure want to delete?')">
                                 @csrf
+                                @method('DELETE')
                                 <button type="submit">Delete Order</button>
                             </form>
                         </td>
@@ -134,6 +140,7 @@
                         <form action="{{ route('cart.portfolio.delete', $data->id_cart_portfolio) }}" method="POST"
                             onsubmit="return confirm('Are you sure want to delete?')">
                             @csrf
+                            @method('DELETE')
                             <button type="submit">Delete Order</button>
                         </form>
                     </td>

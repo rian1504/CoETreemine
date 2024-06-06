@@ -10,6 +10,7 @@ use App\Models\Buyer\CartCustom;
 use App\Models\Buyer\CartPortfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class CartController extends Controller
 {
@@ -65,17 +66,90 @@ class CartController extends Controller
 
     public function assemblyAddFile(CustomAssembly $assembly, Request $request)
     {
+        // validate input
+        $request->validate([
+            'file' => 'required|mimes:rar,zip|max:2048'
+        ]);
+
+        //get assembly by ID
+        $assembly = CustomAssembly::findOrFail($assembly->id_custom_assembly);
+
+        //upload file
+        $file = $request->file('file');
+        $file->storeAs('public/assets/files/assembly', $file->hashName());
+
+        // update assembly
+        $assembly->update([
+            'file' => $file->hashName()
+        ]);
+
+        //redirect to index
+        return redirect()->route('cart.index')->with(['success' => 'Berhasil Menambah File pada Assembly!']);
     }
 
     public function prototypeAddFile(CustomPrototype $prototype, Request $request)
     {
+        // validate input
+        $request->validate([
+            'file' => 'required|mimes:rar,zip|max:2048'
+        ]);
+
+        //get prototype by ID
+        $prototype = CustomPrototype::findOrFail($prototype->id_custom_prototype);
+
+        //upload file
+        $file = $request->file('file');
+        $file->storeAs('public/assets/files/prototype', $file->hashName());
+
+        // update prototype
+        $prototype->update([
+            'file' => $file->hashName()
+        ]);
+
+        //redirect to index
+        return redirect()->route('cart.index')->with(['success' => 'Berhasil Menambah File pada Prototype!']);
     }
 
-    public function portfolio_delete(CartPortfolio $prototype)
+    public function portfolio_delete(CartPortfolio $portfolio)
     {
+        //get portfolio by ID
+        $portfolio = CartPortfolio::findOrFail($portfolio->id_cart_portfolio);
+
+        //delete portfolio
+        $portfolio->delete();
+
+        //redirect to index
+        return redirect()->route('cart.index')->with(['success' => 'Cart Portfolio Berhasil Dihapus!']);
     }
 
-    public function custom_delete(CustomPrototype $prototype)
+    public function custom_delete(CartCustom $custom)
     {
+        //get custom by ID
+        $custom = CartCustom::with('custom_assembly')->with('custom_prototype')->findOrFail($custom->id_cart_custom);
+
+        // Hapus data custom_assembly
+        if ($custom->custom_assembly != NULL) {
+
+            //delete file assembly
+            if ($custom->custom_assembly->file != NULL) {
+                Storage::delete('public/assets/files/assembly/' . $custom->custom_assembly->file);
+            }
+
+            $custom->custom_assembly->delete();
+        }
+
+        // Hapus data custom_prototype
+        if ($custom->custom_prototype != NULL) {
+
+            //delete file prototype
+            if ($custom->custom_prototype->file != NULL) {
+                Storage::delete('public/assets/files/prototype/' . $custom->custom_prototype->file);
+            }
+
+            $custom->custom_prototype->delete();
+        }
+
+        //redirect to index
+        return redirect()->route('cart.index')->with(['success' => 'Cart Custom Berhasil Dihapus!']);
     }
 }

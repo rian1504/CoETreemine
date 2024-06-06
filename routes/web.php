@@ -55,8 +55,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('prototype/{prototype}', [CartController::class, 'prototype'])->name('cart.prototype');
         Route::post('prototype/{prototype}', [CartController::class, 'prototypeAddFile'])->name('cart.prototype.addFile');
         Route::get('portfolio/{portfolio}', [CartController::class, 'portfolio'])->name('cart.portfolio');
-        Route::delete('custom', [CartController::class, 'custom_delete'])->name('cart.custom.delete');
-        Route::delete('portfolio', [CartController::class, 'portfolio_delete'])->name('cart.portfolio.delete');
+        Route::delete('custom/{custom}', [CartController::class, 'custom_delete'])->name('cart.custom.delete');
+        Route::delete('portfolio/{portfolio}', [CartController::class, 'portfolio_delete'])->name('cart.portfolio.delete');
     });
 
     // Portfolio (Button AddCart and BuyNow)
