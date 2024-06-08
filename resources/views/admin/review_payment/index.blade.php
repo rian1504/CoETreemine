@@ -26,47 +26,47 @@
             <table class="w-full text-sm text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Buyer name
                         </th>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Telephone
                         </th>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Address
                         </th>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Shipping
                         </th>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Proof of Payment
                         </th>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Total Price
                         </th>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Detail
                         </th>
-                        <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
+                        <th scope="col" class="px-4 py-3 whitespace-nowrap truncate">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
+                        <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
                             1
                         </th>
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
+                        <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
                             Salman
                         </th>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             088872638283
                         </td>
-                        <td class="px-6 py-4">
+                        <td class="px-4 py-4">
                             <div class="relative group">
                                 <p class=" whitespace-nowrap truncate max-w-20">Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
                                 <div class="absolute -top-4 hidden group-hover:block bg-white text-black shadow-lg rounded p-4 w-96">
@@ -74,22 +74,22 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             J&T Express
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <img class="h-auto max-w-32 rounded-lg dark:shadow-gray-800" src="/image/portfolio/arduino.jpeg" alt="image description">
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate text-right">
+                        <td class="px-4 py-4 whitespace-nowrap truncate text-right">
                             $2999
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <!-- Modal toggle -->
                             <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                                 View Detail
                             </button>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <a href="/admin/portfolio/edit" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
                                 Edit
                             </a>
@@ -99,16 +99,16 @@
                         </td>
                     </tr>
                     <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
+                        <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
                             2
                         </th>
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
+                        <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
                             Salman
                         </th>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             088872638283
                         </td>
-                        <td class="px-6 py-4">
+                        <td class="px-4 py-4">
                             <div class="relative group">
                                 <p class=" whitespace-nowrap truncate max-w-20">Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
                                 <div class="absolute -top-4 hidden group-hover:block bg-white text-black shadow-lg rounded p-4 w-96">
@@ -116,22 +116,22 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             J&T Express
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <img class="h-auto max-w-32 rounded-lg dark:shadow-gray-800" src="/image/portfolio/arduino.jpeg" alt="image description">
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate text-right">
+                        <td class="px-4 py-4 whitespace-nowrap truncate text-right">
                             $1999
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <!-- Modal toggle -->
                             <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                                 View Detail
                             </button>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <div class="flex gap-2 overflow-x-auto">
                                 <a href="#" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
                                     Edit
@@ -143,16 +143,16 @@
                         </td>
                     </tr>
                     <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
+                        <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
                             3
                         </th>
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
+                        <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
                             Salman
                         </th>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             088872638283
                         </td>
-                        <td class="px-6 py-4">
+                        <td class="px-4 py-4">
                             <div class="relative group">
                                 <p class=" whitespace-nowrap truncate max-w-20">Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
                                 <div class="absolute -top-4 hidden group-hover:block bg-white text-black shadow-lg rounded p-4 w-96">
@@ -160,22 +160,22 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             J&T Express
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <img class="h-auto max-w-32 rounded-lg dark:shadow-gray-800" src="/image/portfolio/arduino.jpeg" alt="image description">
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate text-right">
+                        <td class="px-4 py-4 whitespace-nowrap truncate text-right">
                             $99
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <!-- Modal toggle -->
                             <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                                 View Detail
                             </button>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap truncate">
+                        <td class="px-4 py-4 whitespace-nowrap truncate">
                             <a href="#" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
                                 Edit
                             </a>
@@ -213,37 +213,37 @@
                         <table class="shadow-md w-full text-sm text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
                                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                                    <th scope="col" class="px-4 py-3 bg-gray-50 dark:bg-gray-800">
                                         Custom Name
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" class="px-4 py-3">
                                         Total Item
                                     </th>
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                                    <th scope="col" class="px-4 py-3 bg-gray-50 dark:bg-gray-800">
                                         Total Price
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                    <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
                                         Assembly
                                     </th>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 py-4">
                                         2
                                     </td>
-                                    <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800 text-right">
+                                    <td class="px-4 py-4 bg-gray-50 dark:bg-gray-800 text-right">
                                         Rp.40.000
                                     </td>
                                 </tr>
                                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                    <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
                                         Prototype
                                     </th>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 py-4">
                                         1
                                     </td>
-                                    <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800 text-right">
+                                    <td class="px-4 py-4 bg-gray-50 dark:bg-gray-800 text-right">
                                         Rp.30.000
                                     </td>
                                 </tr>
@@ -252,37 +252,37 @@
                         <table class="shadow-md w-full text-sm text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
                                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                                    <th scope="col" class="px-4 py-3 bg-gray-50 dark:bg-gray-800">
                                         Portfolio Name
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" class="px-4 py-3">
                                         Portfolio Image
                                     </th>
-                                    <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                                    <th scope="col" class="px-4 py-3 bg-gray-50 dark:bg-gray-800">
                                         Total Price
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                    <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
                                         Assembly
                                     </th>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 py-4">
                                         <img class="h-auto w-24 rounded-lg" src="/image/portfolio/arduino.jpeg" alt="image description">
                                     </td>
-                                    <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800 text-right">
+                                    <td class="px-4 py-4 bg-gray-50 dark:bg-gray-800 text-right">
                                         Rp.40.000
                                     </td>
                                 </tr>
                                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                    <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
                                         Prototype
                                     </th>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 py-4">
                                         <img class="h-auto w-24 rounded-lg" src="/image/portfolio/arduino.jpeg" alt="image description">
                                     </td>
-                                    <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800 text-right">
+                                    <td class="px-4 py-4 bg-gray-50 dark:bg-gray-800 text-right">
                                         Rp.30.000
                                     </td>
                                 </tr>
