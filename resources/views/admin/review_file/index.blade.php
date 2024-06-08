@@ -95,7 +95,7 @@
                     </tr>
                     <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                         <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
-                            1
+                            2
                         </th>
                         <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
                             Salman
@@ -119,7 +119,7 @@
                             <div class="grid gap-2">
                                 <!-- Modal toggle -->
                                 <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="hover:text-blue-600 font-medium text-sm text-center dark:text-blue-600 dark:hover:text-blue-700 dark:focus:ring-blue-800" type="button">
-                                    View Detail
+                                    -
                                 </button>
                                 <!-- Modal toggle -->
                                 <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="hover:text-blue-600 font-medium text-sm text-center dark:text-blue-600 dark:hover:text-blue-700 dark:focus:ring-blue-800" type="button">
@@ -138,7 +138,7 @@
                     </tr>
                     <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                         <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
-                            1
+                            3
                         </th>
                         <th scope="row" class="px-4 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
                             Salman
@@ -166,7 +166,7 @@
                                 </button>
                                 <!-- Modal toggle -->
                                 <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="hover:text-blue-600 font-medium text-sm text-center dark:text-blue-600 dark:hover:text-blue-700 dark:focus:ring-blue-800" type="button">
-                                    View Detail
+                                    -
                                 </button>
                             </div>
                         </td>
