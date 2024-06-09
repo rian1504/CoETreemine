@@ -58,13 +58,14 @@
             </div>
         </div>
     </div> --}}
+
 <body>
     <nav class="border-gray-200 bg-green-950 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="self-center text-2xl font-semibold text-white">Shopping Cart</span>
             </a>
-         </div>
+        </div>
     </nav>
 
     <div class="container mx-auto mt-10 bg-gray-500">
@@ -74,8 +75,7 @@
                     <tr>
                         <th scope="col" class="p-4">
                             <div class="flex items-center">
-                                <input id="checkbox-all" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
+                                <input id="checkbox-all" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
                                     dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 
                                     dark:bg-gray-700 dark:border-gray-600">
                                 <label for="checkbox-all" class="ml-3">All</label>
@@ -103,8 +103,7 @@
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <td class="w-4 p-4">
                             <div class="flex items-center">
-                                <input id="checkbox-table-1" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
+                                <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
                                     dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 
                                     dark:bg-gray-700 dark:border-gray-600">
                                 <label for="checkbox-table-1" class="sr-only">checkbox</label>
@@ -118,12 +117,10 @@
                         </td>
                         <td class="px-6 py-4">
                             <div class="flex items-center">
-                                <button
-                                    class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 
+                                <button class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 
                                     bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 
                                     focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 
-                                    dark:hover:border-gray-600 dark:focus:ring-gray-700"
-                                    type="button">
+                                    dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 18 2">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -131,8 +128,7 @@
                                     </svg>
                                 </button>
                                 <div>
-                                    <input type="number" id="first_product"
-                                        class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                    <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                                         focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
                                         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="1" required />
@@ -155,18 +151,29 @@
                             <h1 class="text-2xl">200k</h1>
                         </td>
                         <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-greens-900 dark:text-yellow-300 hover:underline">View Details</a>
+                            <!-- Modal toggle -->
+                            <button data-modal-target="static-modal" data-modal-toggle="static-modal"
+                                class="hover:text-blue-600 font-medium text-sm text-center dark:text-blue-600 dark:hover:text-blue-700 dark:focus:ring-blue-800"
+                                type="button">
+                                View Detail
+                            </button>
+                            <!-- Modal toggle -->
+                            <button data-modal-target="static-modal" data-modal-toggle="static-modal"
+                                class="hover:text-blue-600 font-medium text-sm text-center dark:text-blue-600 dark:hover:text-blue-700 dark:focus:ring-blue-800"
+                                type="button">
+                            </button>
                         </td>
                         <td class="px-6 py-4">
                             <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                         </td>
                     </tr>
+
+
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <td class="w-4 p-4">
                             <div class="flex items-center">
-                                <input id="checkbox-table-1" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
+                                <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
                                     dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 
                                     dark:bg-gray-700 dark:border-gray-600">
                                 <label for="checkbox-table-1" class="sr-only">checkbox</label>
@@ -180,12 +187,10 @@
                         </td>
                         <td class="px-6 py-4">
                             <div class="flex items-center">
-                                <button
-                                    class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 
+                                <button class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 
                                     bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 
                                     focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 
-                                    dark:hover:border-gray-600 dark:focus:ring-gray-700"
-                                    type="button">
+                                    dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
                                     <span class="sr-only">Quantity button</span>
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 18 2">
@@ -194,8 +199,7 @@
                                     </svg>
                                 </button>
                                 <div>
-                                    <input type="number" id="first_product"
-                                        class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                    <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                                         focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
                                         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="1" required />
@@ -218,19 +222,19 @@
                             <h1 class="text-2xl">500k</h1>
                         </td>
                         <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-greens-900 dark:text-yellow-300 hover:underline">View Details</a>
+                            <a href="#" class="font-medium text-greens-900 dark:text-yellow-300 hover:underline">View
+                                Details</a>
                         <td class="px-6 py-6">
                             <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
-                            <a href="#" class="fa-solid fa-upload inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-greens-900 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none">
-                            Add File</a>
+                            <a href="#"
+                                class=" inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-greens-900 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none">
+                                Add File</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-
     <div>
         <div class="grid grid-cols-3">
             <div>
@@ -246,9 +250,110 @@
                         </button>
                     </div>
 
+                    <!-- modal -->
+                    <!-- View Detail -->
+                    <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative p-4 w-full max-w-5xl max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative bg-white shadow dark:bg-gray-700">
+                                <!-- Modal header -->
+                                <div
+                                    class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                        Cart Detail
+                                    </h3>
+                                    <button type="button"
+                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                        data-modal-hide="static-modal">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <p class="font-semibold px-10">Basic Information : Standard PCB</p>
+                                <div class="px-10 py-4 flex flex-row gap-2 whitespace-nowrap truncate">
+                                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                                        <table class="shadow-md w-full gap-2 text-sm text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                                        Product No :
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                </tr>
+                                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                                        Create Time :
+                                                    </th>
+                                                    <td class="px-6 py-4">
 
+                                                    </td>
 
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+                                                </tr>
+                                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                                        Estimated Finish Time :
+                                                    </th>
+                                                    <td class="px-6 py-4">
+
+                                                    </td>
+                                                </tr>
+                                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                                        SMT for PCB Service NO :
+                                                    </th>
+                                                    <td class="px-6 py-4">
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                                        <table class="shadow-md w-full gap-2 text-sm text-gray-500 dark:text-gray-400">
+                                            <tbody>
+                                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                                        Order Status :
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                </tr>
+                                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                                        Build Time :
+                                                    </th>
+                                                    <td class="px-6 py-4">
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr class="border-b border-gray-200 dark:border-gray-700">
+                                                    <th scope="row"
+                                                        class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                                                        Gerber File :
+                                                    </th>
+                                                    <td class="px-6 py-4">
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js">
+                                    </script>
 </body>
 
 </html>
