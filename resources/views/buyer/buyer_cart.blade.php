@@ -9,22 +9,14 @@
 
 </head>
 
-<body>
-    <nav class="border-gray-200 bg-green-950 dark:border-gray-700">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class="self-center text-2xl font-semibold text-white">Shopping Cart</span>
-            </a>
-        </div>
-    </nav>
 
-    {{-- <div class="grid-lama">
-        <div class="inline-grid grid-cols-9 ml-12 mt-8 my-5">
-            <div class="bg-red-500">
-                <input type="checkbox" name="" id="" class="">
-                <h1 class="inline ml-2">All</h1>
-            </div>
-            <h1 class="col-span-4">Product Name & Details</h1>
+{{-- <div class="grid-lama">
+    <div class="inline-grid grid-cols-9 ml-12 mt-8 my-5">
+        <div class="bg-red-500">
+            <input type="checkbox" name="" id="" class="">
+            <h1 class="inline ml-2">All</h1>
+        </div>
+        <h1 class="col-span-4">Product Name & Details</h1>
             <h1>Quantity</h1>
             <h1>Price</h1>
             <h1>Product File</h1>
@@ -66,7 +58,14 @@
             </div>
         </div>
     </div> --}}
-
+<body>
+    <nav class="border-gray-200 bg-green-950 dark:border-gray-700">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-semibold text-white">Shopping Cart</span>
+            </a>
+         </div>
+    </nav>
 
     <div class="container mx-auto mt-10 bg-gray-500">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -76,24 +75,23 @@
                         <th scope="col" class="p-4">
                             <div class="flex items-center">
                                 <input id="checkbox-all" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
+                                    dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 
+                                    dark:bg-gray-700 dark:border-gray-600">
                                 <label for="checkbox-all" class="ml-3">All</label>
                             </div>
                         </th>
                         <th scope="col" class="py-3 px-16">
-                            Product Name & Details
+                            Product Name
                         </th>
                         <th scope="col" class="px-12 py-3">
-                            Qty
+                            Quantity
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Price
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Product File
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Status
+                            Details
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -106,23 +104,26 @@
                         <td class="w-4 p-4">
                             <div class="flex items-center">
                                 <input id="checkbox-table-1" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
+                                    dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 
+                                    dark:bg-gray-700 dark:border-gray-600">
                                 <label for="checkbox-table-1" class="sr-only">checkbox</label>
                             </div>
                         </td>
                         <td class="py-4 font-semibold text-gray-900 dark:text-white flex">
-                            <img src="./image/development board.jpg" class="w-16 max-w-full max-h-full mx-2">
-                            <div class="">
-                                <p>Control Module Without USB Cable</p>
-                                <h2>View Detail</h2>
+                            <img src="./image/development board.jpg" class="h-28">
+                            <div>
+                                <p style="font-family: cambria; font-size: large;">Control Module Without USB Cable</p>
                             </div>
                         </td>
                         <td class="px-6 py-4">
                             <div class="flex items-center">
                                 <button
-                                    class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                    class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 
+                                    bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 
+                                    focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 
+                                    dark:hover:border-gray-600 dark:focus:ring-gray-700"
                                     type="button">
-                                    <span class="sr-only">Quantity button</span>
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 18 2">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -131,11 +132,15 @@
                                 </button>
                                 <div>
                                     <input type="number" id="first_product"
-                                        class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                        focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+                                        dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="1" required />
                                 </div>
                                 <button
-                                    class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                    class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border 
+                                    border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 
+                                    dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                                     type="button">
                                     <span class="sr-only">Quantity button</span>
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -147,22 +152,12 @@
                             </div>
                         </td>
                         <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">
-                            <h1 class="text-3xl">Rp200K</h1>
-                            <p>(0,01 kg)</p>
+                            <h1 class="text-2xl">200k</h1>
                         </td>
                         <td class="px-6 py-4">
-                            <input
-                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="file_input_help" id="file_input" type="file">
-                            <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG
-                                or GIF (MAX. 800x400px).</p>
-                        </td>
-                        <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">
-                            <h1 class="text-3xl">Waiting</h1>
+                            <a href="#" class="font-medium text-greens-900 dark:text-yellow-300 hover:underline">View Details</a>
                         </td>
                         <td class="px-6 py-4">
-                            <a href="#"
-                                class="font-medium text-yellow-300 dark:text-yellow-300 hover:underline">Edit</a>
                             <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                         </td>
                     </tr>
@@ -171,24 +166,25 @@
                         <td class="w-4 p-4">
                             <div class="flex items-center">
                                 <input id="checkbox-table-1" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
+                                    dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 
+                                    dark:bg-gray-700 dark:border-gray-600">
                                 <label for="checkbox-table-1" class="sr-only">checkbox</label>
                             </div>
                         </td>
                         <td class="py-4 font-semibold text-gray-900 dark:text-white flex">
-                            <img src="./image/development board.jpg" class="w-16 max-w-full max-h-full mx-2">
-                            <div class="">
-                                <p>2 Layers Size 10x10mm 1.6mm</p>
-                                <p>Product No : WWR45TYFVG4</p>
-                                <p>Solder Mask: Green</p>
-                                <p>Silkscreen : White</p>
-                                <h2>View Detail</h2>
+                            <img src="./image/development board.jpg" class="h-28">
+                            <div>
+                                <p style="font-family: cambria; font-size: large;">Assembly</p>
                             </div>
                         </td>
                         <td class="px-6 py-4">
                             <div class="flex items-center">
                                 <button
-                                    class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                    class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 
+                                    bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 
+                                    focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 
+                                    dark:hover:border-gray-600 dark:focus:ring-gray-700"
                                     type="button">
                                     <span class="sr-only">Quantity button</span>
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -199,11 +195,15 @@
                                 </button>
                                 <div>
                                     <input type="number" id="first_product"
-                                        class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                        focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+                                        dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="1" required />
                                 </div>
                                 <button
-                                    class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                    class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border 
+                                    border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 
+                                    dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                                     type="button">
                                     <span class="sr-only">Quantity button</span>
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -215,24 +215,14 @@
                             </div>
                         </td>
                         <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">
-                            <h1 class="text-3xl">Rp200K</h1>
-                            <p>(0,01 kg)</p>
+                            <h1 class="text-2xl">500k</h1>
                         </td>
                         <td class="px-6 py-4">
-                            <input
-                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="file_input_help" id="file_input" type="file">
-                            <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG,
-                                JPG
-                                or GIF (MAX. 800x400px).</p>
-                        </td>
-                        <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">
-                            <h1 class="text-3xl">Waiting</h1>
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#"
-                                class="font-medium text-yellow-300 dark:text-yellow-300 hover:underline">Edit</a>
+                            <a href="#" class="font-medium text-greens-900 dark:text-yellow-300 hover:underline">View Details</a>
+                        <td class="px-6 py-6">
                             <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                            <a href="#" class="fa-solid fa-upload inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-greens-900 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none">
+                            Add File</a>
                         </td>
                     </tr>
                 </tbody>

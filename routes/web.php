@@ -142,7 +142,6 @@ Route::get('/admin/review_payment', function () {
 Route::get('/admin/review_payment/create', function () {
     return view('admin/review_payment/create');
 });
-
 Route::get('/admin/review_file', function () {
     return view('admin/review_file/index');
 });
