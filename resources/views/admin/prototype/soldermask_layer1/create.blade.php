@@ -8,7 +8,7 @@
     <div class="my-4 flex flex-row gap-4">
         <a href="/admin">Dashboard</a>
         <p>></p>
-        <a href="/admin/prototype">Porototype</a>
+        <a href="/admin/prototype">Prototype</a>
         <p>></p>
         <a href="/admin/prototype/soldermask_layer1">Soldermask Layer 1</a>
         <p>></p>
