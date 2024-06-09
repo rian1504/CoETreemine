@@ -30,7 +30,7 @@
             <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3" rowspan="2">
-                        NO
+                        Number
                     </th>
                     <th scope="col" class="px-6 py-3" rowspan="2">
                         Buyer Name
@@ -73,7 +73,7 @@
                         rejected
                     </td>
                     <td rowspan="2" class="px-6 py-4">
-                        Tidak Lengkap
+                        
                     </td>
                     <td class="px-6 py-4">
                         Prototype 
@@ -99,6 +99,7 @@
                     </td>
                 </tr>
                 <tbody>
+                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <tr
                     class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                     <th rowspan="2" scope="row"
@@ -107,7 +108,7 @@
                     </th>
                     <th rowspan="2" scope="row"
                         class="px-6 py-4 whitespace-nowrap truncate font-medium text-gray-900 dark:text-white">
-                        Rizqi Vela Binti
+                        Rizqi Vela Syifa
                     </th>
                     <td rowspan="2" class="px-6 py-4 whitespace-nowrap truncate">
                         $2999
@@ -116,7 +117,7 @@
                         rejected
                     </td>
                     <td rowspan="2" class="px-6 py-4">
-                        Tidak Lengkap
+                       
                     </td>
                     <td class="px-6 py-4">
                         Prototype 
