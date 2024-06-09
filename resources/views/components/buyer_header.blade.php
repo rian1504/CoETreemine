@@ -14,7 +14,7 @@
             </div>
             <div class="flex w-1/2 justify-end">
                 <div class="flex w-16 gap-2">
-                    <a href="/custom_cart">
+                    <a href="/buyer_cart">
                         <i class="fas fa-cart-shopping fa-lg"></i>
                     </a>
                     <a href="/history">

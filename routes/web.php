@@ -69,9 +69,6 @@ Route::get('/buyer_detail_portfolio', function () {
 Route::get('/buyer_service', function () {
     return view('buyer.service');
 });
-Route::get('/custom_cart', function () {
-    return view('buyer.custom_cart');
-});
 Route::get('/buyer_cart', function () {
     return view('buyer.buyer_cart');
 });

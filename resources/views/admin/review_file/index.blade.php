@@ -214,9 +214,6 @@
                                     <th scope="col" class="px-4 py-3">
                                         Total Item
                                     </th>
-                                    <th scope="col" class="px-4 py-3 bg-gray-50 dark:bg-gray-800">
-                                        Total Price
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -227,9 +224,6 @@
                                     <td class="px-4 py-4">
                                         2
                                     </td>
-                                    <td class="px-4 py-4 bg-gray-50 dark:bg-gray-800 text-right">
-                                        Rp.40.000
-                                    </td>
                                 </tr>
                                 <tr class="border-b border-gray-200 dark:border-gray-700">
                                     <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
@@ -237,9 +231,6 @@
                                     </th>
                                     <td class="px-4 py-4">
                                         1
-                                    </td>
-                                    <td class="px-4 py-4 bg-gray-50 dark:bg-gray-800 text-right">
-                                        Rp.30.000
                                     </td>
                                 </tr>
                             </tbody>
