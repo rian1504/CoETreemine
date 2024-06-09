@@ -10,6 +10,7 @@
         <p>></p>
         <a href="/admin/history" class="text-admin-900">History Order</a>
     </div>
+    <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
     <div class="pb-4 justify-between">
         <label for="table-search" class="sr-only">Search</label>
         <div class="relative mt-1">
