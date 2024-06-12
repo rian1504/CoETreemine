@@ -29,6 +29,8 @@ use App\Http\Controllers\Admin\ReviewPaymentController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\OnProgressController;
 use App\Http\Controllers\Buyer\CartController;
+use App\Http\Controllers\Buyer\CustomAssemblyController as BuyerCustomAssemblyController;
+use App\Http\Controllers\Buyer\CustomPrototypeController as BuyerCustomPrototypeController;
 use App\Http\Controllers\Buyer\PortfolioController as BuyerPortfolioController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -43,6 +45,13 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('category', [BuyerPortfolioController::class, 'index'])->name('buyer.portfolio.index');
 Route::get('category/{category}', [BuyerPortfolioController::class, 'showCategory'])->name('buyer.portfolio.showCategory');
 Route::get('portfolio/{portfolio}', [BuyerPortfolioController::class, 'showPortfolio'])->name('buyer.portfolio.showPortfolio');
+
+// Custom Assembly
+Route::get('assembly', [BuyerCustomAssemblyController::class, 'index'])->name('buyer.assembly.index');
+Route::post('assembly', [BuyerCustomAssemblyController::class, 'store'])->name('buyer.assembly.store');
+
+// Custom Prototype
+Route::get('prototype', [BuyerCustomPrototypeController::class, 'index'])->name('buyer.prototype.index');
 
 // guest and buyer with middleware
 Route::middleware(['auth'])->group(function () {
