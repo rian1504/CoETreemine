@@ -68,9 +68,8 @@
                 <div class="flex flex-col mt-2 mb-6">
                     <label for="" class="font-semibold mb-2">Descriptions</label>
                     <textarea type="text" name="portfolio_description"
-                        value="{{ old('portfolio_description', $portfolio->portfolio_description) }}"
                         class="rounded-lg text-gray-900 border-admin-900 px-4 pt-6 bg-admin-100 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
-                        placeholder="Input a product descriptions"></textarea>
+                        placeholder="Input a product descriptions">{{ old('portfolio_description', $portfolio->portfolio_description) }}</textarea>
                 </div>
                 <div class="grid place-items-end ">
                     <button type="submit"
