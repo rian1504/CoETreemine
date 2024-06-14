@@ -107,6 +107,9 @@
                                     </form>
                                 </td>
                             </tr>
+                        @empty
+                            <h1>Tidak ada data</h1>
+                        @endforelse
                     </tbody>
                 </table>
             </div>

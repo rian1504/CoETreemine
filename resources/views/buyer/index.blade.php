@@ -11,6 +11,8 @@
 <body>
     <a href="{{ route('buyer.portfolio.index') }}">Product</a>
     <a href="{{ route('cart.index') }}">Cart</a>
+    <a href="{{ route('buyer.assembly.index') }}">Assembly</a>
+    <a href="{{ route('buyer.prototype.index') }}">Prototype</a>
     @if (Auth::check())
         {{-- Buyer --}}
         <h1>Buyer</h1>
