@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $datas = Category::latest()->paginate(10);
+        $datas = Category::get();
         return view('admin.category_portfolio.index', compact('datas'));
     }
 
