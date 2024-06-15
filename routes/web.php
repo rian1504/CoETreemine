@@ -52,6 +52,7 @@ Route::post('assembly', [BuyerCustomAssemblyController::class, 'store'])->name('
 
 // Custom Prototype
 Route::get('prototype', [BuyerCustomPrototypeController::class, 'index'])->name('buyer.prototype.index');
+Route::post('prototype', [BuyerCustomPrototypeController::class, 'store'])->name('buyer.prototype.store');
 
 // guest and buyer with middleware
 Route::middleware(['auth'])->group(function () {

@@ -81,49 +81,49 @@
                         </td>
                     </tr>
                 @else
-                    <td>
-                        <input type="checkbox" name="custom[]" id="custom" value="{{ $data->id_cart_custom }}"
-                            @disabled($data->status == 'not review')>
-                    </td>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="custom[]" id="custom" value="{{ $data->id_cart_custom }}"
+                                @disabled($data->status == 'not review')>
+                        </td>
                 @endif
 
                 {{-- CUSTOM PROTOTYPE --}}
                 @if ($data->custom_prototype != null)
-                    <tr>
-                        <td>
-                            <img src="{{ asset('/storage/assets/images/pcb-prototype.png') }}" alt=""
-                                width="100" height="100">
-                            Prototype
-                        </td>
-                        <td>{{ $data->custom_prototype->quantity }}</td>
-                        <td>{{ number_format($data->custom_prototype->price, 0, '', '.') }}</td>
-                        <td>
-                            <a href="{{ route('cart.prototype', $data->custom_prototype->id_custom_prototype) }}">View
-                                Detail</a>
-                        </td>
-                        <td>
-                            {{-- BUTTON ADD FILE --}}
-                            @if ($data->custom_prototype->file == null)
-                                <form
-                                    action="{{ route('cart.prototype.addFile', $data->custom_prototype->id_custom_prototype) }}"
-                                    method="POST" enctype="multipart/form-data" class="add-file-form">
-                                    @csrf
-                                    <input type="file" name="file">
-                                    <button type="submit">Save</button>
-                                </form>
-                                <h1>Not Completed</h1>
-                            @else
-                                <h1>Under Review</h1>
-                            @endif
-
-                            {{-- BUTTON DELETE CART CUSTOM --}}
-                            <form action="{{ route('cart.custom.delete', $data->id_cart_custom) }}" method="POST"
-                                onsubmit="return confirm('Are you sure want to delete?')">
+                    <td>
+                        <img src="{{ asset('/storage/assets/images/pcb-prototype.png') }}" alt=""
+                            width="100" height="100">
+                        Prototype
+                    </td>
+                    <td>{{ $data->custom_prototype->quantity }}</td>
+                    <td>{{ number_format($data->custom_prototype->price, 0, '', '.') }}</td>
+                    <td>
+                        <a href="{{ route('cart.prototype', $data->custom_prototype->id_custom_prototype) }}">View
+                            Detail</a>
+                    </td>
+                    <td>
+                        {{-- BUTTON ADD FILE --}}
+                        @if ($data->custom_prototype->file == null)
+                            <form
+                                action="{{ route('cart.prototype.addFile', $data->custom_prototype->id_custom_prototype) }}"
+                                method="POST" enctype="multipart/form-data" class="add-file-form">
                                 @csrf
-                                @method('DELETE')
-                                <button type="submit">Delete Order</button>
+                                <input type="file" name="file">
+                                <button type="submit">Save</button>
                             </form>
-                        </td>
+                            <h1>Not Completed</h1>
+                        @else
+                            <h1>Under Review</h1>
+                        @endif
+
+                        {{-- BUTTON DELETE CART CUSTOM --}}
+                        <form action="{{ route('cart.custom.delete', $data->id_cart_custom) }}" method="POST"
+                            onsubmit="return confirm('Are you sure want to delete?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete Order</button>
+                        </form>
+                    </td>
                     </tr>
                 @endif
             @endforeach
