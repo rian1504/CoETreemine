@@ -55,7 +55,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('progress.index') }}" class="{{ request()->is('admin/review_payment*') ? 'active' : '' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('progress.index') }}" class="{{ request()->is('admin/on_progress*') ? 'active' : '' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
                     <i class="fas fa-sync text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">On Progress</span>
                     <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300"></span>
@@ -69,12 +69,12 @@
                 </a>
                 <ul id="dropdown-example" class="hidden py-2 space-y-0">
                     <li>
-                        <a href="{{ route('history.cart_custom') }}" class="{{ request()->is('admin/history/cart_custom') ? 'active' : '' }} flex items-center p-2 ml-8 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                        <a href="{{ route('history.cart_custom') }}" class="{{ request()->is('admin/history/cart_custom') ? 'active' : '' }} flex items-center p-1 my-2 ml-8 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
                             <span class="flex-1 ms-3 whitespace-nowrap">Cart Custom</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('history.order') }}" class="{{ request()->is('admin/history/order') ? 'active' : '' }} flex items-center p-2 ml-8 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                        <a href="{{ route('history.order') }}" class="{{ request()->is('admin/history/order') ? 'active' : '' }} flex items-center p-1 my-2 ml-8 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
                             <span class="flex-1 ms-3 whitespace-nowrap">Order</span>
                         </a>
                     </li>

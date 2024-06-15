@@ -42,7 +42,11 @@
                 </div>
             </div>
             @empty
-            <h1>Tidak ada data</h1>
+            <tr>
+                <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                    No data
+                </td>
+            </tr>
             @endforelse
         </div>
     </div>

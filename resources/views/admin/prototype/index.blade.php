@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Assembly')
+@section('title', 'CoE Treemine | Prototype')
 
 @section('content')
 
@@ -13,8 +13,8 @@
 
     <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
         <div class="pb-4 flex flex-row justify-between">
-            <select id="prototype" name="prototype" class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
-                <option selected value="Board" disabled hidden>choose a prototype</option>
+            <select id="prototype" name="prototype" class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-green-500 dark:focus:border-green-500">
+                <option selected value="Board" disabled hidden>Choose a Prototype</option>
                 @foreach ($dataSelect as $item)
                 <option value="{{ $item }}" {{ session('select') == $item ? 'selected' : '' }}>
                     {{ $item }}
@@ -31,16 +31,16 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -48,13 +48,13 @@
                 <tbody>
                     @forelse ($dataPrototype['dataBoard'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->board_type_name }}
                         </th>
-                        <td class="px-6 py-3">
+                        <td class="px-6 py-3 whitespace-nowrap">
                             Rp{{ number_format($data->board_type_price, 0, '', '.') }}
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
@@ -78,7 +78,7 @@
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -92,13 +92,13 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -106,10 +106,10 @@
                 <tbody>
                     @forelse ($dataPrototype['dataRouteProcess'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->route_process_name }}
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
@@ -133,7 +133,7 @@
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -147,13 +147,13 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -161,10 +161,10 @@
                 <tbody>
                     @forelse ($dataPrototype['dataFr4'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->fr4_name }}
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
@@ -188,7 +188,7 @@
                     @empty
                     <tr>
                         <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -202,59 +202,60 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Layer Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($dataPrototype['dataThickness'] as $index => $data)
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $index + 1 }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->thickness_name }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Rp{{ number_format($data->thickness_price, 0, '', '.') }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->prototype_layer->layer_name }}
-                    </th>
-                    <td class="px-6 py-3 whitespace-nowrap">
-                        <div class="flex items-center gap-4">
-                            <a href="{{ route('thickness.edit', $data->id_thickness) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('thickness.destroy', $data->id_thickness) }}" onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
+                    <tr>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $index + 1 }}
+                        </th>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->thickness_name }}
+                        </th>
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                            Rp{{ number_format($data->thickness_price, 0, '', '.') }}
+                        </td>
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->prototype_layer->layer_name }}
+                        </td>
+                        <td class="px-6 py-3 whitespace-nowrap">
+                            <div class="flex items-center gap-4">
+                                <a href="{{ route('thickness.edit', $data->id_thickness) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('thickness.destroy', $data->id_thickness) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
                                             font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
                                             focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
                                             dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @empty
                     <tr>
                         <td colspan="5" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -268,53 +269,54 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($dataPrototype['dataLayer'] as $index => $data)
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $index + 1 }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->layer_name }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Rp{{ number_format($data->layer_price, 0, '', '.') }}
-                    </th>
-                    <td class="px-6 py-3 whitespace-nowrap">
-                        <div class="flex items-center gap-4">
-                            <a href="{{ route('layer.edit', $data->id_layer) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('layer.destroy', $data->id_layer) }}" onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
+                    <tr>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $index + 1 }}
+                        </th>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->layer_name }}
+                        </th>
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                            Rp{{ number_format($data->layer_price, 0, '', '.') }}
+                        </td>
+                        <td class="px-6 py-3 whitespace-nowrap">
+                            <div class="flex items-center gap-4">
+                                <a href="{{ route('layer.edit', $data->id_layer) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('layer.destroy', $data->id_layer) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
                                             font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
                                             focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
                                             dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -328,53 +330,54 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($dataPrototype['dataInnerCooper'] as $index => $data)
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $index + 1 }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->inner_cooper_name }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Rp{{ number_format($data->inner_cooper_price, 0, '', '.') }}
-                    </th>
-                    <td class="px-6 py-3 whitespace-nowrap">
-                        <div class="flex items-center gap-4">
-                            <a href="{{ route('inner_cooper.edit', $data->id_inner_cooper) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('inner_cooper.destroy', $data->id_inner_cooper) }}" onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
+                    <tr>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $index + 1 }}
+                        </th>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->inner_cooper_name }}
+                        </th>
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                            Rp{{ number_format($data->inner_cooper_price, 0, '', '.') }}
+                        </td>
+                        <td class="px-6 py-3 whitespace-nowrap">
+                            <div class="flex items-center gap-4">
+                                <a href="{{ route('inner_cooper.edit', $data->id_inner_cooper) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('inner_cooper.destroy', $data->id_inner_cooper) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
                                             font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
                                             focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
                                             dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -388,53 +391,54 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($dataPrototype['dataFinishedCooper'] as $index => $data)
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $index + 1 }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->finished_cooper_name }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Rp{{ number_format($data->finished_cooper_price, 0, '', '.') }}
-                    </th>
-                    <td class="px-6 py-3 whitespace-nowrap">
-                        <div class="flex items-center gap-4">
-                            <a href="{{ route('finished_cooper.edit', $data->id_finished_cooper) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('finished_cooper.destroy', $data->id_finished_cooper) }}" onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
+                    <tr>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $index + 1 }}
+                        </th>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->finished_cooper_name }}
+                        </th>
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                            Rp{{ number_format($data->finished_cooper_price, 0, '', '.') }}
+                        </td>
+                        <td class="px-6 py-3 whitespace-nowrap">
+                            <div class="flex items-center gap-4">
+                                <a href="{{ route('finished_cooper.edit', $data->id_finished_cooper) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('finished_cooper.destroy', $data->id_finished_cooper) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
                                             font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
                                             focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
                                             dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -448,47 +452,48 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($dataPrototype['dataCooperLayer'] as $index => $data)
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $index + 1 }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->cooper_layer_name }}
-                    </th>
-                    <td class="px-6 py-3 whitespace-nowrap">
-                        <div class="flex items-center gap-4">
-                            <a href="{{ route('cooper_layer.edit', $data->id_cooper_layer) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('cooper_layer.destroy', $data->id_cooper_layer) }}" onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
+                    <tr>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $index + 1 }}
+                        </th>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->cooper_layer_name }}
+                        </th>
+                        <td class="px-6 py-3 whitespace-nowrap">
+                            <div class="flex items-center gap-4">
+                                <a href="{{ route('cooper_layer.edit', $data->id_cooper_layer) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('cooper_layer.destroy', $data->id_cooper_layer) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
                                             font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
                                             focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
                                             dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @empty
                     <tr>
                         <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -502,53 +507,54 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($dataPrototype['dataTrack'] as $index => $data)
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $index + 1 }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->track_name }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Rp{{ number_format($data->track_price, 0, '', '.') }}
-                    </th>
-                    <td class="px-6 py-3 whitespace-nowrap">
-                        <div class="flex items-center gap-4">
-                            <a href="{{ route('track.edit', $data->id_track) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('track.destroy', $data->id_track) }}" onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
+                    <tr>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $index + 1 }}
+                        </th>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->track_name }}
+                        </th>
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                            Rp{{ number_format($data->track_price, 0, '', '.') }}
+                        </td>
+                        <td class="px-6 py-3 whitespace-nowrap">
+                            <div class="flex items-center gap-4">
+                                <a href="{{ route('track.edit', $data->id_track) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('track.destroy', $data->id_track) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
                                             font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
                                             focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
                                             dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @empty
                     <tr>
                         <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -562,16 +568,16 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -579,15 +585,15 @@
                 <tbody>
                     @forelse ($dataPrototype['dataHole'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->hole_name }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
                             Rp{{ number_format($data->hole_price, 0, '', '.') }}
-                        </th>
+                        </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
                                 <a href="{{ route('hole.edit', $data->id_hole) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -609,7 +615,7 @@
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -623,16 +629,16 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -640,15 +646,15 @@
                 <tbody>
                     @forelse ($dataPrototype['dataSolder'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->solder_name }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
                             Rp{{ number_format($data->solder_price, 0, '', '.') }}
-                        </th>
+                        </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
                                 <a href="{{ route('solder.edit', $data->id_solder) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -670,7 +676,7 @@
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -684,16 +690,16 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -701,15 +707,15 @@
                 <tbody>
                     @forelse ($dataPrototype['dataSilk'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->silk_name }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
                             Rp{{ number_format($data->silk_price, 0, '', '.') }}
-                        </th>
+                        </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
                                 <a href="{{ route('silk.edit', $data->id_silk) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -731,7 +737,7 @@
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -745,16 +751,16 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -762,15 +768,15 @@
                 <tbody>
                     @forelse ($dataPrototype['dataSurface'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->surface_name }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
                             Rp{{ number_format($data->surface_price, 0, '', '.') }}
-                        </th>
+                        </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
                                 <a href="{{ route('surface.edit', $data->id_surface) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -792,7 +798,7 @@
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -806,16 +812,16 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -823,15 +829,15 @@
                 <tbody>
                     @forelse ($dataPrototype['dataViaProcess'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->via_process_name }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
                             Rp{{ number_format($data->via_process_price, 0, '', '.') }}
-                        </th>
+                        </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
                                 <a href="{{ route('via_process.edit', $data->id_via) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -853,7 +859,7 @@
                     @empty
                     <tr>
                         <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -867,19 +873,19 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Picture
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -887,18 +893,18 @@
                 <tbody>
                     @forelse ($dataPrototype['dataMaterial'] as $index => $data)
                     <tr>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $index + 1 }}
                         </th>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
                             {{ $data->material_name }}
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <img class="max-h-32 max-w-32 object-cover dark:shadow-gray-800" src="{{ asset('/storage/assets/images/material/' . $data->material_picture) }}" alt="Material Picture">
                         </td>
-                        <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td scope="row" class="px-6 py-3 whitespace-nowrap">
                             Rp{{ number_format($data->material_price, 0, '', '.') }}
-                        </th>
+                        </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
                                 <a href="{{ route('material.edit', $data->id_material) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -920,7 +926,7 @@
                     @empty
                     <tr>
                         <td colspan="5" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -934,47 +940,48 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($dataPrototype['dataSoldermaskLayer1'] as $index => $data)
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $index + 1 }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->soldermask_layer1_name }}
-                    </th>
-                    <td class="px-6 py-3 whitespace-nowrap">
-                        <div class="flex items-center gap-4">
-                            <a href="{{ route('soldermask_layer1.edit', $data->id_soldermask_layer1) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('soldermask_layer1.destroy', $data->id_soldermask_layer1) }}" onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
+                    <tr>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $index + 1 }}
+                        </th>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->soldermask_layer1_name }}
+                        </th>
+                        <td class="px-6 py-3 whitespace-nowrap">
+                            <div class="flex items-center gap-4">
+                                <a href="{{ route('soldermask_layer1.edit', $data->id_soldermask_layer1) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('soldermask_layer1.destroy', $data->id_soldermask_layer1) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
                                             font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
                                             focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
                                             dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @empty
                     <tr>
                         <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse
@@ -988,47 +995,48 @@
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($dataPrototype['dataSilkscreenLayer1'] as $index => $data)
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $index + 1 }}
-                    </th>
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $data->silkscreen_layer1_name }}
-                    </th>
-                    <td class="px-6 py-3 whitespace-nowrap">
-                        <div class="flex items-center gap-4">
-                            <a href="{{ route('silkscreen_layer1.edit', $data->id_silkscreen_layer1) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('silkscreen_layer1.destroy', $data->id_silkscreen_layer1) }}" onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
+                    <tr>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $index + 1 }}
+                        </th>
+                        <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                            {{ $data->silkscreen_layer1_name }}
+                        </th>
+                        <td class="px-6 py-3 whitespace-nowrap">
+                            <div class="flex items-center gap-4">
+                                <a href="{{ route('silkscreen_layer1.edit', $data->id_silkscreen_layer1) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form action="{{ route('silkscreen_layer1.destroy', $data->id_silkscreen_layer1) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
                                             font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
                                             focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
                                             dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </td>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @empty
                     <tr>
                         <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            Tidak ada data
+                            No data
                         </td>
                     </tr>
                     @endforelse

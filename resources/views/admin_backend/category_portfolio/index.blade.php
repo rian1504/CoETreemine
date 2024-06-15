@@ -23,25 +23,27 @@
     </thead>
     <tbody>
         @forelse ($datas as $index => $data)
-            <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $data->category_name }}</td>
-                <td>
-                    <img src="{{ asset('/storage/assets/images/category/' . $data->category_picture) }}" alt=""
-                        width="100" height="100">
-                </td>
-                <td>
-                    <a href="{{ route('category.edit', $data->id_category) }}">Edit</a>
-                    <form action="{{ route('category.destroy', $data->id_category) }}"
-                        onsubmit="return confirm('Are you sure?')" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">Delete</button>
-                    </form>
-                </td>
-            </tr>
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ $data->category_name }}</td>
+            <td>
+                <img src="{{ asset('/storage/assets/images/category/' . $data->category_picture) }}" alt="" width="100" height="100">
+            </td>
+            <td>
+                <a href="{{ route('category.edit', $data->id_category) }}">Edit</a>
+                <form action="{{ route('category.destroy', $data->id_category) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
         @empty
-            <h1>Tidak ada data</h1>
+        <tr>
+            <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                No data
+            </td>
+        </tr>
         @endforelse
     </tbody>
 </table>
