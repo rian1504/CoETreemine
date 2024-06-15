@@ -5,9 +5,12 @@
 @section('content')
 
 <div>
-    <h1 class="my-4 text-admin-900">Dashboard</h1>
+    <div class="my-4">
+        <a href="{{ route('dashboard') }}" class="text-admin-900">Dashboard</a>
+    </div>
+    <!-- page -->
     <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex flex-col items-center justify-center p-5">
                     <a href="{{ route('category.index') }}">
