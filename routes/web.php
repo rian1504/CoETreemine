@@ -1,156 +1,265 @@
 <?php
 
-use App\Http\Controllers\Admin\AssemblyBoardTypeController;
-use App\Http\Controllers\Admin\AssemblyFlexibleController;
-use App\Http\Controllers\Admin\AssemblySideController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\CustomAssemblyController;
-use App\Http\Controllers\Admin\CustomPrototypeController;
-use App\Http\Controllers\Admin\PortfolioController;
-use App\Http\Controllers\Admin\PrototypeBoardTypeController;
-use App\Http\Controllers\Admin\PrototypeCooperLayerController;
-use App\Http\Controllers\Admin\PrototypeFinishedCooperController;
-use App\Http\Controllers\Admin\PrototypeFr4Controller;
-use App\Http\Controllers\Admin\PrototypeHoleController;
-use App\Http\Controllers\Admin\PrototypeInnerCooperController;
-use App\Http\Controllers\Admin\PrototypeLayerController;
-use App\Http\Controllers\Admin\PrototypeMaterialController;
-use App\Http\Controllers\Admin\PrototypeRouteProcessController;
-use App\Http\Controllers\Admin\PrototypeSilkController;
-use App\Http\Controllers\Admin\PrototypeSilkscreenLayer1Controller;
-use App\Http\Controllers\Admin\PrototypeSolderController;
-use App\Http\Controllers\Admin\PrototypeSoldermaskLayer1Controller;
-use App\Http\Controllers\Admin\PrototypeSurfaceController;
-use App\Http\Controllers\Admin\PrototypeThicknessController;
-use App\Http\Controllers\Admin\PrototypeTrackController;
-use App\Http\Controllers\Admin\PrototypeViaProcessController;
-use App\Http\Controllers\Admin\ReviewFileController;
-use App\Http\Controllers\Admin\ReviewPaymentController;
-use App\Http\Controllers\Admin\HistoryController;
-use App\Http\Controllers\Admin\OnProgressController;
-use App\Http\Controllers\Buyer\CartController;
-use App\Http\Controllers\Buyer\CustomAssemblyController as BuyerCustomAssemblyController;
-use App\Http\Controllers\Buyer\CustomPrototypeController as BuyerCustomPrototypeController;
-use App\Http\Controllers\Buyer\PortfolioController as BuyerPortfolioController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// guest and buyer without middleware
-
-// index
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
-// Portfolio
-Route::get('category', [BuyerPortfolioController::class, 'index'])->name('buyer.portfolio.index');
-Route::get('category/{category}', [BuyerPortfolioController::class, 'showCategory'])->name('buyer.portfolio.showCategory');
-Route::get('portfolio/{portfolio}', [BuyerPortfolioController::class, 'showPortfolio'])->name('buyer.portfolio.showPortfolio');
-
-// Custom Assembly
-Route::get('assembly', [BuyerCustomAssemblyController::class, 'index'])->name('buyer.assembly.index');
-Route::post('assembly', [BuyerCustomAssemblyController::class, 'store'])->name('buyer.assembly.store');
-
-// Custom Prototype
-Route::get('prototype', [BuyerCustomPrototypeController::class, 'index'])->name('buyer.prototype.index');
-
-// guest and buyer with middleware
-Route::middleware(['auth'])->group(function () {
-
-    // Cart
-    Route::prefix('cart')->group(function () {
-        Route::get('', [CartController::class, 'index'])->name('cart.index');
-        Route::get('assembly/{assembly}', [CartController::class, 'assembly'])->name('cart.assembly');
-        Route::post('assembly/{assembly}', [CartController::class, 'assemblyAddFile'])->name('cart.assembly.addFile');
-        Route::get('prototype/{prototype}', [CartController::class, 'prototype'])->name('cart.prototype');
-        Route::post('prototype/{prototype}', [CartController::class, 'prototypeAddFile'])->name('cart.prototype.addFile');
-        Route::get('portfolio/{portfolio}', [CartController::class, 'portfolio'])->name('cart.portfolio');
-        Route::delete('custom/{custom}', [CartController::class, 'custom_delete'])->name('cart.custom.delete');
-        Route::delete('portfolio/{portfolio}', [CartController::class, 'portfolio_delete'])->name('cart.portfolio.delete');
-    });
-
-    // Portfolio (Button AddCart and BuyNow)
-    Route::post('portfolio/addCart', [BuyerPortfolioController::class, 'addCart'])->name('buyer.portfolio.cartAdd');
-    Route::post('portfolio/buyNow', [BuyerPortfolioController::class, 'buyNow'])->name('buyer.portfolio.buyNow');
-
-    // Manage Profile
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
+// Route::get('/halaman', function () {
+//     return view('layouts.pembeli');
+// });
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
-// admin
-Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {
-    Route::resource('category', CategoryController::class)->except('show');
-    Route::resource('portfolio', PortfolioController::class)->except('show');
 
-    // History
-    Route::prefix('history')->group(function () {
-        Route::prefix('cart_custom')->group(function () {
-            Route::get('', [HistoryController::class, 'cart_custom'])->name('history.cart_custom');
-            Route::get('custom_assembly/{assembly}', [HistoryController::class, 'showAssembly'])->name('history.cart_custom.assembly');
-            Route::get('custom_prototype/{prototype}', [HistoryController::class, 'showPrototype'])->name('history.cart_custom.prototype');
-        });
-        Route::prefix('order')->group(function () {
-            Route::get('', [HistoryController::class, 'order'])->name('history.order');
-            Route::get('{order}', [HistoryController::class, 'showOrder'])->name('history.order.show');
-        });
-    });
+// // guest
+// Route::get('/guest', function () {
+//     return view('guest.home');
+// });
+// Route::get('/guest_product_category', function () {
+//     return view('guest.product_category');
+// });
+// Route::get('/guest_portfolio', function () {
+//     return view('guest.portfolio');
+// });
+// Route::get('/guest_detail_portfolio', function () {
+//     return view('guest.detail_portfolio');
+// });
+// Route::get('/guest_service', function () {
+//     return view('guest.service');
+// });
+// Route::get('/login', function () {
+//     return view('guest.login');
+// });
+// Route::get('/enter_email', function () {
+//     return view('guest.enter_email');
+// });
+// Route::get('/enter_password', function () {
+//     return view('guest.enter_password');
+// });
+// Route::get('/register', function () {
+//     return view('guest.register');
+// });
+// Route::get('/forgot', function () {
+//     return view('guest.forgot_password');
+// });
+// Route::get('/verify', function () {
+//     return view('guest.verify_email');
+// });
 
-    // Review File
-    Route::prefix('review_file')->group(function () {
-        Route::get('', [ReviewFileController::class, 'index'])->name('review_file.index');
-        Route::get('custom_assembly/{assembly}', [ReviewFileController::class, 'showAssembly'])->name('review_file.showAssembly');
-        Route::get('custom_prototype/{prototype}', [ReviewFileController::class, 'showPrototype'])->name('review_file.showPrototype');
-        Route::post('reject/{cart_custom}', [ReviewFileController::class, 'reject'])->name('review_file.reject');
-        Route::post('accept/{cart_custom}', [ReviewFileController::class, 'accept'])->name('review_file.accept');
-    });
 
-    // Review Payment
-    Route::prefix('review_payment')->group(function () {
-        Route::get('', [ReviewPaymentController::class, 'index'])->name('review_payment.index');
-        Route::get('/{order}', [ReviewPaymentController::class, 'show'])->name('review_payment.show');
-        Route::post('reject/{order}', [ReviewPaymentController::class, 'reject'])->name('review_payment.reject');
-        Route::post('accept/{order}', [ReviewPaymentController::class, 'accept'])->name('review_payment.accept');
-    });
 
-    // On Progress Product
-    Route::prefix('on_progress')->group(function () {
-        Route::get('', [OnProgressController::class, 'index'])->name('progress.index');
-        Route::get('/{order}', [OnProgressController::class, 'show'])->name('progress.show');
-        Route::post('done/{order}', [OnProgressController::class, 'done'])->name('progress.done');
-    });
+// // buyer
 
-    // Assembly
-    Route::prefix('assembly')->group(function () {
-        Route::get('', [CustomAssemblyController::class, 'index'])->name('assembly.index');
-        Route::resource('flexible', AssemblyFlexibleController::class)->except('show', 'index');
-        Route::resource('board', AssemblyBoardTypeController::class)->except('show', 'index');
-        Route::resource('side', AssemblySideController::class)->except('show', 'index');
-    });
+// Route::get('/buyer', function () {
+//     return view('buyer.home');
+// });
+// Route::get('/buyer_product_category', function () {
+//     return view('buyer.product_category');
+// });
+// Route::get('/buyer_portfolio', function () {
+//     return view('buyer.portfolio');
+// });
+// Route::get('/buyer_detail_portfolio', function () {
+//     return view('buyer.detail_portfolio');
+// });
+// Route::get('/buyer_service', function () {
+//     return view('buyer.service');
+// });
+// Route::get('/buyer_cart', function () {
+//     return view('buyer.buyer_cart');
+// });
+// Route::get('/upload_file', function () {
+//     return view('buyer.upload_file');
+// });
+// Route::get('/payment', function () {
+//     return view('buyer.payment');
+// });
+// Route::get('/history', function () {
+//     return view('buyer.history');
+// });
+// Route::get('/manage_profile', function () {
+//     return view('buyer.manage_profile');
+// });
 
-    // Prototype
-    Route::prefix('prototype')->group(function () {
-        Route::get('', [CustomPrototypeController::class, 'index'])->name('prototype.index');
-        Route::resource('board_type', PrototypeBoardTypeController::class)->except('show', 'index');
-        Route::resource('route_process', PrototypeRouteProcessController::class)->except('show', 'index');
-        Route::resource('fr4', PrototypeFr4Controller::class)->except('show', 'index');
-        Route::resource('thickness', PrototypeThicknessController::class)->except('show', 'index');
-        Route::resource('layer', PrototypeLayerController::class)->except('show', 'index');
-        Route::resource('inner_cooper', PrototypeInnerCooperController::class)->except('show', 'index');
-        Route::resource('finished_cooper', PrototypeFinishedCooperController::class)->except('show', 'index');
-        Route::resource('cooper_layer', PrototypeCooperLayerController::class)->except('show', 'index');
-        Route::resource('track', PrototypeTrackController::class)->except('show', 'index');
-        Route::resource('hole', PrototypeHoleController::class)->except('show', 'index');
-        Route::resource('solder', PrototypeSolderController::class)->except('show', 'index');
-        Route::resource('silk', PrototypeSilkController::class)->except('show', 'index');
-        Route::resource('surface', PrototypeSurfaceController::class)->except('show', 'index');
-        Route::resource('via_process', PrototypeViaProcessController::class)->except('show', 'index');
-        Route::resource('material', PrototypeMaterialController::class)->except('show', 'index');
-        Route::resource('soldermask_layer1', PrototypeSoldermaskLayer1Controller::class)->except('show', 'index');
-        Route::resource('silkscreen_layer1', PrototypeSilkscreenLayer1Controller::class)->except('show', 'index');
-    });
-});
 
-require __DIR__ . '/auth.php';
+
+
+// // admin
+// Route::get('/admin', function () {
+//     return view('admin.index');
+// });
+// Route::get('/admin/category_portfolio', function () {
+//     return view('admin/category_portfolio.index');
+// });
+// Route::get('/admin/category_portfolio/create', function () {
+//     return view('admin/category_portfolio.create');
+// });
+// Route::get('/admin/category_portfolio/edit', function () {
+//     return view('admin/category_portfolio.edit');
+// });
+
+// Route::get('/admin/portfolio', function () {
+//     return view('admin/portfolio.index');
+// });
+// Route::get('/admin/portfolio/create', function () {
+//     return view('admin/portfolio.create');
+// });
+// Route::get('/admin/portfolio/edit', function () {
+//     return view('admin/portfolio.edit');
+// });
+// Route::get('/admin/assembly', function () {
+//     return view('admin/assembly.index');
+// });
+// Route::get('/admin/assembly/board/create', function () {
+//     return view('admin/assembly/board.create');
+// });
+// Route::get('/admin/assembly/board/edit', function () {
+//     return view('admin/assembly/board.edit');
+// });
+// Route::get('/admin/assembly/flexible/create', function () {
+//     return view('admin/assembly/flexible.create');
+// });
+// Route::get('/admin/assembly/flexible/edit', function () {
+//     return view('admin/assembly/flexible.edit');
+// });
+// Route::get('/admin/assembly/side/create', function () {
+//     return view('admin/assembly/side.create');
+// });
+// Route::get('/admin/assembly/side/edit', function () {
+//     return view('admin/assembly/side.edit');
+// });
+
+// Route::get('/admin/review_payment', function () {
+//     return view('admin/review_payment/index');
+// });
+// Route::get('/admin/review_payment/create', function () {
+//     return view('admin/review_payment/create');
+// });
+// Route::get('/admin/review_file', function () {
+//     return view('admin/review_file/index');
+// });
+// Route::get('/admin/review_file/assembly', function () {
+//     return view('admin/review_file/assembly');
+// });
+// Route::get('/admin/review_file/prototype', function () {
+//     return view('admin/review_file/prototype');
+// });
+
+// Route::get('/admin/history', function () {
+//     return view('admin/history');
+// });
+// Route::get('/admin/history/cart_custom', function () {
+//     return view('admin/history/cart_custom');
+// });
+// Route::get('/admin/prototype', function () {
+//     return view('admin/prototype.index');
+// });
+// Route::get('/admin/prototype/board/create', function () {
+//     return view('admin/prototype/board.create');
+// });
+// Route::get('/admin/prototype/board/edit', function () {
+//     return view('admin/prototype/board.edit');
+// });
+// Route::get('/admin/prototype/track/create', function () {
+//     return view('admin/prototype/track.create');
+// });
+// Route::get('/admin/prototype/track/edit', function () {
+//     return view('admin/prototype/track.edit');
+// });
+// Route::get('/admin/prototype/thickness/create', function () {
+//     return view('admin/prototype/thickness.create');
+// });
+// Route::get('/admin/prototype/thickness/edit', function () {
+//     return view('admin/prototype/thickness.edit');
+// });
+// Route::get('/admin/prototype/layer/create', function () {
+//     return view('admin/prototype/layer.create');
+// });
+// Route::get('/admin/prototype/layer/edit', function () {
+//     return view('admin/prototype/layer.edit');
+// });
+// Route::get('/admin/prototype/material/create', function () {
+//     return view('admin/prototype/material.create');
+// });
+// Route::get('/admin/prototype/material/edit', function () {
+//     return view('admin/prototype/material.edit');
+// });
+// Route::get('/admin/prototype/fr4/create', function () {
+//     return view('admin/prototype/fr4.create');
+// });
+// Route::get('/admin/prototype/fr4/edit', function () {
+//     return view('admin/prototype/fr4.edit');
+// });
+// Route::get('/admin/prototype/finished_cooper/create', function () {
+//     return view('admin/prototype/finished_cooper.create');
+// });
+// Route::get('/admin/prototype/finished_cooper/edit', function () {
+//     return view('admin/prototype/finished_cooper.edit');
+// });
+// Route::get('/admin/prototype/inner_cooper/create', function () {
+//     return view('admin/prototype/inner_cooper.create');
+// });
+// Route::get('/admin/prototype/inner_cooper/edit', function () {
+//     return view('admin/prototype/inner_cooper.edit');
+// });
+// Route::get('/admin/prototype/route_process/create', function () {
+//     return view('admin/prototype/route_process.create');
+// });
+// Route::get('/admin/prototype/route_process/edit', function () {
+//     return view('admin/prototype/route_process.edit');
+// });
+// Route::get('/admin/prototype/cooper_layer/create', function () {
+//     return view('admin/prototype/cooper_layer.create');
+// });
+// Route::get('/admin/prototype/cooper_layer/edit', function () {
+//     return view('admin/prototype/cooper_layer.edit');
+// });
+// Route::get('/admin/prototype/hole/create', function () {
+//     return view('admin/prototype/hole.create');
+// });
+// Route::get('/admin/prototype/hole/edit', function () {
+//     return view('admin/prototype/hole.edit');
+// });
+// Route::get('/admin/prototype/solder/create', function () {
+//     return view('admin/prototype/solder.create');
+// });
+// Route::get('/admin/prototype/solder/edit', function () {
+//     return view('admin/prototype/solder.edit');
+// });
+// Route::get('/admin/prototype/silkscreen_layer1/create', function () {
+//     return view('admin/prototype/silkscreen_layer1.create');
+// });
+// Route::get('/admin/prototype/silkscreen_layer1/edit', function () {
+//     return view('admin/prototype/silkscreen_layer1.edit');
+// });
+// Route::get('/admin/prototype/surface/create', function () {
+//     return view('admin/prototype/surface.create');
+// });
+// Route::get('/admin/prototype/surface/edit', function () {
+//     return view('admin/prototype/surface.edit');
+// });
+// Route::get('/admin/prototype/via_process/create', function () {
+//     return view('admin/prototype/via_process.create');
+// });
+// Route::get('/admin/prototype/via_process/edit', function () {
+//     return view('admin/prototype/via_process.edit');
+// });
+// Route::get('/admin/prototype/silkscreen_layer1/create', function () {
+//     return view('admin/prototype/silkscreen_layer1.create');
+// });
+// Route::get('/admin/prototype/silkscreen_layer1/edit', function () {
+//     return view('admin/prototype/silkscreen_layer1.edit');
+// });
+// Route::get('/admin/prototype/soldermask_layer1/create', function () {
+//     return view('admin/prototype/soldermask_layer1.create');
+// });
+// Route::get('/admin/prototype/soldermask_layer1/edit', function () {
+//     return view('admin/prototype/soldermask_layer1.edit');
+// });
+// Route::get('/admin/history/order', function () {
+//     return view('admin/history.order');
+// });
