@@ -72,8 +72,11 @@
             <input type="radio" name="cable_wire" value="no" checked>No
             <input type="radio" name="cable_wire" value="yes">Yes
         </div>
+        <div class="detail_information">
+            <textarea name="detail_information" cols="60" rows="5" style="resize: none"></textarea>
+        </div>
         <div class="result">
-
+            <button type="submit">Add to Cart</button>
         </div>
     </form>
     <button onclick="calculate()">Calculate</button>
@@ -81,14 +84,12 @@
     <script>
         function calculate() {
             let quantity = document.getElementById('quantity').value
-
             console.log(quantity);
         }
 
         function sensitive() {
             let sensitive = document.getElementById('sensitive').value
             let sensitive_description = document.getElementsByName('sensitive_description')
-
             if (sensitive == 'no') {
                 sensitive_description.classList.add('hidden')
             } else {
