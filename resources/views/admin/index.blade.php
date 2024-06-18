@@ -5,9 +5,13 @@
 @section('content')
 
     <div>
-        <h1 class="my-4 text-admin-900">Dashboard</h1>
+        <div class="my-4">
+            <a href="{{ route('dashboard') }}" class="text-admin-900">Dashboard</a>
+        </div>
+        <!-- page -->
         <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
-            <div class="grid grid-cols-3 gap-4 my-4">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {{-- category --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -29,6 +33,7 @@
                         </a>
                     </div>
                 </div>
+                {{-- portfolio --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -40,7 +45,7 @@
                             <span
                                 class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataPortfolio'] }}</span>
                         </div>
-                        <a href="/admin/portfolio"
+                        <a href="{{ route('portfolio.index') }}"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                             More Details
                             <div class="rounded-full ms-2 w-5 bg-white">
@@ -49,6 +54,7 @@
                         </a>
                     </div>
                 </div>
+                {{-- prototype --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -57,10 +63,8 @@
                         </a>
                         <div class="relative inline-block my-4">
                             <i class="fas fa-project-diagram text-4xl text-gray-500"></i>
-                            <span
-                                class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataCustomPrototype'] }}</span>
                         </div>
-                        <a href="#"
+                        <a href="{{ route('prototype.index') }}"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                             More Details
                             <div class="rounded-full ms-2 w-5 bg-white">
@@ -69,6 +73,7 @@
                         </a>
                     </div>
                 </div>
+                {{-- assembly --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -77,10 +82,8 @@
                         </a>
                         <div class="relative inline-block my-4">
                             <i class="fas fa-cogs text-4xl text-gray-500"></i>
-                            <span
-                                class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataCustomAssembly'] }}</span>
                         </div>
-                        <a href="/assembly"
+                        <a href="{{ route('assembly.index') }}"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                             More Details
                             <div class="rounded-full ms-2 w-5 bg-white">
@@ -89,6 +92,7 @@
                         </a>
                     </div>
                 </div>
+                {{-- review file --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -100,7 +104,7 @@
                             <span
                                 class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataReviewFile'] }}</span>
                         </div>
-                        <a href="#"
+                        <a href="{{ route('review_file.index') }}"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                             More Details
                             <div class="rounded-full ms-2 w-5 bg-white">
@@ -109,6 +113,7 @@
                         </a>
                     </div>
                 </div>
+                {{-- review payment --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -120,7 +125,7 @@
                             <span
                                 class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataReviewPayment'] }}</span>
                         </div>
-                        <a href="#"
+                        <a href="{{ route('review_payment.index') }}"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                             More Details
                             <div class="rounded-full ms-2 w-5 bg-white">
@@ -129,6 +134,7 @@
                         </a>
                     </div>
                 </div>
+                {{-- on progress --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -137,12 +143,11 @@
                             </h5>
                         </a>
                         <div class="relative inline-block my-4">
-                            <i class="fas fa-clock text-4xl text-gray-500"></i>
+                            <i class="fas fa-sync text-4xl text-gray-500"></i>
                             <span
-                                class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataCartCustomHistory'] }}
-                                dummy</span>
+                                class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataOnProgress'] }}</span>
                         </div>
-                        <a href="/admin/history"
+                        <a href="{{ route('progress.index') }}"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                             More Details
                             <div class="rounded-full ms-2 w-5 bg-white">
@@ -151,6 +156,7 @@
                         </a>
                     </div>
                 </div>
+                {{-- history cart custom --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -163,7 +169,7 @@
                             <span
                                 class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataCartCustomHistory'] }}</span>
                         </div>
-                        <a href="/admin/history"
+                        <a href="{{ route('history.cart_custom') }}"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                             More Details
                             <div class="rounded-full ms-2 w-5 bg-white">
@@ -172,6 +178,7 @@
                         </a>
                     </div>
                 </div>
+                {{-- history order --}}
                 <div
                     class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex flex-col items-center justify-center p-5">
@@ -184,7 +191,7 @@
                             <span
                                 class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataOrderHistory'] }}</span>
                         </div>
-                        <a href="/admin/history"
+                        <a href="{{ route('history.order') }}"
                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-admin-900 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                             More Details
                             <div class="rounded-full ms-2 w-5 bg-white">

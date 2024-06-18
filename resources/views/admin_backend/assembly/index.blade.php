@@ -21,20 +21,21 @@
     <a href="{{ route('assembly.index') }}">assembly</a>
     <a href="{{ route('review_file.index') }}">review file</a>
     {{-- <a href="{{ route('review_payment.index') }}">review payment</a>
-<a href="{{ route('history.index') }}">history</a> --}}
+    <a href="{{ route('history.index') }}">history</a> --}}
 
     <h1>Assembly</h1>
 
     <select name="assembly" id="assembly">
         <option disabled selected>Select Assembly</option>
         @foreach ($dataSelect as $item)
-            <option value="{{ $item }}" {{ session('select') == $item ? 'selected' : '' }}>
-                {{ $item }}</option>
+        <option value="{{ $item }}" {{ session('select') == $item ? 'selected' : '' }}>
+            {{ $item }}
+        </option>
         @endforeach
     </select>
 
     @session('success')
-        {{ session('success') }}
+    {{ session('success') }}
     @endsession
 
     <div class="flexible hidden">
@@ -52,22 +53,25 @@
             </thead>
             <tbody>
                 @forelse ($dataAssembly['dataFlexible'] as $index => $data)
-                    <tr>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ $data->flexible_name }}</td>
-                        <td>Rp{{ number_format($data->flexible_price, 0, '', '.') }}</td>
-                        <td>
-                            <a href="{{ route('flexible.edit', $data->id_flexible) }}">Edit</a>
-                            <form action="{{ route('flexible.destroy', $data->id_flexible) }}"
-                                onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $data->flexible_name }}</td>
+                    <td>Rp{{ number_format($data->flexible_price, 0, '', '.') }}</td>
+                    <td>
+                        <a href="{{ route('flexible.edit', $data->id_flexible) }}">Edit</a>
+                        <form action="{{ route('flexible.destroy', $data->id_flexible) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
                 @empty
-                    <h1>Tidak ada data</h1>
+                <tr>
+                    <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                        No data
+                    </td>
+                </tr>
                 @endforelse
             </tbody>
         </table>
@@ -89,21 +93,24 @@
             </thead>
             <tbody>
                 @forelse ($dataAssembly['dataBoard'] as $index => $data)
-                    <tr>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ $data->board_type_name }}</td>
-                        <td>
-                            <a href="{{ route('board.edit', $data->id_board) }}">Edit</a>
-                            <form action="{{ route('board.destroy', $data->id_board) }}"
-                                onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $data->board_type_name }}</td>
+                    <td>
+                        <a href="{{ route('board.edit', $data->id_board) }}">Edit</a>
+                        <form action="{{ route('board.destroy', $data->id_board) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
                 @empty
-                    <h1>Tidak ada data</h1>
+                <tr>
+                    <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                        No data
+                    </td>
+                </tr>
                 @endforelse
             </tbody>
         </table>
@@ -126,22 +133,25 @@
             </thead>
             <tbody>
                 @forelse ($dataAssembly['dataSide'] as $index => $data)
-                    <tr>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ $data->side_name }}</td>
-                        <td>Rp{{ number_format($data->side_price, 0, '', '.') }}</td>
-                        <td>
-                            <a href="{{ route('side.edit', $data->id_side) }}">Edit</a>
-                            <form action="{{ route('side.destroy', $data->id_side) }}"
-                                onsubmit="return confirm('Are you sure?')" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $data->side_name }}</td>
+                    <td>Rp{{ number_format($data->side_price, 0, '', '.') }}</td>
+                    <td>
+                        <a href="{{ route('side.edit', $data->id_side) }}">Edit</a>
+                        <form action="{{ route('side.destroy', $data->id_side) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
                 @empty
-                    <h1>Tidak ada data</h1>
+                <tr>
+                    <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                        No data
+                    </td>
+                </tr>
                 @endforelse
             </tbody>
         </table>

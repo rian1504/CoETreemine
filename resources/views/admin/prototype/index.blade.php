@@ -1,726 +1,1267 @@
 @extends('layouts.admin')
 
-@section('title', 'CoE Treemine | Assembly')
+@section('title', 'CoE Treemine | Prototype')
 
 @section('content')
 
     <div>
-        <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center">
-                <i class="fas fa-project-diagram text-2xl mr-2"></i>
-                <h2 class="text-lg font-bold">Custom Prototype</h2>
-            </div>
-        </div>
-
         <div class="my-4 flex flex-row gap-4">
             <a href="{{ route('dashboard') }}">Dashboard</a>
             <p>></p>
-            <p class="text-admin-900">Prototype</p>
-        </div>
-
-        <div class=" flex flex-row gap-4">
-            <label for="prototype"
-                class=" inline-flex items-center mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose</label>
-            <select id="prototype" name="prototype"
-                class=" max-w-44 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
-                <option selected disabled>choose a prototype</option>
-                @foreach ($dataSelect as $item)
-                    <option value="{{ $item }}" {{ session('select') == $item ? 'selected' : '' }}>
-                        {{ $item }}</option>
-                @endforeach
-            </select>
+            <a href="{{ route('prototype.index') }}" class="text-admin-900">Prototype</a>
         </div>
 
         <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
-            <div class="my-4 flex justify-end">
-                <a href="/admin/prototype/board/create"
-                    class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-                </a>
+            <div class="pb-4 flex flex-row justify-between">
+                <select id="prototype" name="prototype"
+                    class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-green-500 dark:focus:border-green-500">
+                    <option selected value="Board" disabled hidden>Choose a Prototype</option>
+                    @foreach ($dataSelect as $item)
+                        <option value="{{ $item }}" {{ session('select') == $item ? 'selected' : '' }}>
+                            {{ $item }}
+                        </option>
+                    @endforeach
+                </select>
+                <div id="addButtonContainer">
+                    {{-- Container untuk tombol "Add" --}}
+                </div>
+            </div>
+            <!-- table -->
+            <!-- board type -->
+            <div id="boardTypeTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataBoard'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->board_type_name }}
+                                </th>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->board_type_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('board_type.edit', $data->id_board) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('board_type.destroy', $data->id_board) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataBoard']->links() }}
+            </div>
+
+            <!-- route process -->
+            <div id="routeProcessTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataRouteProcess'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->route_process_name }}
+                                </th>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('route_process.edit', $data->id_route) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('route_process.destroy', $data->id_route) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataRouteProcess']->links() }}
+            </div>
+
+            <!-- fr4 -->
+            <div id="fr4Table" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataFr4'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->fr4_name }}
+                                </th>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('fr4.edit', $data->id_fr4) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('fr4.destroy', $data->id_fr4) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataFr4']->links() }}
+            </div>
+
+            <!-- thickness -->
+            <div id="thicknessTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Layer Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataThickness'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->thickness_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->thickness_price, 0, '', '.') }}
+                                </td>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->prototype_layer->layer_name }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('thickness.edit', $data->id_thickness) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('thickness.destroy', $data->id_thickness) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="5" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataThickness']->links() }}
+            </div>
+
+            <!-- layer -->
+            <div id="layerTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataLayer'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->layer_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->layer_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('layer.edit', $data->id_layer) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('layer.destroy', $data->id_layer) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataLayer']->links() }}
+            </div>
+
+            <!-- inner cooper -->
+            <div id="innerCooperTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataInnerCooper'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->inner_cooper_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->inner_cooper_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('inner_cooper.edit', $data->id_inner_cooper) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('inner_cooper.destroy', $data->id_inner_cooper) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataInnerCooper']->links() }}
+            </div>
+
+            <!-- finished cooper -->
+            <div id="finishedCooperTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataFinishedCooper'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->finished_cooper_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->finished_cooper_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('finished_cooper.edit', $data->id_finished_cooper) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('finished_cooper.destroy', $data->id_finished_cooper) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataFinishedCooper']->links() }}
+            </div>
+
+            <!-- cooper layer -->
+            <div id="cooperLayerTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataCooperLayer'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->cooper_layer_name }}
+                                </th>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('cooper_layer.edit', $data->id_cooper_layer) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('cooper_layer.destroy', $data->id_cooper_layer) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataCooperLayer']->links() }}
+            </div>
+
+            <!-- track -->
+            <div id="trackTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataTrack'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->track_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->track_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('track.edit', $data->id_track) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('track.destroy', $data->id_track) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataTrack']->links() }}
+            </div>
+
+            <!-- hole -->
+            <div id="holeTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataHole'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->hole_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->hole_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('hole.edit', $data->id_hole) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('hole.destroy', $data->id_hole) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataHole']->links() }}
+            </div>
+
+            <!-- SOLDER -->
+            <div id="solderTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataSolder'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->solder_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->solder_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('solder.edit', $data->id_solder) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('solder.destroy', $data->id_solder) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataSolder']->links() }}
+            </div>
+
+            <!-- silk -->
+            <div id="silkTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataSilk'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->silk_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->silk_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('silk.edit', $data->id_silk) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('silk.destroy', $data->id_silk) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataSilk']->links() }}
+            </div>
+
+            <!-- surface -->
+            <div id="surfaceTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataSurface'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->surface_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->surface_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('surface.edit', $data->id_surface) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('surface.destroy', $data->id_surface) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataSurface']->links() }}
+            </div>
+
+            <!-- via process -->
+            <div id="viaProcessTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataViaProcess'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->via_process_name }}
+                                </th>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->via_process_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('via_process.edit', $data->id_via) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('via_process.destroy', $data->id_via) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataViaProcess']->links() }}
+            </div>
+
+            <!-- material -->
+            <div id="materialTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Picture
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataMaterial'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->material_name }}
+                                </th>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <img class="max-h-32 max-w-32 object-cover dark:shadow-gray-800"
+                                        src="{{ asset('/storage/assets/images/material/' . $data->material_picture) }}"
+                                        alt="Material Picture">
+                                </td>
+                                <td scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    Rp{{ number_format($data->material_price, 0, '', '.') }}
+                                </td>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('material.edit', $data->id_material) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="{{ route('material.destroy', $data->id_material) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="5" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataMaterial']->links() }}
+            </div>
+
+            <!-- SoldermaskLayer1 -->
+            <div id="solderMaskLayer1Table" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataSoldermaskLayer1'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->soldermask_layer1_name }}
+                                </th>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('soldermask_layer1.edit', $data->id_soldermask_layer1) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form
+                                            action="{{ route('soldermask_layer1.destroy', $data->id_soldermask_layer1) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataSoldermaskLayer1']->links() }}
+            </div>
+
+            <!-- silkscreen_layer1 -->
+            <div id="silkScreenLayer1Table" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($dataPrototype['dataSilkscreenLayer1'] as $index => $data)
+                            <tr>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $index + 1 }}
+                                </th>
+                                <th scope="row" class="px-6 py-3 whitespace-nowrap">
+                                    {{ $data->silkscreen_layer1_name }}
+                                </th>
+                                <td class="px-6 py-3 whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <a href="{{ route('silkscreen_layer1.edit', $data->id_silkscreen_layer1) }}"
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form
+                                            action="{{ route('silkscreen_layer1.destroy', $data->id_silkscreen_layer1) }}"
+                                            onsubmit="return confirm('Are you sure?')" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center px-5 py-2 text-sm
+                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
+                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
+                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $dataPrototype['dataSilkscreenLayer1']->links() }}
             </div>
         </div>
-
-        {{-- BOARD TYPE --}}
-        <div class="board hidden">
-            <h1>Board</h1>
-            <a href="{{ route('board_type.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataBoard'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->board_type_name }}</td>
-                            <td>Rp{{ number_format($data->board_type_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('board_type.edit', $data->id_board) }}">Edit</a>
-                                <form action="{{ route('board_type.destroy', $data->id_board) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataBoard']->links() }}
-
-        </div>
-
-        {{-- ROUTE PROCESS --}}
-        <div class="route_process hidden">
-            <h1>Route Process</h1>
-            <a href="{{ route('route_process.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataRouteProcess'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->route_process_name }}</td>
-                            <td>
-                                <a href="{{ route('route_process.edit', $data->id_route) }}">Edit</a>
-                                <form action="{{ route('route_process.destroy', $data->id_route) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataRouteProcess']->links() }}
-
-        </div>
-
-        {{-- FR4 --}}
-        <div class="fr4 hidden">
-            <h1>Fr4</h1>
-            <a href="{{ route('fr4.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataFr4'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->fr4_name }}</td>
-                            <td>
-                                <a href="{{ route('fr4.edit', $data->id_fr4) }}">Edit</a>
-                                <form action="{{ route('fr4.destroy', $data->id_fr4) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataFr4']->links() }}
-
-        </div>
-
-        {{-- THICKNESS --}}
-        <div class="thickness hidden">
-            <h1>Thickness</h1>
-            <a href="{{ route('thickness.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Layer Name</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataThickness'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->thickness_name }}</td>
-                            <td>Rp{{ number_format($data->thickness_price, 0, '', '.') }}</td>
-                            <td>{{ $data->prototype_layer->layer_name }}</td>
-                            <td>
-                                <a href="{{ route('thickness.edit', $data->id_thickness) }}">Edit</a>
-                                <form action="{{ route('thickness.destroy', $data->id_thickness) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataThickness']->links() }}
-
-        </div>
-
-        {{-- LAYER --}}
-        <div class="layer hidden">
-            <h1>Layer</h1>
-            <a href="{{ route('layer.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataLayer'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->layer_name }}</td>
-                            <td>Rp{{ number_format($data->layer_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('layer.edit', $data->id_layer) }}">Edit</a>
-                                <form action="{{ route('layer.destroy', $data->id_layer) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataLayer']->links() }}
-
-        </div>
-
-        {{-- INNER COOPER --}}
-        <div class="inner_cooper hidden">
-            <h1>Inner Cooper</h1>
-            <a href="{{ route('inner_cooper.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataInnerCooper'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->inner_cooper_name }}</td>
-                            <td>Rp{{ number_format($data->inner_cooper_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('inner_cooper.edit', $data->id_inner_cooper) }}">Edit</a>
-                                <form action="{{ route('inner_cooper.destroy', $data->id_inner_cooper) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataInnerCooper']->links() }}
-
-        </div>
-
-        {{-- FINISHED COOPER --}}
-        <div class="finished_cooper hidden">
-            <h1>Finished Cooper</h1>
-            <a href="{{ route('finished_cooper.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataFinishedCooper'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->finished_cooper_name }}</td>
-                            <td>Rp{{ number_format($data->finished_cooper_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('finished_cooper.edit', $data->id_finished_cooper) }}">Edit</a>
-                                <form action="{{ route('finished_cooper.destroy', $data->id_finished_cooper) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataFinishedCooper']->links() }}
-
-        </div>
-
-        {{-- COOPER LAYER --}}
-        <div class="cooper_layer hidden">
-            <h1>Cooper Layer</h1>
-            <a href="{{ route('cooper_layer.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataCooperLayer'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->cooper_layer_name }}</td>
-                            <td>
-                                <a href="{{ route('cooper_layer.edit', $data->id_cooper_layer) }}">Edit</a>
-                                <form action="{{ route('cooper_layer.destroy', $data->id_cooper_layer) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataCooperLayer']->links() }}
-
-        </div>
-
-        {{-- TRACK --}}
-        <div class="track hidden">
-            <h1>Track</h1>
-            <a href="{{ route('track.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataTrack'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->track_name }}</td>
-                            <td>Rp{{ number_format($data->track_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('track.edit', $data->id_track) }}">Edit</a>
-                                <form action="{{ route('track.destroy', $data->id_track) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataTrack']->links() }}
-
-        </div>
-
-        {{-- HOLE --}}
-        <div class="hole hidden">
-            <h1>Hole</h1>
-            <a href="{{ route('hole.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataHole'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->hole_name }}</td>
-                            <td>Rp{{ number_format($data->hole_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('hole.edit', $data->id_hole) }}">Edit</a>
-                                <form action="{{ route('hole.destroy', $data->id_hole) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataHole']->links() }}
-
-        </div>
-
-        {{-- SOLDER --}}
-        <div class="solder hidden">
-            <h1>Solder</h1>
-            <a href="{{ route('solder.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-            </a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataSolder'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->solder_name }}</td>
-                            <td>Rp{{ number_format($data->solder_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('solder.edit', $data->id_solder) }}">Edit</a>
-                                <form action="{{ route('solder.destroy', $data->id_solder) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataSolder']->links() }}
-
-        </div>
-
-        {{-- SILK --}}
-        <div class="silk hidden">
-            <h1>Silk</h1>
-            <a href="{{ route('silk.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-            </a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataSilk'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->silk_name }}</td>
-                            <td>Rp{{ number_format($data->silk_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('silk.edit', $data->id_silk) }}">Edit</a>
-                                <form action="{{ route('silk.destroy', $data->id_silk) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataSilk']->links() }}
-
-        </div>
-
-        {{-- SURFACE --}}
-        <div class="surface hidden">
-            <h1>Surface</h1>
-            <a href="{{ route('surface.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-            </a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataSurface'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->surface_name }}</td>
-                            <td>Rp{{ number_format($data->surface_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('surface.edit', $data->id_surface) }}">Edit</a>
-                                <form action="{{ route('surface.destroy', $data->id_surface) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataSurface']->links() }}
-
-        </div>
-
-        {{-- VIA PROCESS --}}
-        <div class="via_process hidden">
-            <h1>Via Process</h1>
-            <a href="{{ route('via_process.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-            </a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataViaProcess'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->via_process_name }}</td>
-                            <td>Rp{{ number_format($data->via_process_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('via_process.edit', $data->id_via) }}">Edit</a>
-                                <form action="{{ route('via_process.destroy', $data->id_via) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataViaProcess']->links() }}
-
-        </div>
-
-        {{-- MATERIAL --}}
-        <div class="material hidden">
-            <h1>Material</h1>
-            <a href="{{ route('material.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-            </a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Picture</td>
-                        <td>Price</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataMaterial'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->material_name }}</td>
-                            <td>
-                                <img src="{{ asset('/storage/assets/images/material/' . $data->material_picture) }}"
-                                    alt="" width="100" height="100">
-                            </td>
-                            <td>Rp{{ number_format($data->material_price, 0, '', '.') }}</td>
-                            <td>
-                                <a href="{{ route('material.edit', $data->id_material) }}">Edit</a>
-                                <form action="{{ route('material.destroy', $data->id_material) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataMaterial']->links() }}
-
-        </div>
-
-        {{-- SOLDERMASK LAYER 1 --}}
-        <div class="soldermask_layer1 hidden">
-            <h1>Soldermask Layer 1</h1>
-            <a href="{{ route('soldermask_layer1.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-            </a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataSoldermaskLayer1'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->soldermask_layer1_name }}</td>
-                            <td>
-                                <a href="{{ route('soldermask_layer1.edit', $data->id_soldermask_layer1) }}">Edit</a>
-                                <form action="{{ route('soldermask_layer1.destroy', $data->id_soldermask_layer1) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataSoldermaskLayer1']->links() }}
-
-        </div>
-
-        {{-- SILKSCREEN LAYER 1 --}}
-        <div class="silkscreen_layer1 hidden">
-            <h1>Silkscreen Layer1</h1>
-            <a href="{{ route('silkscreen_layer1.create') }}"
-                class=" mt-5 max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-            </a>
-
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>No</td>
-                        <td>Name</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($dataPrototype['dataSilkscreenLayer1'] as $index => $data)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $data->silkscreen_layer1_name }}</td>
-                            <td>
-                                <a href="{{ route('silkscreen_layer1.edit', $data->id_silkscreen_layer1) }}">Edit</a>
-                                <form action="{{ route('silkscreen_layer1.destroy', $data->id_silkscreen_layer1) }}"
-                                    onsubmit="return confirm('Are you sure?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <h1>Tidak ada data</h1>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $dataPrototype['dataSilkscreenLayer1']->links() }}
-
-        </div>
     </div>
+
+
+    <script>
+        // show table
+        document.getElementById('prototype').addEventListener('change', function() {
+            const value = this.value;
+            document.getElementById('boardTypeTable').classList.add('hidden');
+            document.getElementById('routeProcessTable').classList.add('hidden');
+            document.getElementById('fr4Table').classList.add('hidden');
+            document.getElementById('thicknessTable').classList.add('hidden');
+            document.getElementById('layerTable').classList.add('hidden');
+            document.getElementById('innerCooperTable').classList.add('hidden');
+            document.getElementById('finishedCooperTable').classList.add('hidden');
+            document.getElementById('cooperLayerTable').classList.add('hidden');
+            document.getElementById('trackTable').classList.add('hidden');
+            document.getElementById('holeTable').classList.add('hidden');
+            document.getElementById('solderTable').classList.add('hidden');
+            document.getElementById('silkTable').classList.add('hidden');
+            document.getElementById('surfaceTable').classList.add('hidden');
+            document.getElementById('viaProcessTable').classList.add('hidden');
+            document.getElementById('materialTable').classList.add('hidden');
+            document.getElementById('solderMaskLayer1Table').classList.add('hidden');
+            document.getElementById('silkScreenLayer1Table').classList.add('hidden');
+
+            if (value === 'Board') {
+                document.getElementById('boardTypeTable').classList.remove('hidden');
+            } else if (value === 'Route Process') {
+                document.getElementById('routeProcessTable').classList.remove('hidden');
+            } else if (value === 'Fr4') {
+                document.getElementById('fr4Table').classList.remove('hidden');
+            } else if (value === 'Thickness') {
+                document.getElementById('thicknessTable').classList.remove('hidden');
+            } else if (value === 'Layer') {
+                document.getElementById('layerTable').classList.remove('hidden');
+            } else if (value === 'Inner Cooper') {
+                document.getElementById('innerCooperTable').classList.remove('hidden');
+            } else if (value === 'Finished Cooper') {
+                document.getElementById('finishedCooperTable').classList.remove('hidden');
+            } else if (value === 'Cooper Layer') {
+                document.getElementById('cooperLayerTable').classList.remove('hidden');
+            } else if (value === 'Track') {
+                document.getElementById('trackTable').classList.remove('hidden');
+            } else if (value === 'Hole') {
+                document.getElementById('holeTable').classList.remove('hidden');
+            } else if (value === 'Solder') {
+                document.getElementById('solderTable').classList.remove('hidden');
+            } else if (value === 'Silk') {
+                document.getElementById('silkTable').classList.remove('hidden');
+            } else if (value === 'Surface') {
+                document.getElementById('surfaceTable').classList.remove('hidden');
+            } else if (value === 'Via Process') {
+                document.getElementById('viaProcessTable').classList.remove('hidden');
+            } else if (value === 'Material') {
+                document.getElementById('materialTable').classList.remove('hidden');
+            } else if (value === 'Soldermask Layer1') {
+                document.getElementById('solderMaskLayer1Table').classList.remove('hidden');
+            } else if (value === 'Silkscreen Layer1') {
+                document.getElementById('silkScreenLayer1Table').classList.remove('hidden');
+            }
+        });
+
+        // Check if there's a selected value, if not, show the boardTypeTable by default
+        const selectedValue = document.getElementById('prototype').value;
+        if (!selectedValue) {
+            document.getElementById('boardTypeTable').classList.remove('hidden');
+        } else {
+            // Optional: Trigger the change event to show the selected table on page load if there's a selected value
+            document.getElementById('prototype').dispatchEvent(new Event('change'));
+        }
+
+
+
+        // add button create
+        document.getElementById('prototype').addEventListener('change', function() {
+            var selectedValue = this.value.toLowerCase().replace(/\s/g, '_');
+            var addButtonContainer = document.getElementById('addButtonContainer');
+            var addButton = '';
+
+            // Menghapus tombol sebelumnya jika ada
+            addButtonContainer.innerHTML = '';
+
+            // Menambahkan tombol berdasarkan pilihan yang dipilih
+            switch (selectedValue) {
+                case 'board':
+                    addButton =
+                        `<a href="{{ route('board_type.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'route_process':
+                    addButton =
+                        `<a href="{{ route('route_process.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'fr4':
+                    addButton =
+                        `<a href="{{ route('fr4.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'thickness':
+                    addButton =
+                        `<a href="{{ route('thickness.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'layer':
+                    addButton =
+                        `<a href="{{ route('layer.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'inner_cooper':
+                    addButton =
+                        `<a href="{{ route('inner_cooper.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'finished_cooper':
+                    addButton =
+                        `<a href="{{ route('finished_cooper.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'cooper_layer':
+                    addButton =
+                        `<a href="{{ route('cooper_layer.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'track':
+                    addButton =
+                        `<a href="{{ route('track.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'hole':
+                    addButton =
+                        `<a href="{{ route('hole.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'solder':
+                    addButton =
+                        `<a href="{{ route('solder.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'silk':
+                    addButton =
+                        `<a href="{{ route('silk.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'surface':
+                    addButton =
+                        `<a href="{{ route('surface.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'via_process':
+                    addButton =
+                        `<a href="{{ route('via_process.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'material':
+                    addButton =
+                        `<a href="{{ route('material.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'soldermask_layer1':
+                    addButton =
+                        `<a href="{{ route('soldermask_layer1.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                case 'silkscreen_layer1':
+                    addButton =
+                        `<a href="{{ route('silkscreen_layer1.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>`;
+                    break;
+                default:
+                    // Default behavior if no specific button matches
+                    break;
+            }
+
+            // Memasukkan tombol ke dalam container
+            if (addButton !== '') {
+                addButtonContainer.innerHTML = addButton;
+            }
+        });
+    </script>
 @endsection

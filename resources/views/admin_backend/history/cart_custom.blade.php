@@ -36,50 +36,52 @@
         </thead>
         <tbody>
             @forelse ($datas as $index => $data)
-                @if ($data->custom_assembly != null)
-                    <tr>
-                        <td rowspan="2">{{ $index + 1 }}</td>
-                        <td rowspan="2">{{ $data->user->name }}</td>
-                        <td rowspan="2">Rp{{ number_format($data->total_price, 0, '', '.') }}</td>
-                        <td rowspan="2">{{ $data->status }}</td>
-                        <td rowspan="2">{{ $data->reason }}</td>
-                        <td>Assembly</td>
-                        <td>Rp{{ number_format($data->custom_assembly->price, 0, '', '.') }}</td>
-                        <td>
-                            <a
-                                href="{{ route('history.cart_custom.assembly', $data->custom_assembly->id_custom_assembly) }}">View
-                                Detail</a>
-                        </td>
-                    </tr>
-                @else
-                    <tr>
-                        <td rowspan="2">{{ $index + 1 }}</td>
-                        <td rowspan="2">{{ $data->user->name }}</td>
-                        <td rowspan="2">Rp{{ number_format($data->total_price, 0, '', '.') }}</td>
-                        <td rowspan="2">{{ $data->status }}</td>
-                        <td rowspan="2">{{ $data->reason }}</td>
-                        <td colspan="3">Assembly Kosong</td>
-                    </tr>
-                @endif
+            @if ($data->custom_assembly != null)
+            <tr>
+                <td rowspan="2">{{ $index + 1 }}</td>
+                <td rowspan="2">{{ $data->user->name }}</td>
+                <td rowspan="2">Rp{{ number_format($data->total_price, 0, '', '.') }}</td>
+                <td rowspan="2">{{ $data->status }}</td>
+                <td rowspan="2">{{ $data->reason }}</td>
+                <td>Assembly</td>
+                <td>Rp{{ number_format($data->custom_assembly->price, 0, '', '.') }}</td>
+                <td>
+                    <a href="{{ route('history.cart_custom.assembly', $data->custom_assembly->id_custom_assembly) }}">View
+                        Detail</a>
+                </td>
+            </tr>
+            @else
+            <tr>
+                <td rowspan="2">{{ $index + 1 }}</td>
+                <td rowspan="2">{{ $data->user->name }}</td>
+                <td rowspan="2">Rp{{ number_format($data->total_price, 0, '', '.') }}</td>
+                <td rowspan="2">{{ $data->status }}</td>
+                <td rowspan="2">{{ $data->reason }}</td>
+                <td colspan="3">Assembly Kosong</td>
+            </tr>
+            @endif
 
-                @if ($data->custom_prototype != null)
-                    <tr>
-                        <td>Prototype</td>
-                        <td>Rp{{ number_format($data->custom_prototype->price, 0, '', '.') }}</td>
-                        <td>
-                            <a
-                                href="{{ route('history.cart_custom.prototype', $data->custom_prototype->id_custom_prototype) }}">View
-                                Detail</a>
-                        </td>
-                    </tr>
-                @else
-                    <tr>
-                        <td colspan="3">Prototype Kosong</td>
-                    </tr>
-                @endif
+            @if ($data->custom_prototype != null)
+            <tr>
+                <td>Prototype</td>
+                <td>Rp{{ number_format($data->custom_prototype->price, 0, '', '.') }}</td>
+                <td>
+                    <a href="{{ route('history.cart_custom.prototype', $data->custom_prototype->id_custom_prototype) }}">View
+                        Detail</a>
+                </td>
+            </tr>
+            @else
+            <tr>
+                <td colspan="3">Prototype Kosong</td>
+            </tr>
+            @endif
 
             @empty
-                <h1>Tidak ada data</h1>
+            <tr>
+                <td colspan="8" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                    No data
+                </td>
+            </tr>
             @endforelse
         </tbody>
     </table>

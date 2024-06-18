@@ -17,20 +17,18 @@ class DashboardController extends Controller
     {
         $dataCategory = Category::get()->count();
         $dataPortfolio = Portfolio::get()->count();
-        $dataCustomAssembly = CustomAssembly::get();
-        $dataCustomPrototype = CustomPrototype::get();
         $dataReviewFile = CartCustom::where('status', 'not review')->get()->count();
         $dataReviewPayment = Order::where('status', 'not review')->get()->count();
+        $dataOnProgress = Order::where('status', 'on progress')->get()->count();
         $dataOrderHistory = Order::where('status', '!=', 'not review')->get()->count();
         $dataCartCustomHistory = HistoryCartCustom::get()->count();
 
         return [
             "dataCategory" => $dataCategory,
             "dataPortfolio" => $dataPortfolio,
-            "dataCustomAssembly" => $dataCustomAssembly->count(),
-            "dataCustomPrototype" => $dataCustomPrototype->count(),
             "dataReviewFile" => $dataReviewFile,
             "dataReviewPayment" => $dataReviewPayment,
+            "dataOnProgress" => $dataOnProgress,
             "dataOrderHistory" => $dataOrderHistory,
             "dataCartCustomHistory" => $dataCartCustomHistory,
         ];

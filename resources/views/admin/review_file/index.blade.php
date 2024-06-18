@@ -25,7 +25,7 @@
                         </svg>
                     </div>
                     <input type="text" id="table-search"
-                        class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                        class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                         placeholder="Search for items">
                 </div>
             </div>
@@ -90,12 +90,11 @@
                                     </td>
                                     <td rowspan="2" class="px-4 py-4 whitespace-nowrap truncate">
                                         {{-- <form action="{{ route('review_file.reject', $data->id_cart_custom) }}"
-                                            method="POST" onsubmit="return confirm('Are you sure want to reject?')">
-                                            @csrf
-                                            <input type="text" name="reason">
-                                            <button type="submit"
-                                                class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Reject</button>
-                                        </form> --}}
+                            method="POST" onsubmit="return confirm('Are you sure want to reject?')">
+                            @csrf
+                            <input type="text" name="reason">
+                            <button type="submit" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Reject</button>
+                            </form> --}}
                                         <form action="{{ route('review_file.accept', $data->id_cart_custom) }}"
                                             method="POST" onsubmit="return confirm('Are you sure want to accept?')">
                                             @csrf
@@ -129,12 +128,11 @@
                                     </td>
                                     <td rowspan="2" class="px-4 py-4 whitespace-nowrap truncate">
                                         {{-- <form action="{{ route('review_file.reject', $data->id_cart_custom) }}"
-                                            method="POST" onsubmit="return confirm('Are you sure want to reject?')">
-                                            @csrf
-                                            <input type="text" name="reason">
-                                            <button type="submit"
-                                                class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Reject</button>
-                                        </form> --}}
+                            method="POST" onsubmit="return confirm('Are you sure want to reject?')">
+                            @csrf
+                            <input type="text" name="reason">
+                            <button type="submit" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Reject</button>
+                            </form> --}}
                                         <form action="{{ route('review_file.accept', $data->id_cart_custom) }}"
                                             method="POST" onsubmit="return confirm('Are you sure want to accept?')">
                                             @csrf
@@ -176,9 +174,12 @@
                                     <h1>Prototype Kosong</h1>
                                 </td>
                             @endif
-
                         @empty
-                            <h1>Tidak ada data</h1>
+                            <tr>
+                                <td colspan="7" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                                    No data
+                                </td>
+                            </tr>
                         @endforelse
                     </tbody>
                 </table>

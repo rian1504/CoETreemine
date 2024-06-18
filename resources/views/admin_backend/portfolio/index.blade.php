@@ -27,29 +27,31 @@
     </thead>
     <tbody>
         @forelse ($datas as $index => $data)
-            <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $data->portfolio_name }}</td>
-                <td>Rp{{ number_format($data->portfolio_price, 0, '', '.') }}</td>
-                <td>{{ $data->portfolio_description }}</td>
-                <td>{{ $data->portfolio_stock }} Pcs</td>
-                <td>
-                    <img src="{{ asset('/storage/assets/images/portfolio/' . $data->portfolio_picture) }}" alt=""
-                        width="100" height="100">
-                </td>
-                <td>{{ $data->category->category_name }}</td>
-                <td>
-                    <a href="{{ route('portfolio.edit', $data->id_portfolio) }}">Edit</a>
-                    <form action="{{ route('portfolio.destroy', $data->id_portfolio) }}"
-                        onsubmit="return confirm('Are you sure?')" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">Delete</button>
-                    </form>
-                </td>
-            </tr>
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ $data->portfolio_name }}</td>
+            <td>Rp{{ number_format($data->portfolio_price, 0, '', '.') }}</td>
+            <td>{{ $data->portfolio_description }}</td>
+            <td>{{ $data->portfolio_stock }} Pcs</td>
+            <td>
+                <img src="{{ asset('/storage/assets/images/portfolio/' . $data->portfolio_picture) }}" alt="" width="100" height="100">
+            </td>
+            <td>{{ $data->category->category_name }}</td>
+            <td>
+                <a href="{{ route('portfolio.edit', $data->id_portfolio) }}">Edit</a>
+                <form action="{{ route('portfolio.destroy', $data->id_portfolio) }}" onsubmit="return confirm('Are you sure?')" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
         @empty
-            <h1>Tidak ada data</h1>
+        <tr>
+            <td colspan="4" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
+                No data
+            </td>
+        </tr>
         @endforelse
     </tbody>
 </table>

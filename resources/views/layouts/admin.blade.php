@@ -9,36 +9,47 @@
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">
 </head>
 
-<body>
+<body class="h-screen">
+    <div class="flex w-screen h-screen ">
+        <aside>
+            @include('components.admin_sidebar')
+        </aside>
 
-    <header>
-        @include('components.admin_header')
-    </header>
-    <aside>
-        @include('components.admin_sidebar')
-    </aside>
-    <main class="min-h-screen flex flex-col flex-grow bg-admin-100 mt-20 p-8 sm:ml-64">
-        @yield('content')
-    </main>
-    <!-- <footer>
+        <div id="content" class="flex flex-col w-full md:ml-64 transition-all duration-300">
+            <header>
+                @include('components.admin_header')
+            </header>
+            <main class="flex flex-col grow bg-admin-100 mt-12 p-8">
+                @yield('content')
+            </main>
+        </div>
+        <!-- <footer>
         @include('components.footer')
     </footer> -->
+    </div>
 
 
 
     <script>
-        const toggleSidebarBtn = document.getElementById('toggle-sidebar-btn');
-        const sidebar = document.getElementById('logo-sidebar');
+        document.querySelector("#menuToggle").addEventListener("click", () => {
+            let sidebar = document.querySelector("#sidebar");
+            let content = document.querySelector("#content");
+            let navbar = document.querySelector("#navbar");
 
-        // Function to toggle sidebar
-        function toggleSidebar() {
-            sidebar.classList.toggle('translate-x-0');
-            sidebar.classList.toggle('-translate-x-full');
-        }
-
-        // Add event listener
-        toggleSidebarBtn.addEventListener('click', toggleSidebar);
+            if (sidebar.classList.contains("md:translate-x-0")) {
+                sidebar.classList.remove("md:translate-x-0");
+                content.classList.remove("md:ml-64");
+                navbar.classList.remove("md:ml-64");
+            } else {
+                sidebar.classList.add("md:translate-x-0");
+                content.classList.add("md:ml-64");
+                navbar.classList.add("md:ml-64");
+            } 
+        });
     </script>
+    <div class="">
+
+    </div>
 </body>
 
 </html>
