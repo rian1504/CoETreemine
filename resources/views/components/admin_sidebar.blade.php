@@ -63,7 +63,7 @@
                         class="fas fa-file-lines text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Review File</span>
                     <span
-                        class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataReviewFile'] }}</span>
+                        class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $dataSidebar['dataReviewFile'] }}</span>
                 </a>
             </li>
             <li>
@@ -73,7 +73,7 @@
                         class="fas fa-credit-card text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Review Payment</span>
                     <span
-                        class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataReviewPayment'] }}</span>
+                        class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $dataSidebar['dataReviewPayment'] }}</span>
                 </a>
             </li>
             <li>
@@ -83,7 +83,7 @@
                         class="fas fa-sync text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">On Progress</span>
                     <span
-                        class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataOnProgress'] }}</span>
+                        class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $dataSidebar['dataOnProgress'] }}</span>
                 </a>
             </li>
             <li>
