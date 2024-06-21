@@ -643,7 +643,10 @@
                         $('#cable').text(data.cable_wire);
                         $('#detail_information').text(data.detail_information);
                         $('#price').text(formatCurrency(data.price));
-                        $('#file').text(data.file);
+                        data.file == null ? $('#file').text('') : $('#file').html(
+                            '<a href="/storage/assets/files/assembly/' + data.file +
+                            '" download class="underline text-blue-400">Check File Here</a>'
+                        )
                         $('#flexible').text(data.assembly_flexible.flexible_name);
                         $('#board').text(data.assembly_board_type.board_type_name);
                         $('#side').text(data.assembly_side.side_name);
@@ -669,7 +672,11 @@
                         $('#length').text(data.length + " Cm");
                         $('#width').text(data.width + " Cm");
                         $('#prototype_quantity').text(data.quantity + " Pcs");
-                        $('#prototype_file').text(data.file);
+                        data.file == null ? $('#prototype_file').text('') : $('#prototype_file')
+                            .html(
+                                '<a href="/storage/assets/files/prototype/' + data.file +
+                                '" download class="underline text-blue-400">Check File Here</a>'
+                            )
                         $('#prototype_price').text(formatCurrency(data.price));
                         $('#prototype_board').text(data.prototype_board_type.board_type_name);
                         $('#route').text(data.prototype_route_process.route_process_name);
