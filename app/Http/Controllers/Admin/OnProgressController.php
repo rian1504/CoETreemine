@@ -52,7 +52,7 @@ class OnProgressController extends Controller
     public function index()
     {
         // get data
-        $datas = Order::where('status', 'on progress')->with('user')->get();
+        $datas = Order::where('status', 'on progress')->with('user')->latest()->get();
 
         return view('admin.on_progress.index', compact('datas'));
     }

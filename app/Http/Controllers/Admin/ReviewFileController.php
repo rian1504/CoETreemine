@@ -14,7 +14,7 @@ class ReviewFileController extends Controller
     public function index()
     {
         // get data
-        $datas = CartCustom::where('status', 'not review')->with('custom_assembly')->with('custom_prototype')->with('user')->get();
+        $datas = CartCustom::where('status', 'not review')->with('custom_assembly')->with('custom_prototype')->with('user')->latest()->get();
 
         return view('admin.review_file.index', compact('datas'));
     }
