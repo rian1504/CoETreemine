@@ -36,7 +36,8 @@
                     </div>
                 </div>
                 <div>
-                    <img class="h-auto max-w-52 rounded-lg shadow-xl dark:shadow-gray-800" id="imagePreview">
+                    <img class="h-auto max-w-52 rounded-lg shadow-xl dark:shadow-gray-800" id="imagePreview"
+                        src="{{ asset('storage/assets/images/category/' . $category->category_picture) }}">
                 </div>
                 <div class="grid place-items-end ">
                     <button type="submit"
