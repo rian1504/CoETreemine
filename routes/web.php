@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin\ReviewFileController;
 use App\Http\Controllers\Admin\ReviewPaymentController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\OnProgressController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Buyer\CartController;
 use App\Http\Controllers\Buyer\CustomAssemblyController as BuyerCustomAssemblyController;
 use App\Http\Controllers\Buyer\CustomPrototypeController as BuyerCustomPrototypeController;
@@ -52,6 +53,7 @@ Route::post('assembly', [BuyerCustomAssemblyController::class, 'store'])->name('
 
 // Custom Prototype
 Route::get('prototype', [BuyerCustomPrototypeController::class, 'index'])->name('buyer.prototype.index');
+Route::post('prototype', [BuyerCustomPrototypeController::class, 'store'])->name('buyer.prototype.store');
 
 // guest and buyer with middleware
 Route::middleware(['auth'])->group(function () {
@@ -82,6 +84,7 @@ Route::middleware(['auth'])->group(function () {
 
 // admin
 Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {
+    Route::get('', [AdminController::class, 'index'])->name('admin');
     Route::resource('category', CategoryController::class)->except('show');
     Route::resource('portfolio', PortfolioController::class)->except('show');
 

@@ -17,7 +17,7 @@ class CartController extends Controller
     public function getDataCustom()
     {
         $id_user = Auth::id();
-        $dataCustom = CartCustom::where('id_user', $id_user)->where('status', 'not review')->with('custom_assembly')->with('custom_prototype')->get();
+        $dataCustom = CartCustom::where('id_user', $id_user)->with('custom_assembly')->with('custom_prototype')->get();
 
         return $dataCustom;
     }

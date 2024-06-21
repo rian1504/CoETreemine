@@ -72,7 +72,7 @@ class CustomPrototypeController extends Controller
             'Board', 'Route Process', 'Fr4', 'Thickness', 'Layer',
             'Inner Cooper', 'Finished Cooper', 'Cooper Layer', 'Track',
             'Hole', 'Solder', 'Silk', 'Surface', 'Via Process', 'Material',
-            'Soldermask Layer 1', 'Silkscreen Layer 1'
+            'Soldermask Layer1', 'Silkscreen Layer1'
         ];
     }
     /**

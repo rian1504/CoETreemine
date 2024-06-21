@@ -52,7 +52,7 @@ class ReviewPaymentController extends Controller
     public function index()
     {
         // get data
-        $datas = Order::where('status', 'not review')->with('user')->get();
+        $datas = Order::where('status', 'not review')->with('user')->latest()->get();
 
         return view('admin.review_payment.index', compact('datas'));
     }
