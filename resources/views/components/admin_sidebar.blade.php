@@ -55,7 +55,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('progress.index') }}" class="{{ request()->is('admin/on_progress*') ? 'active' : '' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('progress.index') }}" class="{{ Request::routeIs('route_process.index') ? 'bg-admin-900 text-white' : 'hover:bg-gray-700 hover:text-white' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
                     <i class="fas fa-sync text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">On Progress</span>
                     <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300"></span>
@@ -79,6 +79,12 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="{{ route('progress.index') }}" class="{{ request()->is('admin/logout*') ? 'active' : '' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                    <i class="fas fa-sign-out-alt text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
+                    <span class="flex-1 ms-3 whitespace-nowrap">Logout</span>
+                </a>
             </li>
         </ul>
     </div>
