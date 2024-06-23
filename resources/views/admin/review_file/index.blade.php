@@ -103,7 +103,7 @@
                                                 class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-yellow-800">Accept</button>
                                         </form>
                                         <button data-modal-target="authentication-modal"
-                                            data-modal-toggle="authentication-modal"
+                                            data-modal-toggle="authentication-modal" data-id={{ $data->id_cart_custom }}
                                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                                             Reject
                                         </button>
@@ -141,7 +141,7 @@
                                                 class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-yellow-800">Accept</button>
                                         </form>
                                         <button data-modal-target="authentication-modal"
-                                            data-modal-toggle="authentication-modal"
+                                            data-modal-toggle="authentication-modal" data-id={{ $data->id_cart_custom }}
                                             class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                                             Reject
                                         </button>
@@ -186,7 +186,7 @@
             </div>
         </div>
 
-        <!-- modal -->
+        <!-- Modal -->
         <!-- View Detail Assembly -->
         <div id="static-assembly-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -340,7 +340,7 @@
             </div>
         </div>
 
-        <!-- modal -->
+        <!-- Modal -->
         <!-- View Detail Prototype -->
         <div id="static-prototype-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -564,7 +564,7 @@
             </div>
         </div>
 
-        <!-- Delete -->
+        <!-- Modal -->
         <!-- Main modal -->
         <div id="authentication-modal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -589,15 +589,18 @@
                     </div>
                     <!-- Modal body -->
                     <div class="p-4 md:p-5">
-                        <form class="space-y-4" action="#">
+                        <form id="rejectForm" class="space-y-4"
+                            action="{{ route('review_file.reject', ':id_cart_custom') }}">
+                            @csrf
+
+                            <input type="hidden" name="cart_custom" id="cart_custom">
                             <div>
-                                <label for="email"
+                                <label for="reason"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-                                    message</label>
-                                <textarea type="email" name="email" id="email"
+                                    Reason</label>
+                                <textarea name="reason" id="reason"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    placeholder="name@company.com" required>
-                            </textarea>
+                                    required></textarea>
                             </div>
                             <button type="submit"
                                 class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
@@ -711,6 +714,48 @@
                         console.log(error);
                     }
                 });
+            });
+
+            // Reject Button
+
+            // Handler saat tombol "Reject" di klik untuk menetapkan nilai cart_custom ke input hidden
+            $('[data-modal-toggle="authentication-modal"]').click(function() {
+                let id_cart_custom = $(this).data('id');
+                $('#cart_custom').val(id_cart_custom);
+
+                let actionUrl = $('#rejectForm').attr('action');
+                actionUrl = actionUrl.replace(':id_cart_custom', id_cart_custom);
+                $('#rejectForm').attr('action', actionUrl);
+            });
+
+            // Handler saat form di-submit
+            $('#rejectForm').submit(function(event) {
+                event.preventDefault(); // Mencegah form dikirim dan halaman dimuat ulang
+
+                // Mengambil data
+                let dataForm = $('#rejectForm').serialize();
+
+                // Mengirim data form menggunakan jQuery AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'), // Mengambil URL dari action form
+                    data: dataForm,
+                    success: function(data) {
+                        window.location.reload(); // Refresh halaman untuk memuat data terbaru
+                    },
+                    error: function(error) {
+                        console.log(error.responseText);
+                        alert('Terjadi kesalahan, data tidak dapat disimpan.');
+                    }
+                });
+            });
+
+            // Ketika tombol untuk menutup modal diklik
+            $('[data-modal-hide="authentication-modal"]').click(function() {
+                // Reset action form ke awal
+                $('#rejectForm').attr('action', '{{ route('review_file.reject', ':id_cart_custom') }}');
+                // Reset nilai input hidden ke kosong
+                $('#cart_custom').val('');
             });
         });
     </script>
