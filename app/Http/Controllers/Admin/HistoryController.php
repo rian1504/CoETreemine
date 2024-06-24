@@ -71,7 +71,8 @@ class HistoryController extends Controller
                 'price' => $pricePrototype
             ],
             'dataPortfolio' => $dataPortfolio,
-            'pricePortfolio' => $pricePortfolio
+            'pricePortfolio' => $pricePortfolio,
+            'totalPrice' => $priceAssembly + $pricePrototype + $pricePortfolio
         ];
     }
 
@@ -86,6 +87,7 @@ class HistoryController extends Controller
         // get detail order by ID
         $datas = $this->getDataOrder($order->id_order);
 
-        return view('admin.history.show_order', compact('datas'));
+        // return view('admin.history.show_order', compact('datas'));
+        return $datas;
     }
 }
