@@ -45,7 +45,8 @@ class OnProgressController extends Controller
                 'price' => $pricePrototype
             ],
             'dataPortfolio' => $dataPortfolio,
-            'pricePortfolio' => $pricePortfolio
+            'pricePortfolio' => $pricePortfolio,
+            'totalPrice' => $priceAssembly + $pricePrototype + $pricePortfolio
         ];
     }
 
@@ -62,7 +63,8 @@ class OnProgressController extends Controller
         // get detail order by ID
         $datas = $this->getData($order->id_order);
 
-        return view('admin.on_progress.show', compact('datas'));
+        // return view('admin.on_progress.show', compact('datas'));
+        return $datas;
     }
 
     public function done(Order $order, Request $request)
