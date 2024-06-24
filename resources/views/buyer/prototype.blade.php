@@ -58,13 +58,13 @@
 
         {{-- SIZE --}}
         <div class="size">
-            <input type="number" name="length">
-            <input type="number" name="width">
+            <input type="number" name="length" value="{{ old('length') }}">
+            <input type="number" name="width" value="{{ old('width') }}">
         </div>
 
         {{-- QUANTITY --}}
         <div class="quantity">
-            <input type="number" name="quantity">
+            <input type="number" name="quantity" value="{{ old('quantity') }}">
         </div>
 
         {{-- LAYER --}}
