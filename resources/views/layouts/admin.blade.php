@@ -18,7 +18,7 @@
             <header>
                 @include('components.admin_header')
             </header>
-            <main class="flex flex-col grow bg-admin-100 mt-12 p-8">
+            <main class="flex flex-col grow bg-custom-grey mt-12 p-8">
                 @yield('content')
             </main>
         </div>

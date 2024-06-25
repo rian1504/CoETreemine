@@ -23,8 +23,15 @@ export default {
             },
             admin: {
                 100: "#FCFCFC",
-                900: "#85B485"
-            }
+                900: "#85B485",
+            },
+
+            "custom-grey": "#F5F5F5",
+            "buyer-green": "#047C1E",
+            "admin-green": "#85B485",
+        },
+        fontFamily: {
+            inter: ["Inter", "sans-serif"],
         },
     },
     plugins: [require("flowbite/plugin")],

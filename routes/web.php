@@ -81,6 +81,10 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+// service
+Route::view('/service', 'buyer.service')->name('buyer.service');
+
+
 
 // admin
 Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {

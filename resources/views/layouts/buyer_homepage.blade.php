@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">
 </head>
 
-<body class="h-screen w-screen">
+<body class="h-screen w-screen font-inter">
     <header>
         @include('components.header')
     </header>
-    <div class="bg-grays-700 min-h-screen">
+    <div class="bg-custom-grey min-h-screen">
         <main class="container mx-auto p-6">
             @yield('carousel')
             @yield('content')
