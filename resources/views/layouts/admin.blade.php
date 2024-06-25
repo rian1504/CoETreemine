@@ -10,11 +10,10 @@
 </head>
 
 <body class="h-screen">
-    <div class="flex w-screen h-screen ">
+    <div class="flex w-screen h-screen">
         <aside>
             @include('components.admin_sidebar')
         </aside>
-
         <div id="content" class="flex flex-col w-full md:ml-64 transition-all duration-300">
             <header>
                 @include('components.admin_header')
@@ -44,7 +43,7 @@
                 sidebar.classList.add("md:translate-x-0");
                 content.classList.add("md:ml-64");
                 navbar.classList.add("md:ml-64");
-            } 
+            }
         });
     </script>
     <div class="">
