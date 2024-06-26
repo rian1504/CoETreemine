@@ -3,7 +3,6 @@
 @section('title', 'CoE Treemine | Review File')
 
 @section('content')
-    @routes
 
     <div>
         <div class="my-4 flex flex-row gap-4">

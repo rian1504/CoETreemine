@@ -34,7 +34,7 @@ class PrototypeSoldermaskLayer1Controller extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Soldermask Layer 1'
+            'select' => 'Soldermask Layer1'
         ]);
     }
 
@@ -71,7 +71,7 @@ class PrototypeSoldermaskLayer1Controller extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Diubah!',
-            'select' => 'Soldermask Layer 1'
+            'select' => 'Soldermask Layer1'
         ]);
     }
 
@@ -89,7 +89,7 @@ class PrototypeSoldermaskLayer1Controller extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Dihapus!',
-            'select' => 'Soldermask Layer 1'
+            'select' => 'Soldermask Layer1'
         ]);
     }
 }

@@ -34,7 +34,7 @@ class PrototypeSilkscreenLayer1Controller extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Disimpan!',
-            'select' => 'Silkscreen Layer 1'
+            'select' => 'Silkscreen Layer1'
         ]);
     }
 
@@ -71,7 +71,7 @@ class PrototypeSilkscreenLayer1Controller extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Diubah!',
-            'select' => 'Silkscreen Layer 1'
+            'select' => 'Silkscreen Layer1'
         ]);
     }
 
@@ -89,7 +89,7 @@ class PrototypeSilkscreenLayer1Controller extends Controller
         //redirect to index
         return redirect()->route('prototype.index')->with([
             'success' => 'Data Berhasil Dihapus!',
-            'select' => 'Silkscreen Layer 1'
+            'select' => 'Silkscreen Layer1'
         ]);
     }
 }
