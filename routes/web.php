@@ -39,6 +39,9 @@ use Illuminate\Support\Facades\Route;
 
 // guest and buyer without middleware
 
+// service
+Route::view('/service', 'buyer.service')->name('buyer.service');
+
 // index
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -57,6 +60,9 @@ Route::post('prototype', [BuyerCustomPrototypeController::class, 'store'])->name
 
 // guest and buyer with middleware
 Route::middleware(['auth'])->group(function () {
+
+    // History
+    Route::view('/history', 'buyer.history')->name('history.index');
 
     // Cart
     Route::prefix('cart')->group(function () {
@@ -79,12 +85,6 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
-// service
-Route::view('/service', 'buyer.service')->name('buyer.service');
-
-
 
 // admin
 Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {

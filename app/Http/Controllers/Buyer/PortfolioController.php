@@ -13,13 +13,15 @@ class PortfolioController extends Controller
     public function index()
     {
         $datas = Category::get();
-        return view('buyer.portfolio.index', compact('datas'));
+        $datasBest = Category::latest()->limit(5)->get();
+        return view('buyer.portfolio.index', compact('datas', 'datasBest'));
     }
 
     public function showCategory(Category $category)
     {
         $datas = Category::with('portfolio')->findOrFail($category->id_category);
-        return view('buyer.portfolio.detail_category', compact('datas'));
+        $datasAnother = Category::where('id_category', '!=', $category->id_category)->latest()->limit(5)->get();
+        return view('buyer.portfolio.detail_category', compact('datas', 'datasAnother'));
     }
 
     public function showPortfolio($portfolio)
