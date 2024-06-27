@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="max-w-lg mt-12 bg-greens-900 border border-gray-200 rounded-lg shadow-lg p-6 sm:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto">
+    <div class="max-w-lg mt-12 bg-buyer-green border border-gray-200 rounded-lg shadow-lg p-6 sm:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto">
         <h2 class="text-2xl font-bold text-white mb-4">CONTACT INFO</h2>
         <ul class="divide-y divide-gray-200 dark:divide-gray-700">
             <li class="py-4">

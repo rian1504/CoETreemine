@@ -38,7 +38,7 @@
 </div>
 
 
-<div class="w-full max-w-lg p-4 bg-greens-900 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 ml-96 mt-8">
+<div class="w-full max-w-lg p-4 bg-buyer-green border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 ml-96 mt-8">
     <div class="flex items-center justify-center  mb-4">
         <h5 class="text-xl font-bold leading-none text-white dark:text-white">CONTACT INFO</h5>
     </div>

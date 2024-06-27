@@ -8,7 +8,7 @@
     <div class="my-4 flex flex-row gap-4">
         <a href="{{ route('dashboard') }}">Dashboard</a>
         <p>></p>
-        <p class="text-admin-900">History Order</p>
+        <p class="text-admin-green">History Order</p>
     </div>
 
     <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
@@ -25,7 +25,7 @@
         </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-admin-green dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3 whitespace-nowrap truncate">
                             NO
@@ -194,7 +194,7 @@
                             <tbody id="dataBody"></tbody>
                         </table>
                     </div>
-                    <hr class="border border-admin-900 w-full">
+                    <hr class="border border-admin-green w-full">
                     <div class="px-10 py-5 flex flex-row justify-between">
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                             Total Price

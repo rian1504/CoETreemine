@@ -15,7 +15,7 @@
     <div class="my-4 flex flex-row gap-4">
         <a href="{{ route('dashboard') }}">Dashboard</a>
         <p>></p>
-        <a href="{{ route('assembly.index') }}" class="text-admin-900">Assembly</a>
+        <a href="{{ route('assembly.index') }}" class="text-admin-green">Assembly</a>
     </div>
 
     <div class="flex flex-row gap-4">

@@ -8,7 +8,7 @@
     <div class="my-4 flex flex-row gap-4">
         <a href="{{ route('dashboard') }}">Dashboard</a>
         <p>></p>
-        <a href="{{ route('assembly.index') }}" class="text-admin-900">Assembly</a>
+        <a href="{{ route('assembly.index') }}" class="text-admin-green">Assembly</a>
     </div>
 
     <div class="min-h-[450px] bg-white rounded-sm px-10 py-6">
@@ -29,7 +29,7 @@
         <!-- flexible -->
         <div id="flexibleTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-admin-green dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
@@ -90,7 +90,7 @@
         <!-- board -->
         <div id="boardTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-admin-green dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number
@@ -145,7 +145,7 @@
         <!-- side -->
         <div id="sideTable" class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-white uppercase bg-admin-900 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-admin-green dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3 whitespace-nowrap">
                             Number

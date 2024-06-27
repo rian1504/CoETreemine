@@ -17,7 +17,7 @@
     <aside>
         @include('components.admin_sidebar')
     </aside>
-    <main class="min-h-screen flex flex-col flex-grow bg-admin-100 mt-20 p-8 sm:ml-64">
+    <main class="min-h-screen flex flex-col flex-grow bg-red mt-20 p-8 sm:ml-64">
         @yield('content')
     </main>
     <!-- <footer>

@@ -1,5 +1,5 @@
 <nav class="flex flex-col fixed top-0 z-50 w-screen">
-    <div class="bg-grays-800 dark:bg-gray-900">
+    <div class="bg-custom-grey dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center mx-14">
             <div class="flex w-1/2 items-center">
                 <a href="{{ route('dashboard') }}" class="space-x-3 rtl:space-x-reverse">
@@ -8,7 +8,7 @@
                     </div>
                 </a>
                 <div class="flex flex-col ms-2">
-                    <h1 class="text-greens-900 font-semibold text-">PCB Prototype and Assembly the Easy Way</h1>
+                    <h1 class="text-buyer-green font-semibold text-">PCB Prototype and Assembly the Easy Way</h1>
                     <h2 class="text-xs">Full feature custom PCB prototype and Assembly service.</h2>
                 </div>
             </div>
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-greens-900 w-full" id="navbar-user">
+    <div class="bg-buyer-green w-full" id="navbar-user">
         <ul class="ms-32 flex flex-col text-white font-medium p-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li class="{{ Route::is('dashboard') ? 'border-b-2 border-white hover:text-black hover:border-black' : '' }}  hover-effect ">
                 <a href="{{ route('dashboard') }}" class="block py-2 px-3 md:p-0 md:dark:text-blue-500 hover:text-black" aria-current="page">Home</a>

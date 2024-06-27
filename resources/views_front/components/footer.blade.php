@@ -1,4 +1,4 @@
-<footer class="bg-greens-900 shadow h-52 w-full">
+<footer class="bg-buyer-green shadow h-52 w-full">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between flex text-white">
         <div class="flex gap-12">
             <div>

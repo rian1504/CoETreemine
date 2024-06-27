@@ -8,7 +8,7 @@
     <div class="my-4 flex flex-row gap-4">
         <a href="{{ route('dashboard') }}">Dashboard</a>
         <p>></p>
-        <a href="{{ route('category.index') }}" class="text-admin-900">Portfolio Category</a>
+        <a href="{{ route('category.index') }}" class="text-admin-green">Portfolio Category</a>
     </div>
     <!-- page -->
     <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
@@ -19,7 +19,7 @@
         </div>
         <div class="grid grid-cols-3 gap-4 mb-4">
             @forelse ($datas as $index => $data)
-            <div class="max-w-sm bg-white border border-admin-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="max-w-sm bg-white border border-admin-green rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex flex-col items-center justify-center p-5">
                     <div class="relative inline-block ">
                         <img src="{{ asset('/storage/assets/images/category/' . $data->category_picture) }}" alt="Category Image" class=" max-h-32 w-60 object-cover object-center rounded-md">

@@ -14,7 +14,7 @@
     <header>
         @include('components.buyer_header')
     </header>
-    <div class="bg-grays-700">
+    <div class="bg-custom-grey">
         @yield('carousel')
         <div class="flex flex-col justify-center items-center">
             <div class="container">

@@ -1,5 +1,5 @@
 <nav class="flex flex-col fixed top-0 z-50 w-full">
-    <div class="bg-grays-800 dark:bg-gray-900">
+    <div class="bg-custom-grey dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center mx-auto p-4">
             <div class="flex w-1/2">
                 <div class=" w-28">
@@ -8,7 +8,7 @@
                     </a>
                 </div>
                 <div class="flex flex-col">
-                    <h1 class="text-greens-900 font-semibold text-lg">PCB Prototype and Assembly the Easy Way</h1>
+                    <h1 class="text-buyer-green font-semibold text-lg">PCB Prototype and Assembly the Easy Way</h1>
                     <h2 class="text-sm">Full feature custom PCB prototype and Assembly service.</h2>
                 </div>
             </div>
@@ -71,7 +71,7 @@
 
         </div>
     </div>
-    <div class="bg-greens-900 h-16 w-full id=" navbar-user">
+    <div class="bg-buyer-green h-16 w-full id=" navbar-user">
         <ul class="flex flex-col ml-40 text-lg text-white font-medium p-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
                 <a href="/buyer" class="block py-2 px-3 md:bg-transparent md:p-0 md:dark:text-blue-500 hover:text-black underline" aria-current="page">Home</a>

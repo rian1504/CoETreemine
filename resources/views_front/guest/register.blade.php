@@ -53,7 +53,7 @@
           <a href="#" class="underline text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
         </div>
         <div class="flex items-center justify-center">
-          <button type="submit" class="mt-6 text-white bg-greens-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Submit</button>
+          <button type="submit" class="mt-6 text-white bg-buyer-green hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Submit</button>
 
           </p>
           </form>
