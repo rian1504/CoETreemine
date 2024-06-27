@@ -9,7 +9,7 @@
         </a>
         <ul class="space-y-2 font-medium">
             <li>
-                <a href="{{ route('dashboard') }}" class="{{ request()->is('admin') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('dashboard') }}" class="{{ request()->is('admin') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <svg class="{{ request()->is('admin') ? ' text-white' : 'text-gray-500' }} w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
                         <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
                         <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
@@ -18,52 +18,52 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('category.index') }}" class="{{ request()->is('admin/category*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('category.index') }}" class="{{ request()->is('admin/category*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <i class="{{ request()->is('admin/category*') ? ' text-white' : 'text-gray-500' }} fas fa-th-list text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Portfolio Category</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('portfolio.index') }}" class="{{ request()->is('admin/portfolio*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('portfolio.index') }}" class="{{ request()->is('admin/portfolio*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <i class="{{ request()->is('admin/portfolio*') ? ' text-white' : 'text-gray-500' }} fas fa-microchip text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Portfolio</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('prototype.index') }}" class="{{ request()->is('admin/prototype*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('prototype.index') }}" class="{{ request()->is('admin/prototype*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <i class="{{ request()->is('admin/prototype*') ? ' text-white' : 'text-gray-500' }} fas fa-project-diagram text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Prototype</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('assembly.index') }}" class="{{ request()->is('admin/assembly*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('assembly.index') }}" class="{{ request()->is('admin/assembly*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <i class="{{ request()->is('admin/assembly*') ? 'text-white' : 'text-gray-500' }} fas fa-cogs text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Assembly</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('review_file.index') }}" class="{{ request()->is('admin/review_file*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('review_file.index') }}" class="{{ request()->is('admin/review_file*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <i class="{{ request()->is('admin/review_file*') ? 'text-white' : 'text-gray-500' }} fas fa-file-lines mx-1 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Review File</span>
                     <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $dataSidebar['dataReviewFile'] }}</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('review_payment.index') }}" class="{{ request()->is('admin/review_payment*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('review_payment.index') }}" class="{{ request()->is('admin/review_payment*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <i class="{{ request()->is('admin/review_payment*') ? 'text-white' : 'text-gray-500' }} fas fa-credit-card text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">Review Payment</span>
                     <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $dataSidebar['dataReviewPayment'] }}</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('progress.index') }}" class="{{ request()->is('admin/on_progress*') ? 'bg-admin-900 text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a href="{{ route('progress.index') }}" class="{{ request()->is('admin/on_progress*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <i class="{{ request()->is('admin/on_progress*') ? 'text-white' : 'text-gray-500' }} fas fa-sync text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">On Progress</span>
                     <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $dataSidebar['dataOnProgress'] }}</span>
                 </a>
             </li>
             <li>
-                <a type="button" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example" class="{{ request()->is('admin/history*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-900 hover:text-white dark:hover:bg-gray-700 group">
+                <a type="button" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example" class="{{ request()->is('admin/history*') ? 'bg-admin-green text-white' : 'text-gray-500' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-admin-green hover:text-white dark:hover:bg-gray-700 group">
                     <i class="{{ request()->is('admin/history*') ? 'text-white' : 'text-gray-500' }} fas fa-history text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"></i>
                     <span class="flex-1 ms-3 whitespace-nowrap">History</span>
                     <i class="fas fa-chevron-down me-1"></i>
