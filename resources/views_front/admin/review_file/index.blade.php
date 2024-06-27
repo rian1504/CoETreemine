@@ -12,7 +12,7 @@
     </div>
 
 
-    <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
+    <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
         <div class="pb-4 flex flex-row justify-between">
             <label for="table-search" class="sr-only">Search</label>
             <div class="relative mt-1">

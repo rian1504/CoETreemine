@@ -10,7 +10,7 @@
         <p>></p>
         <a href="{{ route('category.index') }}" class="text-admin-900">Portfolio Category</a>
     </div>
-    <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
+    <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
         <a href="{{ route('category.create') }} ">
             <button type="button" class="max-w-20 font-semibold text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
         </a>

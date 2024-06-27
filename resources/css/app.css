@@ -4,7 +4,7 @@
 
 @layer components {
     .hover-effect {
-        @apply transform transition-transform duration-300 ease-in-out hover:scale-105;
+        @apply transform transition-transform duration-200 ease-in-out hover:scale-105;
     }
 }
 

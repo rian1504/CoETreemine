@@ -19,7 +19,7 @@
         @csrf
         @method('PUT')
 
-        <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
+        <div class="min-h-[450px] bg-white rounded-sm px-10 py-6">
             <div class="flex flex-col mt-2 mb-6">
                 <label for="" class="font-semibold mb-2">Board Type Name</label>
                 <input type="text" name="board_type_name" value="{{ old('board_type_name', $board->board_type_name) }}" class="rounded-lg text-gray-900 border-admin-900 p-4 bg-admin-100 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Input a product name">

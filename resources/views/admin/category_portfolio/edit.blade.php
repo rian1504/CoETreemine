@@ -16,7 +16,7 @@
         <form action="{{ route('category.update', $category->id_category) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
+            <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
                 <div class="flex flex-col mt-2 mb-6">
                     <label for="" class="font-semibold mb-2">Name</label>
                     <input type="text" name="category_name" value="{{ old('category_name', $category->category_name) }}"

@@ -11,7 +11,7 @@
         <a href="{{ route('category.index') }}" class="text-admin-900">Portfolio Category</a>
     </div>
     <!-- page -->
-    <div class=" min-h-96 bg-white rounded-sm px-10 py-6">
+    <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
         <div class="flex justify-end mb-4">
             <a href="{{ route('category.create') }} " class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Add
