@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-    .active {
+    /* .active {
         @apply text-white rounded-lg bg-admin-900 dark:text-white dark:hover:bg-gray-700;
-    }
+    } */
 }
 
 @font-face {
