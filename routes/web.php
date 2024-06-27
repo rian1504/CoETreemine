@@ -37,8 +37,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/logintes', 'auth2.login');
-Route::view('/forgot-passwordtes', 'auth2.forgot-password');
+Route::view('/profiletes', 'edit');
 
 // guest and buyer without middleware
 // service
@@ -60,7 +59,7 @@ Route::post('assembly', [BuyerCustomAssemblyController::class, 'store'])->name('
 Route::get('prototype', [BuyerCustomPrototypeController::class, 'index'])->name('buyer.prototype.index');
 Route::post('prototype', [BuyerCustomPrototypeController::class, 'store'])->name('buyer.prototype.store');
 
-// guest and buyer with middleware
+// buyer with middleware
 Route::middleware(['auth'])->group(function () {
 
     // History
