@@ -3,16 +3,19 @@
         <div class="flex gap-12">
             <div>
                 <span class="text-sm sm:text-center dark:text-gray-400">
-                    &copy; {{ date('Y')}} Coe Treemine
+                    &copy; {{ date('Y') }} CoE Treemine
                 </span>
-                <h1>LOGO</h1>
+                <div class="w-28 flex justify-center items-center">
+                    <img src="{{ asset('image/logo.png') }}" alt="Logo CoETreemine" class="w-14 h-auto">
+                </div>
             </div>
             <div class="flex flex-col">
                 <h1 class="font-semibold text-lg mb-4">Main Menu</h1>
-                <a href="/home">Home</a>
-                <a href="/custom">Custom</a>
-                <a href="/product">Product</a>
-                <a href="/service">Service</a>
+                <a href="{{ route('dashboard') }}">Home</a>
+                <a href="{{ route('buyer.assembly.index') }}">Assembly</a>
+                <a href="{{ route('buyer.prototype.index') }}">Prototype</a>
+                <a href="{{ route('buyer.portfolio.index') }}">Product</a>
+                <a href="{{ route('buyer.service') }}">Service</a>
             </div>
         </div>
         <div class="me-10">
