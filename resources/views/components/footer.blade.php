@@ -1,18 +1,22 @@
-<footer class="bg-greens-900 shadow h-52 w-full -mt-8">
+<footer class="bg-greens-900 shadow h-52 w-full -mt-8 text-sm">
     <div class="w-full mx-14 max-w-screen-xl p-4 md:flex md:items-center md:justify-between flex text-white">
         <div class="flex gap-12">
             <div>
                 <span class="text-sm sm:text-center dark:text-gray-400">
                     &copy; {{ date('Y')}} Coe Treemine
                 </span>
-                <h1>LOGO</h1>
+                <div class="w-28 flex justify-center items-center">
+                    <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="{{ asset('image/logo.png') }}" alt="Logo CoETreemine" class="w-36 h-auto">
+                    </a>
+                </div>
             </div>
             <div class="flex flex-col">
                 <h1 class="font-semibold text-lg mb-4">Main Menu</h1>
-                <a href="/home">Home</a>
-                <a href="/custom">Custom</a>
-                <a href="/product">Product</a>
-                <a href="/service">Service</a>
+                <a href="{{ route('dashboard') }}">Home</a>
+                <a href="{{ route('buyer.assembly.index') }}">Custom</a>
+                <a href="{{ route('buyer.portfolio.index') }}">Product</a>
+                <a href="{{ route('buyer.service') }}">Service</a>
             </div>
         </div>
         <div class="me-10">

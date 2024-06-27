@@ -10,19 +10,8 @@
 
 @section('content')
 <div class="my-4 py-4 px-8 bg-white w-full flex flex-row gap-4 justify-around">
-    <a href="{{ route('buyer.assembly.index') }}" class="w-1/6 h-20">
-        <div class="flex justify-center items-center w-full h-full px-4 py-2 border shadow-lg gap-2
-        {{ Route::is('buyer.assembly.index') ? 'border-4 border-buyer-green' : 'border-custom-grey' }}">
-            <div class="w-20 h-12 overflow-hidden">
-                <img src="{{ asset('image/assembly.jpg') }}" alt="" class="w-full h-full object-cover ">
-            </div>
-            <h1 class="text-lg">
-                Assembly
-            </h1>
-        </div>
-    </a>
     <a href="{{ route('buyer.prototype.index') }}" class="w-1/6 h-20">
-        <div class="flex justify-center items-center w-full h-full px-4 py-2 border shadow-lg gap-2
+        <div class="flex justify-center items-center w-full h-full px-4 py-2 border shadow-lg gap-2 hover-effect 
         {{ Route::is('buyer.prototype.index') ? 'border-buyer-green' : 'border-custom-grey' }}">
             <div class="w-20 h-12 overflow-hidden">
                 <img src="{{ asset('image/prototype.jpg') }}" alt="" class="w-full h-full object-cover ">
@@ -32,14 +21,25 @@
             </h1>
         </div>
     </a>
+    <a href="{{ route('buyer.assembly.index') }}" class="w-1/6 h-20">
+        <div class="flex justify-center items-center w-full h-full px-4 py-2 border shadow-lg gap-2 hover-effect 
+        {{ Route::is('buyer.assembly.index') ? 'border-4 border-buyer-green' : 'border-custom-grey' }}">
+            <div class="w-20 h-12 overflow-hidden">
+                <img src="{{ asset('image/assembly.jpg') }}" alt="" class="w-full h-full object-cover ">
+            </div>
+            <h1 class="text-lg">
+                Assembly
+            </h1>
+        </div>
+    </a>
     <a href="{{ route('buyer.portfolio.index') }}" class="w-1/6 h-20">
-        <div class="flex justify-center items-center w-full h-full px-4 py-2 border shadow-lg gap-2
+        <div class="flex justify-center items-center w-full h-full px-4 py-2 border shadow-lg gap-2 hover-effect 
         {{ Route::is('buyer.portfolio.index') ? 'border-buyer-green' : 'border-custom-grey' }}">
             <div class="w-20 h-12 overflow-hidden">
                 <img src="{{ asset('image/pcb.jpg') }}" alt="" class="w-full h-full object-cover ">
             </div>
             <h1 class="text-lg">
-                Portfolio
+                Product
             </h1>
         </div>
     </a>

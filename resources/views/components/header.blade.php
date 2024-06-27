@@ -1,6 +1,6 @@
 <nav class="flex flex-col fixed top-0 z-50 w-screen">
     <div class="bg-grays-800 dark:bg-gray-900">
-        <div class="max-w-screen-xl flex flex-wrap items-center mx-32 p-4">
+        <div class="max-w-screen-xl flex flex-wrap items-center mx-14 p-4">
             <div class="flex w-1/2">
                 <div class="w-28 flex justify-center items-center">
                     <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -8,22 +8,22 @@
                     </a>
                 </div>
                 <div class="flex flex-col ms-3">
-                    <h1 class="text-greens-900 font-semibold text-lg">PCB Prototype and Assembly the Easy Way</h1>
-                    <h2 class="text-sm">Full feature custom PCB prototype and Assembly service.</h2>
+                    <h1 class="text-greens-900 font-semibold text-">PCB Prototype and Assembly the Easy Way</h1>
+                    <h2 class="text-xs">Full feature custom PCB prototype and Assembly service.</h2>
                 </div>
             </div>
-            <div class="flex w-1/2 justify-end items-center gap-4">
+            <div class="flex w-1/2 justify-end items-center text-gray-500 text-sm">
                 <div class="flex w-16 gap-4">
-                    <a href="{{ route('cart.index') }}">
-                        <i class="fas fa-cart-shopping fa-lg"></i>
+                    <a href="{{ route('cart.index') }}" class=" hover-effect ">
+                        <i class="fas fa-cart-shopping"></i>
                     </a>
-                    <a href="{{ route('history.index') }}">
-                        <i class="fas fa-history fa-lg"></i>
+                    <a href="{{ route('history.index') }}" class=" hover-effect ">
+                        <i class="fas fa-history"></i>
                     </a>
                 </div>
                 @if (Auth::check())
                 {{-- Buyer --}}
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
                     <div class="flex items-center justify-end gap-2">
                         <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                             <span class="sr-only">Open user menu</span>
@@ -65,17 +65,14 @@
                 </div>
                 @else
                 {{-- Guest --}}
-                <div class="flex gap-2">
-                    <div class="flex mt-1 gap-2">
-                        <i class="fas fa-user mt-1"></i>
-                        <a href="/login" class="font-bold">Sign In</a>
+                <div class="flex items-center gap-2">
+                    <div class="hover-effect ">
+                        <a href="/login" class="font-bold flex items-center justify-end gap-1"><i class="fas fa-user text-"></i>Sign In</a>
                     </div>
-                    <div class="">
-                        <h1 class="font-bold text-xl mb-4">
-                            |
-                        </h1>
+                    <div class="max-w-sm mx-auto h-4">
+                        <hr class="border-l-2 border-gray-500 h-full">
                     </div>
-                    <div class="mt-1">
+                    <div class="hover-effect ">
                         <a href="/register" class="font-bold">Sign Up</a>
                     </div>
                 </div>
@@ -83,12 +80,12 @@
             </div>
         </div>
     </div>
-    <div class="bg-greens-900 h-16 w-full px-24 -ms-1" id="navbar-user">
-        <ul class="flex flex-col ml-40 text-lg text-white font-medium p-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-                <a href="{{ route('dashboard') }}" class="block py-2 px-3 md:bg-transparent md:p-0 md:dark:text-blue-500 hover:text-black underline" aria-current="page">Home</a>
+    <div class="bg-greens-900 w-full px-5 text-" id="navbar-user">
+        <ul class="flex flex-col ml-40 text- text-white font-medium p-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li class="{{ Route::is('dashboard') ? 'border-b-2 border-white hover:text-black hover:border-black' : '' }}  hover-effect ">
+                <a href="{{ route('dashboard') }}" class="block py-2 px-3 md:p-0 md:dark:text-blue-500 hover:text-black" aria-current="page">Home</a>
             </li>
-            <li class="relative">
+            <li class="relative {{ Route::is('buyer.assembly*') || Route::is('buyer.prototype*') ? 'border-b-2 border-white hover:text-black hover:border-black' : '' }}  hover-effect ">
                 <!-- Dropdown Toggle Button -->
                 <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center py-2 px-3 hover:text-black md:hover:bg-transparent md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                     Custom
@@ -108,10 +105,10 @@
                     </ul>
                 </div>
             </li>
-            <li>
+            <li class="{{ Route::is('buyer.portfolio*') ? 'border-b-2 border-white hover:text-black hover:border-black' : '' }} hover-effect ">
                 <a href="{{ route('buyer.portfolio.index') }}" class="block py-2 px-3 hover:text-black md:hover:bg-transparent md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Product</a>
             </li>
-            <li>
+            <li class="{{ Route::is('buyer.service') ? 'border-b-2 border-white hover:text-black hover:border-black' : '' }} hover-effect ">
                 <a href="{{ route('buyer.service') }}" class="block py-2 px-3 hover:text-black md:hover:bg-transparent md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
             </li>
         </ul>

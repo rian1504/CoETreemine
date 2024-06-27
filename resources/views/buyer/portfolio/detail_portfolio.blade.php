@@ -21,7 +21,7 @@
                     <h1 class="text-sm text-gray-700 dark:text-gray-300">{{ $data->portfolio_description }}</h1>
                 </div>
                 <!-- order box -->
-                <div class="w-1/3 h-52 border border-gray-200 rounded-lg shadow-md p-4">
+                <div class=" hover-effect w-1/3 h-52 border border-gray-200 rounded-lg shadow-md p-4">
                     <h1 class="text-2xl font-bold text-black dark:text-white leading-tight tracking-tight">{{ $data->portfolio_name }}</h1>
                     <h1 class="my-2 text-lg text-buyer-green dark:text-white leading-tight tracking-tight">Rp{{ number_format($data->portfolio_price, 0, '', '.') }}</h1>
 
