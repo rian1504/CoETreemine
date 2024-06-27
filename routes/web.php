@@ -37,8 +37,10 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// guest and buyer without middleware
+Route::view('/logintes', 'auth2.login');
+Route::view('/forgot-passwordtes', 'auth2.forgot-password');
 
+// guest and buyer without middleware
 // service
 Route::view('/service', 'buyer.service')->name('buyer.service');
 
