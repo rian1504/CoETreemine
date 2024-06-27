@@ -1,11 +1,11 @@
 <footer class="bg-greens-900 shadow h-52 w-full -mt-8 text-sm">
     <div class="w-full mx-14 max-w-screen-xl p-4 md:flex md:items-center md:justify-between flex text-white">
         <div class="flex gap-12">
-            <div>
+            <div class="flex flex-col gap-2">
                 <span class="text-sm sm:text-center dark:text-gray-400">
                     &copy; {{ date('Y') }} CoE Treemine
                 </span>
-                <div class="w-28 flex justify-center items-center">
+                <div class="w-28 flex justify-center items-center shadow-lg">
                     <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src="{{ asset('image/logo.png') }}" alt="Logo CoETreemine" class="w-36 h-auto">
                     </a>
