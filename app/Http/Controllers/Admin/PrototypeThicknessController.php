@@ -28,7 +28,7 @@ class PrototypeThicknessController extends Controller
     {
         //validate form
         $request->validate([
-            'thickness_name' => 'required|min:5',
+            'thickness_name' => 'required|numeric',
             'thickness_price' => 'required|numeric',
             'id_layer' => 'required|numeric'
         ]);
@@ -69,7 +69,7 @@ class PrototypeThicknessController extends Controller
     {
         //validate form
         $request->validate([
-            'thickness_name' => 'required|min:5',
+            'thickness_name' => 'required|numeric',
             'thickness_price' => 'required|numeric',
             'id_layer' => 'required|numeric'
         ]);

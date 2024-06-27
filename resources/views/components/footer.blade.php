@@ -3,7 +3,7 @@
         <div class="flex gap-12">
             <div>
                 <span class="text-sm sm:text-center dark:text-gray-400">
-                    &copy; {{ date('Y')}} Coe Treemine
+                    &copy; {{ date('Y') }} CoE Treemine
                 </span>
                 <div class="w-28 flex justify-center items-center">
                     <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -14,7 +14,8 @@
             <div class="flex flex-col">
                 <h1 class="font-semibold text-lg mb-4">Main Menu</h1>
                 <a href="{{ route('dashboard') }}">Home</a>
-                <a href="{{ route('buyer.assembly.index') }}">Custom</a>
+                <a href="{{ route('buyer.assembly.index') }}">Assembly</a>
+                <a href="{{ route('buyer.prototype.index') }}">Prototype</a>
                 <a href="{{ route('buyer.portfolio.index') }}">Product</a>
                 <a href="{{ route('buyer.service') }}">Service</a>
             </div>

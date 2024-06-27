@@ -1,51 +1,94 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<!DOCTYPE html>
+<html lang="en">
 
-    @session('success')
-        {{ session('success') }}
-    @endsession
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoE Treemine | Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet" type="text/css">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+</head>
+
+<body>
+    <section class="bg-gray-100">
+        {{-- <h2 class=" p-6 space-y-4 md:space-y-5 sm:p-5 text-2xl font-bold mb-6">LOGO</h2> --}}
+        <div class="w-28 flex justify-center items-center m-5">
+            <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('image/logo.png') }}" alt="Logo CoETreemine" class="w-36 h-auto">
+            </a>
         </div>
+        <div class="flex items-center justify-center px-6 py-10 mx-auto md:h-screen ">
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1
+                        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
+                        LOGIN
+                    </h1>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+                    <form class="space-y-4 md:space-y-6" method="POST" action="{{ route('login') }}">
+                        @csrf
 
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                autocomplete="current-password" />
+                        {{-- email --}}
+                        <div class="mb-4">
+                            <label for="email"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Email Address<span
+                                    class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-3 py-2 border rounded-lg bg-gray-50 focus:outline-none focus:ring focus:ring-green-500 focus:border-green-500"
+                                placeholder="coetreemine@yahui.kom" required autofocus autocomplete="username">
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                        {{-- password --}}
+                        <div class="mb-5 relative">
+                            <label for="password"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Password<span
+                                    class="text-red-500">*</span></label>
+                            <input type="password" name="password" id="password" placeholder="••••••••"
+                                class="w-full px-3 py-2 border rounded-lg bg-gray-50 focus:outline-none focus:ring focus:ring-green-500 focus:border-green-500"
+                                required autocomplete="current-password">
+                            <i class="absolute top-10 right-3 text-gray-500 hover:text-green-500 cursor-pointer fas fa-eye-slash"
+                                onclick="showPassword()"></i>
+                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                        </div>
+
+                        {{-- remember me --}}
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="remember_me" aria-describedby="remember_me" type="checkbox"
+                                        name="remember"
+                                        class="focus:ring-green-500 focus:border-green-500 w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-white dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="remember_me"
+                                        class="text-sm font-medium text-primary-600 dark:text-primary-500">Keep me
+                                        signed in</label>
+                                </div>
+                            </div>
+                            <a href="{{ route('password.request') }}"
+                                class="underline text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot
+                                password?</a>
+                        </div>
+
+                        {{-- submit --}}
+                        <button type="submit"
+                            class="text-white bg-greens-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Sign
+                            In</button>
+                    </form>
+                </div>
+            </div>
         </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        function showPassword() {
+            let password = document.getElementById("password")
+            password.type === "password" ? password.type = 'text' : password.type = 'password'
+        }
+    </script>
+</body>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox"
-                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>

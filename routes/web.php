@@ -37,9 +37,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/logintes', 'auth2.login');
-Route::view('/forgot-passwordtes', 'auth2.forgot-password');
-
 // guest and buyer without middleware
 // service
 Route::view('/service', 'buyer.service')->name('buyer.service');
@@ -52,16 +49,15 @@ Route::get('category', [BuyerPortfolioController::class, 'index'])->name('buyer.
 Route::get('category/{category}', [BuyerPortfolioController::class, 'showCategory'])->name('buyer.portfolio.showCategory');
 Route::get('portfolio/{portfolio}', [BuyerPortfolioController::class, 'showPortfolio'])->name('buyer.portfolio.showPortfolio');
 
-// Custom Assembly
+// Custom
 Route::get('assembly', [BuyerCustomAssemblyController::class, 'index'])->name('buyer.assembly.index');
-Route::post('assembly', [BuyerCustomAssemblyController::class, 'store'])->name('buyer.assembly.store');
-
-// Custom Prototype
 Route::get('prototype', [BuyerCustomPrototypeController::class, 'index'])->name('buyer.prototype.index');
-Route::post('prototype', [BuyerCustomPrototypeController::class, 'store'])->name('buyer.prototype.store');
 
-// guest and buyer with middleware
+// buyer with middleware
 Route::middleware(['auth'])->group(function () {
+    // Custom
+    Route::post('assembly', [BuyerCustomAssemblyController::class, 'store'])->name('buyer.assembly.store');
+    Route::post('prototype', [BuyerCustomPrototypeController::class, 'store'])->name('buyer.prototype.store');
 
     // History
     Route::view('/history', 'buyer.history')->name('history.index');
