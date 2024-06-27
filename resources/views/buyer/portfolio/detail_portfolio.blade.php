@@ -47,6 +47,8 @@
                                 @csrf
 
                                 {{-- input quantity disini --}}
+                                {{-- <input type="number" name="quantity" id="input1" oninput="syncInput()"
+                                    class="max-w-20 py-2 px-3 border border-gray-300 rounded-lg focus:outline-none focus:border-buyer-green dark:focus:border-white"> --}}
                                 <input type="hidden" name="id_portfolio" value="{{ $data->id_portfolio }}">
                                 <input type="hidden" name="portfolio_stock" value="{{ $data->portfolio_stock }}">
                                 <button type="submit"
