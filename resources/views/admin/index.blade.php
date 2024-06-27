@@ -165,7 +165,7 @@
                             </h5>
                         </a>
                         <div class="relative inline-block my-4">
-                            <i class="fas fa-clock text-4xl text-gray-500"></i>
+                            <i class="fas fa-shopping-cart text-4xl text-gray-500"></i>
                             <span
                                 class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataCartCustomHistory'] }}</span>
                         </div>
@@ -187,7 +187,7 @@
                             </h5>
                         </a>
                         <div class="relative inline-block my-4">
-                            <i class="fas fa-clock text-4xl text-gray-500"></i>
+                            <i class="fas fa-receipt text-4xl text-gray-500"></i>
                             <span
                                 class="absolute -top-3 -right-3 flex items-center justify-center w-6 h-6 text-sm font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">{{ $data['dataOrderHistory'] }}</span>
                         </div>
