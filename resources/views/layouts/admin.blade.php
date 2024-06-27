@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">
 </head>
 
-<body class="h-screen">
+<body class="h-screen font-inter">
     <div class="flex w-screen h-screen">
         <aside>
             @include('components.admin_sidebar')
