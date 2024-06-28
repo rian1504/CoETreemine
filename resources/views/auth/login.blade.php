@@ -32,7 +32,7 @@
                         {{-- email --}}
                         <div class="mb-4">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Email Address<span class="text-red-500">*</span></label>
-                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg bg-gray-50 focus:outline-none focus:ring focus:ring-green-500 focus:border-green-500" placeholder="coetreemine@yahui.kom" required autofocus autocomplete="username">
+                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg bg-gray-50 focus:outline-none focus:ring focus:ring-green-500 focus:border-green-500" placeholder="coetreemine@yahoo.com" required autofocus autocomplete="username">
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
 
