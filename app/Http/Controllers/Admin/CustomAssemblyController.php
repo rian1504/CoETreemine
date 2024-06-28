@@ -41,3 +41,4 @@ class CustomAssemblyController extends Controller
         return view('admin.assembly.index', compact('dataAssembly', 'dataSelect'));
     }
 }
+

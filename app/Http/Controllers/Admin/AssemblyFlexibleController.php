@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\AssemblyFlexible;
 use App\Http\Requests\StoreAssemblyFlexibleRequest;
 use App\Http\Requests\UpdateAssemblyFlexibleRequest;
+use App\Models\Admin\CustomAssembly;
 
 class AssemblyFlexibleController extends Controller
 {

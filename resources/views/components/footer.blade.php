@@ -23,7 +23,7 @@
         <div class="me-10">
             <h1 class="font-semibold text-lg mb-4">Call Us</h1>
             <p><i class="fas fa-envelope m-2"></i>CoETreemine@gmail.com</p>
-            <p><i class="fas fa-phone m-2"></i>812456780</p>
+            <p><i class="fas fa-phone m-2"></i>+62 81245678012</p>
             <p><i class="fas fa-globe m-2"></i>CoETreemine.id</p>
         </div>
     </div>
