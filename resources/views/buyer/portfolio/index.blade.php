@@ -38,14 +38,14 @@
         <div class="flex justify-center">
             <div class="inline-grid grid-cols-5 gap-4">
                 @forelse ($datasBest as $data)
-                <a href="{{ route('buyer.portfolio.showCategory', $data->id_category) }}">
+                <a href="{{ route('buyer.portfolio.showPortfolio', $data->id_portfolio) }}">
                     <div class=" hover-effect flex flex-col justify-center items-center w-56 h-60 bg-white border border-custom-grey rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8">
                         <div class="w-full h-full shadow-lg overflow-hidden bg-gray-100">
-                            <img src="{{ asset('/storage/assets/images/category/' . $data->category_picture) }}" alt="Product Picture" class="w-full h-full object-cover">
+                            <img src="{{ asset('/storage/assets/images/portfolio/' . $data->portfolio_picture) }}" alt="Product Picture" class="w-full h-full object-cover">
                         </div>
                         <div class="mx-6 my-6 md:my-6">
-                            <h1 class="text-sm font-bold text-gray-900 dark:text-white">{{ $data->category_name }}
-                            </h1>
+                            <h1 class="text-sm text-gray-900 dark:text-white">{{ $data->portfolio_name }}</h1>
+                            <h1 class="text-sm font-bold text-gray-900 dark:text-white">Rp{{ number_format($data->portfolio_price, 0, '', '.') }}</h1>
                         </div>
                     </div>
                 </a>

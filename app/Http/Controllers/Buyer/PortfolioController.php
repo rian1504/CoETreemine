@@ -13,7 +13,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $datas = Category::get();
-        $datasBest = Category::latest()->limit(5)->get();
+        $datasBest = Portfolio::latest()->limit(5)->get();
         return view('buyer.portfolio.index', compact('datas', 'datasBest'));
     }
 

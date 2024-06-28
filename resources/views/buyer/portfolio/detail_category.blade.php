@@ -14,6 +14,9 @@
 
 <div class="flex flex-col my-8 gap-8">
     <div class="py-4 px-8 bg-white rounded-lg">
+        <div class="px-3 py-1 bg-gray-400 w-20 flex justify-center items-center rounded-lg text-white text-sm hover:bg-gray-500">
+            <a href="{{ url()->previous() }}" rel="noopener noreferrer"><i class="fas fa-arrow-left me-1"></i>Back</a>
+        </div>
         <div class="flex justify-center">
             <div class="inline-grid grid-cols-5 gap-4">
                 @forelse ($datas->portfolio as $data)
@@ -24,8 +27,7 @@
                         </div>
                         <div class="mx-6 my-6 md:my-6">
                             <h1 class="text-sm text-gray-900 dark:text-white">{{ $data->portfolio_name }}</h1>
-                            <h1 class="text-sm font-bold text-gray-900 dark:text-white">
-                                Rp{{ number_format($data->portfolio_price, 0, '', '.') }}</h1>
+                            <h1 class="text-sm font-bold text-gray-900 dark:text-white">Rp{{ number_format($data->portfolio_price, 0, '', '.') }}</h1>
                         </div>
                     </div>
                 </a>
