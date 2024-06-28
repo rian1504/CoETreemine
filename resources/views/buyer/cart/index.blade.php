@@ -30,19 +30,19 @@
                                     <label for="checkbox-all-search" class="sr-only">All</label>
                                 </div>
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-5 py-3">
                                 Product name
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-5 py-3">
                                 Quantity
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-5 py-3">
                                 Price
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-5 py-3">
                                 Detail
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-5 py-3">
                                 Action
                             </th>
                         </tr>
@@ -55,7 +55,7 @@
                                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     {{-- CHECKBOX --}}
                                     @if ($data->custom_prototype != null)
-                                        <td rowspan="2" class="w-4 p-4 text-center">
+                                        <td rowspan="2" class="px-5 py-3 text-center">
                                             <div class="flex items-center">
                                                 <input type="checkbox" name="custom[]" id="custom"
                                                     value="{{ $data->id_cart_custom }}"
@@ -65,7 +65,7 @@
                                             </div>
                                         </td>
                                     @else
-                                        <td class="w-4 p-4 text-center">
+                                        <td class="px-5 py-3 text-center">
                                             <div class="flex items-center">
                                                 <input type="checkbox" name="custom[]" id="custom"
                                                     value="{{ $data->id_cart_custom }}"
@@ -76,15 +76,16 @@
                                         </td>
                                     @endif
                                     <th scope="row"
-                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <img src="{{ asset('/storage/assets/images/pcb-assembly.jpg') }}" alt=""
-                                            width="100" height="100">
+                                        class="px-5 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white flex flex-col gap-2">
                                         <h1>Assembly</h1>
+                                        <div class="h-20 w-20 border-custom-grey border-2 rounded-lg p-2">
+                                            <img src="{{ asset('/storage/assets/images/pcb-assembly.jpg') }}" alt="">
+                                        </div>
                                     </th>
-                                    <td class="px-6 py-4">{{ $data->custom_assembly->quantity }}</td>
-                                    <td class="px-6 py-4">Rp{{ number_format($data->custom_assembly->price, 0, '', '.') }}
+                                    <td class="px-5 py-3 text-center">{{ $data->custom_assembly->quantity }}</td>
+                                    <td class="px-5 py-3">Rp{{ number_format($data->custom_assembly->price, 0, '', '.') }}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-5 py-3">
                                         <!-- Modal toggle -->
                                         <button data-modal-target="static-assembly-modal"
                                             data-modal-toggle="static-assembly-modal"
@@ -94,19 +95,21 @@
                                             View Detail
                                         </button>
                                     </td>
-                                    <td class="px-6 py-4 text-center">
+                                    <td class="px-5 py-3 text-center flex gap-2">
                                         {{-- BUTTON ADD FILE --}}
-                                        @if ($data->custom_assembly->file == null)
-                                            <button data-modal-target="authentication-assembly-modal"
-                                                data-modal-toggle="authentication-assembly-modal"
-                                                data-id={{ $data->custom_assembly->id_custom_assembly }}
-                                                class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                Upload File
-                                            </button>
-                                            <h1>Not Completed</h1>
-                                        @else
-                                            <h1>Under Review</h1>
-                                        @endif
+                                        <div class="flex flex-col gap-2">
+                                            @if ($data->custom_assembly->file == null)
+                                                <button data-modal-target="authentication-assembly-modal"
+                                                    data-modal-toggle="authentication-assembly-modal"
+                                                    data-id={{ $data->custom_assembly->id_custom_assembly }}
+                                                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                    Upload File
+                                                </button>
+                                                <h1 class="text-xs text-red-500">Not Completed</h1>
+                                            @else
+                                                <h1>Under Review</h1>
+                                            @endif
+                                        </div>
 
                                         {{-- BUTTON DELETE CART CUSTOM --}}
                                         <form action="{{ route('cart.custom.delete', $data->id_cart_custom) }}"
@@ -114,7 +117,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="px-3 py-1 w-10 bg-red-500 text-center rounded-lg text-white text-sm hover:bg-gray-500"><i
+                                                class="px-5 py-2 bg-red-500 text-center rounded-lg text-white text-sm hover:bg-red-800"><i
                                                     class="fas fa-trash"></i></button>
                                         </form>
                                     </td>
@@ -122,7 +125,7 @@
                             @else
                                 <tr
                                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <td class="w-4 p-4 text-center">
+                                    <td class="px-5 py-3 text-center">
                                         <input type="checkbox" name="custom[]" id="custom"
                                             value="{{ $data->id_cart_custom }}"
                                             class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
@@ -133,15 +136,15 @@
                             {{-- CUSTOM PROTOTYPE --}}
                             @if ($data->custom_prototype != null)
                                 <th scope="row"
-                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    class="px-5 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     <img src="{{ asset('/storage/assets/images/pcb-prototype.png') }}" alt=""
                                         width="100" height="100">
                                     <h1>Prototype</h1>
                                 </th>
-                                <td class="w-4 p-4 text-center">{{ $data->custom_prototype->quantity }}</td>
-                                <td class="w-4 p-4 text-center">
+                                <td class="px-5 py-3 text-center">{{ $data->custom_prototype->quantity }}</td>
+                                <td class="px-5 py-3 text-center">
                                     Rp{{ number_format($data->custom_prototype->price, 0, '', '.') }}</td>
-                                <td class="w-4 p-4 text-center">
+                                <td class="px-5 py-3 text-center">
                                     {{-- <a href="{{ route('cart.prototype', $data->custom_prototype->id_custom_prototype) }}">View
                                         Detail</a> --}}
                                     <!-- Modal toggle -->
@@ -153,7 +156,7 @@
                                         View Detail
                                     </button>
                                 </td>
-                                <td class="w-4 p-4 text-center">
+                                <td class="px-5 py-3 text-center">
                                     {{-- BUTTON ADD FILE --}}
                                     @if ($data->custom_prototype->file == null)
                                         <button data-modal-target="authentication-prototype-modal"
@@ -184,20 +187,20 @@
                         @foreach ($dataPortfolio as $index => $data)
                             <tr
                                 class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4 text-center">
+                                <td class="px-5 py-3 text-center">
                                     <input type="checkbox" name="portfolio[]" id="portfolio"
                                         value="{{ $data->id_portfolio }}"
                                         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                 </td>
                                 <th scope="row"
-                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex gap-2">
+                                    class="px-5 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white flex flex-col gap-2">
+                                    {{ $data->portfolio->portfolio_name }}
                                     <div class="h-20 w-20 border-custom-grey border-2 rounded-lg p-2">
                                         <img src="{{ asset('/storage/assets/images/portfolio/' . $data->portfolio->portfolio_picture) }}"
                                             alt="" class="h-full w-full object-cover">
                                     </div>
-                                    {{ $data->portfolio->portfolio_name }}
                                 </th>
-                                <td class="w-4 p-4 text-center">
+                                <td class="px-5 py-3 text-center">
                                     <div class="flex justify-center items-center">
                                         <button type="button"
                                             onclick="decreaseQuantity('{{ $data->id_cart_portfolio }}')"
@@ -214,15 +217,15 @@
                                         </button>
                                     </div>
                                 </td>
-                                <td class="w-4 p-4 text-center">
+                                <td class="px-5 py-3 text-center">
                                     <h1>Rp{{ number_format($data->portfolio->portfolio_price, 0, '', '.') }}</h1>
                                 </td>
-                                <td class="w-4 p-4 text-center">
+                                <td class="px-5 py-3 text-center">
                                     <a href="{{ route('cart.portfolio', $data->portfolio->id_portfolio) }}">
                                         View Detail
                                     </a>
                                 </td>
-                                <td class="w-4 p-4 text-center">
+                                <td class="px-5 py-3 text-center">
                                     <form action="{{ route('cart.portfolio.delete', $data->id_cart_portfolio) }}"
                                         method="POST" onsubmit="return confirm('Are you sure want to delete?')">
                                         @csrf
