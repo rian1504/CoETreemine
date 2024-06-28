@@ -94,16 +94,15 @@
                                             View Detail
                                         </button>
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 text-center">
                                         {{-- BUTTON ADD FILE --}}
                                         @if ($data->custom_assembly->file == null)
-                                            <form
-                                                action="{{ route('cart.assembly.addFile', $data->custom_assembly->id_custom_assembly) }}"
-                                                method="POST" enctype="multipart/form-data" class="add-file-form">
-                                                @csrf
-                                                <input type="file" name="file">
-                                                <button type="submit">Save</button>
-                                            </form>
+                                            <button data-modal-target="authentication-assembly-modal"
+                                                data-modal-toggle="authentication-assembly-modal"
+                                                data-id={{ $data->custom_assembly->id_custom_assembly }}
+                                                class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                Upload File
+                                            </button>
                                             <h1>Not Completed</h1>
                                         @else
                                             <h1>Under Review</h1>
@@ -157,21 +156,20 @@
                                 <td class="w-4 p-4 text-center">
                                     {{-- BUTTON ADD FILE --}}
                                     @if ($data->custom_prototype->file == null)
-                                        <form
-                                            action="{{ route('cart.prototype.addFile', $data->custom_prototype->id_custom_prototype) }}"
-                                            method="POST" enctype="multipart/form-data" class="add-file-form">
-                                            @csrf
-                                            <input type="file" name="file">
-                                            <button type="submit">Save</button>
-                                        </form>
+                                        <button data-modal-target="authentication-prototype-modal"
+                                            data-modal-toggle="authentication-prototype-modal"
+                                            data-id={{ $data->custom_prototype->id_custom_prototype }}
+                                            class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                            Upload File
+                                        </button>
                                         <h1>Not Completed</h1>
                                     @else
                                         <h1>Under Review</h1>
                                     @endif
 
                                     {{-- BUTTON DELETE CART CUSTOM --}}
-                                    <form action="{{ route('cart.custom.delete', $data->id_cart_custom) }}"
-                                        method="POST" onsubmit="return confirm('Are you sure want to delete?')">
+                                    <form action="{{ route('cart.custom.delete', $data->id_cart_custom) }}" method="POST"
+                                        onsubmit="return confirm('Are you sure want to delete?')">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
@@ -242,7 +240,7 @@
             </div>
             <div class=" flex justify-end items-center">
                 <div class="px-3 py-1 w-28 bg-buyer-green text-center rounded-lg text-white text-sm hover:bg-gray-500">
-                    <a href="#">Buy Now</a>
+                    <a href="#">Checkout</a>
                 </div>
             </div>
         </div>
@@ -624,8 +622,117 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal -->
+        <!-- Upload File Assembly -->
+        <div id="authentication-assembly-modal" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            Upload a Gerber File
+                        </h3>
+                        <button type="button"
+                            class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="authentication-assembly-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4 md:p-5">
+                        <form id="uploadForm" class="space-y-4"
+                            action="{{ route('cart.assembly.addFile', ':id_custom_assembly') }}"
+                            enctype="multipart/form-data" method="POST">
+                            @csrf
+
+                            <input type="hidden" name="custom_assembly" id="custom_assembly">
+                            <div>
+                                <label for="file"
+                                    class="block mb-2 text-sm font-semibold text-gray-900 dark:text-white">Your
+                                    File</label>
+                                <div class="relative flex items-center">
+                                    <input type="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                                        id="fileInput" name="file">
+                                    <input type="text"
+                                        class="w-full h-14 p-4 border border-admin-green rounded-l-lg focus:outline-none"
+                                        placeholder="No file chosen" id="fileText" readonly>
+                                    <button class="h-14 w-52 bg-admin-green text-white rounded-r-lg">
+                                        Choose File
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <!-- Upload File Prototype -->
+        <div id="authentication-prototype-modal" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            Upload a Gerber File
+                        </h3>
+                        <button type="button"
+                            class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="authentication-prototype-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4 md:p-5">
+                        <form id="uploadFormPrototype" class="space-y-4"
+                            action="{{ route('cart.prototype.addFile', ':id_custom_prototype') }}"
+                            enctype="multipart/form-data" method="POST">
+                            @csrf
+
+                            <input type="hidden" name="custom_prototype" id="custom_prototype">
+                            <div>
+                                <label for="file"
+                                    class="block mb-2 text-sm font-semibold text-gray-900 dark:text-white">Your
+                                    File</label>
+                                <div class="relative flex items-center">
+                                    <input type="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                                        id="fileInputPrototype" name="file">
+                                    <input type="text"
+                                        class="w-full h-14 p-4 border border-admin-green rounded-l-lg focus:outline-none"
+                                        placeholder="No file chosen" id="fileTextPrototype" readonly>
+                                    <button class="h-14 w-52 bg-admin-green text-white rounded-r-lg">
+                                        Choose File
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    {{-- Quantity Portfolio --}}
     <script>
         function decreaseQuantity(id) {
             var quantityInput = document.getElementById('quantity-' + id);
@@ -641,7 +748,10 @@
             quantityInput.value = currentValue + 1;
         }
     </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    {{-- View Detail Custom --}}
     <script>
         $(document).ready(function() {
             function formatNumber(number, options = {}) {
@@ -786,6 +896,121 @@
             //     // Reset nilai input hidden ke kosong
             //     $('#cart_custom').val('');
             // });
+        });
+    </script>
+
+    {{-- Input File Assembly --}}
+    <script>
+        // Upload File Button
+
+        // Handler saat tombol "Upload File" di klik untuk menetapkan nilai custom_assembly ke input hidden
+        $('[data-modal-toggle="authentication-assembly-modal"]').click(function() {
+            document.getElementById('fileInput').addEventListener('change', function() {
+                var fileInput = this;
+                var fileName = fileInput.files[0].name;
+                var fileText = document.getElementById('fileText');
+
+                fileText.value = fileName;
+            });
+
+            let id_custom_assembly = $(this).data('id');
+            $('#custom_assembly').val(id_custom_assembly);
+
+            let actionUrl = $('#uploadForm').attr('action');
+            actionUrl = actionUrl.replace(':id_custom_assembly', id_custom_assembly);
+            $('#uploadForm').attr('action', actionUrl);
+        });
+
+        // Handler saat form di-submit
+        $('#uploadForm').submit(function(event) {
+            event.preventDefault(); // Mencegah form dikirim dan halaman dimuat ulang
+
+            // Mengambil data
+            let dataForm = new FormData(this);
+
+            // Mengirim data form menggunakan jQuery AJAX
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'), // Mengambil URL dari action form
+                data: dataForm,
+                contentType: false, // Tidak mengatur content type secara otomatis
+                processData: false, // Tidak memproses data (FormData akan menangani semuanya
+                success: function(data) {
+                    window.location.reload(); // Refresh halaman untuk memuat data terbaru
+                },
+                error: function(error) {
+                    console.log(error.responseText);
+                    alert('Terjadi kesalahan, data tidak dapat disimpan.');
+                }
+            });
+        });
+
+        // Ketika tombol untuk menutup modal diklik
+        $('[data-modal-hide="authentication-assembly-modal"]').click(function() {
+            // Reset action form ke awal
+            $('#uploadForm').attr('action', '{{ route('cart.assembly.addFile', ':id_custom_assembly') }}');
+            // Reset nilai input hidden ke kosong
+            $('#custom_assembly').val('');
+            $('#fileInput').val('');
+            $('#fileText').val('');
+        });
+    </script>
+
+    {{-- Input File Prototype --}}
+    <script>
+        // Upload File Button
+
+        // Handler saat tombol "Upload File" di klik untuk menetapkan nilai custom_assembly ke input hidden
+        $('[data-modal-toggle="authentication-prototype-modal"]').click(function() {
+            document.getElementById('fileInputPrototype').addEventListener('change', function() {
+                var fileInput = this;
+                var fileName = fileInput.files[0].name;
+                var fileText = document.getElementById('fileTextPrototype');
+
+                fileText.value = fileName;
+            });
+
+            let id_custom_prototype = $(this).data('id');
+            $('#custom_prototype').val(id_custom_prototype);
+
+            let actionUrl = $('#uploadFormPrototype').attr('action');
+            actionUrl = actionUrl.replace(':id_custom_prototype', id_custom_prototype);
+            $('#uploadFormPrototype').attr('action', actionUrl);
+        });
+
+        // Handler saat form di-submit
+        $('#uploadFormPrototype').submit(function(event) {
+            event.preventDefault(); // Mencegah form dikirim dan halaman dimuat ulang
+
+            // Mengambil data
+            let dataForm = new FormData(this);
+
+            // Mengirim data form menggunakan jQuery AJAX
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'), // Mengambil URL dari action form
+                data: dataForm,
+                contentType: false, // Tidak mengatur content type secara otomatis
+                processData: false, // Tidak memproses data (FormData akan menangani semuanya
+                success: function(data) {
+                    window.location.reload(); // Refresh halaman untuk memuat data terbaru
+                },
+                error: function(error) {
+                    console.log(error.responseText);
+                    alert('Terjadi kesalahan, data tidak dapat disimpan.');
+                }
+            });
+        });
+
+        // Ketika tombol untuk menutup modal diklik
+        $('[data-modal-hide="authentication-prototype-modal"]').click(function() {
+            // Reset action form ke awal
+            $('#uploadFormPrototype').attr('action',
+                '{{ route('cart.prototype.addFile', ':id_custom_prototype') }}');
+            // Reset nilai input hidden ke kosong
+            $('#custom_prototype').val('');
+            $('#fileInputPrototype').val('');
+            $('#fileTextPrototype').val('');
         });
     </script>
 
