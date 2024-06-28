@@ -49,19 +49,31 @@ class CartController extends Controller
     public function assembly(CustomAssembly $assembly)
     {
         //get custom_assembly by ID
-        $assembly = CustomAssembly::findOrFail($assembly->id_custom_assembly);
+        $assembly = CustomAssembly::with('assembly_flexible')
+            ->with('assembly_board_type')->with('assembly_side')
+            ->findOrFail($assembly->id_custom_assembly);
 
+        // $assembly = CustomAssembly::findOrFail($assembly->id_custom_assembly);
         //render view with custom_assembly
-        return view('buyer.cart.show_assembly', compact('assembly'));
+        // return view('buyer.cart.show_assembly', compact('assembly'));
+        return $assembly;
     }
 
     public function prototype(CustomPrototype $prototype)
     {
         //get custom_prototype by ID
-        $prototype = CustomPrototype::findOrFail($prototype->id_custom_prototype);
+        $prototype = CustomPrototype::with('prototype_board_type')->with('prototype_route_process')
+            ->with('prototype_fr4')->with('prototype_thickness')->with('prototype_layer')
+            ->with('prototype_inner_cooper')->with('prototype_finished_cooper')->with('prototype_cooper_layer')
+            ->with('prototype_track')->with('prototype_hole')->with('prototype_solder')->with('prototype_silk')
+            ->with('prototype_surface')->with('prototype_via_process')->with('prototype_material')
+            ->with('prototype_soldermask_layer1')->with('prototype_silkscreen_layer1')
+            ->findOrFail($prototype->id_custom_prototype);
 
+        // $prototype = CustomPrototype::findOrFail($prototype->id_custom_prototype);
         //render view with custom_prototype
-        return view('buyer.cart.show_prototype', compact('prototype'));
+        // return view('buyer.cart.show_prototype', compact('prototype'));
+        return $prototype;
     }
 
     public function assemblyAddFile(CustomAssembly $assembly, Request $request)
