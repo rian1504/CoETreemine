@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin\ReviewFileController;
 use App\Http\Controllers\Admin\ReviewPaymentController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\OnProgressController;
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Buyer\CartController;
 use App\Http\Controllers\Buyer\CustomAssemblyController as BuyerCustomAssemblyController;
@@ -156,6 +157,10 @@ Route::middleware(['admin', 'auth'])->prefix('admin')->group(function () {
         Route::resource('soldermask_layer1', PrototypeSoldermaskLayer1Controller::class)->except('show', 'index');
         Route::resource('silkscreen_layer1', PrototypeSilkscreenLayer1Controller::class)->except('show', 'index');
     });
+
+    Route::get('/profile', [AdminProfileController::class, 'edit'])->name('profile.admin.edit');
+    Route::patch('/profile', [AdminProfileController::class, 'update'])->name('profile.admin.update');
+    Route::delete('/profile', [AdminProfileController::class, 'destroy'])->name('profile.admin.destroy');
 });
 
 require __DIR__ . '/auth.php';
