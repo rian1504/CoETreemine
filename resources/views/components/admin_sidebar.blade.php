@@ -1,4 +1,4 @@
-<aside id="sidebar" class="fixed top-0 left-0 z-40 w-64 h-full bg-white dark:bg-gray-800 transition-transform transform duration-300 -translate-x-full md:translate-x-0">
+<aside id="sidebar" class="shadow-lg fixed top-0 left-0 z-40 w-64 h-full bg-white dark:bg-gray-800 transition-transform transform duration-300 -translate-x-full md:translate-x-0">
     <div class="px-3 py-4 overflow-y-auto h-full">
         <a href="{{ route('dashboard') }}" class="flex flex-col justify-center items-center p-2 mb-4 text-gray-900 rounded-lg dark:text-whit group">
             <h1 class="text-2xl font-bold hidden md:block">CoETreemine</h1>

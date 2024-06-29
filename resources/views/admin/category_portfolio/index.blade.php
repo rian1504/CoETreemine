@@ -11,10 +11,10 @@
         <a href="{{ route('category.index') }}" class="text-admin-green">Portfolio Category</a>
     </div>
     <!-- page -->
-    <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
+    <div class=" min-h-[450px] shadow-lg bg-white rounded-sm px-10 py-6">
         <div class="flex justify-end mb-4">
-            <a href="{{ route('category.create') }} " class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Add
+            <a href="{{ route('category.create') }} " class="button-blue">
+                <i class="fas fa-plus me-1"></i>Add
             </a>
         </div>
         <div class="grid grid-cols-3 gap-4 mb-4">
@@ -28,14 +28,14 @@
                         {{ $data->category_name }}
                     </h5>
                     <div class="flex justify-between gap-4 mt-4">
-                        <a href="{{ route('category.edit', $data->id_category) }}" class="px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                            Edit
+                        <a href="{{ route('category.edit', $data->id_category) }}" class="button-yellow">
+                            <i class="fas fa-edit me-1"></i>Edit
                         </a>
                         <div>
                             <form action="{{ route('category.destroy', $data->id_category) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="px-5 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
+                                <button type="submit" class="button-red"><i class="fas fa-trash me-1"></i>Delete</button>
                             </form>
                         </div>
                     </div>

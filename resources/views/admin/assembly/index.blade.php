@@ -11,7 +11,7 @@
         <a href="{{ route('assembly.index') }}" class="text-admin-green">Assembly</a>
     </div>
 
-    <div class="min-h-[450px] bg-white rounded-sm px-10 py-6">
+    <div class="min-h-[450px] shadow-lg bg-white rounded-sm px-10 py-6">
         <div class="pb-4 flex flex-row justify-between">
             <select id="assembly" name="assembly" class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-green-500 dark:focus:border-green-500">
                 <option selected value="Flexible" disabled hidden>Choose a Assembly</option>
@@ -22,7 +22,7 @@
                 @endforeach
             </select>
             <div id="addButtonContainer">
-                <a id="addButton" href="#" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>
+                <a id="addButton" href="#" class="button-blue"><i class="fas fa-plus me-1"></i>Add</a>
             </div>
         </div>
         <!-- table -->
@@ -59,16 +59,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('flexible.edit', $data->id_flexible) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('flexible.edit', $data->id_flexible) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('flexible.destroy', $data->id_flexible) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -114,16 +111,13 @@
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('board.edit', $data->id_board) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('board.edit', $data->id_board) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('board.destroy', $data->id_board) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -175,16 +169,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('side.edit', $data->id_side) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('side.edit', $data->id_side) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('side.destroy', $data->id_side) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>

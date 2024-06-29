@@ -21,12 +21,27 @@
     .textarea-form{
         @apply block p-2.5 w-full text-sm text-gray-900 bg-custom-grey border border-custom-grey shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500
     }
+
+    /* button */
     .button-grey{
-        @apply py-2 px-4 bg-gray-300 rounded-lg hover:bg-gray-500 hover:text-white focus:outline-none focus:bg-gray-500
+        @apply inline-flex items-center px-5 py-2 bg-gray-400 text-center font-medium text-white rounded-lg text-sm hover:bg-gray-700 focus:outline-none focus:bg-gray-700
     }
     .button-green{
-        @apply py-2 px-4 bg-buyer-green text-white rounded-lg hover:bg-green-800 focus:outline-none focus:bg-green-800
+        @apply inline-flex items-center px-5 py-2 bg-buyer-green text-center font-medium text-white rounded-lg text-sm hover:bg-green-800 focus:outline-none focus:bg-green-800
     }
+    .button-green-admin{
+        @apply inline-flex items-center px-5 py-2 text-sm text-center font-medium text-white bg-admin-green rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800
+    }
+    .button-red{
+        @apply inline-flex items-center px-5 py-2 bg-red-500 text-center font-medium text-white rounded-lg text-sm hover:bg-red-800 focus:outline-none focus:bg-red-800
+    }
+    .button-yellow{
+        @apply inline-flex items-center px-5 py-2 bg-yellow-400 text-center font-medium text-white rounded-lg text-sm hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800
+    }
+    .button-blue{
+        @apply inline-flex items-center px-5 py-2 bg-blue-500 text-center font-medium text-white rounded-lg text-sm hover:bg-blue-800 focus:outline-none focus:bg-blue-800
+    }
+
     .image{
         @apply w-full h-full object-cover mx-auto
     }

@@ -11,7 +11,7 @@
         <p class="text-admin-green">History Order</p>
     </div>
 
-    <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
+    <div class=" min-h-[450px] shadow-lg bg-white rounded-sm px-10 py-6">
         <div class="pb-4 justify-between">
             <label for="table-search" class="sr-only">Search</label>
             <div class="relative mt-1">
@@ -103,14 +103,15 @@
                         </td>
                         <td class="px-6 py-4 flex flex-row gap-2 items-center ">
                             <i class="fa-solid fa-eye px-4 "></i>
-                            <a href="{{ route('history.order.show', $data->id_order) }}" class=" inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                            <a href="{{ route('history.order.show', $data->id_order) }}" class=" inline-flex items-center button-red>
                                 View Detail
                             </a>
                         </td>
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="7">Data Kosong</td>
+                        <td colspan=" 7">Data Kosong
+                        </td>
                     </tr>
                     @endforelse
                 </tbody>

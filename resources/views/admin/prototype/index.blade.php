@@ -11,7 +11,7 @@
         <a href="{{ route('prototype.index') }}" class="text-admin-green">Prototype</a>
     </div>
 
-    <div class="min-h-[450px] bg-white rounded-sm px-10 py-6">
+    <div class="min-h-[450px] shadow-lg bg-white rounded-sm px-10 py-6">
         <div class="pb-4 flex flex-row justify-between">
             <select id="prototype" name="prototype" class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-green-500 dark:focus:border-green-500">
                 <option selected value="Board" disabled hidden>Choose a Prototype</option>
@@ -22,7 +22,7 @@
                 @endforeach
             </select>
             <div id="addButtonContainer">
-                <a id="addButton" href="#" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</a>
+                <a id="addButton" href="#" class="button-blue"><i class="fas fa-plus me-1"></i>Add</a>
             </div>
         </div>
         <!-- table -->
@@ -59,16 +59,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('board_type.edit', $data->id_board) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('board_type.edit', $data->id_board) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('board_type.destroy', $data->id_board) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -114,16 +111,13 @@
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('route_process.edit', $data->id_route) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('route_process.edit', $data->id_route) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('route_process.destroy', $data->id_route) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -169,16 +163,13 @@
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('fr4.edit', $data->id_fr4) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('fr4.edit', $data->id_fr4) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('fr4.destroy', $data->id_fr4) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -236,16 +227,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('thickness.edit', $data->id_thickness) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('thickness.edit', $data->id_thickness) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('thickness.destroy', $data->id_thickness) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -297,16 +285,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('layer.edit', $data->id_layer) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('layer.edit', $data->id_layer) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('layer.destroy', $data->id_layer) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -358,16 +343,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('inner_cooper.edit', $data->id_inner_cooper) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('inner_cooper.edit', $data->id_inner_cooper) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('inner_cooper.destroy', $data->id_inner_cooper) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -419,16 +401,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('finished_cooper.edit', $data->id_finished_cooper) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('finished_cooper.edit', $data->id_finished_cooper) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('finished_cooper.destroy', $data->id_finished_cooper) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -474,16 +453,13 @@
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('cooper_layer.edit', $data->id_cooper_layer) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('cooper_layer.edit', $data->id_cooper_layer) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('cooper_layer.destroy', $data->id_cooper_layer) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -535,16 +511,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('track.edit', $data->id_track) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('track.edit', $data->id_track) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('track.destroy', $data->id_track) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -596,16 +569,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('hole.edit', $data->id_hole) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('hole.edit', $data->id_hole) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('hole.destroy', $data->id_hole) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -657,16 +627,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('solder.edit', $data->id_solder) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('solder.edit', $data->id_solder) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('solder.destroy', $data->id_solder) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -718,16 +685,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('silk.edit', $data->id_silk) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('silk.edit', $data->id_silk) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('silk.destroy', $data->id_silk) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -779,16 +743,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('surface.edit', $data->id_surface) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('surface.edit', $data->id_surface) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('surface.destroy', $data->id_surface) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -840,16 +801,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('via_process.edit', $data->id_via) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('via_process.edit', $data->id_via) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('via_process.destroy', $data->id_via) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -907,16 +865,13 @@
                         </td>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('material.edit', $data->id_material) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('material.edit', $data->id_material) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('material.destroy', $data->id_material) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -962,16 +917,13 @@
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('soldermask_layer1.edit', $data->id_soldermask_layer1) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('soldermask_layer1.edit', $data->id_soldermask_layer1) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('soldermask_layer1.destroy', $data->id_soldermask_layer1) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -1017,16 +969,13 @@
                         </th>
                         <td class="px-6 py-3 whitespace-nowrap">
                             <div class="flex items-center gap-4">
-                                <a href="{{ route('silkscreen_layer1.edit', $data->id_silkscreen_layer1) }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-yellow-400 rounded-lg hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                <a href="{{ route('silkscreen_layer1.edit', $data->id_silkscreen_layer1) }}" class="button-yellow">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form action="{{ route('silkscreen_layer1.destroy', $data->id_silkscreen_layer1) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                    <button type="submit" class="button-red">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>

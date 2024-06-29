@@ -117,8 +117,8 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="px-5 py-2 bg-red-500 text-center rounded-lg text-white text-sm hover:bg-red-800"><i
-                                                    class="fas fa-trash"></i></button>
+                                                class="px-5 py-2 bg-red-500 text-center rounded-lg text-white text-sm hover:bg-red-800">
+                                                <i class="fas fa-trash me-1"></i>Delete</button>
                                         </form>
                                     </td>
                                 </tr>

@@ -11,7 +11,7 @@
         <p class="text-admin-green">Portfolio</p>
     </div>
 
-    <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
+    <div class=" min-h-[450px] shadow-lg bg-white rounded-sm px-10 py-6">
         <div class="pb-4 flex flex-row justify-between">
             <label for="table-search" class="sr-only">Search</label>
             <div class="relative mt-1">
@@ -22,9 +22,7 @@
                 </div>
                 <input type="text" id="table-search" class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Search for items">
             </div>
-            <a href="{{ route('portfolio.create') }}" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Add
-            </a>
+            <a href="{{ route('portfolio.create') }}" class="button-blue"><i class="fas fa-plus me-1"></i>Add</a>
         </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -89,10 +87,7 @@
                             <form action="{{ route('portfolio.destroy', $data->id_portfolio) }}" onsubmit="return confirm('Are you sure?')" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm
-                                            font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800
-                                            focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600
-                                            dark:hover:bg-red-700 dark:focus:ring-red-800">Delete</button>
+                                <button type="submit" class="button-red">Delete</button>
                             </form>
                         </td>
                     </tr>

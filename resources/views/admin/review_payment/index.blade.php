@@ -12,7 +12,7 @@
     </div>
 
 
-    <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
+    <div class=" min-h-[450px] shadow-lg bg-white rounded-sm px-10 py-6">
         <div class="pb-4 flex flex-row justify-between">
             <label for="table-search" class="sr-only">Search</label>
             <div class="relative mt-1">
@@ -84,11 +84,11 @@
                         <td class="px-4 py-4 whitespace-nowrap truncate">
                             <form action="{{ route('review_payment.reject', $data->id_order) }}" method="POST" onsubmit="return confirm('Are you sure want to reject?')">
                                 @csrf
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Reject</button>
+                                <button type="submit" class="button-red">Reject</button>
                             </form>
                             <form action="{{ route('review_payment.accept', $data->id_order) }}" method="POST" onsubmit="return confirm('Are you sure want to accept?')">
                                 @csrf
-                                <button type="submit" class="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-yellow-800">Accept</button>
+                                <button type="submit" class="button-green-admin">Accept</button>
                             </form>
                         </td>
                     </tr>

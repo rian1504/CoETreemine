@@ -16,7 +16,7 @@
     <form action="{{ route('category.update', $category->id_category) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <div class=" min-h-[450px] bg-white rounded-sm px-10 py-6">
+        <div class=" min-h-[450px] shadow-lg bg-white rounded-sm px-10 py-6">
             <div class="flex flex-col mt-2 mb-6">
                 <label for="" class="font-semibold mb-2">Name</label>
                 <input type="text" name="category_name" value="{{ old('category_name', $category->category_name) }}" class="rounded-lg text-gray-900 border-admin-green p-4 bg-custom-grey focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Input a product name">
@@ -34,7 +34,8 @@
                 <img class="h-auto max-w-52 rounded-lg shadow-xl dark:shadow-gray-800" id="imagePreview" src="{{ asset('storage/assets/images/category/' . $category->category_picture) }}">
             </div>
             <div class="grid place-items-end ">
-                <button type="submit" class="inline-flex items-center px-5 py-2 text-lg font-medium text-center text-white bg-admin-green rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                <button type="submit" class="button-green-admin">
+                    <i class="fas fa-save me-1"></i>
                     Save
                 </button>
             </div>
