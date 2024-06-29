@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">
 </head>
 
-<body class="h-screen w-screen font-inter">
-    <main class="flex flex-col grow bg-custom-grey h-full w-full">
+<body class="min-h-screen w-screen font-inter">
+    <main class="flex flex-col grow bg-custom-grey min-h-screen w-screen">
         @yield('content')
     </main>
 </body>
