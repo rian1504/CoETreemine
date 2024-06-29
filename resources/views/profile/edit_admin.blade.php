@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="w-full h-full flex flex-row justify-between my-4 gap-4">
+<div class="w-full h-full flex flex-row justify-between my-5 gap-4">
     <div class="flex gap-4">
         <i class="fas fa-user text-6xl"></i>
         <div class="flex flex-col gap-2">
