@@ -49,15 +49,15 @@
     </div>
     <div class="bg-white rounded-lg shadow-lg">
         <div class="px-8 py-8">
-            <div class="flex h-24">
-                <div class=" w-52 h-full py-4">
+            <div class="flex justify-center items-center h-24 gap-4">
+                <div class="py-4 me-5">
                     <h1 class="text-2xl font-bold text-buyer-green ">How To Use</h1>
                     <p class="text-gray-500">Place an order on PCB</p>
                 </div>
-                <div class="max-w-sm mx-auto">
+                <div class="max-w-sm">
                     <hr class="border-l-2 border-custom-grey h-36 -mt-8 -ms-4">
                 </div>
-                <div class="flex justify-center items-center mb-2 gap-2 text-gray-500 text-sm">
+                <div class="flex justify-center items-center gap-2 text-gray-500 text-sm text-nowrap truncate">
                     <div class="text-center">
                         <i class="fas fa-file"></i>
                         <h1>Online Quote</h1>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <hr class="border-t-2 border-custom-grey -px-8 my-4">
+            <hr class="border-t-2 border-custom-grey -mx-8 my-4">
             <div class="flex justify-evenly mt-6">
                 <a href="{{ route('buyer.prototype.index') }}">
                     <div class="shadow-lg flex flex-col items-center w-52 p-2 gap-2 hover-effect ">
