@@ -81,7 +81,7 @@
                                 View Detail
                             </button>
                         </td>
-                        <td class="px-4 py-4 whitespace-nowrap truncate">
+                        <td rowspan="2" class="px-4 py-4 whitespace-nowrap truncate flex items-center justify-center gap-2">
                             <form action="{{ route('review_payment.reject', $data->id_order) }}" method="POST" onsubmit="return confirm('Are you sure want to reject?')">
                                 @csrf
                                 <button type="submit" class="button-red">Reject</button>

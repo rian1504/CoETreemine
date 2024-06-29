@@ -115,7 +115,7 @@
                                     <td colspan="3" class="px-4 py-4 whitespace-nowrap truncate col-span-2">
                                         <h1>Assembly Kosong</h1>
                                     </td>
-                                    <td rowspan="2" class="px-4 py-4 whitespace-nowrap truncate">
+                                    <td rowspan="2" class="px-4 py-4 whitespace-nowrap truncate flex items-center justify-center gap-2">
                                         <form action="{{ route('review_file.accept', $data->id_cart_custom) }}"
                                             method="POST" onsubmit="return confirm('Are you sure want to accept?')">
                                             @csrf
