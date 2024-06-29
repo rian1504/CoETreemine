@@ -15,8 +15,7 @@
 
     <div class="flex flex-col my-8 gap-8">
         <div class="py-8 px-8 bg-white rounded-lg flex flex-col justify-center gap-4">
-            <div
-                class="w-1/12 button-grey">
+            <div class="w-1/12 button-grey">
                 <a href="{{ url()->previous() }}" rel="noopener noreferrer"><i class="fas fa-arrow-left me-1"></i>Back</a>
             </div>
             <div class="overflow-x-auto shadow-md sm:rounded-lg text-nowrap truncate">
@@ -169,7 +168,7 @@
                                             </button>
                                             <h1 class="text-xs text-red-500">Not Completed</h1>
                                         @else
-                                            <h1>Under Review</h1>
+                                            <h1 class="text-xs text-green-500">Under Review</h1>
                                         @endif
                                     </div>
 
