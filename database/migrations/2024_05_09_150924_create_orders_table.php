@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("shipping_method")->nullable();
             $table->string("payment_proof");
             $table->integer("total_price");
-            $table->enum("status", ["not review", "reject", "on progress", "done"]);
+            $table->enum("status", ["not review", "rejected", "on progress", "done"]);
             $table->string("no_invoice")->nullable();
             $table->string("no_resi")->nullable();
             $table->unsignedBigInteger("id_user");
