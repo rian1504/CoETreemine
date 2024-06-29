@@ -16,7 +16,7 @@
     <div class="flex flex-col my-8 gap-8">
         <div class="py-8 px-8 bg-white rounded-lg flex flex-col justify-center gap-4">
             <div
-                class="px-3 py-1 bg-gray-400 w-20 flex justify-center items-center rounded-lg text-white text-sm hover:bg-gray-500">
+                class="w-1/12 button-grey">
                 <a href="{{ url()->previous() }}" rel="noopener noreferrer"><i class="fas fa-arrow-left me-1"></i>Back</a>
             </div>
             <div class="overflow-x-auto shadow-md sm:rounded-lg text-nowrap truncate">
@@ -245,7 +245,7 @@
                 </table>
             </div>
             <div class=" flex justify-end items-center">
-                <div class="px-3 py-1 w-28 bg-buyer-green text-center rounded-lg text-white text-sm hover:bg-gray-500">
+                <div class="button-green">
                     <a href="#">Checkout</a>
                 </div>
             </div>

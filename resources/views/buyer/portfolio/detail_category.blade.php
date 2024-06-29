@@ -14,11 +14,11 @@
 
 <div class="flex flex-col my-8 gap-8">
     <div class="py-4 px-8 bg-white rounded-lg">
-        <div class="px-3 py-1 bg-gray-400 w-20 flex justify-center items-center rounded-lg text-white text-sm hover:bg-gray-500">
+        <div class="button-grey">
             <a href="{{ url()->previous() }}" rel="noopener noreferrer"><i class="fas fa-arrow-left me-1"></i>Back</a>
         </div>
-        <div class="flex justify-center">
-            <div class="inline-grid grid-cols-5 gap-4">
+        <div class="flex justify-center items-center">
+            <div class="flex flex-row justify-between items-center gap-4">
                 @forelse ($datas->portfolio as $data)
                 <a href="{{ route('buyer.portfolio.showPortfolio', $data->id_portfolio) }}">
                     <div class=" hover-effect flex flex-col justify-center items-start w-56 h-60 bg-white border border-custom-grey rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8">
@@ -32,7 +32,10 @@
                     </div>
                 </a>
                 @empty
-                <h1>No Data</h1>
+                <div class="flex flex-col justify-center items-center h-full py-10 mb-4">
+                    <h1 class="text-2xl font-semibold text-gray-700 dark:text-white mb-2">No Data</h1>
+                    <i class="fas fa-database text-gray-400 text-4xl"></i>
+                </div>
                 @endforelse
             </div>
         </div>
@@ -40,7 +43,7 @@
     <div class="py-8 px-8 bg-white rounded-lg border-t-2 border-buyer-green">
         <h1 class="font-extrabold text-gray-500 text-lg">Another Category Product</h1>
         <div class="flex justify-center">
-            <div class="inline-grid grid-cols-5 gap-4">
+            <div class="flex flex-row justify-between items-center gap-4">
                 @forelse ($datasAnother as $data)
                 <a href="{{ route('buyer.portfolio.showCategory', $data->id_category) }}">
                     <div class=" hover-effect flex flex-col justify-center items-center w-56 h-60 bg-white border border-red rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8">
@@ -54,7 +57,10 @@
                     </div>
                 </a>
                 @empty
-                <h1>No Data</h1>
+                <div class="flex flex-col justify-center items-center h-full py-10 mb-8">
+                    <h1 class="text-2xl font-semibold text-gray-700 dark:text-white mb-8">No Data</h1>
+                    <i class="fas fa-database text-gray-400 text-4xl"></i>
+                </div>
                 @endforelse
             </div>
         </div>

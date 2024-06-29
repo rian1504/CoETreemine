@@ -1,4 +1,4 @@
-<div id="default-carousel" class="relative w-full overflow-hidden rounded-lg" data-carousel="slide">
+<div id="default-carousel" class="relative w-full overflow-hidden rounded-lg shadow-lg" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-32 md:h-52 overflow-hidden rounded-lg">
         <!-- Item 1 -->

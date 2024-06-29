@@ -14,7 +14,7 @@
     <div class="py-8 px-8 bg-white rounded-lg">
         <h1 class="text-center font-extrabold text-black-900 text-2xl">Category Product</h1>
         <div class="flex justify-center">
-            <div class="inline-grid grid-cols-5 gap-4">
+            <div class="flex flex-row justify-between items-center gap-4">
                 @forelse ($datas as $data)
                 <a href="{{ route('buyer.portfolio.showCategory', $data->id_category) }}">
                     <div class="hover-effect flex flex-col justify-center items-center w-56 h-60 bg-white border border-custom-grey rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8">
@@ -28,7 +28,10 @@
                     </div>
                 </a>
                 @empty
-                <h1>No Data</h1>
+                <div class="flex flex-col justify-center items-center h-full py-10 mb-8">
+                    <h1 class="text-2xl font-semibold text-gray-700 dark:text-white mb-8">No Data</h1>
+                    <i class="fas fa-database text-gray-400 text-4xl"></i>
+                </div>
                 @endforelse
             </div>
         </div>
@@ -36,7 +39,7 @@
     <div class="py-8 px-8 bg-white rounded-lg border-t-2 border-buyer-green">
         <h1 class="font-extrabold text-gray-500 text-lg">Best Seller Product</h1>
         <div class="flex justify-center">
-            <div class="inline-grid grid-cols-5 gap-4">
+            <div class="flex flex-row justify-between items-center gap-4">
                 @forelse ($datasBest as $data)
                 <a href="{{ route('buyer.portfolio.showPortfolio', $data->id_portfolio) }}">
                     <div class=" hover-effect flex flex-col justify-center items-center w-56 h-60 bg-white border border-custom-grey rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8">
@@ -50,7 +53,10 @@
                     </div>
                 </a>
                 @empty
-                <h1>No Data</h1>
+                <div class="flex flex-col justify-center items-center h-full py-10 mb-4">
+                    <h1 class="text-2xl font-semibold text-gray-700 dark:text-white mb-2">No Data</h1>
+                    <i class="fas fa-database text-gray-400 text-4xl"></i>
+                </div>
                 @endforelse
             </div>
         </div>

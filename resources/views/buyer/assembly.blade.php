@@ -47,7 +47,7 @@
 <div class="flex flex-row mb-8 -mt-4 gap-4">
     <!-- form -->
     <div class="w-3/4">
-        <div class="w-full py-4 flex justify-between gap-4">
+        <div class="w-full py-4 flex gap-4">
             <button class="w-1/2 button-grey" type="reset" id="reset"><i class="fas fa-undo me-2"></i>Reset</button>
             <button class="w-1/2 button-green" onclick="calculate()"><i class="fas fa-calculator me-2"></i>Calculate</button>
         </div>
@@ -195,9 +195,12 @@
                 </div>
                 <div class="flex justify-end mt-4 gap-4">
                     {{-- button addcart sementara --}}
-                    <button type="submit" class="w-1/6 button-green"><i class="fas fa-shopping-cart me-2"></i>Add to
-                        Cart</button>
-                    <button class="w-1/6 button-green" onclick="calculate()"><i class="fas fa-calculator me-2"></i>Calculate</button>
+                    <button type="submit" class=" button-grey"><i class="fas fa-shopping-cart me-2"></i>
+                        Add to Cart
+                    </button>
+                    <button class=" button-green" onclick="calculate()"><i class="fas fa-calculator me-2"></i>
+                        Calculate
+                    </button>
                 </div>
             </form>
         </div>
