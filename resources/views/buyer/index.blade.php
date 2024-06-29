@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <hr class="border-t-2 border-custom-grey -mx-8 my-4">
-                <div class="flex justify-evenly mt-6">
+                <div class="flex justify-between">
                     <a href="{{ route('buyer.prototype.index') }}">
                         <div class="shadow-lg flex flex-col items-center w-52 p-2 gap-2 hover-effect ">
                             <img src="{{ asset('image/prototype.jpg') }}" alt="" class="image">

@@ -115,8 +115,11 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="11" class="px-6 py-3 text-center text-gray-500 dark:text-gray-400">
-                            No data
+                        <td colspan="11" class="px-6 py-3                         text-center text-gray-500 dark:text-gray-400">
+                            <div class="flex flex-col justify-center items-center h-full py-10">
+                                <h1 class="text-2xl font-semibold text-gray-700 dark:text-white mb-2">No Data</h1>
+                                <i class="fas fa-database text-gray-400 text-4xl"></i>
+                            </div>
                         </td>
                     </tr>
                     @endforelse

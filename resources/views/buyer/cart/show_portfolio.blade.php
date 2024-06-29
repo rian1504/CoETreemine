@@ -11,7 +11,7 @@
     @endif
 
     <div class="py-8 px-8 bg-white rounded-lg h-[400px] flex flex-col gap-4">
-        <div class="px-3 py-1 bg-gray-400 w-20 flex justify-center items-center rounded-lg text-white text-sm hover:bg-gray-500">
+        <div class="button-grey">
             <a href="{{ route('cart.index') }}" rel="noopener noreferrer"><i class="fas fa-arrow-left me-1"></i>Back</a>
         </div>
         <div class="flex justify-between h-full gap-4">
