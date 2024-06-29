@@ -16,7 +16,7 @@
         </div>
         <div class="flex justify-between h-full gap-4">
             <div class="w-1/3 h-60 overflow-hidden rounded-lg shadow-lg bg-custom-grey">
-                <img src="{{ asset('/storage/assets/images/portfolio/' . $data->portfolio_picture) }}" alt="Portfolio Picture" class="w-full h-full object-cover">
+                <img src="{{ asset('/storage/assets/images/portfolio/' . $data->portfolio_picture) }}" alt="Portfolio Picture" class="image">
             </div>
             <!-- description box -->
             <div class="w-1/3 h-[90%] overflow-y-auto p-4 bg-white dark:bg-gray-800 custom-scrollbar">

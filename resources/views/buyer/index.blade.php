@@ -34,14 +34,14 @@
             <div class="w-1/2 p-4 flex flex-col justify-center items-center shadow-lg">
                 <h1 class="text-buyer-green text-2xl font-bold">PROTOTYPE</h1>
                 <div class="flex justify-center items-center w-full h-72 p-8">
-                    <img src="{{ asset('image/custom/prototype.jpeg') }}" alt="prototype" class="w-full h-full mx-auto object-cover my-3">
+                    <img src="{{ asset('image/custom/prototype.jpeg') }}" alt="prototype" class="image my-3">
                 </div>
                 <p class="text-justify mb-6">PCB prototypes are the first samples of products that are built with the primary aim of testing the functionality of the design ideas.Designers and engineers use different types of PCB prototypes to test various aspects of a selected design.</p>
             </div>
             <div class="w-1/2 p-4 flex flex-col justify-center items-center shadow-lg">
                 <h1 class="text-buyer-green text-2xl font-bold">ASSEMBLY</h1>
                 <div class="flex justify-center items-center w-full h-72 p-8">
-                    <img src="{{ asset('image/custom/assembly.jpeg') }}" alt="assembly" class="w-full h-full mx-auto object-cover my-3">
+                    <img src="{{ asset('image/custom/assembly.jpeg') }}" alt="assembly" class="image my-3">
                 </div>
                 <p class="text-justify">A printed circuit board assembly (PCBA) describes the finished board after all the components have been soldered and installed on a printed circuit board (PCB). The conductive pathways engraved in the laminated copper sheets of PCBs are used within a non-conductive substrate in order to form the assembly.</p>
             </div>
@@ -98,25 +98,25 @@
             <div class="flex justify-evenly mt-6">
                 <a href="{{ route('buyer.prototype.index') }}">
                     <div class="shadow-lg flex flex-col items-center w-52 p-2 gap-2 hover-effect ">
-                        <img src="{{ asset('image/prototype.jpg') }}" alt="" class="w-full object-cover">
+                        <img src="{{ asset('image/prototype.jpg') }}" alt="" class="image">
                         <h1 class="font-semibold text-lg">Standard PCB</h1>
                     </div>
                 </a>
                 <a href="{{ route('buyer.assembly.index') }}">
                     <div class="shadow-lg flex flex-col items-center w-52 p-2 gap-2 hover-effect ">
-                        <img src="{{ asset('image/assembly.jpg') }}" alt="" class="w-full object-cover">
+                        <img src="{{ asset('image/assembly.jpg') }}" alt="" class="image">
                         <h1 class="font-semibold text-lg">Assembly</h1>
                     </div>
                 </a>
                 <a href="{{ route('buyer.portfolio.index') }}">
                     <div class="shadow-lg flex flex-col items-center w-52 p-2 gap-2 hover-effect ">
-                        <img src="{{ asset('image/pcb.jpg') }}" alt="" class="w-full object-cover">
+                        <img src="{{ asset('image/pcb.jpg') }}" alt="" class="image">
                         <h1 class="font-semibold text-lg">PCB Product</h1>
                     </div>
                 </a>
                 <a href="{{ route('buyer.service') }}">
                     <div class="shadow-lg flex flex-col items-center w-52 p-2 gap-2 hover-effect ">
-                        <img src="{{ asset('image/service.jpg') }}" alt="" class="w-full object-cover">
+                        <img src="{{ asset('image/service.jpg') }}" alt="" class="image">
                         <h1 class="font-semibold text-lg">Service</h1>
                     </div>
                 </a>

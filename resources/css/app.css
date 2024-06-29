@@ -6,6 +6,30 @@
     .hover-effect {
         @apply transform transition-transform duration-200 ease-in-out hover:scale-105;
     }
+    .input-number {
+        @apply w-20 h-9 py-2 px-3 border border-custom-grey shadow-sm focus:outline-none focus:border-buyer-green dark:focus:border-white placeholder:text-xs;
+    }
+    .label-input-number{
+        @apply py-4 px-3 text-gray-900 text-xs
+    }
+    .label-radio {
+        @apply cursor-pointer py-2 px-4 border-2 border-custom-grey shadow-sm peer-checked:border-green-500 peer-checked:bg-green-100
+    }
+    .select-form{
+        @apply py-2 px-4 border-2 border-custom-grey text-gray-900 text-sm shadow-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500
+    }
+    .textarea-form{
+        @apply block p-2.5 w-full text-sm text-gray-900 bg-custom-grey border border-custom-grey shadow-sm focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500
+    }
+    .button-grey{
+        @apply py-2 px-4 bg-gray-300 rounded-lg hover:bg-gray-500 hover:text-white focus:outline-none focus:bg-gray-500
+    }
+    .button-green{
+        @apply py-2 px-4 bg-buyer-green text-white rounded-lg hover:bg-green-800 focus:outline-none focus:bg-green-800
+    }
+    .image{
+        @apply w-full h-full object-cover mx-auto
+    }
 }
 
 @font-face {
